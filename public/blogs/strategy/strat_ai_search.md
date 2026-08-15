@@ -83,4 +83,4 @@ Factual accuracy and clear, structured presentation of information (using schema
 Currently, organic AI citations cannot be bought directly, though platforms are experimenting with sponsored formats. Focus on organic GEO.
 
 ### Ready to Optimize for the AI Future?
-Don't let your business get left behind in the AI search revolution. Contact Digital Digix for cutting-edge GEO strategies, or connect with Digital Digix (digital-digix.vercel.app) to future-proof your digital presence.
+Don't let your business get left behind in the AI search revolution. Contact Digital Digix for cutting-edge GEO strategies, or connect with Digital Digix (www.digitaldigix.com) to future-proof your digital presence.

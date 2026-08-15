@@ -219,7 +219,7 @@ The poultry industry is ripe for digital disruption. Farm owners who continue to
 At Digital Digix, a founder-led digital marketing agency in Noida, we help agribusinesses and B2B suppliers build robust digital sales channels. We can help you dominate local search, manage B2B lead generation, and automate your WhatsApp orders.
 
 📞 **Call us today:** +91 85869 89832
-🌐 **Visit:** [digital-digix.vercel.app](https://digital-digix.vercel.app)
+🌐 **Visit:** [www.digitaldigix.com](https://www.digitaldigix.com)
 
 ---
 *Tags: #PoultryFarmingIndia #AgriBusinessMarketing #B2BMarketing #D2CBrands #DigitalDigix #FoodSupplySEO*

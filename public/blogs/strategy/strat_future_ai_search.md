@@ -270,4 +270,4 @@ Our team provides comprehensive GEO audits, schema implementation, semantic cont
 Ready to dominate search in 2026?
 - **Call/WhatsApp Us**: [+91 98765 43210](tel:+919876543210)
 - **Email Us**: info@digitaldigix.in
-- **Strategic Resources**: Visit [Digital Digix](https://digital-digix.vercel.app) to explore strategic digital marketing playbooks, local business growth guides, and interactive tools.
+- **Strategic Resources**: Visit [Digital Digix](https://www.digitaldigix.com) to explore strategic digital marketing playbooks, local business growth guides, and interactive tools.

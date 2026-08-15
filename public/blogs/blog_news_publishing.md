@@ -236,7 +236,7 @@ Create a professional media kit showing your monthly reach, audience demographic
 - ✅ Branded content strategy and sales support
 - ✅ Subscription model digital marketing
 
-📞 **+91 85869 89832** | 🌐 **digital-digix.vercel.app**
+📞 **+91 85869 89832** | 🌐 **www.digitaldigix.com**
 *No lock-in contracts. Post-pay available. Free strategy call.*
 
 ---

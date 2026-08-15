@@ -79,8 +79,8 @@ Embedding structured JSON-LD Schema code into your website's header is the most 
   "@context": "https://schema.org",
   "@type": "DiagnosticLab",
   "name": "Digital Digix Pathology & Imaging Center",
-  "url": "https://digital-digix.vercel.app",
-  "logo": "https://digital-digix.vercel.app/logo.png",
+  "url": "https://www.digitaldigix.com",
+  "logo": "https://www.digitaldigix.com/logo.png",
   "description": "NABL-accredited diagnostic center offering blood testing, home sample collection, MRI scans, and digital report delivery.",
   "address": {
     "@type": "PostalAddress",

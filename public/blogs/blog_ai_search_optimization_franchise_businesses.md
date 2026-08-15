@@ -79,9 +79,9 @@ Embedding structured JSON-LD Schema code into every location page header is the 
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Digital Digix Fitness - Sector 29 Gurgaon",
-  "url": "https://digital-digix.vercel.app/locations/gurgaon/sec-29",
-  "logo": "https://digital-digix.vercel.app/logo.png",
-  "image": "https://digital-digix.vercel.app/images/gurgaon-outlet.jpg",
+  "url": "https://www.digitaldigix.com/locations/gurgaon/sec-29",
+  "logo": "https://www.digitaldigix.com/logo.png",
+  "image": "https://www.digitaldigix.com/images/gurgaon-outlet.jpg",
   "telephone": "+919876543210",
   "address": {
     "@type": "PostalAddress",

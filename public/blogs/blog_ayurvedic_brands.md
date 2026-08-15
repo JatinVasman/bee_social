@@ -190,4 +190,4 @@ The Ayurvedic industry is experiencing a renaissance. The brands that will win i
 Digital Digix has helped over 2,700 clients across 89+ industries. We specialize in D2C growth, Marketplace optimization, and brand building. Post-pay available, no lock-in contracts.
 
 📞 **Call us today: +91 85869 89832**
-🌐 **Visit: [digital-digix.vercel.app](https://digital-digix.vercel.app)**
+🌐 **Visit: [www.digitaldigix.com](https://www.digitaldigix.com)**

@@ -180,4 +180,4 @@ The demand for mental health support in India is at an all-time high, but the ba
 Digital Digix has helped over 2,700 clients, including leading mental health professionals, build ethical digital practices. 
 
 📞 **Call us today: +91 85869 89832**
-🌐 **Visit: [digital-digix.vercel.app](https://digital-digix.vercel.app)**
+🌐 **Visit: [www.digitaldigix.com](https://www.digitaldigix.com)**

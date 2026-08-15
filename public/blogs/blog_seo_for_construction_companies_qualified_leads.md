@@ -112,7 +112,7 @@ Schema markup provides search engines with explicit data regarding your construc
   "@context": "https://schema.org",
   "@type": "GeneralContractor",
   "name": "Digital Digix Construction Company",
-  "url": "https://digital-digix.vercel.app",
+  "url": "https://www.digitaldigix.com",
   "description": "Premier general contracting firm providing civil engineering, commercial building construction, and residential villa development in Gurgaon.",
   "address": {
     "@type": "PostalAddress",

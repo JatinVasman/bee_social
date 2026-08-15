@@ -180,4 +180,4 @@ Marketing a fertility clinic is not about "selling" IVF; it is about extending a
 Digital Digix has helped over 2,700 clients, including leading healthcare and IVF centers in India, build ethical, high-performing digital engines.
 
 📞 **Call us today: +91 85869 89832**
-🌐 **Visit: [digital-digix.vercel.app](https://digital-digix.vercel.app)**
+🌐 **Visit: [www.digitaldigix.com](https://www.digitaldigix.com)**

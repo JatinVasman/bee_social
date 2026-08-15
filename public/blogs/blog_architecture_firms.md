@@ -151,6 +151,6 @@ Mastering digital marketing for architecture firms in India requires a multi-cha
 ### Ready to dominate your industry online?
 At **Digital Digix**, we’ve helped over 2,700+ clients across 89+ industries scale their digital presence. Based in Noida, India, we offer comprehensive digital marketing services with a unique post-pay model and no lock-in contracts. 
 
-📞 **Call us today at +91 85869 89832** or visit our website at [digital-digix.vercel.app](https://digital-digix.vercel.app) to get your customized digital strategy!
+📞 **Call us today at +91 85869 89832** or visit our website at [www.digitaldigix.com](https://www.digitaldigix.com) to get your customized digital strategy!
 
 Tags: #ArchitectureFirms #DigitalMarketing #SEO #GoogleAds #MetaAds #WhatsAppMarketing #DigitalDigix #Noida #IndiaBusiness

@@ -72,8 +72,8 @@ Schema markup is machine-readable code embedded in your website that explicitly 
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Digital Digix Chemical Manufacturing Ltd",
-  "url": "https://digital-digix.vercel.app",
-  "logo": "https://digital-digix.vercel.app/logo.png",
+  "url": "https://www.digitaldigix.com",
+  "logo": "https://www.digitaldigix.com/logo.png",
   "description": "Specialty acrylic polymer and construction chemical manufacturer in Gurgaon near Cyber City.",
   "address": {
     "@type": "PostalAddress",

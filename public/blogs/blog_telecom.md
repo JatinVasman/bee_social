@@ -1084,7 +1084,7 @@ The market is moving fast, and 2026 is the year to solidify your digital presenc
 At **Digital Digix**, we specialize in transforming digital presences for Telecommunications Companies. 
 - **Location:** Noida, India
 - **Contact:** +91 85869 89832
-- **Website:** [digital-digix.vercel.app](https://digital-digix.vercel.app)
+- **Website:** [www.digitaldigix.com](https://www.digitaldigix.com)
 - **Why Us:** Founder-led, 89+ industries, 2,700+ clients, Post-pay available, No lock-in contracts.
 
 **Call us today at +91 85869 89832 to get your customized growth roadmap!**

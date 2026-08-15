@@ -235,6 +235,6 @@ Digital Digix is a founder-led digital marketing agency in Noida, serving 89+ in
 
 **Contact Digital Digix today!**
 📞 +91 85869 89832
-🌐 [digital-digix.vercel.app](https://digital-digix.vercel.app)
+🌐 [www.digitaldigix.com](https://www.digitaldigix.com)
 
 *Tags: digital marketing for bakeries, sweet shop marketing, bakery seo, instagram for bakeries, sell cakes online india, whatsapp marketing for bakeries, food business marketing*

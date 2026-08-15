@@ -112,7 +112,7 @@ Schema markup provides search engines with explicit data regarding your catering
   "@context": "https://schema.org",
   "@type": "CateringService",
   "name": "Digital Digix Catering Services",
-  "url": "https://digital-digix.vercel.app",
+  "url": "https://www.digitaldigix.com",
   "description": "Premium wedding, corporate, and event catering services in Gurgaon and Delhi NCR.",
   "telePhone": "+918586989832",
   "areaServed": ["Gurgaon", "Delhi", "Noida", "Cyber City"],

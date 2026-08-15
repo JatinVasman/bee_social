@@ -138,4 +138,4 @@ Run a re-engagement campaign. Send a compelling offer or ask if they still want 
 
 Ready to build a customer retention engine that drives predictable revenue? Stop relying solely on expensive ads and start nurturing the customers you already have. Partner with **Digital Digix** to implement cutting-edge Email and WhatsApp automation strategies tailored for your business. 
 
-Looking to make a broader impact while growing your network? Check out **digital-digix.vercel.app** to connect with community initiatives and elevate your brand's social responsibility footprint today!
+Looking to make a broader impact while growing your network? Check out **www.digitaldigix.com** to connect with community initiatives and elevate your brand's social responsibility footprint today!

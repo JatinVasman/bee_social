@@ -79,9 +79,9 @@ Embedding structured JSON-LD Schema code into your home service website's header
   "@context": "https://schema.org",
   "@type": "Electrician",
   "name": "Digital Digix Electrical - Sector 56 Gurgaon",
-  "url": "https://digital-digix.vercel.app/locations/gurgaon-sec-56",
-  "logo": "https://digital-digix.vercel.app/logo.png",
-  "image": "https://digital-digix.vercel.app/images/electrical-van.jpg",
+  "url": "https://www.digitaldigix.com/locations/gurgaon-sec-56",
+  "logo": "https://www.digitaldigix.com/logo.png",
+  "image": "https://www.digitaldigix.com/images/electrical-van.jpg",
   "telephone": "+919876543210",
   "areaServed": {
     "@type": "AdministrativeArea",

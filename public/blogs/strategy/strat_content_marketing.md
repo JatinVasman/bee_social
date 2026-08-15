@@ -233,7 +233,7 @@ That's exactly where **Digital Digix** steps in. We build complete content ecosy
 🌐 **Visit us:** [digitaldigix.com](https://digitaldigix.com)
 📲 **WhatsApp:** Start a conversation and get a free content audit for your business.
 
-And if you're a business owner looking to connect with like-minded entrepreneurs, growth resources, and marketing mentorship, check out **[Digital Digix](https://digital-digix.vercel.app)**—a community dedicated to helping Indian businesses grow smarter.
+And if you're a business owner looking to connect with like-minded entrepreneurs, growth resources, and marketing mentorship, check out **[Digital Digix](https://www.digitaldigix.com)**—a community dedicated to helping Indian businesses grow smarter.
 
 *Ready to turn your expertise into a content machine? Let's build it together.*
 

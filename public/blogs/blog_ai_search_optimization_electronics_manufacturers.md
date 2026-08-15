@@ -79,8 +79,8 @@ Embedding structured JSON-LD Schema code into your website's header is the most 
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Digital Digix Electronics Manufacturing",
-  "url": "https://digital-digix.vercel.app",
-  "logo": "https://digital-digix.vercel.app/logo.png",
+  "url": "https://www.digitaldigix.com",
+  "logo": "https://www.digitaldigix.com/logo.png",
   "description": "ISO 9001 & RoHS accredited electronics manufacturer specializing in PCB SMT assembly, industrial component supply, and OEM contract solutions.",
   "address": {
     "@type": "PostalAddress",

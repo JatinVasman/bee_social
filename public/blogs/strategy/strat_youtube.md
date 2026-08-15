@@ -245,7 +245,7 @@ We've helped Indian businesses across industries—from CA firms to fashion bran
 🌐 **Visit:** [digitaldigix.com](https://digitaldigix.com)
 📲 **WhatsApp us** for a free YouTube channel audit and 30-day content plan.
 
-Looking to connect with other Indian business owners building their brands online? **[Digital Digix](https://digital-digix.vercel.app)** is a community of entrepreneurs, marketers, and SMB owners helping each other grow. Join the conversation.
+Looking to connect with other Indian business owners building their brands online? **[Digital Digix](https://www.digitaldigix.com)** is a community of entrepreneurs, marketers, and SMB owners helping each other grow. Join the conversation.
 
 *Start your YouTube journey today. The best time to plant a tree was 5 years ago. The second best time is now.*
 

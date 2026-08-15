@@ -129,7 +129,7 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ slug, onNavigate, on
       document.head.appendChild(script);
     }
 
-    const postUrl = `https://digital-digix.vercel.app/?page=blog-post&id=${encodeURIComponent(blog.slug)}`;
+    const postUrl = `https://www.digitaldigix.com/?page=blog-post&id=${encodeURIComponent(blog.slug)}`;
     const schemaData = {
       "@context": "https://schema.org",
       "@graph": [
@@ -149,14 +149,14 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ slug, onNavigate, on
           "author": {
             "@type": "Organization",
             "name": "Digital Digix",
-            "url": "https://digital-digix.vercel.app"
+            "url": "https://www.digitaldigix.com"
           },
           "publisher": {
             "@type": "Organization",
             "name": "Digital Digix",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://digital-digix.vercel.app/digital_digix_logo.png"
+              "url": "https://www.digitaldigix.com/digital_digix_logo.png"
             }
           },
           "keywords": [blog.keyword, blog.keyword2, ...blog.tags].filter(Boolean).join(", ")
@@ -169,13 +169,13 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ slug, onNavigate, on
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://digital-digix.vercel.app/"
+              "item": "https://www.digitaldigix.com/"
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "Blog",
-              "item": "https://digital-digix.vercel.app/?page=blog"
+              "item": "https://www.digitaldigix.com/?page=blog"
             },
             {
               "@type": "ListItem",
@@ -287,7 +287,7 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ slug, onNavigate, on
           <div className="bpp-quick-links">
             <h3>Quick Links</h3>
             <a href="tel:+918586989832" className="bql-link">📞 Call Us Now</a>
-            <a href="https://digital-digix.vercel.app" target="_blank" rel="noreferrer" className="bql-link">🌐 Our Website</a>
+            <a href="https://www.digitaldigix.com" target="_blank" rel="noreferrer" className="bql-link">🌐 Our Website</a>
             <button className="bql-link" onClick={() => onNavigate('blog')}>📚 All Blogs</button>
             <button className="bql-link" onClick={() => onNavigate('services')}>⚡ Our Services</button>
           </div>

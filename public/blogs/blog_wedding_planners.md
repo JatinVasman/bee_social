@@ -632,6 +632,6 @@ Don't let your competitors steal your customers.
 - Transparent KPI Dashboards.
 
 📞 **Contact us today:** +91 85869 89832  
-🌐 **Visit us online:** [digital-digix.vercel.app](https://digital-digix.vercel.app)
+🌐 **Visit us online:** [www.digitaldigix.com](https://www.digitaldigix.com)
 
 *Tags: Digital Marketing for Wedding Planners in India, wedding planners marketing, digital marketing India, wedding planning SEO, Meta Ads for wedding planners, Digital Digix Noida*

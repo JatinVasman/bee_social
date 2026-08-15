@@ -230,7 +230,7 @@ At ₹20,000–₹35,000/month, a well-optimised travel agency can expect 12–2
 - ✅ Destination landing pages and SEO
 - ✅ Review collection and reputation management
 
-📞 **+91 85869 89832** | 🌐 **digital-digix.vercel.app**
+📞 **+91 85869 89832** | 🌐 **www.digitaldigix.com**
 *No lock-in contracts. Post-pay available. Free 30-min strategy call.*
 
 ---
