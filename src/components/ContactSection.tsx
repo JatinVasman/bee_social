@@ -1,0 +1,103 @@
+import React, { useState } from 'react';
+
+interface ContactSectionProps {
+  backgroundColor?: string;
+}
+
+export const ContactSection: React.FC<ContactSectionProps> = ({ backgroundColor }) => {
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setTimeout(() => {
+      setSubmitted(false);
+      setFormData({ name: '', email: '', phone: '', message: '' });
+    }, 4000);
+  };
+
+  return (
+    <section id="contact" style={{ padding: '5rem 0', backgroundColor: backgroundColor || 'transparent' }}>
+      <div className="container">
+        <div className="section-header">
+          <div className="section-tag">CONTACT US</div>
+          <h2 className="section-title">Let's Build Something Amazing Together</h2>
+          <p className="section-subtitle">Tell us about your project and our experts will get in touch with you within 24 hours.</p>
+        </div>
+
+        <div className="contact-grid">
+          <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: '24px', padding: '2.5rem', boxShadow: 'var(--shadow-sm)' }}>
+            {submitted ? (
+              <div style={{ padding: '2rem', textAlign: 'center', color: 'var(--green-accent)' }}>
+                <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>🎉 Message Sent Successfully!</h3>
+                <p style={{ color: 'var(--text-muted)' }}>Thank you, {formData.name}. Our strategy team will contact you shortly.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <div style={{ marginBottom: '1.25rem' }}>
+                  <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem', color: 'var(--secondary)' }}>Full Name</label>
+                  <input type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required placeholder="Enter your name" style={{ width: '100%', padding: '0.8rem 1rem', border: '1px solid var(--border-color)', borderRadius: '12px', background: 'var(--bg-subtle)', outline: 'none' }} />
+                </div>
+
+                <div style={{ marginBottom: '1.25rem' }}>
+                  <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem', color: 'var(--secondary)' }}>Email Address</label>
+                  <input type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required placeholder="Enter your email" style={{ width: '100%', padding: '0.8rem 1rem', border: '1px solid var(--border-color)', borderRadius: '12px', background: 'var(--bg-subtle)', outline: 'none' }} />
+                </div>
+
+                <div style={{ marginBottom: '1.25rem' }}>
+                  <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem', color: 'var(--secondary)' }}>Phone Number</label>
+                  <input type="tel" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} required placeholder="Enter your phone number" style={{ width: '100%', padding: '0.8rem 1rem', border: '1px solid var(--border-color)', borderRadius: '12px', background: 'var(--bg-subtle)', outline: 'none' }} />
+                </div>
+
+                <div style={{ marginBottom: '1.25rem' }}>
+                  <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem', color: 'var(--secondary)' }}>Your Message</label>
+                  <textarea value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} required placeholder="Tell us about your project..." style={{ width: '100%', padding: '0.8rem 1rem', border: '1px solid var(--border-color)', borderRadius: '12px', background: 'var(--bg-subtle)', outline: 'none', minHeight: '120px' }} />
+                </div>
+
+                <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>Send Message ➔</button>
+              </form>
+            )}
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: '14px', padding: '1.25rem' }}>
+              <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'var(--bg-badge)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>✉️</div>
+              <div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Email Us</div>
+                <a href="mailto:contact.digitaldigix@gmail.com" style={{ fontWeight: 700, color: 'inherit', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary)'} onMouseLeave={(e) => e.currentTarget.style.color = 'inherit'}>
+                  contact.digitaldigix@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: '14px', padding: '1.25rem' }}>
+              <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'var(--bg-badge)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>📞</div>
+              <div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Call Us</div>
+                <a href="tel:+918586989832" style={{ fontWeight: 700, color: 'inherit', textDecoration: 'none' }}>+91 85869 89832</a>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: '14px', padding: '1.25rem' }}>
+              <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'var(--bg-badge)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>💬</div>
+              <div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>WhatsApp</div>
+                <a href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 700, color: 'inherit', textDecoration: 'none' }}>+91 85869 89832</a>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: '14px', padding: '1.25rem' }}>
+              <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'var(--bg-badge)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>📍</div>
+              <div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Head Office</div>
+                <div style={{ fontWeight: 700 }}>Digital Digix, Delhi NCR, India</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Working Hours: Mon - Sat: 9AM - 7PM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
