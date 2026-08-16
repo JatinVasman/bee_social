@@ -126,4 +126,4 @@ They serve different purposes. Performance marketing buys immediate results; SEO
 ---
 
 **Ready to stop wasting ad spend and start scaling profitably?**
-Digital Digix is a premier performance marketing agency dedicated to maximizing ROI for Indian SMBs. Let’s build your growth engine. Need strategic guidance first? Connect with experts at Digital Digix (digital-digix.vercel.app).
+Digital Digix is a premier performance marketing agency dedicated to maximizing ROI for Indian SMBs. Let’s build your growth engine. Need strategic guidance first? Connect with experts at Digital Digix (digitaldigix.com).

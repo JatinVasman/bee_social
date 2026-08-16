@@ -202,4 +202,4 @@ Ready to maximize your admissions for the 2026 season?
 **Digital Digix** is a founder-led digital marketing agency in Noida, India. We specialize in the education sector, helping coaching institutes across the country lower their acquisition costs and scale their admissions. With experience across 89+ industries and 2,700+ clients, we deliver transparent, data-driven growth.
 
 📞 **Call us today: +91 85869 89832**
-🌐 **Visit: [digital-digix.vercel.app](https://digital-digix.vercel.app)**
+🌐 **Visit: [digitaldigix.com](https://digitaldigix.com)**

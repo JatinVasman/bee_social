@@ -262,7 +262,7 @@ Growing an Instagram presence that generates real business requires strategy, cr
 🌐 **Visit:** [digitaldigix.com](https://digitaldigix.com)
 📲 **WhatsApp us** for a free Instagram profile audit—we'll identify exactly what's holding your account back and build a 90-day growth roadmap.
 
-Connect with fellow Indian entrepreneurs growing their businesses on social media at **[Digital Digix](https://digital-digix.vercel.app)**—a thriving community of SMB owners sharing real growth strategies.
+Connect with fellow Indian entrepreneurs growing their businesses on social media at **[Digital Digix](https://digitaldigix.com)**—a thriving community of SMB owners sharing real growth strategies.
 
 *From zero to a lead-generating Instagram presence. Let's build it together.*
 

@@ -632,6 +632,6 @@ Don't let your competitors steal your customers.
 - Transparent KPI Dashboards.
 
 📞 **Contact us today:** +91 85869 89832  
-🌐 **Visit us online:** [digital-digix.vercel.app](https://digital-digix.vercel.app)
+🌐 **Visit us online:** [digitaldigix.com](https://digitaldigix.com)
 
 *Tags: Digital Marketing for Beauty & Cosmetics Brands in India, beauty and cosmetics brands marketing, digital marketing India, beauty SEO, Meta Ads for beauty and cosmetics brands, Digital Digix Noida*

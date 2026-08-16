@@ -180,4 +180,4 @@ The mat is ready, the studio is clean, and the knowledge is within you. The only
 Digital Digix has helped over 2,700 businesses, including top wellness centers in India. We handle the digital heavy lifting so you can focus on the practice. 
 
 📞 **Call us today: +91 85869 89832**
-🌐 **Visit: [digital-digix.vercel.app](https://digital-digix.vercel.app)**
+🌐 **Visit: [digitaldigix.com](https://digitaldigix.com)**

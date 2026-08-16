@@ -11,6 +11,7 @@ export const FloatingSocials: React.FC = () => {
         href={instagramUrl}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Instagram"
         className="floating-social-btn floating-social-btn--instagram"
         style={{
           background: 'linear-gradient(45deg, #F09433 0%, #E6683C 25%, #DC2743 50%, #CC2366 75%, #BC1888 100%)'
@@ -37,6 +38,7 @@ export const FloatingSocials: React.FC = () => {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="WhatsApp"
         className="floating-social-btn floating-social-btn--whatsapp"
         style={{
           background: '#25D366'

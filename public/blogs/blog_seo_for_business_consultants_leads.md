@@ -108,7 +108,7 @@ Schema markup provides search engines with explicit data regarding your business
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Digital Digix Consulting",
-  "url": "https://digital-digix.vercel.app",
+  "url": "https://digitaldigix.com",
   "description": "Full-service management consulting, strategy advisory, and SEO growth agency for enterprise real estate and tech brands.",
   "telePhone": "+918586989832",
   "areaServed": "Gurgaon, India"

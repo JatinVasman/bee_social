@@ -91,6 +91,8 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onOpenStrate
                   <img
                     src={project.cardImage}
                     alt={project.name}
+                    loading="lazy"
+                    decoding="async"
                     style={{
                       width: '100%',
                       maxWidth: '240px',

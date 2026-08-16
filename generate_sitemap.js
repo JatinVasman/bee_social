@@ -36,7 +36,7 @@ const staticRoutes = [
 const urls = [];
 staticRoutes.forEach(r => {
   urls.push({
-    loc: 'https://digital-digix.vercel.app' + r,
+    loc: 'https://digitaldigix.com' + r,
     changefreq: r === '' ? 'daily' : 'weekly',
     priority: r === '' ? '1.0' : (r.startsWith('/services') || r === '/blogs' ? '0.9' : '0.8')
   });
@@ -49,7 +49,7 @@ if (fs.existsSync(blogsDir)) {
   files.forEach(f => {
     const slug = f.replace(/\.md$/, '');
     urls.push({
-      loc: 'https://digital-digix.vercel.app/blogs/' + encodeURIComponent(slug),
+      loc: 'https://digitaldigix.com/blogs/' + encodeURIComponent(slug),
       changefreq: 'monthly',
       priority: '0.8'
     });
@@ -69,7 +69,7 @@ const topLocations = [
 
 topLocations.forEach(loc => {
   urls.push({
-    loc: 'https://digital-digix.vercel.app/location/' + loc,
+    loc: 'https://digitaldigix.com/digital-marketing/' + loc,
     changefreq: 'monthly',
     priority: '0.7'
   });

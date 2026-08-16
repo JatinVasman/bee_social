@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { LEGAL_SERVICES_DATA } from '../components/LegalSection';
 
 interface LegalDetailsPageProps {
@@ -18,6 +18,60 @@ export const LegalDetailsPage: React.FC<LegalDetailsPageProps> = ({
       s.title.toLowerCase() === serviceTitle?.toLowerCase() ||
       s.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') === cleanQuery
   );
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    if (!service) return;
+
+    const pageTitle = `${service.title} — Legal Marketing & Practice Growth | Digital Digix`;
+    const pageDesc = service.description || service.explanation;
+    const canonicalUrl = `https://digitaldigix.com/legal/${cleanQuery}`;
+
+    document.title = pageTitle;
+
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', pageDesc);
+
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute('href', canonicalUrl);
+
+    // Dynamic Service & Breadcrumb JSON-LD Schema
+    const scriptId = 'legal-detail-schema';
+    let script = document.getElementById(scriptId) as HTMLScriptElement | null;
+    if (!script) {
+      script = document.createElement('script');
+      script.id = scriptId;
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "@id": `${canonicalUrl}#service`,
+          "name": service.title,
+          "description": pageDesc,
+          "provider": {
+            "@type": "Organization",
+            "name": "Digital Digix",
+            "url": "https://digitaldigix.com"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${canonicalUrl}#breadcrumb`,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://digitaldigix.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Legal Marketing", "item": "https://digitaldigix.com/legal" },
+            { "@type": "ListItem", "position": 3, "name": service.title, "item": canonicalUrl }
+          ]
+        }
+      ]
+    };
+    script.text = JSON.stringify(schemaData);
+  }, [service, cleanQuery]);
 
   // Fallback if not found
   if (!service) {

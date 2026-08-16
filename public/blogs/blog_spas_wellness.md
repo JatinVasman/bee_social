@@ -179,4 +179,4 @@ Your spa provides an incredible service, but in 2026, the battle is won before t
 Digital Digix has helped over 2,700 clients, including premium spas and wellness chains across India. Let us build your booking engine.
 
 📞 **Call us today: +91 85869 89832**
-🌐 **Visit: [digital-digix.vercel.app](https://digital-digix.vercel.app)**
+🌐 **Visit: [digitaldigix.com](https://digitaldigix.com)**

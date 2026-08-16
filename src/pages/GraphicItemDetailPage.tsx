@@ -35,7 +35,7 @@ const customExplanations: Record<string, { desc: string; turnaround: string; for
     desc: 'Premium business card designs that leave a lasting first impression. Optimized for digital networking cards or physical print finishes.',
     turnaround: '48 Hours',
     formats: 'Print-Ready PDF with bleed marks, vector AI/PSD source files',
-    inclusions: ['Front & back side layout mapping', 'Standard sizing (3.5\" x 2.0\") or custom dimensions', 'Setup for special finishes (e.g., spot UV, foil)', 'Unlimited contact information variations'],
+    inclusions: ['Front & back side layout mapping', 'Standard sizing (3.5" x 2.0") or custom dimensions', 'Setup for special finishes (e.g., spot UV, foil)', 'Unlimited contact information variations'],
     requirements: ['Vcard details (name, title, contact info)', 'Logo files (transparent background)', 'Brand brand guide / style guide (optional)', 'Preferred paper texture / finish type']
   },
   'ppt-presentation-design': {
@@ -104,6 +104,69 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
     }
   }
 
+  // Get explanation overrides or category defaults
+  const customDesc = matchedItem ? (customExplanations[itemId]?.desc || `Professional design service for custom ${matchedItem.name} collateral. Visually engineered to support brand identity and business marketing goals. Setup according to standard industrial formatting specifications.`) : '';
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    if (!matchedItem) return;
+
+    const pageTitle = `${matchedItem.name} Services — ₹${matchedItem.price} | Digital Digix`;
+    const pageDesc = customDesc;
+    const canonicalUrl = `https://digitaldigix.com/graphic-design/${itemId}`;
+
+    document.title = pageTitle;
+
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', pageDesc);
+
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute('href', canonicalUrl);
+
+    // Dynamic Product & Breadcrumb JSON-LD Schema
+    const scriptId = 'graphic-item-detail-schema';
+    let script = document.getElementById(scriptId) as HTMLScriptElement | null;
+    if (!script) {
+      script = document.createElement('script');
+      script.id = scriptId;
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Product",
+          "@id": `${canonicalUrl}#product`,
+          "name": matchedItem.name,
+          "description": pageDesc,
+          "brand": {
+            "@type": "Brand",
+            "name": "Digital Digix"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": matchedItem.price ? matchedItem.price.replace(/[^0-9,]/g, '') : "149",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock",
+            "url": canonicalUrl
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${canonicalUrl}#breadcrumb`,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://digitaldigix.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Graphic Design", "item": "https://digitaldigix.com/graphic-design" },
+            { "@type": "ListItem", "position": 3, "name": matchedItem.name, "item": canonicalUrl }
+          ]
+        }
+      ]
+    };
+    script.text = JSON.stringify(schemaData);
+  }, [itemId, matchedItem, customDesc]);
+
   if (!matchedItem || !matchedCategory) {
     return (
       <div style={{ padding: '6rem 0', textAlign: 'center', backgroundColor: '#FDFBF7', minHeight: '80vh' }}>
@@ -128,7 +191,7 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
 
   // Get explanation overrides or category defaults
   const customData = customExplanations[itemId] || {
-    desc: `Professional design service for custom ${matchedItem.name} collateral. Visually engineered to support brand identity and business marketing goals. Setup according to standard industrial formatting specifications.`,
+    desc: customDesc,
     turnaround: matchedCategory.title.includes('Multi-Page') || matchedCategory.title.includes('Large-Format') ? '3–5 Days' : '48 Hours',
     formats: 'Layered source files (AI/PSD), Print-Ready PDF with bleed Setup, high-resolution JPG & PNG files',
     inclusions: ['Bespoke layout configuration', 'Custom typographic layout setup', 'Up to 3 revision iteration cycles', 'Commercial copyright license rights'],

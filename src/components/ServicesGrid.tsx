@@ -896,7 +896,6 @@ interface ServicesGridProps {
 }
 
 export const ServicesGrid: React.FC<ServicesGridProps> = ({ 
-  onOpenStrategyModal, 
   onNavigate,
   backgroundColor
 }) => {
@@ -904,7 +903,6 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [viewingSmmDetails, setViewingSmmDetails] = useState(false);
   const [openInlineSmmFaqIndex, setOpenInlineSmmFaqIndex] = useState<number | null>(null);
-  if (false && onOpenStrategyModal) onOpenStrategyModal();
 
   return (
     <section id="services" style={{ padding: '6rem 0', backgroundColor: backgroundColor || 'var(--bg-main)' }}>

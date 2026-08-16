@@ -995,6 +995,6 @@ At **Digital Digix**, a premier founder-led digital marketing agency based in No
 
 **Contact Us Today:**
 📞 **Call/WhatsApp:** +91 85869 89832
-🌐 **Website:** [digital-digix.vercel.app](https://digital-digix.vercel.app)
+🌐 **Website:** [digitaldigix.com](https://digitaldigix.com)
 
 *Tags: #DigitalMarketingForBusiness Consultants #SEOForBusiness Consultants #GoogleAdsIndia #DigitalDigix #NoidaMarketingAgency #B2BMarketing2026 #LeadGenerationIndia*

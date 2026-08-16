@@ -111,13 +111,12 @@ interface ServicesPageProps {
   onOpenStrategyModal: (serviceName?: string) => void;
 }
 
-export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate, onOpenStrategyModal }) => {
+export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedService, setSelectedService] = useState<ComprehensiveServiceItem | null>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0); // First FAQ open by default
   const [viewingSmmDetails, setViewingSmmDetails] = useState(false);
   const [openInlineSmmFaqIndex, setOpenInlineSmmFaqIndex] = useState<number | null>(null);
-  if (false && onOpenStrategyModal) onOpenStrategyModal();
 
   const categories = ['All', 'Social Growth', 'Design & Branding', 'Web Engineering', 'Video & Reels', 'Data & Analytics', 'Viral Content', 'Search Engine Rank', 'Paid Search', 'Social Acquisition', 'Ecommerce Growth', 'Revenue Operations', 'Performance Leads', 'Content Engine', 'Local Search', 'Direct Marketing'];
 

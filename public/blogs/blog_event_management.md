@@ -211,4 +211,4 @@ Ready to fill your calendar with premium events?
 **Digital Digix** is a founder-led digital marketing agency in Noida, India, specializing in growing event management companies. With experience across 89+ industries and over 2,700 clients, we know exactly what it takes to make your brand shine. We offer transparent pricing, no lock-in contracts, and post-pay options.
 
 📞 **Call us today: +91 85869 89832**
-🌐 **Visit: [digital-digix.vercel.app](https://digital-digix.vercel.app)**
+🌐 **Visit: [digitaldigix.com](https://digitaldigix.com)**

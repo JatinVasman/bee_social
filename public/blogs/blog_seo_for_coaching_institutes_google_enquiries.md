@@ -112,7 +112,7 @@ Schema markup provides search engines with explicit data regarding your institut
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
   "name": "Digital Digix Coaching Institute",
-  "url": "https://digital-digix.vercel.app",
+  "url": "https://digitaldigix.com",
   "description": "Premier competitive exam coaching institute offering specialized JEE, NEET, and UPSC courses in Gurgaon.",
   "address": {
     "@type": "PostalAddress",

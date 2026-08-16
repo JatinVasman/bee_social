@@ -79,8 +79,8 @@ Embedding structured JSON-LD Schema code into your website's header is the most 
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Digital Digix Event Management Company",
-  "url": "https://digital-digix.vercel.app",
-  "logo": "https://digital-digix.vercel.app/logo.png",
+  "url": "https://digitaldigix.com",
+  "logo": "https://digitaldigix.com/digital_digix_logo.png",
   "description": "Premier event management company specializing in luxury wedding planning, corporate conferences, product launches, and real estate launch events.",
   "address": {
     "@type": "PostalAddress",

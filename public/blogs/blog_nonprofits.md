@@ -202,4 +202,4 @@ Need help navigating Google Ad Grants or setting up high-converting donation cam
 **Digital Digix** is a founder-led digital marketing agency in Noida, India, serving 89+ industries, including the non-profit sector. With over 2,700 clients, we know how to maximize your marketing budget for maximum social impact. We offer transparent strategies, no lock-in contracts, and scalable solutions.
 
 📞 **Call us today: +91 85869 89832**
-🌐 **Visit: [digital-digix.vercel.app](https://digital-digix.vercel.app)**
+🌐 **Visit: [digitaldigix.com](https://digitaldigix.com)**

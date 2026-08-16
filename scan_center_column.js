@@ -9,7 +9,6 @@ const files = [
 async function main() {
   for (const file of files) {
     const img = await Jimp.read(file);
-    const w = img.bitmap.width;
     const h = img.bitmap.height;
 
     // Scan vertical center of the center phone (x around 512, which is w/2)

@@ -169,4 +169,4 @@ The traditional pharmaceutical playbook is obsolete. In 2026, the companies that
 Digital Digix has helped over 2,700 clients navigate complex B2B and healthcare digital landscapes. We build secure, compliant, and high-ROI digital strategies.
 
 📞 **Call us today: +91 85869 89832**
-🌐 **Visit: [digital-digix.vercel.app](https://digital-digix.vercel.app)**
+🌐 **Visit: [digitaldigix.com](https://digitaldigix.com)**

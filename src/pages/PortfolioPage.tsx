@@ -286,6 +286,8 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate, onOpen
                   <img
                     src={project.cardImage}
                     alt={project.name}
+                    loading="lazy"
+                    decoding="async"
                     style={{
                       width: '100%',
                       height: 'auto',

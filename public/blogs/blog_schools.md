@@ -196,4 +196,4 @@ Ready to fill your classrooms and build a waitlist for the upcoming academic yea
 **Digital Digix** is a founder-led digital marketing agency in Noida, India. We have extensive experience partnering with K-12 schools to modernize their admission strategies, lower acquisition costs, and build lasting parent communities. With expertise across 89+ industries and a portfolio of 2,700+ clients, we deliver results you can measure.
 
 📞 **Call us today: +91 85869 89832**
-🌐 **Visit: [digital-digix.vercel.app](https://digital-digix.vercel.app)**
+🌐 **Visit: [digitaldigix.com](https://digitaldigix.com)**

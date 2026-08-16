@@ -72,8 +72,8 @@ Schema markup is machine-readable code embedded in your website that explicitly 
   "@context": "https://schema.org",
   "@type": "CollegeOrUniversity",
   "name": "Digital Digix Engineering College",
-  "url": "https://digital-digix.vercel.app",
-  "logo": "https://digital-digix.vercel.app/logo.png",
+  "url": "https://digitaldigix.com",
+  "logo": "https://digitaldigix.com/digital_digix_logo.png",
   "description": "Premier higher education institution offering accredited BTech, MBA, and LLB degree programs in Gurgaon near Cyber City.",
   "sameAs": [
     "https://www.facebook.com/digitaldigixeducation",

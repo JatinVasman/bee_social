@@ -197,4 +197,4 @@ Ready to dominate your local tutoring market?
 **Digital Digix** is a founder-led digital marketing agency in Noida, India. We have helped numerous tutoring agencies and individual educators scale their student base through highly targeted local marketing. With experience across 89+ industries, we offer transparent pricing, no lock-in contracts, and post-pay options.
 
 📞 **Call us today: +91 85869 89832**
-🌐 **Visit: [digital-digix.vercel.app](https://digital-digix.vercel.app)**
+🌐 **Visit: [digitaldigix.com](https://digitaldigix.com)**

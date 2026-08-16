@@ -202,4 +202,4 @@ Stop losing policies to the new kid on the block just because they have a better
 Digital Digix has helped over 2,700 clients across 89+ industries, including top insurance advisors in India. We offer comprehensive digital marketing services with no lock-in contracts. 
 
 📞 **Call us today: +91 85869 89832**
-🌐 **Visit: [digital-digix.vercel.app](https://digital-digix.vercel.app)**
+🌐 **Visit: [digitaldigix.com](https://digitaldigix.com)**

@@ -237,6 +237,6 @@ Digital Digix is a founder-led digital marketing agency in Noida, serving 89+ in
 
 **Contact Digital Digix today!**
 📞 +91 85869 89832
-🌐 [digital-digix.vercel.app](https://digital-digix.vercel.app)
+🌐 [digitaldigix.com](https://digitaldigix.com)
 
 *Tags: digital marketing for ngos, ngo fundraising strategies, google ad grants india, non profit marketing, csr partnership marketing, volunteer recruitment seo, ngo digital strategy*

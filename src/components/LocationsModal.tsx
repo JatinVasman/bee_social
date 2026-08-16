@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ALL_STATE_LOCATIONS, TOP_FOOTER_INTERNATIONAL_LOCATIONS } from '../data/locationsData';
 
 interface LocationsModalProps {
@@ -10,6 +10,16 @@ interface LocationsModalProps {
 export const LocationsModal: React.FC<LocationsModalProps> = ({ isOpen, onClose, onSelectLocation }) => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [activeTab, setActiveTab] = useState<string>('All');
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    if (isOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -34,7 +44,7 @@ export const LocationsModal: React.FC<LocationsModalProps> = ({ isOpen, onClose,
   );
 
   return (
-    <div className="modal-overlay" onClick={onClose} style={{ zIndex: 9999 }}>
+    <div className="modal-overlay" onClick={onClose} style={{ zIndex: 9999 }} role="dialog" aria-modal="true" aria-label="Locations Directory">
       <div
         className="modal-card"
         style={{

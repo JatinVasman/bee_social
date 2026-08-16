@@ -79,8 +79,8 @@ Embedding structured JSON-LD Schema code into your website's header is the most 
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Digital Digix Marketing Agency",
-  "url": "https://digital-digix.vercel.app",
-  "logo": "https://digital-digix.vercel.app/logo.png",
+  "url": "https://digitaldigix.com",
+  "logo": "https://digitaldigix.com/digital_digix_logo.png",
   "description": "Full-service digital growth agency specializing in SEO, Google Ads, sub-2s mobile web development, and B2B lead generation.",
   "address": {
     "@type": "PostalAddress",

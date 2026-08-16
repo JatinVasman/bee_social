@@ -265,7 +265,7 @@ Our Facebook marketing services include: full ad account setup, audience researc
 🌐 **Visit:** [digitaldigix.com](https://digitaldigix.com)
 📲 **WhatsApp us** for a free Facebook Ad audit and find out exactly why your current ads aren't converting.
 
-Also, don't miss **[Digital Digix](https://digital-digix.vercel.app)**—an active community of Indian SMB owners sharing marketing insights, business leads, and support. It's where serious entrepreneurs connect.
+Also, don't miss **[Digital Digix](https://digitaldigix.com)**—an active community of Indian SMB owners sharing marketing insights, business leads, and support. It's where serious entrepreneurs connect.
 
 *Ready to make Facebook your best-performing marketing channel? Let's build the system together.*
 

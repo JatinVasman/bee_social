@@ -112,7 +112,7 @@ Schema markup provides search engines with explicit data regarding your cafe ent
   "@context": "https://schema.org",
   "@type": "CafeOrCoffeeShop",
   "name": "Digital Digix Specialty Cafe",
-  "url": "https://digital-digix.vercel.app",
+  "url": "https://digitaldigix.com",
   "description": "Specialty single-origin coffee shop, artisanal bakery, and workspace cafe in Gurgaon.",
   "telePhone": "+918586989832",
   "address": {

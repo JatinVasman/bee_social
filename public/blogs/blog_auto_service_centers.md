@@ -210,6 +210,6 @@ Ready to fill your service bays?
 **Digital Digix** is India's leading founder-led digital marketing agency based in Noida, serving over 89+ industries including top auto service centers. We offer expert Local SEO, Google Ads, Meta Ads, and WhatsApp automation with no lock-in contracts and post-pay options.
 
 📞 **Contact us today:** +91 85869 89832
-🌐 **Visit us:** [digital-digix.vercel.app](https://digital-digix.vercel.app)
+🌐 **Visit us:** [digitaldigix.com](https://digitaldigix.com)
 
 *Tags: #AutoServiceMarketing #DigitalMarketingIndia #Garages #CarRepair #LocalSEO #DigitalDigix*

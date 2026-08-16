@@ -78,7 +78,7 @@ const smmFaqsData = [
   { q: 'How long does onboarding take?', a: 'We can onboard your social channels and launch your first week content calendar within 48 hours of completing the strategy checklist and signing off on templates.' }
 ];
 
-import { SERVICE_SLUG_TO_ID } from '../utils/routes';
+import { SERVICE_SLUG_TO_ID, SERVICE_ID_TO_SLUG } from '../utils/routes';
 
 export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId, onNavigate, onOpenStrategyModal: _onOpenStrategyModal }) => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
@@ -93,7 +93,64 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [serviceId]);
+    if (!selectedService) return;
+
+    const pageTitle = `${selectedService.title} Services — Pricing, Strategy & Results | Digital Digix`;
+    const pageDesc = selectedService.longDescription || selectedService.description;
+    const cleanSlug = SERVICE_ID_TO_SLUG[selectedService.id] || selectedService.id;
+    const canonicalUrl = `https://digitaldigix.com/services/${cleanSlug}`;
+
+    document.title = pageTitle;
+
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', pageDesc);
+
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute('href', canonicalUrl);
+
+    // Dynamic Service & Breadcrumb JSON-LD Schema
+    const scriptId = 'service-detail-schema';
+    let script = document.getElementById(scriptId) as HTMLScriptElement | null;
+    if (!script) {
+      script = document.createElement('script');
+      script.id = scriptId;
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "@id": `${canonicalUrl}#service`,
+          "name": selectedService.title,
+          "serviceType": selectedService.category,
+          "description": pageDesc,
+          "provider": {
+            "@type": "Organization",
+            "name": "Digital Digix",
+            "url": "https://digitaldigix.com"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": selectedService.pricing ? selectedService.pricing.replace(/[^0-9,]/g, '') : "149",
+            "priceCurrency": "INR"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${canonicalUrl}#breadcrumb`,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://digitaldigix.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://digitaldigix.com/services" },
+            { "@type": "ListItem", "position": 3, "name": selectedService.title, "item": canonicalUrl }
+          ]
+        }
+      ]
+    };
+    script.text = JSON.stringify(schemaData);
+  }, [serviceId, selectedService]);
 
   if (!selectedService) {
     return (

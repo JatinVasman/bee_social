@@ -93,6 +93,8 @@ export const WorkShowcaseMarquee: React.FC<WorkShowcaseMarqueeProps> = ({ locati
                   className="showcase-image"
                   src={item.cardImage}
                   alt={item.name}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -121,6 +123,8 @@ export const WorkShowcaseMarquee: React.FC<WorkShowcaseMarqueeProps> = ({ locati
                   className="showcase-image"
                   src={item.cardImage}
                   alt={item.name}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -149,6 +153,8 @@ export const WorkShowcaseMarquee: React.FC<WorkShowcaseMarqueeProps> = ({ locati
                   className="showcase-image"
                   src={item.cardImage}
                   alt={item.name}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>

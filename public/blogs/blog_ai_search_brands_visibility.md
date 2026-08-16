@@ -72,8 +72,8 @@ Schema markup is machine-readable code embedded in your website that explicitly 
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Digital Digix",
-  "url": "https://digital-digix.vercel.app",
-  "logo": "https://digital-digix.vercel.app/logo.png",
+  "url": "https://digitaldigix.com",
+  "logo": "https://digitaldigix.com/digital_digix_logo.png",
   "description": "Full-service corporate branding, visual identity, performance SEO, and AI search optimization agency for enterprise real estate and tech brands.",
   "address": {
     "@type": "PostalAddress",

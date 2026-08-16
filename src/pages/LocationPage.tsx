@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { WorkShowcaseMarquee } from '../components/WorkShowcaseMarquee';
 
 interface LocationPageProps {
@@ -24,6 +24,63 @@ export const LocationPage: React.FC<LocationPageProps> = ({ locationName, onNavi
         .map(w => w.toUpperCase() === 'NCR' || w.toUpperCase() === 'USA' || w.toUpperCase() === 'UK' ? w.toUpperCase() : w.charAt(0).toUpperCase() + w.slice(1))
         .join(' ')
     : 'India';
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    const slug = displayName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    const canonicalUrl = `https://digitaldigix.com/digital-marketing/${slug}`;
+    const pageTitle = `Digital Marketing & SEO Agency in ${displayName} | Digital Digix`;
+    const pageDesc = `Local SEO, Performance Marketing, and Google Maps optimization services for businesses in ${displayName} and surrounding regions.`;
+
+    document.title = pageTitle;
+
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', pageDesc);
+
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute('href', canonicalUrl);
+
+    // Dynamic LocalBusiness & Breadcrumb JSON-LD Schema
+    const scriptId = 'location-page-schema';
+    let script = document.getElementById(scriptId) as HTMLScriptElement | null;
+    if (!script) {
+      script = document.createElement('script');
+      script.id = scriptId;
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": `${canonicalUrl}#localbusiness`,
+          "name": `Digital Digix - ${displayName}`,
+          "url": canonicalUrl,
+          "description": pageDesc,
+          "telephone": "+918586989832",
+          "areaServed": displayName,
+          "provider": {
+            "@type": "Organization",
+            "name": "Digital Digix",
+            "url": "https://digitaldigix.com"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${canonicalUrl}#breadcrumb`,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://digitaldigix.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://digitaldigix.com/digital-marketing" },
+            { "@type": "ListItem", "position": 3, "name": displayName, "item": canonicalUrl }
+          ]
+        }
+      ]
+    };
+    script.text = JSON.stringify(schemaData);
+  }, [displayName]);
 
   const isInternational = ['USA', 'Australia', 'UK', 'Canada', 'Dubai', 'Singapore', 'Malaysia'].includes(displayName);
   const regionTag = isInternational ? 'INTERNATIONAL · DIGITAL MARKETING' : 'INDIA · DIGITAL MARKETING';

@@ -180,11 +180,17 @@ export const App: React.FC = () => {
     }
     metaDesc.setAttribute('content', description);
 
-    // Update OpenGraph tags
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute('content', title);
-    const ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc) ogDesc.setAttribute('content', description);
+    // Compute clean canonical URL
+    const activeSlug = activePage === 'blog-post' ? selectedBlogSlug :
+      activePage === 'service-details' ? selectedServiceId :
+      activePage === 'location' ? selectedLocation :
+      activePage === 'legal-details' ? selectedLegalServiceTitle :
+      activePage === 'graphic-details' ? selectedGraphicCat :
+      activePage === 'design-item' ? selectedDesignItem :
+      activePage === 'industries' ? selectedIndustryId : undefined;
+
+    const cleanPath = getRoutePath(activePage, activeSlug);
+    const canonicalUrl = `https://digitaldigix.com${cleanPath === '/' ? '' : cleanPath}`;
 
     // Update Canonical URL
     let canonical = document.querySelector('link[rel="canonical"]');
@@ -193,9 +199,24 @@ export const App: React.FC = () => {
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    const currentUrl = window.location.href.split('#')[0];
-    canonical.setAttribute('href', currentUrl);
-  }, [activePage, selectedLocation]);
+    canonical.setAttribute('href', canonicalUrl);
+
+    // Update OpenGraph tags
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', title);
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', description);
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute('content', canonicalUrl);
+
+    // Update Twitter Card tags
+    const twTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twTitle) twTitle.setAttribute('content', title);
+    const twDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twDesc) twDesc.setAttribute('content', description);
+    const twUrl = document.querySelector('meta[name="twitter:url"]');
+    if (twUrl) twUrl.setAttribute('content', canonicalUrl);
+  }, [activePage, selectedLocation, selectedBlogSlug, selectedServiceId, selectedLegalServiceTitle, selectedGraphicCat, selectedDesignItem, selectedIndustryId]);
 
   const handleThemeToggle = () => {
     const nextTheme = theme === 'light' ? 'dark' : 'light';
