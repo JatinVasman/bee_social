@@ -1,4 +1,107 @@
 {
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.digitaldigix.com"
+        }
+      ],
+      "destination": "https://digitaldigix.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio.html",
+      "destination": "/portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/industries.html",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/services.html",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/blogs.html",
+      "destination": "/blogs",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-daily-mob-design.html",
+      "destination": "/portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-layers-clothing.html",
+      "destination": "/portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/blogs",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:slug*",
+      "destination": "/blogs/:slug*",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pl/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/faq",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/lander",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/shopdetail/:path*",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
