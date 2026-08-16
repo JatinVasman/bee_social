@@ -53,7 +53,7 @@ const explanationData: Record<string, { desc: string; turnaround: string; format
   }
 };
 
-export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId, onNavigate, onOpenStrategyModal }) => {
+export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId, onNavigate, onOpenStrategyModal: _onOpenStrategyModal }) => {
   
   useEffect(() => {
     // Scroll to the active target element after page load
@@ -319,7 +319,7 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
                       WhatsApp Order 💬
                     </a>
                     <button
-                      onClick={() => onOpenStrategyModal(`${cat.title} Design Project`)}
+                      onClick={() => window.open(`https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20a%20design%20project%20for%20${encodeURIComponent(cat.title)}`, '_blank')}
                       style={{
                         flex: 1,
                         backgroundColor: '#0F172A',
@@ -382,7 +382,7 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
             <button
               className="btn btn-secondary"
               style={{ color: '#FFF', borderColor: 'rgba(255,255,255,0.3)', padding: '0.9rem 1.8rem' }}
-              onClick={() => onOpenStrategyModal('Graphic Design Partnership')}
+              onClick={() => window.open('https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20a%20custom%20graphic%20design%20partnership', '_blank')}
             >
               Book Custom Quote ➔
             </button>

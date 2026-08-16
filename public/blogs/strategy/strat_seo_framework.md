@@ -271,7 +271,7 @@ We've helped Indian businesses across Tier 1, 2, and 3 cities achieve first-page
 🌐 **Visit:** [digitaldigix.com](https://digitaldigix.com)
 📲 **WhatsApp us** for a free SEO audit — we'll show you exactly where your website stands and what it will take to rank.
 
-And join the **[Digital Digix](https://www.digitaldigix.com)** community — a thriving network of Indian entrepreneurs where you can learn from peers, share challenges, and find growth opportunities.
+And join the **[Digital Digix](https://digital-digix.vercel.app)** community — a thriving network of Indian entrepreneurs where you can learn from peers, share challenges, and find growth opportunities.
 
 *SEO isn't a cost — it's an investment that pays dividends for years. Let's start building yours today.*
 

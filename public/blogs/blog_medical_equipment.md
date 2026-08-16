@@ -177,4 +177,4 @@ The medical equipment landscape in India has modernized, and your marketing stra
 Digital Digix has helped over 2,700 clients, including B2B healthcare manufacturers, dominate their digital space. We build KPI-driven marketing machines. No lock-in contracts.
 
 📞 **Call us today: +91 85869 89832**
-🌐 **Visit: [www.digitaldigix.com](https://www.digitaldigix.com)**
+🌐 **Visit: [digital-digix.vercel.app](https://digital-digix.vercel.app)**

@@ -196,4 +196,4 @@ Ready to transform your college's admission strategy?
 **Digital Digix** is a founder-led digital marketing agency in Noida, India, specializing in the higher education sector. We manage multi-crore ad budgets for top universities and colleges, driving high-quality applications and reducing the cost per admission. With 89+ industries served, we bring unparalleled expertise to your digital growth.
 
 📞 **Call us today: +91 85869 89832**
-🌐 **Visit: [www.digitaldigix.com](https://www.digitaldigix.com)**
+🌐 **Visit: [digital-digix.vercel.app](https://digital-digix.vercel.app)**

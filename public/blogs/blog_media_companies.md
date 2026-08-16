@@ -211,6 +211,6 @@ Need help scaling your media property?
 **Digital Digix** is India's leading founder-led digital marketing agency based in Noida, serving over 89+ industries including top digital media companies. We offer expert Meta Ads for audience growth, B2B Google Ads, WhatsApp automation, and customized KPI dashboards with no lock-in contracts and post-pay options.
 
 📞 **Contact us today:** +91 85869 89832
-🌐 **Visit us:** [www.digitaldigix.com](https://www.digitaldigix.com)
+🌐 **Visit us:** [digital-digix.vercel.app](https://digital-digix.vercel.app)
 
 *Tags: #MediaMarketing #DigitalMediaIndia #AudienceGrowth #ContentStrategy #DigitalDigix*

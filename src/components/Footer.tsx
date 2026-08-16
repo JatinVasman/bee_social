@@ -216,7 +216,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectLocation, on
         {/* BOTTOM COPYRIGHT BAR: ALL RIGHTS TO DIGITAL DIGIX */}
         <div style={{ height: '1px', background: '#261F1C', margin: '3rem 0 1.5rem 0' }}></div>
         <div style={{ textAlign: 'center', fontSize: '0.85rem', color: '#94A3B8' }}>
-          © 2012 <a href="https://www.digitaldigix.com" target="_blank" rel="noopener noreferrer" style={{ color: '#D97706', fontWeight: 800, textDecoration: 'none', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '0.85'} onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}>Digital Digix</a>. All Rights Reserved.
+          © 2012 <a href="https://digital-digix.vercel.app" target="_blank" rel="noopener noreferrer" style={{ color: '#D97706', fontWeight: 800, textDecoration: 'none', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '0.85'} onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}>Digital Digix</a>. All Rights Reserved.
         </div>
 
       </div>

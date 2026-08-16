@@ -2653,7 +2653,8 @@ export const LegalSection: React.FC<LegalSectionProps> = ({
   };
 
   const openExploreModal = (service: ServiceDetail) => {
-    window.open(`${window.location.origin}${window.location.pathname}?page=legal-details&id=${encodeURIComponent(service.title)}`, '_blank');
+    const slug = service.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    window.open(`${window.location.origin}/legal/${encodeURIComponent(slug)}`, '_blank');
   };
 
   const closeExploreModal = () => {
@@ -2816,8 +2817,13 @@ export const LegalSection: React.FC<LegalSectionProps> = ({
                 <img 
                   src="/lady_justice_scales.jpg" 
                   alt="Intellectual Property lady justice scales"
+                  width="600"
+                  height="400"
+                  loading="lazy"
+                  decoding="async"
                   style={{
                     width: '100%',
+                    height: 'auto',
                     borderRadius: '24px',
                     objectFit: 'cover',
                     boxShadow: 'var(--shadow-md)',

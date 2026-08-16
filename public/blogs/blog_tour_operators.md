@@ -270,7 +270,7 @@ Your tours are your product. Digital marketing is how the right travellers find 
 - ✅ TripAdvisor and GBP optimization
 - ✅ Custom KPI dashboards
 
-📞 **+91 85869 89832** | 🌐 **www.digitaldigix.com**
+📞 **+91 85869 89832** | 🌐 **digital-digix.vercel.app**
 *No lock-in contracts. Post-pay available. Free strategy call.*
 
 ---

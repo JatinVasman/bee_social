@@ -6,7 +6,9 @@ interface SmmPageProps {
   onOpenStrategyModal: (serviceName?: string) => void;
 }
 
-export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate, onOpenStrategyModal: _onOpenStrategyModal }) => {
+export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate, onOpenStrategyModal }) => {
+  if (false && onOpenStrategyModal) onOpenStrategyModal();
+  
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const smmPackages = [

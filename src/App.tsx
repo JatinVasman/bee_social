@@ -37,6 +37,8 @@ import { GraphicDetailPage } from './pages/GraphicDetailPage';
 import { GraphicItemDetailPage } from './pages/GraphicItemDetailPage';
 import { LocationsDirectoryPage } from './pages/LocationsDirectoryPage';
 
+import { parseRoute, getRoutePath } from './utils/routes';
+
 export const App: React.FC = () => {
   const [activePage, setActivePage] = useState<PageView>('home');
   const [currency, setCurrency] = useState<Currency>('INR');
@@ -61,34 +63,54 @@ export const App: React.FC = () => {
   const [initialLegalShowResults, setInitialLegalShowResults] = useState(false);
   const [selectedLegalServiceTitle, setSelectedLegalServiceTitle] = useState<string>('');
   const [selectedServiceId, setSelectedServiceId] = useState<string>('');
+  const [selectedIndustryId, setSelectedIndustryId] = useState<string>('');
   const [selectedGraphicCat, setSelectedGraphicCat] = useState<string>('');
   const [selectedDesignItem, setSelectedDesignItem] = useState<string>('');
 
   useEffect(() => {
     const syncRoute = () => {
-      const params = new URLSearchParams(window.location.search);
-      const pageParam = params.get('page') || 'home';
-      const serviceId = params.get('id') || '';
-      const serviceParam = params.get('service') || '';
+      const { page, slug } = parseRoute(window.location.pathname, window.location.search);
       
-      if (pageParam === 'legal-details') {
-        setSelectedLegalServiceTitle(serviceId);
-      } else if (pageParam === 'service-details') {
-        setSelectedServiceId(serviceId);
-      } else if (pageParam === 'graphic-details') {
-        setSelectedGraphicCat(serviceId);
-      } else if (pageParam === 'design-item') {
-        setSelectedDesignItem(serviceId);
-      }
-      
-      if (serviceParam) {
-        setSelectedServiceId(serviceParam);
-      } else {
-        if (pageParam !== 'service-details') {
-          setSelectedServiceId('');
+      if (page === 'blog-post' && slug) {
+        setSelectedBlogSlug(slug);
+      } else if (page === 'service-details' && slug) {
+        setSelectedServiceId(slug);
+      } else if (page === 'industries') {
+        setSelectedIndustryId(slug || '');
+      } else if (page === 'about') {
+        if (slug) {
+          const lower = slug.toLowerCase();
+          if (lower.includes('co-founder') || lower.includes('cofounder') || lower.includes('khwahish') || lower.includes('creative')) {
+            setActiveLeaderModal('co-founder');
+          } else if (lower.includes('founder') || lower.includes('harsh')) {
+            setActiveLeaderModal('founder');
+          } else if (lower.includes('why') || lower.includes('diff')) {
+            setActiveLeaderModal('why-us');
+          } else if (lower.includes('team') || lower.includes('crew') || lower.includes('specialist')) {
+            setActiveLeaderModal('team');
+          } else {
+            setActiveLeaderModal(null);
+          }
+        } else {
+          setActiveLeaderModal(null);
         }
+      } else if (page === 'legal-details' && slug) {
+        setSelectedLegalServiceTitle(slug);
+      } else if (page === 'graphic-details' && slug) {
+        setSelectedGraphicCat(slug);
+      } else if (page === 'design-item' && slug) {
+        setSelectedDesignItem(slug);
+      } else if (page === 'location' && slug) {
+        setSelectedLocation(slug);
       }
-      setActivePage(pageParam as PageView);
+      
+      setActivePage(page);
+
+      // Upgrade legacy query params (?page=...) to clean SEO paths
+      if (window.location.search.includes('page=')) {
+        const cleanPath = getRoutePath(page, slug);
+        window.history.replaceState(null, '', cleanPath);
+      }
     };
 
     syncRoute();
@@ -96,38 +118,9 @@ export const App: React.FC = () => {
     return () => window.removeEventListener('popstate', syncRoute);
   }, []);
 
-  // Sync selectedServiceId modal changes to query parameters
-  useEffect(() => {
-    if (activePage === 'home' || activePage === 'services') {
-      const params = new URLSearchParams(window.location.search);
-      const currentService = params.get('service') || '';
-      
-      if (selectedServiceId !== currentService) {
-        if (selectedServiceId) {
-          params.set('service', selectedServiceId);
-        } else {
-          params.delete('service');
-        }
-        
-        let newUrl = '/';
-        if (activePage !== 'home') {
-          newUrl = `/?page=${activePage}`;
-          if (selectedServiceId) {
-            newUrl += `&service=${encodeURIComponent(selectedServiceId)}`;
-          }
-        } else {
-          if (selectedServiceId) {
-            newUrl = `/?service=${encodeURIComponent(selectedServiceId)}`;
-          }
-        }
-        window.history.pushState(null, '', newUrl);
-      }
-    }
-  }, [selectedServiceId, activePage]);
-
   // Dynamic SEO Metadata Manager
   useEffect(() => {
-    let title = 'Digital Digix — Performance Marketing, Generative Engine Optimization & Web Applications';
+    let title = 'Digital Digix — Digital Marketing Agency That Grows Your Brand';
     let description = 'Digital Digix is India\'s leading digital growth agency specializing in Performance Marketing, Generative Engine Optimization (GEO/AEO), high-converting web applications, and B2B growth funnels.';
 
     switch (activePage) {
@@ -217,25 +210,46 @@ export const App: React.FC = () => {
     if (page === 'service-details' && slug) {
       setSelectedServiceId(slug);
     }
+    if (page === 'industries') {
+      setSelectedIndustryId(slug || '');
+    }
     if (page === 'graphic-details' && slug) {
       setSelectedGraphicCat(slug);
     }
     if (page === 'design-item' && slug) {
       setSelectedDesignItem(slug);
     }
+    if (page === 'location' && slug) {
+      setSelectedLocation(slug);
+    }
+    if (page === 'about') {
+      if (slug) {
+        const lower = slug.toLowerCase();
+        if (lower.includes('co-founder') || lower.includes('cofounder') || lower.includes('khwahish') || lower.includes('creative')) {
+          setActiveLeaderModal('co-founder');
+        } else if (lower.includes('founder') || lower.includes('harsh')) {
+          setActiveLeaderModal('founder');
+        } else if (lower.includes('why') || lower.includes('diff')) {
+          setActiveLeaderModal('why-us');
+        } else if (lower.includes('team') || lower.includes('crew') || lower.includes('specialist')) {
+          setActiveLeaderModal('team');
+        } else {
+          setActiveLeaderModal(null);
+        }
+      } else {
+        setActiveLeaderModal(null);
+      }
+    }
+    if (page === 'legal-details' && slug) {
+      setSelectedLegalServiceTitle(slug);
+    }
     if (page === 'legal') {
       setInitialLegalQuery('');
       setInitialLegalShowResults(false);
     }
 
-    let newUrl = '/';
-    if (page !== 'home') {
-      newUrl = `/?page=${page}`;
-      if (slug) {
-        newUrl += `&id=${slug}`;
-      }
-    }
-    window.history.pushState(null, '', newUrl);
+    const cleanPath = getRoutePath(page, slug);
+    window.history.pushState(null, '', cleanPath);
     
     setActivePage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -245,18 +259,38 @@ export const App: React.FC = () => {
     setInitialLegalQuery(query || '');
     setInitialLegalShowResults(showResults ?? true);
     setActivePage('legal');
+    const cleanPath = getRoutePath('legal');
+    window.history.pushState(null, '', cleanPath);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleSelectLocation = (loc: string) => {
     setSelectedLocation(loc);
     setActivePage('location');
+    const cleanPath = getRoutePath('location', loc);
+    window.history.pushState(null, '', cleanPath);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleOpenStrategyModal = (note?: string) => {
     setStrategyModalNote(note || '');
     setIsStrategyModalOpen(true);
+  };
+
+  const handleOpenLeaderModal = (person: LeaderPerson) => {
+    setActiveLeaderModal(person);
+    setActivePage('about');
+    const cleanPath = person ? getRoutePath('about', person) : '/about';
+    window.history.pushState(null, '', cleanPath);
+  };
+
+  const handleCloseLeaderModal = () => {
+    setActiveLeaderModal(null);
+    if (activePage === 'about') {
+      window.history.pushState(null, '', '/about');
+    } else {
+      window.history.pushState(null, '', getRoutePath(activePage));
+    }
   };
 
   return (
@@ -270,7 +304,7 @@ export const App: React.FC = () => {
         theme={theme}
         onThemeToggle={handleThemeToggle}
         onOpenStrategyModal={() => handleOpenStrategyModal()}
-        onOpenLeaderModal={setActiveLeaderModal}
+        onOpenLeaderModal={handleOpenLeaderModal}
       />
 
       {/* MAIN ROUTER BODY */}
@@ -295,7 +329,8 @@ export const App: React.FC = () => {
               backgroundColor="#FFFFFF"
             />
             <AboutUs
-              onOpenLeaderModal={setActiveLeaderModal}
+              onNavigate={handleNavigate}
+              onOpenLeaderModal={handleOpenLeaderModal}
               onOpenStrategyModal={handleOpenStrategyModal}
               onSelectLocation={handleSelectLocation}
               backgroundColor="var(--bg-main)"
@@ -319,7 +354,8 @@ export const App: React.FC = () => {
 
         {activePage === 'about' && (
           <AboutUs
-            onOpenLeaderModal={setActiveLeaderModal}
+            onNavigate={handleNavigate}
+            onOpenLeaderModal={handleOpenLeaderModal}
             onOpenStrategyModal={handleOpenStrategyModal}
           />
         )}
@@ -333,6 +369,7 @@ export const App: React.FC = () => {
 
         {activePage === 'industries' && (
           <IndustriesPage
+            industryId={selectedIndustryId}
             onNavigate={handleNavigate}
             onOpenStrategyModal={handleOpenStrategyModal}
           />
@@ -451,7 +488,7 @@ export const App: React.FC = () => {
 
       <LeadershipModal
         person={activeLeaderModal}
-        onClose={() => setActiveLeaderModal(null)}
+        onClose={handleCloseLeaderModal}
         onOpenStrategyModal={handleOpenStrategyModal}
         onNavigate={handleNavigate}
       />

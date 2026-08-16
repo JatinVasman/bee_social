@@ -35,7 +35,7 @@ const customExplanations: Record<string, { desc: string; turnaround: string; for
     desc: 'Premium business card designs that leave a lasting first impression. Optimized for digital networking cards or physical print finishes.',
     turnaround: '48 Hours',
     formats: 'Print-Ready PDF with bleed marks, vector AI/PSD source files',
-    inclusions: ['Front & back side layout mapping', 'Standard sizing (3.5" x 2.0") or custom dimensions', 'Setup for special finishes (e.g., spot UV, foil)', 'Unlimited contact information variations'],
+    inclusions: ['Front & back side layout mapping', 'Standard sizing (3.5\" x 2.0\") or custom dimensions', 'Setup for special finishes (e.g., spot UV, foil)', 'Unlimited contact information variations'],
     requirements: ['Vcard details (name, title, contact info)', 'Logo files (transparent background)', 'Brand brand guide / style guide (optional)', 'Preferred paper texture / finish type']
   },
   'ppt-presentation-design': {
@@ -70,7 +70,7 @@ const customExplanations: Record<string, { desc: string; turnaround: string; for
 
 
 
-export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ itemId, onNavigate, onOpenStrategyModal }) => {
+export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ itemId, onNavigate, onOpenStrategyModal: _onOpenStrategyModal }) => {
   
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -263,7 +263,9 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
                 Order on WhatsApp 💬
               </a>
               <button
-                onClick={() => onOpenStrategyModal(`${matchedItem.name} Custom Campaign`)}
+                onClick={() => {
+                  window.open(`https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20a%20custom%20order%20for%20${encodeURIComponent(matchedItem?.name || '')}`, '_blank');
+                }}
                 style={{
                   backgroundColor: '#0F172A',
                   color: '#FFFFFF',
@@ -356,7 +358,7 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
             <button
               className="btn btn-secondary"
               style={{ color: '#FFF', borderColor: 'rgba(255,255,255,0.3)', padding: '0.9rem 1.8rem' }}
-              onClick={() => onOpenStrategyModal(`Monthly Retainer consultation for ${matchedItem.name}`)}
+              onClick={() => window.open(`https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20a%20strategy%20call%20for%20${encodeURIComponent(matchedItem.name)}`, '_blank')}
             >
               Book Strategy Call ➔
             </button>

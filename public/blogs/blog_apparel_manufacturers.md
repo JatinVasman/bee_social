@@ -632,6 +632,6 @@ Don't let your competitors steal your customers.
 - Transparent KPI Dashboards.
 
 📞 **Contact us today:** +91 85869 89832  
-🌐 **Visit us online:** [www.digitaldigix.com](https://www.digitaldigix.com)
+🌐 **Visit us online:** [digital-digix.vercel.app](https://digital-digix.vercel.app)
 
 *Tags: Digital Marketing for Apparel Manufacturers in India, apparel manufacturers marketing, digital marketing India, apparel manufacturing SEO, Meta Ads for apparel manufacturers, Digital Digix Noida*

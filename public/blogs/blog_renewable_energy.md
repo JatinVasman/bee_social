@@ -139,7 +139,7 @@ Digital Digix is a founder-led digital marketing agency in Noida, India, serving
 
 **Contact Digital Digix Today:**
 📞 +91 85869 89832
-🌐 www.digitaldigix.com
+🌐 digital-digix.vercel.app
 📍 Noida, India
 
 *Tags: Renewable Energy, Solar Marketing, B2B Lead Gen, Digital Marketing India, Digital Digix*

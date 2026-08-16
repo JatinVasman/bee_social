@@ -123,4 +123,4 @@ Cramming too much information and too many conflicting CTAs on the homepage, cau
 ---
 
 **Ready to turn your website traffic into real business?**
-At Digital Digix, we specialise in high-converting websites and performance marketing. Partner with our experts or explore flexible consulting via Digital Digix (www.digitaldigix.com) to skyrocket your conversion rates today.
+At Digital Digix, we specialise in high-converting websites and performance marketing. Partner with our experts or explore flexible consulting via Digital Digix (digital-digix.vercel.app) to skyrocket your conversion rates today.

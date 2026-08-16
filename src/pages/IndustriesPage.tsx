@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 
 export interface IndustryItem {
   id: string;
@@ -20,7 +20,8 @@ export interface IndustryItem {
 }
 
 interface IndustriesPageProps {
-  onNavigate: (page: any) => void;
+  industryId?: string;
+  onNavigate: (page: any, slug?: string) => void;
   onOpenStrategyModal: (note?: string) => void;
 }
 
@@ -3607,11 +3608,58 @@ export const all89IndustriesList: IndustryItem[] = [
   }
 ];
 
-export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate, onOpenStrategyModal: _onOpenStrategyModal }) => {
+export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNavigate, onOpenStrategyModal: _onOpenStrategyModal }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [activeHubIndustry, setActiveHubIndustry] = useState<IndustryItem | null>(null);
   const [activeHubTab, setActiveHubTab] = useState<string>('Overview');
+
+  useEffect(() => {
+    if (industryId) {
+      const raw = decodeURIComponent(industryId).toLowerCase().trim();
+      const clean = raw
+        .replace(/^marketing-for-/i, '')
+        .replace(/^marketing-to-/i, '')
+        .replace(/^marketing-for\s+/i, '')
+        .replace(/^marketing\s+for\s+/i, '')
+        .replace(/^marketing-/i, '')
+        .replace(/^marketing\s+/i, '')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, '');
+
+      const cleanPlural = clean.endsWith('s') ? clean : `${clean}s`;
+      const cleanSingular = clean.replace(/s$/, '');
+
+      const matched = all89IndustriesList.find(i => {
+        const itemCleanId = i.id.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+        const itemCleanName = i.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+        return itemCleanId === clean ||
+               itemCleanName === clean ||
+               itemCleanId === cleanPlural ||
+               itemCleanId === cleanSingular ||
+               itemCleanName === cleanPlural ||
+               itemCleanName === cleanSingular;
+      });
+
+      if (matched) {
+        setActiveHubIndustry(matched);
+        setActiveHubTab('Overview');
+      }
+    } else {
+      setActiveHubIndustry(null);
+    }
+  }, [industryId]);
+
+  const handleOpenHub = (item: IndustryItem) => {
+    setActiveHubIndustry(item);
+    setActiveHubTab('Overview');
+    onNavigate('industries', item.id);
+  };
+
+  const handleCloseHub = () => {
+    setActiveHubIndustry(null);
+    onNavigate('industries');
+  };
 
   const filteredIndustries = useMemo(() => {
     return all89IndustriesList.filter((item) => {
@@ -3726,10 +3774,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate, onOp
           {filteredIndustries.map((item) => (
             <div
               key={item.id}
-              onClick={() => {
-                setActiveHubIndustry(item);
-                setActiveHubTab('Overview');
-              }}
+              onClick={() => handleOpenHub(item)}
               style={{
                 backgroundColor: '#FFFFFF',
                 borderRadius: '20px',
@@ -3803,7 +3848,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate, onOp
 
       {/* FULL DETAILED INDUSTRY HUB MODAL MATCHING USER SCREENSHOTS 1 & 2 EXACTLY */}
       {activeHubIndustry && (
-        <div className="modal-overlay" onClick={() => setActiveHubIndustry(null)}>
+        <div className="modal-overlay" onClick={handleCloseHub}>
           <div
             className="modal-card"
             style={{
@@ -3819,10 +3864,10 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate, onOp
             {/* CLOSE BUTTON */}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
               <div style={{ fontSize: '0.85rem', color: '#64748B' }}>
-                <span style={{ cursor: 'pointer', color: '#0F172A', fontWeight: 600 }} onClick={() => setActiveHubIndustry(null)}>Industries</span> › <span style={{ color: '#3B82F6', fontWeight: 700 }}>{activeHubIndustry.name} Hub</span>
+                <span style={{ cursor: 'pointer', color: '#0F172A', fontWeight: 600 }} onClick={handleCloseHub}>Industries</span> › <span style={{ color: '#3B82F6', fontWeight: 700 }}>{activeHubIndustry.name} Hub</span>
               </div>
               <button
-                onClick={() => setActiveHubIndustry(null)}
+                onClick={handleCloseHub}
                 style={{
                   width: '36px',
                   height: '36px',
@@ -4075,10 +4120,8 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate, onOp
               <div className="responsive-3-grid" style={{ gap: '1.5rem' }}>
                 
                 {/* CARD 1: SEO */}
-                <a
-                  href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <div
+                  onClick={() => onNavigate('service-details', 'seo')}
                   className="industry-service-card-animated"
                   style={{
                     display: 'block',
@@ -4091,7 +4134,8 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate, onOp
                     borderRadius: '20px',
                     padding: '1.75rem 1.5rem',
                     boxShadow: '0 8px 25px rgba(0,0,0,0.03)',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    transition: 'all 0.25s ease'
                   }}
                 >
                   <div style={{ fontSize: '2.2rem', marginBottom: '0.75rem' }}>🔍</div>
@@ -4102,15 +4146,13 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate, onOp
                     Rank your {activeHubIndustry.name} business at the top of Google and capture high-intent local searches.
                   </p>
                   <div style={{ marginTop: '1rem', fontSize: '0.8rem', fontWeight: 800, color: '#FF4E27' }}>
-                    Request SEO Strategy on WhatsApp 💬 ➔
+                    Explore SEO Services & Pricing ➔
                   </div>
-                </a>
+                </div>
 
                 {/* CARD 2: GOOGLE ADS */}
-                <a
-                  href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <div
+                  onClick={() => onNavigate('service-details', 'google-ads')}
                   className="industry-service-card-animated"
                   style={{
                     display: 'block',
@@ -4123,7 +4165,8 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate, onOp
                     borderRadius: '20px',
                     padding: '1.75rem 1.5rem',
                     boxShadow: '0 8px 25px rgba(0,0,0,0.03)',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    transition: 'all 0.25s ease'
                   }}
                 >
                   <div style={{ fontSize: '2.2rem', marginBottom: '0.75rem' }}>🎯</div>
@@ -4134,15 +4177,13 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate, onOp
                     High-intent Search, Display & YouTube campaigns engineered for ROI in the {activeHubIndustry.name} market.
                   </p>
                   <div style={{ marginTop: '1rem', fontSize: '0.8rem', fontWeight: 800, color: '#FF4E27' }}>
-                    Request Google Ads Plan on WhatsApp 💬 ➔
+                    Explore Google Ads Management ➔
                   </div>
-                </a>
+                </div>
 
                 {/* CARD 3: META ADS */}
-                <a
-                  href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <div
+                  onClick={() => onNavigate('service-details', 'meta-ads')}
                   className="industry-service-card-animated"
                   style={{
                     display: 'block',
@@ -4155,7 +4196,8 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate, onOp
                     borderRadius: '20px',
                     padding: '1.75rem 1.5rem',
                     boxShadow: '0 8px 25px rgba(0,0,0,0.03)',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    transition: 'all 0.25s ease'
                   }}
                 >
                   <div style={{ fontSize: '2.2rem', marginBottom: '0.75rem' }}>📱</div>
@@ -4166,15 +4208,13 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate, onOp
                     Targeted social campaigns that turn {activeHubIndustry.name} audiences into real leads.
                   </p>
                   <div style={{ marginTop: '1rem', fontSize: '0.8rem', fontWeight: 800, color: '#FF4E27' }}>
-                    Request Meta Ads Plan on WhatsApp 💬 ➔
+                    Explore Meta Ads Management ➔
                   </div>
-                </a>
+                </div>
 
                 {/* CARD 4: SOCIAL MEDIA MARKETING */}
-                <a
-                  href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <div
+                  onClick={() => onNavigate('service-details', 'social-media-marketing')}
                   className="industry-service-card-animated"
                   style={{
                     display: 'block',
@@ -4187,7 +4227,8 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate, onOp
                     borderRadius: '20px',
                     padding: '1.75rem 1.5rem',
                     boxShadow: '0 8px 25px rgba(0,0,0,0.03)',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    transition: 'all 0.25s ease'
                   }}
                 >
                   <div style={{ fontSize: '2.2rem', marginBottom: '0.75rem' }}>📣</div>
@@ -4198,15 +4239,13 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate, onOp
                     Content, reels and community management that grow your {activeHubIndustry.name} brand.
                   </p>
                   <div style={{ marginTop: '1rem', fontSize: '0.8rem', fontWeight: 800, color: '#FF4E27' }}>
-                    Request SMM Proposal on WhatsApp 💬 ➔
+                    Explore SMM Packages & Plans ➔
                   </div>
-                </a>
+                </div>
 
                 {/* CARD 5: WEBSITE DESIGN & DEVELOPMENT */}
-                <a
-                  href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <div
+                  onClick={() => onNavigate('service-details', 'web-development')}
                   className="industry-service-card-animated"
                   style={{
                     display: 'block',
@@ -4219,7 +4258,8 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate, onOp
                     borderRadius: '20px',
                     padding: '1.75rem 1.5rem',
                     boxShadow: '0 8px 25px rgba(0,0,0,0.03)',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    transition: 'all 0.25s ease'
                   }}
                 >
                   <div style={{ fontSize: '2.2rem', marginBottom: '0.75rem' }}>💻</div>
@@ -4230,15 +4270,13 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate, onOp
                     Fast, SEO-ready, mobile-first websites built to convert {activeHubIndustry.name} visitors.
                   </p>
                   <div style={{ marginTop: '1rem', fontSize: '0.8rem', fontWeight: 800, color: '#FF4E27' }}>
-                    Request Website Quote on WhatsApp 💬 ➔
+                    Explore Web Development Services ➔
                   </div>
-                </a>
+                </div>
 
                 {/* CARD 6: GRAPHIC DESIGN & BRANDING */}
-                <a
-                  href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <div
+                  onClick={() => onNavigate('service-details', 'graphic-design')}
                   className="industry-service-card-animated"
                   style={{
                     display: 'block',
@@ -4251,7 +4289,8 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate, onOp
                     borderRadius: '20px',
                     padding: '1.75rem 1.5rem',
                     boxShadow: '0 8px 25px rgba(0,0,0,0.03)',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    transition: 'all 0.25s ease'
                   }}
                 >
                   <div style={{ fontSize: '2.2rem', marginBottom: '0.75rem' }}>🎨</div>
@@ -4262,9 +4301,9 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate, onOp
                     Posters, logos, packaging and brand identity — from ₹150 per design.
                   </p>
                   <div style={{ marginTop: '1rem', fontSize: '0.8rem', fontWeight: 800, color: '#FF4E27' }}>
-                    Request Graphic Design Pricing on WhatsApp 💬 ➔
+                    Explore Graphic Design Catalog ➔
                   </div>
-                </a>
+                </div>
 
               </div>
             </div>
@@ -4275,12 +4314,49 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate, onOp
                   Tailored Digital Marketing Solutions for {activeHubIndustry.name}
                 </h3>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
-                  {activeHubIndustry.services.map((s, sIdx) => (
-                    <div key={sIdx} style={{ background: '#ECFDF5', padding: '1.25rem', borderRadius: '14px', borderLeft: '4px solid #10B981' }}>
-                      <div style={{ fontSize: '1rem', fontWeight: 800, color: '#065F46', marginBottom: '0.4rem' }}>{s.name}</div>
-                      <div style={{ fontSize: '0.875rem', color: '#475569', lineHeight: 1.6 }}>{s.desc}</div>
-                    </div>
-                  ))}
+                  {activeHubIndustry.services.map((s, sIdx) => {
+                    const sLower = s.name.toLowerCase();
+                    let targetSlug = 'seo';
+                    if (sLower.includes('seo') || sLower.includes('search')) targetSlug = 'seo';
+                    else if (sLower.includes('google')) targetSlug = 'google-ads';
+                    else if (sLower.includes('meta') || sLower.includes('facebook') || sLower.includes('ad campaign') || sLower.includes('paid')) targetSlug = 'meta-ads';
+                    else if (sLower.includes('social') || sLower.includes('smm')) targetSlug = 'social-media-marketing';
+                    else if (sLower.includes('web') || sLower.includes('site') || sLower.includes('app')) targetSlug = 'web-development';
+                    else if (sLower.includes('whatsapp') || sLower.includes('crm')) targetSlug = 'whatsapp-marketing';
+                    else if (sLower.includes('email')) targetSlug = 'email-marketing';
+                    else if (sLower.includes('lead') || sLower.includes('b2b')) targetSlug = 'b2b-lead-generation';
+                    else if (sLower.includes('graphic') || sLower.includes('brand') || sLower.includes('design')) targetSlug = 'brand-identity-design';
+                    else if (sLower.includes('creator') || sLower.includes('reel') || sLower.includes('ugc')) targetSlug = 'ugc-reels-creator-marketing';
+
+                    return (
+                      <div 
+                        key={sIdx} 
+                        onClick={() => onNavigate('service-details', targetSlug)}
+                        style={{ 
+                          background: '#ECFDF5', 
+                          padding: '1.25rem', 
+                          borderRadius: '14px', 
+                          borderLeft: '4px solid #10B981',
+                          cursor: 'pointer',
+                          transition: 'all 0.25s ease'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = 'translateY(-2px)';
+                          e.currentTarget.style.boxShadow = '0 6px 15px rgba(16, 185, 129, 0.15)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = 'translateY(0)';
+                          e.currentTarget.style.boxShadow = 'none';
+                        }}
+                      >
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
+                          <div style={{ fontSize: '1rem', fontWeight: 800, color: '#065F46' }}>{s.name}</div>
+                          <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#059669', background: '#D1FAE5', padding: '0.2rem 0.5rem', borderRadius: '6px' }}>View Service ➔</span>
+                        </div>
+                        <div style={{ fontSize: '0.875rem', color: '#475569', lineHeight: 1.6 }}>{s.desc}</div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             )}

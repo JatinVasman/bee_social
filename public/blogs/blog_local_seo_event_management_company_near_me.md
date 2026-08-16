@@ -56,7 +56,7 @@ High-Ranking Google Business Profile Blueprint:
 |                                                                                 |
 | 📍 VERIFIED ADDRESS: Golf Course Road, Sector 43, Gurgaon, Haryana 122002       |
 | 📞 PHONE / WHATSAPP: +91 8586989832                                             |
-| 🌐 WEBSITE LINK: https://www.digitaldigix.com                               |
+| 🌐 WEBSITE LINK: https://digital-digix.vercel.app                               |
 |                                                                                 |
 | ⭐⭐⭐⭐⭐ 4.9 Stars (120+ Authentic Client Reviews)                            |
 | 📸 MEDIA: 50+ Authorized Event Decor Photos & 4K Setup Videos                   |

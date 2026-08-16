@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.digitaldigix.com/sitemap.xml
+Sitemap: https://digital-digix.vercel.app/sitemap.xml

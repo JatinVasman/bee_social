@@ -10,25 +10,40 @@ interface LocationPageProps {
 export const LocationPage: React.FC<LocationPageProps> = ({ locationName, onNavigate, onOpenStrategyModal }) => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
-  const isInternational = ['USA', 'Australia', 'UK', 'Canada', 'Dubai'].includes(locationName);
+  // Normalize location name to Title Case if slug passed (e.g. "delhi-ncr" -> "Delhi NCR")
+  const cleanLocationRaw = (locationName || '')
+    .replace(/^digital-marketing-agency-in-/i, '')
+    .replace(/^digital-marketing-in-/i, '')
+    .replace(/^digital-marketing-/i, '')
+    .replace(/^location-/i, '')
+    .trim();
+
+  const displayName = cleanLocationRaw
+    ? cleanLocationRaw
+        .split('-')
+        .map(w => w.toUpperCase() === 'NCR' || w.toUpperCase() === 'USA' || w.toUpperCase() === 'UK' ? w.toUpperCase() : w.charAt(0).toUpperCase() + w.slice(1))
+        .join(' ')
+    : 'India';
+
+  const isInternational = ['USA', 'Australia', 'UK', 'Canada', 'Dubai', 'Singapore', 'Malaysia'].includes(displayName);
   const regionTag = isInternational ? 'INTERNATIONAL · DIGITAL MARKETING' : 'INDIA · DIGITAL MARKETING';
 
   const faqs = [
     {
-      q: `Do you offer digital marketing services in ${locationName}?`,
-      a: `Yes! Digital Digix provides full-spectrum performance marketing, SEO, Meta ads, Google ads, social media management, and custom web design directly for businesses operating in ${locationName}.`
+      q: `Do you offer digital marketing services in ${displayName}?`,
+      a: `Yes! Digital Digix provides full-spectrum performance marketing, SEO, Meta ads, Google ads, social media management, and custom web design directly for businesses operating in ${displayName}.`
     },
     {
-      q: `How much does digital marketing cost in ${locationName}?`,
-      a: `Our services start from ₹150 for graphic designs up to transparent monthly performance retainers tailored to your specific budget and growth goals in ${locationName}.`
+      q: `How much does digital marketing cost in ${displayName}?`,
+      a: `Our services start from ₹150 for graphic designs up to transparent monthly performance retainers tailored to your specific budget and growth goals in ${displayName}.`
     },
     {
-      q: `Which industries do you work with in ${locationName}?`,
-      a: `We work across 89+ industries in ${locationName} including e-commerce, real estate, healthcare, education, local services, B2B SaaS, and hospitality.`
+      q: `Which industries do you work with in ${displayName}?`,
+      a: `We work across 89+ industries in ${displayName} including e-commerce, real estate, healthcare, education, local services, B2B SaaS, and hospitality.`
     },
     {
       q: `How soon can we start?`,
-      a: `We can launch your ${locationName} campaign within 24–48 hours after our initial strategy onboarding session.`
+      a: `We can launch your ${displayName} campaign within 24–48 hours after our initial strategy onboarding session.`
     }
   ];
 
@@ -38,16 +53,16 @@ export const LocationPage: React.FC<LocationPageProps> = ({ locationName, onNavi
         
         {/* 1. BREADCRUMB */}
         <div style={{ fontSize: '0.875rem', color: '#64748B', marginBottom: '1.5rem' }}>
-          <span style={{ cursor: 'pointer', color: '#3B82F6' }} onClick={() => onNavigate('home')}>Home</span> / <span className="active" style={{ color: '#0F172A' }}>Digital Marketing in {locationName}</span>
+          <span style={{ cursor: 'pointer', color: '#3B82F6' }} onClick={() => onNavigate('home')}>Home</span> / <span className="active" style={{ color: '#0F172A' }}>Digital Marketing in {displayName}</span>
         </div>
 
         {/* 2. TOP SUMMARY NOTIFICATION BOX (MATCHING SCREENSHOT 2) */}
         <div style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '16px', padding: '1.5rem 2rem', marginBottom: '2.5rem', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
           <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.4rem' }}>
-            Digital Marketing Services in {locationName} | Digital Digix
+            Digital Marketing Services in {displayName} | Digital Digix
           </h3>
           <p style={{ fontSize: '0.925rem', color: '#64748B', lineHeight: 1.6, margin: 0 }}>
-            Looking for a results-driven digital marketing agency in {locationName}? Digital Digix offers SEO, social media, Google & Meta ads, web design and graphic design for businesses in {locationName}. Get a free quote on WhatsApp.
+            Looking for a results-driven digital marketing agency in {displayName}? Digital Digix offers SEO, social media, Google & Meta ads, web design and graphic design for businesses in {displayName}. Get a free quote on WhatsApp.
           </p>
         </div>
 
@@ -61,11 +76,11 @@ export const LocationPage: React.FC<LocationPageProps> = ({ locationName, onNavi
           </div>
 
           <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3.4rem', fontWeight: 900, color: '#0F172A', lineHeight: 1.15, marginBottom: '1.5rem' }}>
-            Digital Marketing Services in {locationName}
+            Digital Marketing Services in {displayName}
           </h1>
 
           <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, maxWidth: '820px', marginBottom: '2rem' }}>
-            Digital Digix is a founder-led digital marketing agency helping businesses in {locationName} grow online with SEO, Google & Meta ads, social media, websites and graphic design. We combine local market understanding with proven, data-driven execution — so your brand in {locationName} gets found, gets leads and gets results.
+            Digital Digix is a founder-led digital marketing agency helping businesses in {displayName} grow online with SEO, Google & Meta ads, social media, websites and graphic design. We combine local market understanding with proven, data-driven execution — so your brand in {displayName} gets found, gets leads and gets results.
           </p>
 
           <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
@@ -76,10 +91,10 @@ export const LocationPage: React.FC<LocationPageProps> = ({ locationName, onNavi
               className="btn"
               style={{ backgroundColor: '#0F172A', color: '#FFFFFF', padding: '0.9rem 1.8rem', borderRadius: '999px', fontWeight: 700, fontSize: '0.95rem', textDecoration: 'none' }}
             >
-              Get a Free {locationName} Quote →
+              Get a Free {displayName} Quote →
             </a>
             <button
-              onClick={() => onOpenStrategyModal(`Digital Marketing Strategy Session in ${locationName}`)}
+              onClick={() => onOpenStrategyModal(`Digital Marketing Strategy Session in ${displayName}`)}
               className="btn"
               style={{ backgroundColor: '#FFFFFF', color: '#0F172A', border: '1px solid #CBD5E1', padding: '0.9rem 1.8rem', borderRadius: '999px', fontWeight: 700, fontSize: '0.95rem' }}
             >
@@ -97,10 +112,10 @@ export const LocationPage: React.FC<LocationPageProps> = ({ locationName, onNavi
               <span style={{ width: '40px', height: '1px', background: '#3B82F6', opacity: 0.6 }}></span>
             </div>
             <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.8rem', fontWeight: 900, color: '#0F172A', marginBottom: '0.5rem' }}>
-              Our Digital Marketing Services in {locationName}
+              Our Digital Marketing Services in {displayName}
             </h2>
             <p style={{ fontSize: '1.05rem', color: '#64748B' }}>
-              Full-service growth for {locationName} businesses — every channel, one accountable team.
+              Full-service growth for {displayName} businesses — every channel, one accountable team.
             </p>
           </div>
 
@@ -111,7 +126,7 @@ export const LocationPage: React.FC<LocationPageProps> = ({ locationName, onNavi
               <div style={{ fontSize: '2.2rem', marginBottom: '1rem' }}>🔍</div>
               <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem' }}>Search Engine Optimisation (SEO)</h3>
               <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: 1.6, margin: 0 }}>
-                Rank your {locationName} business at the top of Google and capture high-intent local searches.
+                Rank your {displayName} business at the top of Google and capture high-intent local searches.
               </p>
             </div>
 
@@ -119,7 +134,7 @@ export const LocationPage: React.FC<LocationPageProps> = ({ locationName, onNavi
               <div style={{ fontSize: '2.2rem', marginBottom: '1rem' }}>🎯</div>
               <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem' }}>Google Ads (PPC)</h3>
               <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: 1.6, margin: 0 }}>
-                High-intent Search, Display & YouTube campaigns engineered for ROI in the {locationName} market.
+                High-intent Search, Display & YouTube campaigns engineered for ROI in the {displayName} market.
               </p>
             </div>
 
@@ -127,7 +142,7 @@ export const LocationPage: React.FC<LocationPageProps> = ({ locationName, onNavi
               <div style={{ fontSize: '2.2rem', marginBottom: '1rem' }}>📱</div>
               <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem' }}>Meta Ads (Facebook & Instagram)</h3>
               <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: 1.6, margin: 0 }}>
-                Targeted social campaigns that turn {locationName} audiences into real leads.
+                Targeted social campaigns that turn {displayName} audiences into real leads.
               </p>
             </div>
 
@@ -135,7 +150,7 @@ export const LocationPage: React.FC<LocationPageProps> = ({ locationName, onNavi
               <div style={{ fontSize: '2.2rem', marginBottom: '1rem' }}>📣</div>
               <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem' }}>Social Media Marketing</h3>
               <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: 1.6, margin: 0 }}>
-                Content, reels and community management that grow your {locationName} brand.
+                Content, reels and community management that grow your {displayName} brand.
               </p>
             </div>
 
@@ -143,7 +158,7 @@ export const LocationPage: React.FC<LocationPageProps> = ({ locationName, onNavi
               <div style={{ fontSize: '2.2rem', marginBottom: '1rem' }}>💻</div>
               <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem' }}>Website Design & Development</h3>
               <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: 1.6, margin: 0 }}>
-                Fast, SEO-ready, mobile-first websites built to convert {locationName} visitors.
+                Fast, SEO-ready, mobile-first websites built to convert {displayName} visitors.
               </p>
             </div>
 
@@ -167,7 +182,7 @@ export const LocationPage: React.FC<LocationPageProps> = ({ locationName, onNavi
               <span style={{ width: '40px', height: '1px', background: '#3B82F6', opacity: 0.6 }}></span>
             </div>
             <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.8rem', fontWeight: 900, color: '#0F172A' }}>
-              Why {locationName} Businesses Choose Us
+              Why {displayName} Businesses Choose Us
             </h2>
           </div>
 
@@ -176,7 +191,7 @@ export const LocationPage: React.FC<LocationPageProps> = ({ locationName, onNavi
             <div style={{ background: '#F8F6F0', borderRadius: '18px', padding: '2rem 1.75rem', border: '1px solid #EFECE6' }}>
               <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.6rem' }}>Local Insight, National Strength</h3>
               <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: 1.6, margin: 0 }}>
-                We tailor every campaign to {locationName}'s local search behaviour, competition and customer intent.
+                We tailor every campaign to {displayName}'s local search behaviour, competition and customer intent.
               </p>
             </div>
 
@@ -206,7 +221,7 @@ export const LocationPage: React.FC<LocationPageProps> = ({ locationName, onNavi
         </div>
       </div>
 
-      <WorkShowcaseMarquee locationName={locationName} />
+      <WorkShowcaseMarquee locationName={displayName} />
 
       <div className="container" style={{ maxWidth: '1100px', position: 'relative', zIndex: 1 }}>
         {/* 6. "DIGITAL MARKETING IN [LOCATION] — FAQS" SECTION (MATCHING SCREENSHOT 5) */}
@@ -218,7 +233,7 @@ export const LocationPage: React.FC<LocationPageProps> = ({ locationName, onNavi
               <span style={{ width: '40px', height: '1px', background: '#3B82F6', opacity: 0.6 }}></span>
             </div>
             <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.8rem', fontWeight: 900, color: '#0F172A' }}>
-              Digital Marketing in {locationName} — FAQs
+              Digital Marketing in {displayName} — FAQs
             </h2>
           </div>
 
@@ -251,7 +266,7 @@ export const LocationPage: React.FC<LocationPageProps> = ({ locationName, onNavi
         {/* 7. BLACK CTA BOX AT BOTTOM (MATCHING SCREENSHOT 5) */}
         <div style={{ background: '#181311', borderRadius: '24px', padding: '3.5rem 2rem', textAlign: 'center', color: '#FFFFFF', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}>
           <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: '#FFFFFF', marginBottom: '0.5rem' }}>
-            Grow your business in {locationName}
+            Grow your business in {displayName}
           </h2>
           <p style={{ fontSize: '1rem', color: '#94A3B8', marginBottom: '2rem' }}>
             Free audit and strategy session — we respond within 2 hours.

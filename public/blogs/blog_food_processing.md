@@ -632,6 +632,6 @@ Don't let your competitors steal your customers.
 - Transparent KPI Dashboards.
 
 📞 **Contact us today:** +91 85869 89832  
-🌐 **Visit us online:** [www.digitaldigix.com](https://www.digitaldigix.com)
+🌐 **Visit us online:** [digital-digix.vercel.app](https://digital-digix.vercel.app)
 
 *Tags: B2B Digital Marketing for Food Processing Companies in India, food processing companies marketing, digital marketing India, food processing SEO, Meta Ads for food processing companies, Digital Digix Noida*

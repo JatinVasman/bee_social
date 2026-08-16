@@ -179,4 +179,4 @@ A world-class sports facility is just concrete and grass until athletes step ont
 Digital Digix has helped over 2,700 businesses, including sports academies and turf owners across India, optimize their admissions engine. Let us handle the marketing while you focus on the coaching.
 
 📞 **Call us today: +91 85869 89832**
-🌐 **Visit: [www.digitaldigix.com](https://www.digitaldigix.com)**
+🌐 **Visit: [digital-digix.vercel.app](https://digital-digix.vercel.app)**

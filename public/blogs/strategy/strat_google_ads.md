@@ -153,6 +153,6 @@ CPC varies wildly by industry. Real estate or B2B software might see CPCs of ₹
 
 Stop wasting budget on poorly optimized campaigns. At **Digital Digix**, we specialize in crafting high-converting, data-driven Google Ads strategies specifically tailored for Indian SMBs. We understand the nuances of the market, the search behaviors, and the exact optimization techniques needed to turn clicks into paying customers.
 
-Looking for strategic advice or mentorship to build your digital presence? Check out **www.digitaldigix.com**, a platform connecting SMBs with expert business volunteers to help you scale sustainably. 
+Looking for strategic advice or mentorship to build your digital presence? Check out **digital-digix.vercel.app**, a platform connecting SMBs with expert business volunteers to help you scale sustainably. 
 
 Contact Digital Digix today, and let's turn your Google Ads into a predictable lead generation engine!

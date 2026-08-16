@@ -402,7 +402,7 @@ Stop guessing. Start growing. Partner with India's most trusted founder-led digi
 - ✅ Serving all of India: Delhi, Mumbai, Bangalore, Noida, Jaipur, Pune & 50+ cities
 
 📞 **Call / WhatsApp:** +91 85869 89832
-🌐 **Website:** [www.digitaldigix.com](https://www.digitaldigix.com)
+🌐 **Website:** [digital-digix.vercel.app](https://digital-digix.vercel.app)
 📍 **Office:** Noida, Uttar Pradesh, India
 
 *Free 30-minute strategy consultation available. Book your slot today.*

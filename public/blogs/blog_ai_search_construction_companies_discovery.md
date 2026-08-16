@@ -72,8 +72,8 @@ Schema markup is machine-readable code embedded in your website that explicitly 
   "@context": "https://schema.org",
   "@type": "GeneralContractor",
   "name": "Digital Digix Construction Company",
-  "url": "https://www.digitaldigix.com",
-  "logo": "https://www.digitaldigix.com/logo.png",
+  "url": "https://digital-digix.vercel.app",
+  "logo": "https://digital-digix.vercel.app/logo.png",
   "description": "Premier general contracting firm providing civil engineering, commercial building construction, and residential villa development in Gurgaon near Cyber City.",
   "sameAs": [
     "https://www.facebook.com/digitaldigixconstruction",

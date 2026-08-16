@@ -79,8 +79,8 @@ Embedding structured JSON-LD Schema code into your website's header is the most 
   "@context": "https://schema.org",
   "@type": "DairyFarm",
   "name": "Digital Digix Organic Dairy",
-  "url": "https://www.digitaldigix.com",
-  "logo": "https://www.digitaldigix.com/logo.png",
+  "url": "https://digital-digix.vercel.app",
+  "logo": "https://digital-digix.vercel.app/logo.png",
   "description": "Farm-fresh A2 cow milk, artisanal paneer, and desi ghee delivered in glass bottles.",
   "address": {
     "@type": "PostalAddress",

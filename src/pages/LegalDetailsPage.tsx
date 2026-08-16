@@ -11,9 +11,12 @@ export const LegalDetailsPage: React.FC<LegalDetailsPageProps> = ({
   serviceTitle,
   onNavigate
 }) => {
-  // Find the requested service
+  // Find the requested service by title, slug, or ID
+  const cleanQuery = serviceTitle?.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || '';
   const service = LEGAL_SERVICES_DATA.find(
-    (s) => s.title.toLowerCase() === serviceTitle.toLowerCase()
+    (s) => 
+      s.title.toLowerCase() === serviceTitle?.toLowerCase() ||
+      s.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') === cleanQuery
   );
 
   // Fallback if not found

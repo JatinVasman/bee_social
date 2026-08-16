@@ -38,7 +38,7 @@ High-Converting Instagram Profile Blueprint:
 |                💪 50+ Modern Machines | Certified Personal Trainers              |
 |                📍 B-12, Sector 62, Noida (Near Metro)                           |
 |  ACTION LINK ➔ 👇 Claim Your Free 3-Day VIP Access Pass Here                   |
-|                [https://www.digitaldigix.com/trial-pass]                    |
+|                [https://digital-digix.vercel.app/trial-pass]                    |
 +---------------------------------------------------------------------------------+
 |  HIGHLIGHTS  ➔ [📍 Location] [🏋️ Gym Tour] [💪 Results] [⭐ Reviews] [🎟️ Pass] |
 +---------------------------------------------------------------------------------+

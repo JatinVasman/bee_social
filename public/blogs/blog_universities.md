@@ -246,6 +246,6 @@ Digital Digix is a founder-led digital marketing agency in Noida, serving 89+ in
 
 **Contact Digital Digix today!**
 📞 +91 85869 89832
-🌐 [www.digitaldigix.com](https://www.digitaldigix.com)
+🌐 [digital-digix.vercel.app](https://digital-digix.vercel.app)
 
 *Tags: digital marketing for universities, university marketing strategy, higher education marketing india, student recruitment strategies, education lead generation, university SEO, google ads for colleges*

@@ -261,7 +261,7 @@ We've built brands for Indian SMBs that have gone on to command premium pricing,
 🌐 **Visit:** [digitaldigix.com](https://digitaldigix.com)
 📲 **WhatsApp us** for a free brand audit — we'll assess your current brand identity across 12 dimensions and show you exactly how to strengthen it.
 
-Connect with fellow Indian entrepreneurs who are building enduring brands at **[Digital Digix](https://www.digitaldigix.com)** — a community dedicated to business growth, mentorship, and peer learning for Indian SMBs.
+Connect with fellow Indian entrepreneurs who are building enduring brands at **[Digital Digix](https://digital-digix.vercel.app)** — a community dedicated to business growth, mentorship, and peer learning for Indian SMBs.
 
 *A great product gets you started. A great brand keeps you growing. Let's build yours.*
 

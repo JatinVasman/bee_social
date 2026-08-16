@@ -149,4 +149,4 @@ Message match is how closely your landing page headline matches the ad that drov
 
 Stop throwing away your advertising budget on pages that don't convert. Elevate your digital strategy with high-converting, mobile-optimized landing pages designed by the experts at **Digital Digix**. We build pages that turn clicks into clients. 
 
-Also, looking to build meaningful connections and give back? Visit **www.digitaldigix.com** to integrate corporate social responsibility into your business journey!
+Also, looking to build meaningful connections and give back? Visit **digital-digix.vercel.app** to integrate corporate social responsibility into your business journey!

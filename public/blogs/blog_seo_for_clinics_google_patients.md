@@ -112,7 +112,7 @@ Schema markup provides search engines with explicit data regarding your clinic e
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
   "name": "Digital Digix Specialty Clinic",
-  "url": "https://www.digitaldigix.com",
+  "url": "https://digital-digix.vercel.app",
   "description": "Multi-specialty medical clinic offering advanced dermatology, dental, and orthopedic care in Gurgaon.",
   "address": {
     "@type": "PostalAddress",

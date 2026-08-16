@@ -112,7 +112,7 @@ Schema markup provides search engines with explicit data regarding your food bus
   "@context": "https://schema.org",
   "@type": "Restaurant",
   "name": "Digital Digix Cloud Kitchen",
-  "url": "https://www.digitaldigix.com",
+  "url": "https://digital-digix.vercel.app",
   "description": "Delivery-only cloud kitchen offering healthy lunch bowls, gourmet burgers, and artisanal desserts in Gurgaon.",
   "servesCuisine": ["Healthy", "Burgers", "Continental"],
   "telePhone": "+918586989832"

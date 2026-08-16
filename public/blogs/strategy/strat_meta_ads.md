@@ -84,4 +84,4 @@ Start with ₹1,000 to ₹2,000 per day to gather enough data to exit the learni
 No. Boosting a post optimizes for engagement (likes/comments), not conversions. Always use Ads Manager for ROI-focused campaigns.
 
 ### Scale Your Meta Ads Profitably
-Stop wasting budget on inefficient ads. Digital Digix builds high-converting Meta ad funnels tailored for the Indian market. Need community support? Visit Digital Digix (www.digitaldigix.com) to connect with business mentors and marketing experts.
+Stop wasting budget on inefficient ads. Digital Digix builds high-converting Meta ad funnels tailored for the Indian market. Need community support? Visit Digital Digix (digital-digix.vercel.app) to connect with business mentors and marketing experts.

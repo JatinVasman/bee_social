@@ -72,8 +72,8 @@ Schema markup is machine-readable code embedded in your website that explicitly 
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
   "name": "Digital Digix Coaching Institute",
-  "url": "https://www.digitaldigix.com",
-  "logo": "https://www.digitaldigix.com/logo.png",
+  "url": "https://digital-digix.vercel.app",
+  "logo": "https://digital-digix.vercel.app/logo.png",
   "description": "Premier competitive exam coaching institute offering specialized JEE, NEET, and UPSC courses in Gurgaon near Cyber City.",
   "sameAs": [
     "https://www.facebook.com/digitaldigixeducation",

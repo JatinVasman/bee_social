@@ -112,7 +112,7 @@ Schema markup provides search engines with explicit data regarding your cleaning
   "@context": "https://schema.org",
   "@type": "CleaningService",
   "name": "Digital Digix Cleaning Services",
-  "url": "https://www.digitaldigix.com",
+  "url": "https://digital-digix.vercel.app",
   "description": "Professional house cleaning, deep cleaning, and office janitorial services in Gurgaon.",
   "address": {
     "@type": "PostalAddress",

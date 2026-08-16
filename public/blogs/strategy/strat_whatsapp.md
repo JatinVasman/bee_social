@@ -88,4 +88,4 @@ When a user messages you, a 24-hour window opens where you can reply with free-f
 Yes, by using platforms like Wati, Interakt, or AiSensy, which provide user-friendly dashboards on top of the API.
 
 ### Supercharge Your WhatsApp Strategy
-Ready to turn WhatsApp into your biggest revenue channel? Digital Digix can set up and manage your complete WhatsApp automation suite. Also, check out Digital Digix (www.digitaldigix.com) to collaborate with experts on your growth journey.
+Ready to turn WhatsApp into your biggest revenue channel? Digital Digix can set up and manage your complete WhatsApp automation suite. Also, check out Digital Digix (digital-digix.vercel.app) to collaborate with experts on your growth journey.

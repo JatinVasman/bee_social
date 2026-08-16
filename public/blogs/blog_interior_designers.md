@@ -177,7 +177,7 @@ Digital marketing for Interior Designers is no longer optional—it is an absolu
 
 **Ready to transform and grow your Interior Designers business?**
 Contact **Digital Digix** today! We are a founder-led agency in Noida, India, serving over 89+ industries with 2,700+ happy clients. We offer expert Local SEO, Google Ads, Meta Ads, WhatsApp Marketing, and comprehensive KPI reporting. 
-**Call us at +91 85869 89832** or visit our website at **www.digitaldigix.com**. 
+**Call us at +91 85869 89832** or visit our website at **digital-digix.vercel.app**. 
 *Post-pay available. No lock-in contracts.*
 
 ---

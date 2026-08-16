@@ -72,8 +72,8 @@ Schema markup is machine-readable code embedded in your website that explicitly 
   "@context": "https://schema.org",
   "@type": "CafeOrCoffeeShop",
   "name": "Digital Digix Specialty Cafe",
-  "url": "https://www.digitaldigix.com",
-  "logo": "https://www.digitaldigix.com/logo.png",
+  "url": "https://digital-digix.vercel.app",
+  "logo": "https://digital-digix.vercel.app/logo.png",
   "description": "Specialty single-origin coffee shop, artisanal sourdough bakery, and workspace cafe in Gurgaon near Cyber City.",
   "address": {
     "@type": "PostalAddress",

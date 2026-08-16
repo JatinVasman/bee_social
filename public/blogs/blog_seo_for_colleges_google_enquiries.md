@@ -112,7 +112,7 @@ Schema markup provides search engines with explicit data regarding your college 
   "@context": "https://schema.org",
   "@type": "CollegeOrUniversity",
   "name": "Digital Digix Engineering College",
-  "url": "https://www.digitaldigix.com",
+  "url": "https://digital-digix.vercel.app",
   "description": "Premier higher education institution offering accredited engineering, computer science, and management programs in Gurgaon.",
   "address": {
     "@type": "PostalAddress",

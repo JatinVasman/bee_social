@@ -79,8 +79,8 @@ Embedding structured JSON-LD Schema code into your website's header is the most 
   "@context": "https://schema.org",
   "@type": "SecurityService",
   "name": "Digital Digix Cybersecurity Services",
-  "url": "https://www.digitaldigix.com",
-  "logo": "https://www.digitaldigix.com/logo.png",
+  "url": "https://digital-digix.vercel.app",
+  "logo": "https://digital-digix.vercel.app/logo.png",
   "description": "Enterprise-grade managed SOC, cloud security architecture, and ISO 27001 compliance audit services.",
   "address": {
     "@type": "PostalAddress",

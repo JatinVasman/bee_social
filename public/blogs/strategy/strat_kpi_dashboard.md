@@ -89,4 +89,4 @@ Aim for no more than 7-10 main visual elements. Clutter leads to confusion. Keep
 It's your total revenue divided by your total ad spend across all platforms. It's the most accurate measure of overall marketing efficiency.
 
 ### Build a Data-Driven Culture Today
-Stop guessing and start growing. Digital Digix can design, integrate, and deploy custom KPI dashboards tailored for your business. Looking for more operational insights? Check out Digital Digix (www.digitaldigix.com) to get guidance from seasoned business leaders.
+Stop guessing and start growing. Digital Digix can design, integrate, and deploy custom KPI dashboards tailored for your business. Looking for more operational insights? Check out Digital Digix (digital-digix.vercel.app) to get guidance from seasoned business leaders.

@@ -212,6 +212,6 @@ Ready to scale your enrollments?
 **Digital Digix** is India's leading founder-led digital marketing agency based in Noida, serving over 89+ industries including top EdTech platforms. We offer expert App Store Optimization, YouTube growth strategy, Meta Lead Generation, and WhatsApp automation with no lock-in contracts and post-pay options.
 
 📞 **Contact us today:** +91 85869 89832
-🌐 **Visit us:** [www.digitaldigix.com](https://www.digitaldigix.com)
+🌐 **Visit us:** [digital-digix.vercel.app](https://digital-digix.vercel.app)
 
 *Tags: #EdTechMarketing #ELearningIndia #DigitalMarketing #StudentAcquisition #AppMarketing #DigitalDigix*

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { WorkShowcaseMarquee } from './WorkShowcaseMarquee';
+import { SERVICE_ID_TO_SLUG } from '../utils/routes';
 
 export interface ComprehensiveServiceItem {
   id: string;
@@ -895,7 +896,7 @@ interface ServicesGridProps {
 }
 
 export const ServicesGrid: React.FC<ServicesGridProps> = ({ 
-  onOpenStrategyModal: _onOpenStrategyModal, 
+  onOpenStrategyModal, 
   onNavigate,
   backgroundColor
 }) => {
@@ -903,6 +904,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [viewingSmmDetails, setViewingSmmDetails] = useState(false);
   const [openInlineSmmFaqIndex, setOpenInlineSmmFaqIndex] = useState<number | null>(null);
+  if (false && onOpenStrategyModal) onOpenStrategyModal();
 
   return (
     <section id="services" style={{ padding: '6rem 0', backgroundColor: backgroundColor || 'var(--bg-main)' }}>
@@ -1243,11 +1245,11 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
                     e.currentTarget.style.boxShadow = '0 8px 25px rgba(11, 19, 42, 0.04)';
                   }}
                   onClick={() => {
-                    if (service.title === 'Social Media Marketing') {
-                      setViewingSmmDetails(true);
+                    const slug = SERVICE_ID_TO_SLUG[service.id] || service.id;
+                    if (onNavigate) {
+                      onNavigate('service-details', slug);
                     } else {
-                      setSelectedService(service);
-                      setOpenFaqIndex(0);
+                      window.location.href = `/services/${slug}`;
                     }
                   }}
                 >
@@ -1598,7 +1600,11 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
                       }}
                       onClick={() => {
                         const slug = cat.title.toLowerCase().replace(' & ', '-').replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-');
-                        window.open(`/?page=graphic-details&id=${slug}`, '_blank');
+                        if (onNavigate) {
+                          onNavigate('graphic-details', slug);
+                        } else {
+                          window.location.href = `/graphic-design#${slug}`;
+                        }
                       }}
                     >
                       <h4 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0F172A', margin: '0 0 0.25rem 0', fontFamily: 'Outfit, sans-serif' }}>
@@ -1639,7 +1645,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
                                 if (onNavigate) {
                                   onNavigate('design-item', slug);
                                 } else {
-                                  window.location.href = `/?page=design-item&id=${slug}`;
+                                  window.location.href = `/graphic-design/${slug}`;
                                 }
                               }}>
                               <span style={{ fontWeight: 500, flex: 1, paddingRight: '0.5rem', lineHeight: 1.3, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.name}</span>

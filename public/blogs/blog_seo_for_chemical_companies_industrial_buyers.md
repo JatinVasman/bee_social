@@ -112,7 +112,7 @@ Schema markup provides search engines with explicit data regarding your chemical
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Specialty Acrylic Emulsion Polymer",
-  "url": "https://www.digitaldigix.com",
+  "url": "https://digital-digix.vercel.app",
   "description": "High-purity acrylic polymer for exterior construction coatings and waterproofing admixtures.",
   "brand": {
     "@type": "Brand",

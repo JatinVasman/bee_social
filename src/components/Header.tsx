@@ -17,7 +17,7 @@ export const Header: React.FC<HeaderProps> = ({
   activePage,
   onNavigate,
   onOpenStrategyModal,
-  onOpenLeaderModal,
+  onOpenLeaderModal: _onOpenLeaderModal,
 }) => {
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -103,7 +103,7 @@ export const Header: React.FC<HeaderProps> = ({
 
             {/* ABOUT ▾ DROPDOWN MENU */}
             <div
-              style={{ position: 'relative' }}
+              style={{ position: 'relative', display: 'inline-block' }}
               onMouseEnter={() => setIsAboutDropdownOpen(true)}
               onMouseLeave={() => setIsAboutDropdownOpen(false)}
             >
@@ -119,125 +119,147 @@ export const Header: React.FC<HeaderProps> = ({
                 About ▾
               </button>
 
-              {/* Dropdown Menu Card */}
+              {/* Dropdown Menu Card with seamless top hover bridge */}
               {isAboutDropdownOpen && (
                 <div
                   style={{
                     position: 'absolute',
                     top: '100%',
                     left: '0',
-                    marginTop: '0.4rem',
-                    width: '260px',
-                    background: '#FFFFFF',
-                    borderRadius: '20px',
-                    boxShadow: '0 20px 40px rgba(11, 19, 42, 0.15)',
-                    border: '1px solid #E2E8F0',
-                    padding: '0.75rem',
-                    zIndex: 1100,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '0.2rem'
+                    paddingTop: '0.45rem',
+                    zIndex: 1100
                   }}
+                  onMouseEnter={() => setIsAboutDropdownOpen(true)}
+                  onMouseLeave={() => setIsAboutDropdownOpen(false)}
                 >
-                  <button
-                    onClick={() => {
-                      setIsAboutDropdownOpen(false);
-                      onNavigate('about');
-                    }}
+                  <div
                     style={{
-                      textAlign: 'left',
-                      padding: '0.65rem 1rem',
-                      borderRadius: '12px',
-                      fontSize: '0.9rem',
-                      fontWeight: 600,
-                      color: 'var(--text-main)',
-                      transition: 'var(--transition)'
+                      width: '260px',
+                      background: '#FFFFFF',
+                      borderRadius: '20px',
+                      boxShadow: '0 20px 40px rgba(11, 19, 42, 0.15)',
+                      border: '1px solid #E2E8F0',
+                      padding: '0.75rem',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '0.2rem'
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFF1EE')}
-                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
                   >
-                    About Digital Digix
-                  </button>
+                    <button
+                      onClick={() => {
+                        setIsAboutDropdownOpen(false);
+                        onNavigate('about');
+                      }}
+                      style={{
+                        textAlign: 'left',
+                        padding: '0.65rem 1rem',
+                        borderRadius: '12px',
+                        fontSize: '0.9rem',
+                        fontWeight: 600,
+                        color: 'var(--text-main)',
+                        transition: 'var(--transition)',
+                        background: 'transparent',
+                        border: 'none',
+                        cursor: 'pointer'
+                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFF1EE')}
+                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+                    >
+                      About Digital Digix
+                    </button>
 
-                  <button
-                    onClick={() => {
-                      setIsAboutDropdownOpen(false);
-                      onOpenLeaderModal('harsh');
-                    }}
-                    style={{
-                      textAlign: 'left',
-                      padding: '0.65rem 1rem',
-                      borderRadius: '12px',
-                      fontSize: '0.875rem',
-                      fontWeight: 500,
-                      color: '#475569',
-                      transition: 'var(--transition)'
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFF1EE')}
-                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
-                  >
-                    Founder — <strong>Harsh Chaudhary</strong>
-                  </button>
+                    <button
+                      onClick={() => {
+                        setIsAboutDropdownOpen(false);
+                        onNavigate('about', 'founder');
+                      }}
+                      style={{
+                        textAlign: 'left',
+                        padding: '0.65rem 1rem',
+                        borderRadius: '12px',
+                        fontSize: '0.875rem',
+                        fontWeight: 500,
+                        color: '#475569',
+                        transition: 'var(--transition)',
+                        background: 'transparent',
+                        border: 'none',
+                        cursor: 'pointer'
+                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFF1EE')}
+                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+                    >
+                      Founder — <strong>Harsh Chaudhary</strong>
+                    </button>
 
-                  <button
-                    onClick={() => {
-                      setIsAboutDropdownOpen(false);
-                      onOpenLeaderModal('khwahish');
-                    }}
-                    style={{
-                      textAlign: 'left',
-                      padding: '0.65rem 1rem',
-                      borderRadius: '12px',
-                      fontSize: '0.875rem',
-                      fontWeight: 500,
-                      color: '#475569',
-                      transition: 'var(--transition)'
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFF1EE')}
-                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
-                  >
-                    Co-Founder — <strong>Khwahish Sahai</strong>
-                  </button>
+                    <button
+                      onClick={() => {
+                        setIsAboutDropdownOpen(false);
+                        onNavigate('about', 'co-founder');
+                      }}
+                      style={{
+                        textAlign: 'left',
+                        padding: '0.65rem 1rem',
+                        borderRadius: '12px',
+                        fontSize: '0.875rem',
+                        fontWeight: 500,
+                        color: '#475569',
+                        transition: 'var(--transition)',
+                        background: 'transparent',
+                        border: 'none',
+                        cursor: 'pointer'
+                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFF1EE')}
+                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+                    >
+                      Co-Founder — <strong>Khwahish Sahai</strong>
+                    </button>
 
-                  <button
-                    onClick={() => {
-                      setIsAboutDropdownOpen(false);
-                      onOpenLeaderModal('why-us');
-                    }}
-                    style={{
-                      textAlign: 'left',
-                      padding: '0.65rem 1rem',
-                      borderRadius: '12px',
-                      fontSize: '0.875rem',
-                      fontWeight: 500,
-                      color: '#475569',
-                      transition: 'var(--transition)'
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFF1EE')}
-                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
-                  >
-                    Why Digital Digix
-                  </button>
+                    <button
+                      onClick={() => {
+                        setIsAboutDropdownOpen(false);
+                        onNavigate('about', 'why-us');
+                      }}
+                      style={{
+                        textAlign: 'left',
+                        padding: '0.65rem 1rem',
+                        borderRadius: '12px',
+                        fontSize: '0.875rem',
+                        fontWeight: 500,
+                        color: '#475569',
+                        transition: 'var(--transition)',
+                        background: 'transparent',
+                        border: 'none',
+                        cursor: 'pointer'
+                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFF1EE')}
+                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+                    >
+                      Why Digital Digix
+                    </button>
 
-                  <button
-                    onClick={() => {
-                      setIsAboutDropdownOpen(false);
-                      onOpenLeaderModal('team');
-                    }}
-                    style={{
-                      textAlign: 'left',
-                      padding: '0.65rem 1rem',
-                      borderRadius: '12px',
-                      fontSize: '0.875rem',
-                      fontWeight: 500,
-                      color: '#475569',
-                      transition: 'var(--transition)'
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFF1EE')}
-                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
-                  >
-                    Our Team
-                  </button>
+                    <button
+                      onClick={() => {
+                        setIsAboutDropdownOpen(false);
+                        onNavigate('about', 'team');
+                      }}
+                      style={{
+                        textAlign: 'left',
+                        padding: '0.65rem 1rem',
+                        borderRadius: '12px',
+                        fontSize: '0.875rem',
+                        fontWeight: 500,
+                        color: '#475569',
+                        transition: 'var(--transition)',
+                        background: 'transparent',
+                        border: 'none',
+                        cursor: 'pointer'
+                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFF1EE')}
+                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+                    >
+                      Our Team
+                    </button>
+                  </div>
                 </div>
               )}
             </div>
@@ -353,10 +375,10 @@ export const Header: React.FC<HeaderProps> = ({
                   {isAboutDropdownOpen && (
                     <div className="mobile-drawer-sublinks">
                       <button onClick={() => handleMobileNav('about')}>About Digital Digix</button>
-                      <button onClick={() => { setIsMobileMenuOpen(false); onOpenLeaderModal('harsh'); }}>Founder — Harsh Chaudhary</button>
-                      <button onClick={() => { setIsMobileMenuOpen(false); onOpenLeaderModal('khwahish'); }}>Co-Founder — Khwahish Sahai</button>
-                      <button onClick={() => { setIsMobileMenuOpen(false); onOpenLeaderModal('why-us'); }}>Why Digital Digix</button>
-                      <button onClick={() => { setIsMobileMenuOpen(false); onOpenLeaderModal('team'); }}>Our Team</button>
+                      <button onClick={() => handleMobileNav('about', 'founder')}>Founder — Harsh Chaudhary</button>
+                      <button onClick={() => handleMobileNav('about', 'co-founder')}>Co-Founder — Khwahish Sahai</button>
+                      <button onClick={() => handleMobileNav('about', 'why-us')}>Why Digital Digix</button>
+                      <button onClick={() => handleMobileNav('about', 'team')}>Our Team</button>
                     </div>
                   )}
                 </div>

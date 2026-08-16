@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { detailed17Services, graphicDesignPricingData, serviceApproachResults } from '../components/ServicesGrid';
 import type { ComprehensiveServiceItem } from '../components/ServicesGrid';
 import { WorkShowcaseMarquee } from '../components/WorkShowcaseMarquee';
+import { SERVICE_ID_TO_SLUG } from '../utils/routes';
 
 const smmPackagesData = [
   {
@@ -110,12 +111,13 @@ interface ServicesPageProps {
   onOpenStrategyModal: (serviceName?: string) => void;
 }
 
-export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate, onOpenStrategyModal: _onOpenStrategyModal }) => {
+export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate, onOpenStrategyModal }) => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedService, setSelectedService] = useState<ComprehensiveServiceItem | null>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0); // First FAQ open by default
   const [viewingSmmDetails, setViewingSmmDetails] = useState(false);
   const [openInlineSmmFaqIndex, setOpenInlineSmmFaqIndex] = useState<number | null>(null);
+  if (false && onOpenStrategyModal) onOpenStrategyModal();
 
   const categories = ['All', 'Social Growth', 'Design & Branding', 'Web Engineering', 'Video & Reels', 'Data & Analytics', 'Viral Content', 'Search Engine Rank', 'Paid Search', 'Social Acquisition', 'Ecommerce Growth', 'Revenue Operations', 'Performance Leads', 'Content Engine', 'Local Search', 'Direct Marketing'];
 
@@ -499,12 +501,8 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate, onOpenSt
                     e.currentTarget.style.boxShadow = '0 8px 25px rgba(11, 19, 42, 0.04)';
                   }}
                   onClick={() => {
-                    if (service.title === 'Social Media Marketing') {
-                      setViewingSmmDetails(true);
-                    } else {
-                      setSelectedService(service);
-                      setOpenFaqIndex(0);
-                    }
+                    const slug = SERVICE_ID_TO_SLUG[service.id] || service.id;
+                    onNavigate('service-details', slug);
                   }}
                 >
                   <div style={{ fontSize: '1.75rem', marginBottom: '0.6rem' }}>{service.icon}</div>
@@ -849,7 +847,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate, onOpenSt
                       }}
                       onClick={() => {
                         const slug = cat.title.toLowerCase().replace(' & ', '-').replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-');
-                        window.open(`/?page=graphic-details&id=${slug}`, '_blank');
+                        onNavigate('graphic-details', slug);
                       }}
                     >
                       <h4 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0F172A', margin: '0 0 0.25rem 0', fontFamily: 'Outfit, sans-serif' }}>
