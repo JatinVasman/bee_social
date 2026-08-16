@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { sendEmail } from '../utils/emailService';
 
 interface StrategyModalProps {
   isOpen: boolean;
@@ -7,7 +8,15 @@ interface StrategyModalProps {
 }
 
 export const StrategyModal: React.FC<StrategyModalProps> = ({ isOpen, planName, onClose }) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    website: '',
+    growthGoal: 'Scale Lead Generation'
+  });
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -21,13 +30,32 @@ export const StrategyModal: React.FC<StrategyModalProps> = ({ isOpen, planName, 
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      onClose();
-    }, 3000);
+    setLoading(true);
+    setErrorMsg('');
+
+    const res = await sendEmail({
+      formType: 'strategy',
+      name: formData.name,
+      email: formData.email,
+      website: formData.website,
+      growthGoal: formData.growthGoal,
+      planName: planName || 'General Strategy Session',
+    });
+
+    setLoading(false);
+
+    if (res.success) {
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({ name: '', email: '', website: '', growthGoal: 'Scale Lead Generation' });
+        onClose();
+      }, 4000);
+    } else {
+      setErrorMsg(res.message || 'Failed to submit booking. Please try again.');
+    }
   };
 
   return (
@@ -49,28 +77,33 @@ export const StrategyModal: React.FC<StrategyModalProps> = ({ isOpen, planName, 
         {submitted ? (
           <div style={{ textAlign: 'center', padding: '2rem 0', color: 'var(--green-accent)' }}>
             <h4 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>🚀 Strategy Session Confirmed!</h4>
-            <p style={{ color: 'var(--text-muted)' }}>We have sent a calendar invitation and audit questionnaire to your email.</p>
+            <p style={{ color: 'var(--text-muted)' }}>We have received your request and sent confirmation details to {formData.email || 'your email'}.</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit}>
+            {errorMsg && (
+              <div style={{ marginBottom: '1rem', padding: '0.75rem 1rem', background: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: '8px', color: '#ef4444', fontSize: '0.85rem' }}>
+                {errorMsg}
+              </div>
+            )}
             <div style={{ marginBottom: '1.25rem' }}>
               <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem' }}>Your Name</label>
-              <input type="text" required placeholder="John Doe" style={{ width: '100%', padding: '0.8rem', borderRadius: '12px', border: '1px solid var(--border-color)', outline: 'none' }} />
+              <input type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required placeholder="John Doe" style={{ width: '100%', padding: '0.8rem', borderRadius: '12px', border: '1px solid var(--border-color)', outline: 'none' }} />
             </div>
 
             <div style={{ marginBottom: '1.25rem' }}>
               <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem' }}>Work Email</label>
-              <input type="email" required placeholder="john@company.com" style={{ width: '100%', padding: '0.8rem', borderRadius: '12px', border: '1px solid var(--border-color)', outline: 'none' }} />
+              <input type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required placeholder="john@company.com" style={{ width: '100%', padding: '0.8rem', borderRadius: '12px', border: '1px solid var(--border-color)', outline: 'none' }} />
             </div>
 
             <div style={{ marginBottom: '1.25rem' }}>
               <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem' }}>Business Website / Phone</label>
-              <input type="text" required placeholder="https://yourcompany.com" style={{ width: '100%', padding: '0.8rem', borderRadius: '12px', border: '1px solid var(--border-color)', outline: 'none' }} />
+              <input type="text" value={formData.website} onChange={(e) => setFormData({ ...formData, website: e.target.value })} required placeholder="https://yourcompany.com" style={{ width: '100%', padding: '0.8rem', borderRadius: '12px', border: '1px solid var(--border-color)', outline: 'none' }} />
             </div>
 
             <div style={{ marginBottom: '1.25rem' }}>
               <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem' }}>Primary Growth Goal</label>
-              <select style={{ width: '100%', padding: '0.8rem', borderRadius: '12px', border: '1px solid var(--border-color)', outline: 'none', background: 'var(--bg-subtle)' }}>
+              <select value={formData.growthGoal} onChange={(e) => setFormData({ ...formData, growthGoal: e.target.value })} style={{ width: '100%', padding: '0.8rem', borderRadius: '12px', border: '1px solid var(--border-color)', outline: 'none', background: 'var(--bg-subtle)' }}>
                 <option>Scale Lead Generation</option>
                 <option>Improve ROAS / Paid Media</option>
                 <option>SEO & AI Search Optimization</option>
@@ -78,7 +111,9 @@ export const StrategyModal: React.FC<StrategyModalProps> = ({ isOpen, planName, 
               </select>
             </div>
 
-            <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '0.5rem' }}>Confirm Booking ➔</button>
+            <button type="submit" className="btn btn-primary" disabled={loading} style={{ width: '100%', marginTop: '0.5rem', opacity: loading ? 0.7 : 1 }}>
+              {loading ? 'Confirming Booking...' : 'Confirm Booking ➔'}
+            </button>
           </form>
         )}
       </div>
