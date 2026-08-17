@@ -86,7 +86,7 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
         <div style={{ fontSize: '0.875rem', color: '#64748B', marginBottom: '1.5rem' }}>
           <span style={{ cursor: 'pointer', color: '#3B82F6' }} onClick={() => onNavigate('home')}>Home</span> /{' '}
           <span style={{ cursor: 'pointer', color: '#3B82F6' }} onClick={() => onNavigate('services')}>Services</span> /{' '}
-          <span style={{ color: '#0F172A', fontWeight: 700 }}>Graphic Design Pricing</span>
+          <span style={{ color: '#0F172A', fontWeight: 700 }}>Graphic Design Deliverables</span>
         </div>
 
         {/* Back / Close button */}
@@ -132,10 +132,10 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
             TRANSPARENT VALUE
           </span>
           <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '1rem', lineHeight: 1.1 }}>
-            Graphic Design Catalog & Pricing
+            Graphic Design Catalog
           </h1>
           <p style={{ fontSize: '1.15rem', color: '#64748B', maxWidth: '750px', margin: '0 auto', lineHeight: 1.6 }}>
-            Browse explanations, deliverable lists, turnaround times, and fixed-rate pricing across each of our professional design domains.
+            Browse explanations, deliverable lists, turnaround times, and specifications across each of our professional design domains.
           </p>
         </div>
 
@@ -291,7 +291,7 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
                           }}
                         >
                           <span style={{ fontWeight: 600, flex: 1, paddingRight: '0.5rem', lineHeight: 1.3, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.name}</span>
-                          <span style={{ fontWeight: 800, color: '#3B82F6', whiteSpace: 'nowrap', flexShrink: 0, textAlign: 'right' }}>{item.price}</span>
+                          <span style={{ fontWeight: 800, color: '#3B82F6', whiteSpace: 'nowrap', flexShrink: 0, textAlign: 'right' }}></span>
                         </div>
                       );
                     })}
@@ -299,7 +299,7 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
 
                   <div style={{ display: 'flex', gap: '0.75rem' }}>
                     <a
-                      href={`https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services`}
+                      href={`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services`}
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
@@ -319,7 +319,7 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
                       WhatsApp Order 💬
                     </a>
                     <button
-                      onClick={() => window.open(`https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20a%20design%20project%20for%20${encodeURIComponent(cat.title)}`, '_blank')}
+                      onClick={() => window.open(`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20a%20design%20project%20for%20${encodeURIComponent(cat.title)}`, '_blank')}
                       style={{
                         flex: 1,
                         backgroundColor: '#0F172A',
@@ -365,13 +365,13 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
               Need a Custom Design Proposal?
             </h3>
             <p style={{ fontSize: '1rem', color: '#94A3B8', lineHeight: 1.6 }}>
-              Enjoy transparent per-design pricing or book a monthly design retainer package with zero lock-in contracts. Custom proposals ready within 24h.
+              Request dedicated creative support or book a monthly design retainer package with zero lock-in contracts. Custom proposals ready within 24h.
             </p>
           </div>
 
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <a
-              href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services"
+              href="https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"
@@ -382,7 +382,7 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
             <button
               className="btn btn-secondary"
               style={{ color: '#FFF', borderColor: 'rgba(255,255,255,0.3)', padding: '0.9rem 1.8rem' }}
-              onClick={() => window.open('https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20a%20custom%20graphic%20design%20partnership', '_blank')}
+              onClick={() => window.open('https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20a%20custom%20graphic%20design%20partnership', '_blank')}
             >
               Book Custom Quote ➔
             </button>

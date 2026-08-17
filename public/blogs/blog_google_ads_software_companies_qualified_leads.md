@@ -1,4 +1,4 @@
-# How Can Google Ads Help Software Companies Generate Qualified B2B Leads?
+# High-ROAS Google Ads Mastery: Converting Search Intent into  for Software Companies
 
 ## Executive Summary & Market Landscape
 
@@ -63,4 +63,4 @@ Acquiring the lead is only step one. Implementing automated workflow sequences v
 
 ## Ready to Accelerate Your Growth?
 
-At **Digital Digix**, we engineer end-to-end digital marketing and growth systems for 2,700+ businesses across 89+ industries. Schedule a free 30-minute strategic consultation with our growth specialists today to build your custom 2026 growth roadmap.
+At **BeeSocial**, we engineer end-to-end digital marketing and growth systems for 2,700+ businesses across 89+ industries. Schedule a free 30-minute strategic consultation with our growth specialists today to build your custom 2026 growth roadmap.

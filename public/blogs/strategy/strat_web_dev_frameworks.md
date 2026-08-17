@@ -2,7 +2,7 @@
 
 Building a high-performance e-commerce platform in 2026 requires making critical architectural decisions early. For years, developers chose standard React Single Page Applications (SPAs) for their interactive user interfaces. However, for e-commerce, user experience is directly tied to page load speed, SEO visibility, and search indexability.
 
-At **Digital Digix**, we develop premium, custom web experiences. In this technical guide, we compare Next.js and client-side React, showing why Next.js has become the gold standard for enterprise e-commerce systems.
+At **BeeSocial**, we develop premium, custom web experiences. In this technical guide, we compare Next.js and client-side React, showing why Next.js has become the gold standard for enterprise e-commerce systems.
 
 ---
 

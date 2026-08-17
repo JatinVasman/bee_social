@@ -255,17 +255,17 @@ With consistent posting (daily Stories + 3–4 Reels/week + weekly carousels), m
 
 ---
 
-## Build Your Instagram Lead Machine with Digital Digix
+## Build Your Instagram Lead Machine with BeeSocial
 
-Growing an Instagram presence that generates real business requires strategy, creative content, and relentless consistency—while you're also running your actual business. That's where **Digital Digix** comes in. We create complete Instagram marketing systems for Indian SMBs: profile optimisation, monthly content calendars, Reels production, DM automation setup, and paid ad campaigns that bring measurable returns.
+Growing an Instagram presence that generates real business requires strategy, creative content, and relentless consistency—while you're also running your actual business. That's where **BeeSocial** comes in. We create complete Instagram marketing systems for Indian SMBs: profile optimisation, monthly content calendars, Reels production, DM automation setup, and paid ad campaigns that bring measurable returns.
 
-🌐 **Visit:** [digitaldigix.com](https://digitaldigix.com)
+🌐 **Visit:** [beesocial](https://beesocial)
 📲 **WhatsApp us** for a free Instagram profile audit—we'll identify exactly what's holding your account back and build a 90-day growth roadmap.
 
-Connect with fellow Indian entrepreneurs growing their businesses on social media at **[Digital Digix](https://digitaldigix.com)**—a thriving community of SMB owners sharing real growth strategies.
+Connect with fellow Indian entrepreneurs growing their businesses on social media at **[BeeSocial](https://beesocial)**—a thriving community of SMB owners sharing real growth strategies.
 
 *From zero to a lead-generating Instagram presence. Let's build it together.*
 
 ---
 
-*© 2026 Digital Digix. All rights reserved. Written to help Indian SMBs master Instagram marketing in 2026.*
+*© 2026 BeeSocial. All rights reserved. Written to help Indian SMBs master Instagram marketing in 2026.*

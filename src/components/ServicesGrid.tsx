@@ -30,7 +30,7 @@ export const serviceApproachResults: Record<string, { approach: string; typicalR
     typicalResults: 'Clients see an average of 40% organic follower growth and 2.5x increase in DM-to-lead conversion rates.'
   },
   'Graphic Design': {
-    approach: 'Share your brief on WhatsApp, choose the design type, and we deliver print- and web-ready files with revisions. Transparent per-design pricing means you know the cost before we start — no surprises.',
+    approach: 'Share your brief on WhatsApp, choose the design type, and we deliver print- and web-ready files with revisions. We deliver fast, print- and web-ready creative files tailored to your brand.',
     typicalResults: 'Brands get consistent, conversion-focused creatives delivered fast — often within 24–48 hours for standard formats — at a fraction of typical agency rates.'
   },
   'UGC Reels & Creator Marketing': {
@@ -97,111 +97,111 @@ export const serviceApproachResults: Record<string, { approach: string; typicalR
 
 export const graphicDesignPricingData: PricingCategory[] = [
   {
-    title: "Standard Creatives — ₹150 each",
+    title: "Standard Social & Digital Creatives",
     subtitle: "Single-page social & digital formats.",
     items: [
-      { name: "Poster Design", price: "₹150" },
-      { name: "Flyer Design", price: "₹150" },
-      { name: "Pamphlet Design", price: "₹150" },
-      { name: "Leaflet Design", price: "₹150" },
-      { name: "Social Media Post Design", price: "₹150" },
-      { name: "Festival Post Design", price: "₹150" },
-      { name: "Promotional Post Design", price: "₹150" },
-      { name: "Product Post Design", price: "₹150" },
-      { name: "Offer Post Design", price: "₹150" },
-      { name: "Event Poster Design", price: "₹150" },
-      { name: "School Admission Creative", price: "₹150" },
-      { name: "Food Promotion Poster", price: "₹150" },
-      { name: "Meta Ad Creative", price: "₹150" },
-      { name: "Google Display Ad", price: "₹150" },
-      { name: "Google Banner Ad", price: "₹150" },
-      { name: "WhatsApp Marketing Creative", price: "₹150" },
-      { name: "App Promotion Creative", price: "₹150" }
+      { name: "Poster Design", price: "" },
+      { name: "Flyer Design", price: "" },
+      { name: "Pamphlet Design", price: "" },
+      { name: "Leaflet Design", price: "" },
+      { name: "Social Media Post Design", price: "" },
+      { name: "Festival Post Design", price: "" },
+      { name: "Promotional Post Design", price: "" },
+      { name: "Product Post Design", price: "" },
+      { name: "Offer Post Design", price: "" },
+      { name: "Event Poster Design", price: "" },
+      { name: "School Admission Creative", price: "" },
+      { name: "Food Promotion Poster", price: "" },
+      { name: "Meta Ad Creative", price: "" },
+      { name: "Google Display Ad", price: "" },
+      { name: "Google Banner Ad", price: "" },
+      { name: "WhatsApp Marketing Creative", price: "" },
+      { name: "App Promotion Creative", price: "" }
     ]
   },
   {
-    title: "Structured Designs — ₹280 each",
+    title: "Structured Layouts & Collateral",
     subtitle: "Layout complexity — cards, certificates, menus.",
     items: [
-      { name: "Visiting Card Design", price: "₹280" },
-      { name: "Letterhead Design", price: "₹280" },
-      { name: "ID Card Design", price: "₹280" },
-      { name: "Certificate Design", price: "₹280" },
-      { name: "Quotation Design", price: "₹280" },
-      { name: "Carousel Design", price: "₹280" },
-      { name: "Menu Card Design", price: "₹280" },
-      { name: "YouTube Banner Design", price: "₹280" },
-      { name: "Event Invitation Design", price: "₹280" }
+      { name: "Visiting Card Design", price: "" },
+      { name: "Letterhead Design", price: "" },
+      { name: "ID Card Design", price: "" },
+      { name: "Certificate Design", price: "" },
+      { name: "Quotation Design", price: "" },
+      { name: "Carousel Design", price: "" },
+      { name: "Menu Card Design", price: "" },
+      { name: "YouTube Banner Design", price: "" },
+      { name: "Event Invitation Design", price: "" }
     ]
   },
   {
-    title: "Multi-Page Documents — ₹130 / page",
+    title: "Multi-Page Documents & Decks",
     subtitle: "Billed per page or per slide.",
     items: [
-      { name: "PPT / Presentation Design", price: "₹130/slide" },
-      { name: "Investor Pitch Deck", price: "₹130/slide" },
-      { name: "Sales Presentation", price: "₹130/slide" },
-      { name: "Business Proposal Design", price: "₹130/slide" },
-      { name: "Training Presentation", price: "₹130/slide" },
-      { name: "Catalogue Design", price: "₹130/page" },
-      { name: "School Magazine Design", price: "₹130/page" },
-      { name: "Prospectus Design", price: "₹130/page" },
-      { name: "Annual Report Design", price: "Custom Quote" }
+      { name: "PPT / Presentation Design", price: "" },
+      { name: "Investor Pitch Deck", price: "" },
+      { name: "Sales Presentation", price: "" },
+      { name: "Business Proposal Design", price: "" },
+      { name: "Training Presentation", price: "" },
+      { name: "Catalogue Design", price: "" },
+      { name: "School Magazine Design", price: "" },
+      { name: "Prospectus Design", price: "" },
+      { name: "Annual Report Design", price: "" }
     ]
   },
   {
-    title: "Large-Format & Corporate Branding — ₹499+",
+    title: "Large-Format & Corporate Branding",
     subtitle: "Outdoor, packaging & corporate identity.",
     items: [
-      { name: "Standee Design", price: "₹649" },
-      { name: "Flex Banner Design", price: "₹649" },
-      { name: "Roll-Up Banner Design", price: "₹649" },
-      { name: "Hoarding Design", price: "₹1,149" },
-      { name: "Billboard Design", price: "₹1,149" },
-      { name: "Shop Branding Design", price: "₹1,649 onwards" },
-      { name: "Vehicle Branding Design", price: "₹1,149 onwards" },
-      { name: "Wall Branding Design", price: "₹1,149 onwards" },
-      { name: "Product Packaging Design", price: "₹1,649" },
-      { name: "Box Packaging Design", price: "₹2,149" },
-      { name: "Company Profile Design", price: "₹1,999 onwards" },
-      { name: "Brand Guidelines", price: "₹2,999 onwards" },
-      { name: "Logo Design", price: "₹850 – ₹3,500" }
+      { name: "Standee Design", price: "" },
+      { name: "Flex Banner Design", price: "" },
+      { name: "Roll-Up Banner Design", price: "" },
+      { name: "Hoarding Design", price: "" },
+      { name: "Billboard Design", price: "" },
+      { name: "Shop Branding Design", price: "" },
+      { name: "Vehicle Branding Design", price: "" },
+      { name: "Wall Branding Design", price: "" },
+      { name: "Product Packaging Design", price: "" },
+      { name: "Box Packaging Design", price: "" },
+      { name: "Company Profile Design", price: "" },
+      { name: "Brand Guidelines", price: "" },
+      { name: "Logo Design", price: "" }
     ]
   },
   {
     title: "Packaging & Product Design",
     subtitle: "Custom commercial packaging layouts.",
     items: [
-      { name: "Product Label Design", price: "₹649" },
-      { name: "Product Tag Design", price: "₹430" },
-      { name: "Shopping Bag Design", price: "₹649" },
-      { name: "Product Mockup Design", price: "₹430" }
+      { name: "Product Label Design", price: "" },
+      { name: "Product Tag Design", price: "" },
+      { name: "Shopping Bag Design", price: "" },
+      { name: "Product Mockup Design", price: "" }
     ]
   },
   {
     title: "Restaurant & Hospitality",
     subtitle: "Branding materials for dining and hotels.",
     items: [
-      { name: "Restaurant Menu Design", price: "₹649" },
-      { name: "Room Service Menu Design", price: "₹649" },
-      { name: "Hotel Brochure Design", price: "₹1,149" },
-      { name: "Tent Card Design", price: "₹430" }
+      { name: "Restaurant Menu Design", price: "" },
+      { name: "Room Service Menu Design", price: "" },
+      { name: "Hotel Brochure Design", price: "" },
+      { name: "Tent Card Design", price: "" }
     ]
   },
   {
     title: "Custom & Creative Services",
     subtitle: "Tailored creative illustrations and retouching.",
     items: [
-      { name: "Infographic Design", price: "₹649" },
-      { name: "Vector Tracing", price: "₹649" },
-      { name: "Photo Retouching", price: "₹430" },
-      { name: "Photo Manipulation", price: "₹649" },
-      { name: "AI Image Enhancement", price: "₹150" },
-      { name: "Merchandise Design", price: "₹649" },
-      { name: "T-Shirt Design", price: "₹649" },
-      { name: "Landing Page Graphics", price: "₹649" },
-      { name: "Custom Illustration", price: "Custom Quote" },
-      { name: "Custom Artwork", price: "Custom Quote" }
+      { name: "Infographic Design", price: "" },
+      { name: "Vector Tracing", price: "" },
+      { name: "Photo Retouching", price: "" },
+      { name: "Photo Manipulation", price: "" },
+      { name: "AI Image Enhancement", price: "" },
+      { name: "Merchandise Design", price: "" },
+      { name: "T-Shirt Design", price: "" },
+      { name: "Landing Page Graphics", price: "" },
+      { name: "Custom Illustration", price: "" },
+      { name: "Custom Artwork", price: "" }
     ]
   }
 ];
@@ -257,25 +257,25 @@ const smmPackagesData = [
 const partnershipTiersData = [
   {
     tier: '3-4 Accounts',
-    discount: '10% OFF',
+    discount: 'Dedicated Team',
     desc: 'Perfect for boutique agencies',
     tag: ''
   },
   {
     tier: '5-9 Accounts',
-    discount: '15% OFF',
+    discount: 'Priority Turnaround',
     desc: 'Mid-size agencies & resellers',
     tag: 'MOST POPULAR'
   },
   {
     tier: '10-49 Accounts',
-    discount: '20% OFF',
+    discount: 'Dedicated Manager',
     desc: 'Large agency portfolios',
     tag: 'BEST VALUE'
   },
   {
     tier: '50+ Accounts',
-    discount: 'Custom',
+    discount: 'Enterprise SLA',
     desc: 'Enterprise + dedicated manager',
     tag: 'ENTERPRISE'
   }
@@ -283,7 +283,7 @@ const partnershipTiersData = [
 
 const smmFaqsData = [
   {
-    q: 'What makes Digital Digix different from other agencies?',
+    q: 'What makes BeeSocial different from other agencies?',
     a: 'We focus on pure results with no long-term lock-in retainer traps, and we provide transparent pay-per-performance execution led directly by founders.'
   },
   {
@@ -295,7 +295,7 @@ const smmFaqsData = [
     a: 'Absolutely not. All our social media marketing packages are billed month-to-month. You are free to scale up, scale down, or cancel at any time with no penalties.'
   },
   {
-    q: 'Is post-pay available at Digital Digix?',
+    q: 'Is post-pay available at BeeSocial?',
     a: 'Yes, we offer pay-after-results or pay-per-outcome performance setups for qualified brands after aligning on upfront lead definitions and targets.'
   },
   {
@@ -316,7 +316,7 @@ export const detailed17Services: ComprehensiveServiceItem[] = [
     icon: '📱',
     description: 'Grow on Instagram, Facebook & LinkedIn with content calendars, posting and analytics.',
     longDescription: 'Supercharge your brand presence on Instagram, Facebook, and LinkedIn. We build custom monthly content calendars, write high-converting captions, design scroll-stopping graphics, produce viral reels hooks, and provide comprehensive monthly analytics reports to drive inbound customer leads and sales.',
-    pricing: '₹3,499–₹8,999/mo',
+    pricing: '',
     whatWeDo: [
       '360° Social Brand Strategy & Monthly Content Planning',
       'High-Engagement Graphic & Reel Content Production',
@@ -352,7 +352,7 @@ export const detailed17Services: ComprehensiveServiceItem[] = [
     icon: '🎨',
     description: 'From social posts and logos to packaging, presentations and branding.',
     longDescription: 'Premium, custom visual assets tailored for B2B and D2C brands. We design social media ad creatives, corporate pitch decks, sales brochures, packaging labels, retail banners, and 3D product mockups with transparent, per-design pricing and ultra-fast 24-hour turnaround times.',
-    pricing: '₹150 onwards',
+    pricing: '',
     whatWeDo: [
       'Custom Social Media Posts, Stories & Ad Creatives',
       'Corporate Pitch Decks, Sales Brochures & Banners',
@@ -375,8 +375,8 @@ export const detailed17Services: ComprehensiveServiceItem[] = [
       'Fragmented visual styles across different company channels'
     ],
     faqs: [
-      { q: 'How is graphic design priced?', a: 'We offer transparent per-design pricing. Standard formats are ₹150, structured designs are ₹280, and multi-page layouts are ₹130/page. No retainers or hidden fees.' },
-      { q: 'Do you offer logo design?', a: 'Yes, we design professional, vector logos starting from ₹850 up to ₹3,500 depending on concepts and design drafts required.' },
+      { q: 'How is graphic design priced?', a: 'We offer transparent per-design pricing. We offer flexible project-based scopes or monthly creative retainers tailored to your deliverables.' },
+      { q: 'Do you offer logo design?', a: 'Yes, we design professional, vector logos tailored to your brand concept requirements depending on concepts and design drafts required.' },
       { q: 'How fast is delivery?', a: 'Standard social posts and ad creatives take 24–48 hours. Complex brochures, packaging layouts or multi-page pitch decks take 48–72 hours.' },
       { q: 'Do prices include revisions and final files?', a: 'Yes, all prices include minor revisions to ensure you are happy, and you receive print-ready PDFs as well as editable source files (AI/PSD).' },
       { q: 'Which industries do you design for?', a: 'We design for a wide array of industries including Healthcare, Restaurants & Hospitality, Real Estate, E-commerce, Education, and Professional Services.' }
@@ -389,7 +389,7 @@ export const detailed17Services: ComprehensiveServiceItem[] = [
     icon: '🎥',
     description: 'Authentic UGC-style reels — scripted, filmed, edited and posted directly.',
     longDescription: 'Connect with your target demographic through authentic User-Generated Content (UGC) videos. We source vetted models and creators from our in-house network of 250+ talent, write direct-response scripts using Problem-Agitate-Solve hooks, and manage the entire filming and post-production pipeline.',
-    pricing: '₹2,100–₹5,100/campaign',
+    pricing: '',
     whatWeDo: [
       'Vetted Creator Selection from 250+ UGC Creators',
       'Script Writing & Problem-Agitate-Solve Hook Creation',
@@ -425,7 +425,7 @@ export const detailed17Services: ComprehensiveServiceItem[] = [
     icon: '📊',
     description: 'Turn business data into clear insights, automated reports and real-time tracking.',
     longDescription: 'Stop guessing your return on ad spend (ROAS). We build custom Google Looker Studio and PowerBI dashboards integrating data from Meta, Google, Amazon, and CRM tools, providing automated daily WhatsApp summaries and real-time visibility into cost-per-lead and pipeline health.',
-    pricing: '₹2,000–₹15,000',
+    pricing: '',
     whatWeDo: [
       'Custom Google Looker Studio & PowerBI Dashboard Setup',
       'Multi-Channel Ad Spend & ROAS Integration (Meta, Google, Amazon)',
@@ -461,7 +461,7 @@ export const detailed17Services: ComprehensiveServiceItem[] = [
     icon: '🔍',
     description: 'Rank at the top and get organic leads 24/7 with data-driven SEO.',
     longDescription: 'Dominate search engine results and acquire organic leads 24/7. Our white-hat SEO strategy includes full technical auditing, high-intent keyword mapping, core web vitals optimization, digital PR backlink building, and Google Search Console tracking for predictable traffic growth.',
-    pricing: '₹4,000–₹12,000/mo',
+    pricing: '',
     whatWeDo: [
       'Comprehensive Technical SEO & Site Architecture Audit',
       'High-Intent Commercial Keyword Research & Mapping',
@@ -497,7 +497,7 @@ export const detailed17Services: ComprehensiveServiceItem[] = [
     icon: '🎯',
     description: 'Capture high-intent searches the moment customers look for you.',
     longDescription: 'Put your brand in front of customers actively searching for your services. We construct high-converting search, display, and Performance Max (PMax) campaigns, eliminate wasted budget using negative keyword lists, and establish accurate GA4 conversion tracking.',
-    pricing: '18% of Monthly Ad Spend',
+    pricing: '',
     whatWeDo: [
       'Search Campaign Bidding & Keyword Match Optimization',
       'Negative Keyword Filtering & Budget Waste Elimination',
@@ -520,7 +520,7 @@ export const detailed17Services: ComprehensiveServiceItem[] = [
       'Inability to track which search queries generate revenue'
     ],
     faqs: [
-      { q: 'Is there a minimum ad budget requirement?', a: 'We manage accounts starting from ₹15,000/month ad spend.' },
+      { q: 'Is there a minimum ad budget requirement?', a: 'We work with brands across flexible ad spend budgets tailored to your growth targets.' },
       { q: 'Who owns the Google Ads account?', a: 'You retain 100% ownership of your Google Ads account.' },
       { q: 'What is the pricing model for Google Ads?', a: 'We charge a percentage of the monthly ad spend with zero lock-in contracts.' },
       { q: 'Do you create display ad graphics?', a: 'Yes, our in-house design team creates display banners and video ad assets.' }
@@ -533,7 +533,7 @@ export const detailed17Services: ComprehensiveServiceItem[] = [
     icon: '📣',
     description: 'Facebook & Instagram campaigns engineered for real leads.',
     longDescription: 'Scale your customer acquisition with data-driven Facebook and Instagram ad campaigns. We build custom and lookalike audience models, design high-converting visual ad creatives, write direct-response copy, implement Conversions API (CAPI), and configure retargeting funnels.',
-    pricing: '15% of Ad Spend',
+    pricing: '',
     whatWeDo: [
       'Laser-Focused Audience Profiling & Lookalike Audience Building',
       'High-Converting Ad Creative Design & Video Copywriting',
@@ -569,7 +569,7 @@ export const detailed17Services: ComprehensiveServiceItem[] = [
     icon: '💻',
     description: 'Modern, fast, SEO-ready websites with WhatsApp integration, SSL and support.',
     longDescription: 'Custom Next.js, React, and WordPress websites engineered for maximum speed, security, and search engine visibility. Includes mobile-first responsive design, direct WhatsApp instant lead chat integration, SSL security setup, and 1 full year of dedicated cloud hosting maintenance and tech support.',
-    pricing: '₹6,500–₹18,000',
+    pricing: '',
     whatWeDo: [
       'Custom Mobile-Responsive Next.js / WordPress Engineering',
       'High-Converting Landing Page Layouts & Copywriting',
@@ -605,7 +605,7 @@ export const detailed17Services: ComprehensiveServiceItem[] = [
     icon: '🖼️',
     description: 'Eye-catching social graphics, festival posters and print-ready creatives.',
     longDescription: 'Engage your audience during holidays and seasonal events with stunning festival posters, discount banners, promotional event flyers, and custom story overlays. We pre-schedule your yearly festival calendar and deliver high-resolution, print-ready files branded with your logo and colors.',
-    pricing: 'From ₹149/design',
+    pricing: '',
     whatWeDo: [
       'Indian & International Festival Creatives (Diwali, New Year, Eid, etc.)',
       'Promotional Discount & Seasonal Offer Banners',
@@ -641,7 +641,7 @@ export const detailed17Services: ComprehensiveServiceItem[] = [
     icon: '🎬',
     description: 'Scripting, editing, trending audio — reels that actually reach.',
     longDescription: 'High-impact vertical video production tailored for Instagram Reels, YouTube Shorts, and TikTok. We handle the entire creative pipeline including viral hook scripting, fast-paced transitions, custom dynamic caption animations, trending audio sync, and click-worthy cover thumbnails.',
-    pricing: 'From ₹380/video',
+    pricing: '',
     whatWeDo: [
       'Viral Hook Scriptwriting & Storyboarding',
       'Fast-Paced Motion Graphics & Caption Animation',
@@ -677,7 +677,7 @@ export const detailed17Services: ComprehensiveServiceItem[] = [
     icon: '🛒',
     description: 'Full-funnel growth for online stores: catalog ads, retargeting & CRO.',
     longDescription: 'Accelerate your online store sales. We optimize Google Shopping feeds, run Advantage+ Catalog ads, configure automated abandoned cart email flows via Klaviyo, manage Amazon/Flipkart listings, and perform deep Conversion Rate Optimization (CRO) to maximize your average order value.',
-    pricing: '₹8,000–₹20,000/mo',
+    pricing: '',
     whatWeDo: [
       'Google Shopping & Advantage+ Catalog Ads Setup',
       'Klaviyo Email & SMS Abandoned Cart Automation Flows',
@@ -714,7 +714,7 @@ export const detailed17Services: ComprehensiveServiceItem[] = [
     icon: '🧲',
     description: 'Performance-driven lead programs across Google, Meta & LinkedIn.',
     longDescription: "Unleash a predictable, high-quality lead flow. We build high-converting landing pages, deploy pay-per-click lead campaigns across Google, Meta, and LinkedIn, implement instant OTP phone verification, and sync screened, sales-ready prospects directly into your sales team's CRM.",
-    pricing: 'Custom / Pay-per-lead',
+    pricing: '',
     whatWeDo: [
       'High-Intent Lead Magnet Landing Page Design',
       'Multi-Channel PPC Ad Management (Google Search & Meta Ads)',
@@ -750,7 +750,7 @@ export const detailed17Services: ComprehensiveServiceItem[] = [
     icon: '✍️',
     description: 'SEO blogs, pillar guides and thought-leadership that build authority.',
     longDescription: 'Establish absolute authority in your industry. We perform competitor content gap analysis, write comprehensive 1,500+ word SEO blog posts and topic clusters, ghostwrite executive thought-leadership articles for LinkedIn/Medium, and design custom infographics to generate organic traffic.',
-    pricing: '₹5,000–₹15,000/mo',
+    pricing: '',
     whatWeDo: [
       'Topic Cluster Keyword Strategy & Competitor Gap Analysis',
       '1,500+ Word In-Depth SEO Blog Article Production',
@@ -786,7 +786,7 @@ export const detailed17Services: ComprehensiveServiceItem[] = [
     icon: '📍',
     description: 'Own the Google map pack: GBP optimisation, reviews and citations.',
     longDescription: 'Dominate local searches and drive foot traffic. We optimize and verify your Google Business Profile (GBP), build local citations across top directories, set up automated review generation funnels, and implement schema markup to boost maps ranking.',
-    pricing: '₹3,500–₹9,000/mo',
+    pricing: '',
     whatWeDo: [
       'Google Business Profile (GBP) Full Optimization & Verification',
       'Local Map-Pack Rank Boosting & Citation Building',
@@ -822,7 +822,7 @@ export const detailed17Services: ComprehensiveServiceItem[] = [
     icon: '💬',
     description: "India's most powerful channel — broadcasts, automation & catalogs.",
     longDescription: "Leverage India's highest engagement channel with 90%+ open rates. We register and set up Meta's official WhatsApp Cloud API, build automated product catalogs, configure abandoned cart reminders, and deploy targeted broadcast campaigns to re-engage past customers.",
-    pricing: '₹2,500–₹6,000/mo',
+    pricing: '',
     whatWeDo: [
       'Official Meta WhatsApp Business API Account Setup',
       'Targeted Broadcast Message Campaign Creation',
@@ -858,7 +858,7 @@ export const detailed17Services: ComprehensiveServiceItem[] = [
     icon: '✒️',
     description: 'Memorable logos & brand identities. Vector files + guidelines included.',
     longDescription: 'Establish a world-class brand identity. We design 3-5 unique, commercial-copyright vector logo concepts, curate custom typography and color palettes, write comprehensive brand identity style guides, and package complete social media profile kits and corporate stationery.',
-    pricing: '₹850–₹3,500',
+    pricing: '',
     whatWeDo: [
       '3-5 Unique Vector Logo Concepts',
       'Brand Identity Style Guide (Typography, Palette, Usage Rules)',
@@ -997,7 +997,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
                     </span>
                     <div style={{ display: 'flex', alignItems: 'baseline', marginTop: '0.4rem' }}>
                       <span style={{ fontSize: '2.5rem', fontWeight: 900, fontFamily: 'Outfit, serif' }}>
-                        ₹{pkg.price}
+                        Custom Plan
                       </span>
                       <span style={{ fontSize: '0.9rem', color: pkg.popular ? '#94A3B8' : '#64748B', marginLeft: '0.25rem', fontWeight: 600 }}>
                         /mo
@@ -1015,7 +1015,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
                   </ul>
 
                   <a
-                    href={`https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services`}
+                    href={`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services`}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
@@ -1055,7 +1055,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
                 — PAY-AS-YOU-GO —
               </div>
               <p style={{ fontSize: '1rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
-                Prefer outcomes over retainers? Our pay-per-performance model lets you pay only for leads that meet criteria agreed upfront — budget, location and intent. Single deliverables start tiny: posters from ₹149, reels from ₹380, dashboards from ₹2,000. <a href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" style={{ color: '#3B82F6', fontWeight: 800, textDecoration: 'underline' }}>Request a quote</a> and we'll build a plan around your numbers.
+                Prefer outcomes over retainers? Our pay-per-performance model lets you pay only for leads that meet criteria agreed upfront — budget, location and intent. From single creative deliverables to full multi-platform management. <a href="https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" style={{ color: '#3B82F6', fontWeight: 800, textDecoration: 'underline' }}>Request a quote</a> and we'll build a plan around your numbers.
               </p>
             </div>
 
@@ -1068,7 +1068,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
                 B2B & Agency Tiers
               </h2>
               <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)' }}>
-                White-label execution and volume pricing for agencies, resellers and enterprise teams.
+                White-label execution and dedicated management for agencies, resellers and enterprise teams.
               </p>
             </div>
 
@@ -1185,7 +1185,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
 
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <a
-                  href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services"
+                  href="https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary"
@@ -1196,7 +1196,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
                 <button
                   className="btn btn-secondary"
                   style={{ color: '#FFF', borderColor: 'rgba(255,255,255,0.3)', padding: '1rem 2.2rem', fontSize: '1rem' }}
-                  onClick={() => window.open('https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services', '_blank')}
+                  onClick={() => window.open('https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services', '_blank')}
                 >
                   Book SMM Strategy Call ➔
                 </button>
@@ -1208,7 +1208,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
             {/* HEADER & SUBTITLE MATCHING SCREENSHOT */}
             <div className="section-header services-section-header" style={{ textAlign: 'center', maxWidth: '850px', margin: '0 auto 3.5rem auto' }}>
               <h2 className="services-heading" style={{ color: '#0F172A' }}>
-                Services & Transparent Pricing
+                Our Services & Capabilities
               </h2>
               <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
                 No lock-in contracts. No hidden fees. Click any service for the full breakdown: pain points, deliverables, approach and FAQs.
@@ -1262,7 +1262,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
                   {/* PRICE TAG & FULL DETAILS LINK MATCHING SCREENSHOT */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.15rem', marginTop: 'auto' }}>
                     <div style={{ fontFamily: 'Outfit', fontSize: '1.05rem', fontWeight: 800, color: '#3B82F6' }}>
-                      {service.pricing}
+                      
                     </div>
                     <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#3B82F6', letterSpacing: '0.05em' }}>
                       FULL DETAILS →
@@ -1305,7 +1305,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
                   e.currentTarget.style.borderColor = '#CBD5E1';
                 }}
               >
-                View All Services & Pricing →
+                View All Services & Capabilities →
               </button>
             </div>
           </>
@@ -1380,7 +1380,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
                 {selectedService.longDescription || selectedService.description}
               </p>
               <div style={{ fontFamily: 'Outfit', fontSize: '1.8rem', fontWeight: 900, color: '#D97706', marginTop: '0.75rem' }}>
-                {selectedService.pricing}
+                
               </div>
             </div>
 
@@ -1388,7 +1388,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
               <div style={{ marginBottom: '3.5rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
                   <span style={{ width: '50px', height: '1px', background: '#D97706', opacity: 0.6 }}></span>
-                  <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#D97706', letterSpacing: '0.15em', textTransform: 'uppercase' }}>PACKAGES & PRICING</span>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#D97706', letterSpacing: '0.15em', textTransform: 'uppercase' }}>PACKAGES & DELIVERABLES</span>
                   <span style={{ width: '50px', height: '1px', background: '#D97706', opacity: 0.6 }}></span>
                 </div>
                 <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '2.2rem', fontWeight: 900, color: '#0F172A', textAlign: 'center', marginBottom: '2.5rem' }}>
@@ -1439,7 +1439,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
                         </span>
                         <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', marginTop: '0.4rem' }}>
                           <span style={{ fontSize: '2.2rem', fontWeight: 900, fontFamily: 'Outfit, serif' }}>
-                            ₹{pkg.price}
+                            Custom Plan
                           </span>
                           <span style={{ fontSize: '0.85rem', color: pkg.popular ? '#94A3B8' : '#64748B', marginLeft: '0.25rem', fontWeight: 600 }}>
                             /mo
@@ -1457,7 +1457,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
                       </ul>
 
                       <a
-                        href={`https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services`}
+                        href={`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services`}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
@@ -1495,7 +1495,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
                     — PAY-AS-YOU-GO —
                   </div>
                   <p style={{ fontSize: '0.95rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
-                    Prefer outcomes over retainers? Our pay-per-performance model lets you pay only for leads that meet criteria agreed upfront — budget, location and intent. Single deliverables start tiny: posters from ₹149, reels from ₹380, dashboards from ₹2,000. <a href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" style={{ color: '#3B82F6', fontWeight: 800, textDecoration: 'underline' }}>Request a quote</a> and we'll build a plan around your numbers.
+                    Prefer outcomes over retainers? Our pay-per-performance model lets you pay only for leads that meet criteria agreed upfront — budget, location and intent. From single creative deliverables to full multi-platform management. <a href="https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" style={{ color: '#3B82F6', fontWeight: 800, textDecoration: 'underline' }}>Request a quote</a> and we'll build a plan around your numbers.
                   </p>
                 </div>
 
@@ -1507,7 +1507,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
                     B2B & Agency Tiers
                   </h3>
                   <p style={{ fontSize: '0.95rem', color: '#64748B' }}>
-                    White-label execution and volume pricing for agencies, resellers and enterprise teams.
+                    White-label execution and dedicated management for agencies, resellers and enterprise teams.
                   </p>
                 </div>
 
@@ -1559,14 +1559,14 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
               <div style={{ marginBottom: '3.5rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
                   <span style={{ width: '50px', height: '1px', background: '#3B82F6', opacity: 0.6 }}></span>
-                  <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#3B82F6', letterSpacing: '0.15em', textTransform: 'uppercase' }}>TRANSPARENT PRICING</span>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#3B82F6', letterSpacing: '0.15em', textTransform: 'uppercase' }}>CREATIVE CATALOG</span>
                   <span style={{ width: '50px', height: '1px', background: '#3B82F6', opacity: 0.6 }}></span>
                 </div>
                 <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '2.2rem', fontWeight: 900, color: '#0F172A', textAlign: 'center', marginBottom: '0.5rem' }}>
-                  Graphic Design Price List
+                  Graphic Design Catalog & Deliverables
                 </h3>
                 <p style={{ fontSize: '0.95rem', color: '#64748B', textAlign: 'center', marginBottom: '2.5rem', maxWidth: '650px', margin: '0 auto 2.5rem auto', lineHeight: 1.5 }}>
-                  Clear per-design pricing across every format — no hidden charges. GST applicable as per norms; prices subject to change.
+                  Browse our comprehensive catalog of graphic design deliverables for digital, social, and print formats.
                 </p>
 
                 {/* Grid container */}
@@ -1647,7 +1647,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
                                 }
                               }}>
                               <span style={{ fontWeight: 500, flex: 1, paddingRight: '0.5rem', lineHeight: 1.3, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.name}</span>
-                              <span style={{ fontWeight: 700, color: '#3B82F6', whiteSpace: 'nowrap', flexShrink: 0, textAlign: 'right' }}>{item.price}</span>
+                              <span style={{ fontWeight: 700, color: '#3B82F6', whiteSpace: 'nowrap', flexShrink: 0, textAlign: 'right' }}></span>
                             </div>
                           );
                         })}
@@ -1668,7 +1668,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
                       —— Our Approach
                     </div>
                     <p style={{ fontSize: '0.875rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
-                      Share your brief on WhatsApp, choose the design type, and we deliver print- and web-ready files with revisions. Transparent per-design pricing means you know the cost before we start — no surprises.
+                      Share your brief on WhatsApp, choose the design type, and we deliver print- and web-ready files with revisions. We deliver fast, print- and web-ready creative files tailored to your brand.
                     </p>
                   </div>
                   <div style={{ background: '#0F172A', borderRadius: '20px', padding: '1.5rem 1.75rem', color: '#FFF' }}>
@@ -1832,7 +1832,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
               style={{ width: '100%', padding: '1rem' }}
               onClick={() => {
                 setSelectedService(null);
-                window.open(`https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services`, '_blank');
+                window.open(`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services`, '_blank');
               }}
             >
               Get Started with {selectedService.title} ➔

@@ -107,9 +107,9 @@ export function parseRoute(pathname: string, search: string): RouteInfo {
       case 'smm':
         return { page: 'smm' };
       case 'legal':
-        return { page: 'legal' };
+        return { page: 'home' };
       case 'legal-details':
-        return { page: 'legal-details', slug: idParam || undefined };
+        return { page: 'home' };
       case 'location':
         return { page: 'location', slug: idParam || undefined };
       case 'all-locations':
@@ -172,15 +172,8 @@ export function parseRoute(pathname: string, search: string): RouteInfo {
     return { page: 'smm' };
   }
 
-  if (first === 'legal') {
-    if (second) {
-      return { page: 'legal-details', slug: rawSegments.slice(1).join('/') };
-    }
-    return { page: 'legal' };
-  }
-
-  if (first === 'legal-details') {
-    return { page: 'legal-details', slug: rawSegments.slice(1).join('/') };
+  if (first === 'legal' || first === 'legal-details') {
+    return { page: 'home' };
   }
 
   if (first === 'digital-marketing' || first === 'digital-marketing-agency' || first === 'digital-marketing-services') {
@@ -243,8 +236,7 @@ export function getRoutePath(page: PageView, slug?: string): string {
     case 'about': {
       if (!slug) return '/about';
       let cleanSlug = slug.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-      if (cleanSlug === 'harsh' || cleanSlug === 'harsh-chaudhary') cleanSlug = 'founder';
-      if (cleanSlug === 'khwahish' || cleanSlug === 'khwahish-sahai' || cleanSlug === 'cofounder') cleanSlug = 'co-founder';
+      if (cleanSlug === 'siddhi' || cleanSlug === 'harsh' || cleanSlug === 'harsh-chaudhary') cleanSlug = 'founder';
       return `/about/${cleanSlug}`;
     }
     case 'contact':
@@ -261,13 +253,7 @@ export function getRoutePath(page: PageView, slug?: string): string {
       return '/portfolio';
     case 'smm':
       return '/smm';
-    case 'legal':
-      return '/legal';
-    case 'legal-details': {
-      if (!slug) return '/legal';
-      const cleanSlug = slug.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-      return `/legal/${cleanSlug}`;
-    }
+
     case 'location': {
       if (!slug) return '/digital-marketing';
       const cleanSlug = slug.toLowerCase()

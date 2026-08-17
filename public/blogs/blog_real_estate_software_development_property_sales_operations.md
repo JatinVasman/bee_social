@@ -139,16 +139,16 @@ Investing in custom real estate software generates compounding operational and f
 
 ---
 
-## 6. How Digital Digix Delivers Custom Real Estate Software Solutions
+## 6. How BeeSocial Delivers Custom Real Estate Software Solutions
 
-At **Digital Digix**, we build tailored PropTech applications, real estate CRMs, investor management portals, and automated lead distribution engines for real estate developers, property agencies, and brokerage networks.
+At **BeeSocial**, we build tailored PropTech applications, real estate CRMs, investor management portals, and automated lead distribution engines for real estate developers, property agencies, and brokerage networks.
 
-### Why Real Estate Companies Partner with Digital Digix:
+### Why Real Estate Companies Partner with BeeSocial:
 - **Real Estate Domain Expertise:** We understand property sales workflows, unit locking mechanics, payment milestone tracking, and buyer journey nuances.
 - **60s Speed-to-Lead Engineering:** Inbound property inquiries are automatically analyzed and dispatched to on-duty sales agents via WhatsApp and email within **60 seconds**, maximizing deal conversion rates.
 - **Custom Interactive Frontends:** We build stunning, fast-loading web and mobile interfaces using Next.js, React Native, Three.js, and Mapbox to showcase property visual assets flawlessly.
 - **100% IP & Code Ownership:** Your business retains 100% full ownership of all custom software source code, database architectures, and digital assets.
-- **End-to-End Digital Ecosystem:** Digital Digix connects your custom PropTech software build with [Internal Link: Custom Software Development], [Internal Link: SEO Services for Real Estate], and [Internal Link: Performance Paid Advertising].
+- **End-to-End Digital Ecosystem:** BeeSocial connects your custom PropTech software build with [Internal Link: Custom Software Development], [Internal Link: SEO Services for Real Estate], and [Internal Link: Performance Paid Advertising].
 
 ---
 
@@ -183,4 +183,4 @@ Integrating e-signature APIs directly into buyer portals allows clients to sign 
 - **Target Tags:** Software Development, Real Estate Software, PropTech, Real Estate CRM, Property Management, Business Growth, Digital Transformation
 
 ---
-*Ready to modernize property operations and accelerate sales velocity with custom PropTech software? Partner with Digital Digix for expert real estate software development, custom CRMs, and automated buyer portals. Contact our technology team today at contact.digitaldigix@gmail.com or +91 8586989832.*
+*Ready to modernize property operations and accelerate sales velocity with custom PropTech software? Partner with BeeSocial for expert real estate software development, custom CRMs, and automated buyer portals. Contact our technology team today at contact.beesocial@gmail.com or +91 7020800621.*

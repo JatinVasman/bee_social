@@ -55,25 +55,25 @@ const smmPackagesData = [
 const partnershipTiersData = [
   {
     tier: '3-4 Accounts',
-    discount: '10% OFF',
+    discount: 'Dedicated Team',
     desc: 'Perfect for boutique agencies',
     tag: ''
   },
   {
     tier: '5-9 Accounts',
-    discount: '15% OFF',
+    discount: 'Priority Turnaround',
     desc: 'Mid-size agencies & resellers',
     tag: 'MOST POPULAR'
   },
   {
     tier: '10-49 Accounts',
-    discount: '20% OFF',
+    discount: 'Dedicated Manager',
     desc: 'Large agency portfolios',
     tag: 'BEST VALUE'
   },
   {
     tier: '50+ Accounts',
-    discount: 'Custom',
+    discount: 'Enterprise SLA',
     desc: 'Enterprise + dedicated manager',
     tag: 'ENTERPRISE'
   }
@@ -81,7 +81,7 @@ const partnershipTiersData = [
 
 const smmFaqsData = [
   {
-    q: 'What makes Digital Digix different from other agencies?',
+    q: 'What makes BeeSocial different from other agencies?',
     a: 'We focus on pure results with no long-term lock-in retainer traps, and we provide transparent pay-per-performance execution led directly by founders.'
   },
   {
@@ -93,7 +93,7 @@ const smmFaqsData = [
     a: 'Absolutely not. All our social media marketing packages are billed month-to-month. You are free to scale up, scale down, or cancel at any time with no penalties.'
   },
   {
-    q: 'Is post-pay available at Digital Digix?',
+    q: 'Is post-pay available at BeeSocial?',
     a: 'Yes, we offer pay-after-results or pay-per-outcome performance setups for qualified brands after aligning on upfront lead definitions and targets.'
   },
   {
@@ -137,10 +137,10 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
             }
           }}>Home</span> / {viewingSmmDetails ? (
             <>
-              <span style={{ cursor: 'pointer', color: 'var(--text-muted)' }} onClick={() => setViewingSmmDetails(false)}>Services & Transparent Pricing</span> / <span className="active">Social Media Marketing</span>
+              <span style={{ cursor: 'pointer', color: 'var(--text-muted)' }} onClick={() => setViewingSmmDetails(false)}>Our Services & Capabilities</span> / <span className="active">Social Media Marketing</span>
             </>
           ) : (
-            <span className="active">Services & Transparent Pricing</span>
+            <span className="active">Our Services & Capabilities</span>
           )}
         </div>
 
@@ -179,13 +179,13 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
 
             <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
               <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#D97706', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-                — TRANSPARENT VALUE —
+                — STRATEGY & SCOPE —
               </div>
               <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '0.75rem' }}>
-                Packages & Pay-As-You-Go
+                Social Media Packages
               </h2>
               <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)' }}>
-                Flexible plans, no retainer traps. Only pay for outcomes that matter.
+                Tailored content creation, community growth, and viral reach campaigns.
               </p>
             </div>
 
@@ -233,7 +233,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
                     </span>
                     <div style={{ display: 'flex', alignItems: 'baseline', marginTop: '0.4rem' }}>
                       <span style={{ fontSize: '2.5rem', fontWeight: 900, fontFamily: 'Outfit, serif' }}>
-                        ₹{pkg.price}
+                        Custom Plan
                       </span>
                       <span style={{ fontSize: '0.9rem', color: pkg.popular ? '#94A3B8' : '#64748B', marginLeft: '0.25rem', fontWeight: 600 }}>
                         /mo
@@ -251,7 +251,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
                   </ul>
 
                   <a
-                    href={`https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services`}
+                    href={`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services`}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
@@ -291,7 +291,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
                 — PAY-AS-YOU-GO —
               </div>
               <p style={{ fontSize: '1rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
-                Prefer outcomes over retainers? Our pay-per-performance model lets you pay only for leads that meet criteria agreed upfront — budget, location and intent. Single deliverables start tiny: posters from ₹149, reels from ₹380, dashboards from ₹2,000. <a href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" style={{ color: '#3B82F6', fontWeight: 800, textDecoration: 'underline' }}>Request a quote</a> and we'll build a plan around your numbers.
+                Prefer outcomes over retainers? Our pay-per-performance model lets you pay only for leads that meet criteria agreed upfront — budget, location and intent. From single creative deliverables to full multi-platform management. <a href="https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" style={{ color: '#3B82F6', fontWeight: 800, textDecoration: 'underline' }}>Request a quote</a> and we'll build a plan around your numbers.
               </p>
             </div>
 
@@ -304,7 +304,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
                 B2B & Agency Tiers
               </h2>
               <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)' }}>
-                White-label execution and volume pricing for agencies, resellers and enterprise teams.
+                White-label execution and dedicated management for agencies, resellers and enterprise teams.
               </p>
             </div>
 
@@ -421,7 +421,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
 
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <a
-                  href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services"
+                  href="https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary"
@@ -432,7 +432,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
                 <button
                   className="btn btn-secondary"
                   style={{ color: '#FFF', borderColor: 'rgba(255,255,255,0.3)', padding: '1rem 2.2rem', fontSize: '1rem' }}
-                  onClick={() => window.open('https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services', '_blank')}
+                  onClick={() => window.open('https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services', '_blank')}
                 >
                   Book SMM Strategy Call ➔
                 </button>
@@ -444,7 +444,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
             {/* HEADER & SUBTITLE MATCHING SCREENSHOT */}
             <div className="section-header" style={{ textAlign: 'left', maxWidth: '850px', margin: '0 0 2.5rem 0' }}>
               <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3.4rem', fontWeight: 900, marginBottom: '1rem', color: '#0F172A' }}>
-                Services & Transparent Pricing
+                Our Services & Capabilities
               </h1>
               <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
                 No lock-in contracts. No hidden fees. Click any service for the full breakdown: pain points, deliverables, approach and FAQs.
@@ -513,7 +513,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
                   {/* PRICE TAG & FULL DETAILS LINK MATCHING SCREENSHOT */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.15rem', marginTop: 'auto' }}>
                     <div style={{ fontFamily: 'Outfit', fontSize: '0.95rem', fontWeight: 800, color: '#3B82F6' }}>
-                      {service.pricing}
+                      
                     </div>
                     <div style={{ fontSize: '0.7rem', fontWeight: 800, color: '#3B82F6', letterSpacing: '0.05em' }}>
                       FULL DETAILS →
@@ -542,7 +542,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
 
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a
-                href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services"
+                href="https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary"
@@ -553,7 +553,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
               <button
                 className="btn btn-secondary"
                 style={{ color: '#FFF', borderColor: 'rgba(255,255,255,0.3)', padding: '0.9rem 1.8rem' }}
-                onClick={() => window.open('https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services', '_blank')}
+                onClick={() => window.open('https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services', '_blank')}
               >
                 Get Custom Quote ➔
               </button>
@@ -687,7 +687,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
                         </span>
                         <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', marginTop: '0.4rem' }}>
                           <span style={{ fontSize: '2.2rem', fontWeight: 900, fontFamily: 'Outfit, serif' }}>
-                            ₹{pkg.price}
+                            Custom Plan
                           </span>
                           <span style={{ fontSize: '0.85rem', color: pkg.popular ? '#94A3B8' : '#64748B', marginLeft: '0.25rem', fontWeight: 600 }}>
                             /mo
@@ -705,7 +705,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
                       </ul>
 
                       <a
-                        href={`https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services`}
+                        href={`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services`}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
@@ -743,7 +743,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
                     — PAY-AS-YOU-GO —
                   </div>
                   <p style={{ fontSize: '0.95rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
-                    Prefer outcomes over retainers? Our pay-per-performance model lets you pay only for leads that meet criteria agreed upfront — budget, location and intent. Single deliverables start tiny: posters from ₹149, reels from ₹380, dashboards from ₹2,000. <a href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" style={{ color: '#3B82F6', fontWeight: 800, textDecoration: 'underline' }}>Request a quote</a> and we'll build a plan around your numbers.
+                    Prefer outcomes over retainers? Our pay-per-performance model lets you pay only for leads that meet criteria agreed upfront — budget, location and intent. From single creative deliverables to full multi-platform management. <a href="https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" style={{ color: '#3B82F6', fontWeight: 800, textDecoration: 'underline' }}>Request a quote</a> and we'll build a plan around your numbers.
                   </p>
                 </div>
 
@@ -755,7 +755,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
                     B2B & Agency Tiers
                   </h3>
                   <p style={{ fontSize: '0.95rem', color: '#64748B' }}>
-                    White-label execution and volume pricing for agencies, resellers and enterprise teams.
+                    White-label execution and dedicated management for agencies, resellers and enterprise teams.
                   </p>
                 </div>
 
@@ -1073,7 +1073,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
               style={{ width: '100%', padding: '1rem' }}
               onClick={() => {
                 setSelectedService(null);
-                window.open(`https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services`, '_blank');
+                window.open(`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services`, '_blank');
               }}
             >
               Get Started with {selectedService.title} ➔

@@ -80,7 +80,7 @@ Visual content drives incredible engagement on GBP. Profiles with high-quality p
 If your business operates in multiple locations across a city (e.g., a chain of pharmacies in Hyderabad) or across the country, you must manage a separate GBP listing for *each* physical location. 
 
 - Do not point all profiles to the same homepage. Create dedicated "location pages" on your website and link each GBP to its respective location page.
-- Ensure naming conventions are consistent but distinct (e.g., "Digital Digix - Andheri" and "Digital Digix - Bandra").
+- Ensure naming conventions are consistent but distinct (e.g., "BeeSocial - Andheri" and "BeeSocial - Bandra").
 - Use a bulk management tool or agency to monitor reviews, update hours, and publish posts across all locations simultaneously.
 
 ## 8. Tracking Your GBP Performance with Built-in Analytics
@@ -140,8 +140,8 @@ It varies based on competition. In a low-competition niche, optimizing your prof
 
 ### Take Control of Your Local Search Presence
 
-A neglected Google Business Profile is a massive missed opportunity. At **Digital Digix**, we specialize in comprehensive local SEO and Map-Pack optimization for Indian businesses. We manage your profile, generate reviews, and ensure your business is the first one customers see when they search locally.
+A neglected Google Business Profile is a massive missed opportunity. At **BeeSocial**, we specialize in comprehensive local SEO and Map-Pack optimization for Indian businesses. We manage your profile, generate reviews, and ensure your business is the first one customers see when they search locally.
 
-Want to understand the broader strategy for your business growth? Connect with seasoned mentors at **digitaldigix.com**, a unique platform where business experts volunteer their time to guide SMBs to success.
+Want to understand the broader strategy for your business growth? Connect with seasoned mentors at **beesocial**, a unique platform where business experts volunteer their time to guide SMBs to success.
 
-Reach out to Digital Digix today and let's dominate your local market!
+Reach out to BeeSocial today and let's dominate your local market!

@@ -1,6 +1,6 @@
-# Robots.txt for Digital Digix
+# Robots.txt for BeeSocial
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://digitaldigix.com/sitemap.xml
+Sitemap: https://thebeesocial.in/sitemap.xml

@@ -236,19 +236,19 @@ Most business YouTube channels start seeing inquiries around the 20–30 video m
 
 ---
 
-## Build Your Authority on YouTube with Digital Digix
+## Build Your Authority on YouTube with BeeSocial
 
-YouTube marketing requires a unique blend of content strategy, video production knowledge, and SEO expertise that most business owners simply don't have time to develop while running their company. **Digital Digix** offers complete YouTube marketing services for Indian SMBs: channel strategy and setup, content calendar creation, video script writing, SEO optimisation for every video, thumbnail design, and monthly analytics reviews.
+YouTube marketing requires a unique blend of content strategy, video production knowledge, and SEO expertise that most business owners simply don't have time to develop while running their company. **BeeSocial** offers complete YouTube marketing services for Indian SMBs: channel strategy and setup, content calendar creation, video script writing, SEO optimisation for every video, thumbnail design, and monthly analytics reviews.
 
 We've helped Indian businesses across industries—from CA firms to fashion brands to educational institutes—build YouTube channels that generate consistent, high-quality leads month after month.
 
-🌐 **Visit:** [digitaldigix.com](https://digitaldigix.com)
+🌐 **Visit:** [beesocial](https://beesocial)
 📲 **WhatsApp us** for a free YouTube channel audit and 30-day content plan.
 
-Looking to connect with other Indian business owners building their brands online? **[Digital Digix](https://digitaldigix.com)** is a community of entrepreneurs, marketers, and SMB owners helping each other grow. Join the conversation.
+Looking to connect with other Indian business owners building their brands online? **[BeeSocial](https://beesocial)** is a community of entrepreneurs, marketers, and SMB owners helping each other grow. Join the conversation.
 
 *Start your YouTube journey today. The best time to plant a tree was 5 years ago. The second best time is now.*
 
 ---
 
-*© 2026 Digital Digix. All rights reserved. Helping Indian SMBs build authority through strategic YouTube marketing.*
+*© 2026 BeeSocial. All rights reserved. Helping Indian SMBs build authority through strategic YouTube marketing.*

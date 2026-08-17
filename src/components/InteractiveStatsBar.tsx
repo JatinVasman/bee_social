@@ -223,7 +223,7 @@ export const InteractiveStatsBar: React.FC<InteractiveStatsBarProps> = ({
             </div>
 
             <p style={{ color: '#475569', fontSize: '0.925rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-              From high-growth D2C brands and dental clinics to real estate developers and edtech platforms across 89 industries, Digital Digix delivers founder-led performance marketing.
+              From high-growth D2C brands and dental clinics to real estate developers and edtech platforms across 89 industries, BeeSocial delivers founder-led performance marketing.
             </p>
 
             <div style={{ background: '#F8FAFC', padding: '1.25rem', borderRadius: '16px', border: '1px solid #E2E8F0', marginBottom: '1.5rem' }}>
@@ -246,7 +246,7 @@ export const InteractiveStatsBar: React.FC<InteractiveStatsBarProps> = ({
                 if (onOpenStrategyModal) onOpenStrategyModal('Client Growth Partnership');
               }}
             >
-              Partner With Digital Digix ➔
+              Partner With BeeSocial ➔
             </button>
           </div>
         </div>

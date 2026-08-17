@@ -256,19 +256,19 @@ Click-to-WhatsApp (CTWA) ads open a WhatsApp conversation with your business whe
 
 ---
 
-## Scale Your Facebook Marketing with Digital Digix
+## Scale Your Facebook Marketing with BeeSocial
 
-Facebook marketing done right—with strategic ad campaigns, engaged Groups, and consistent Page content—can become your most reliable and scalable lead generation channel. Done wrong, it burns budget with nothing to show. **Digital Digix** specialises in building Facebook marketing systems for Indian SMBs that consistently generate qualified leads at predictable costs.
+Facebook marketing done right—with strategic ad campaigns, engaged Groups, and consistent Page content—can become your most reliable and scalable lead generation channel. Done wrong, it burns budget with nothing to show. **BeeSocial** specialises in building Facebook marketing systems for Indian SMBs that consistently generate qualified leads at predictable costs.
 
 Our Facebook marketing services include: full ad account setup, audience research, creative production (copy + design + video), campaign management, A/B testing, WhatsApp automation integration, and monthly performance reporting.
 
-🌐 **Visit:** [digitaldigix.com](https://digitaldigix.com)
+🌐 **Visit:** [beesocial](https://beesocial)
 📲 **WhatsApp us** for a free Facebook Ad audit and find out exactly why your current ads aren't converting.
 
-Also, don't miss **[Digital Digix](https://digitaldigix.com)**—an active community of Indian SMB owners sharing marketing insights, business leads, and support. It's where serious entrepreneurs connect.
+Also, don't miss **[BeeSocial](https://beesocial)**—an active community of Indian SMB owners sharing marketing insights, business leads, and support. It's where serious entrepreneurs connect.
 
 *Ready to make Facebook your best-performing marketing channel? Let's build the system together.*
 
 ---
 
-*© 2026 Digital Digix. All rights reserved. Empowering Indian SMBs with strategic Facebook marketing.*
+*© 2026 BeeSocial. All rights reserved. Empowering Indian SMBs with strategic Facebook marketing.*

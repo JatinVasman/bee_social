@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 export const ChatbotWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<{ sender: 'user' | 'bot'; text: string }[]>([
-    { sender: 'bot', text: "👋 Hi! I'm DigiBot. Looking to double your ROI or scale paid ads? Type your query!" }
+    { sender: 'bot', text: "👋 Hi! I'm BeeBot. Looking to double your ROI or scale paid ads? Type your query!" }
   ]);
   const [input, setInput] = useState('');
 
@@ -16,7 +16,7 @@ export const ChatbotWidget: React.FC = () => {
     setTimeout(() => {
       let reply = `Thanks for reaching out regarding "${userText}". Would you like to book a 1-on-1 strategy call with our growth team?`;
       if (/price|cost|plan/i.test(userText)) {
-        reply = 'Our plans range from Starter (₹24,999/mo) to Growth (₹49,999/mo) and Enterprise (₹99,999/mo). Can I send you a proposal?';
+        reply = 'We offer customized plans tailored to your brand goals and requirements. Would you like to book a quick consultation with our team?';
       } else if (/seo|google|rank/i.test(userText)) {
         reply = 'Our SEO Hub covers Technical, On-Page, Schema & AI Search (GEO). We guarantee rank growth within 90 days!';
       }
@@ -26,7 +26,7 @@ export const ChatbotWidget: React.FC = () => {
 
   return (
     <>
-      <button className="floating-chatbot-btn" onClick={() => setIsOpen(!isOpen)} title="Chat with DigiBot">
+      <button className="floating-chatbot-btn" onClick={() => setIsOpen(!isOpen)} title="Chat with BeeBot">
         💬
       </button>
 
@@ -36,7 +36,7 @@ export const ChatbotWidget: React.FC = () => {
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <span style={{ fontSize: '1.25rem' }}>🤖</span>
               <div>
-                <div style={{ fontSize: '0.9rem', fontWeight: 700 }}>DigiBot AI Assistant</div>
+                <div style={{ fontSize: '0.9rem', fontWeight: 700 }}>BeeBot AI Assistant</div>
                 <div style={{ fontSize: '0.7rem', color: 'var(--green-accent)' }}>● Online</div>
               </div>
             </div>

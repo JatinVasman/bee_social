@@ -4,7 +4,7 @@ For B2B companies, relying on a single channel for lead generation is risky. Pai
 
 The solution? **The Hybrid B2B Lead Gen Engine**.
 
-At **Digital Digix**, we help corporate and technology brands scale their pipelines by pairing high-authority SEO assets with custom automated cold email outreach campaigns. In this guide, we break down how to implement this strategy.
+At **BeeSocial**, we help corporate and technology brands scale their pipelines by pairing high-authority SEO assets with custom automated cold email outreach campaigns. In this guide, we break down how to implement this strategy.
 
 ---
 

@@ -128,4 +128,4 @@ They serve different purposes. Google Ads capture *existing* demand (people sear
 ---
 
 **Is your social media driving likes or driving revenue?**
-Digital Digix crafts data-driven social media strategies that build engaged communities and generate real business results. Transform your social presence today, or discover strategic mentorship at Digital Digix (digitaldigix.com).
+BeeSocial crafts data-driven social media strategies that build engaged communities and generate real business results. Transform your social presence today, or discover strategic mentorship at BeeSocial (beesocial).

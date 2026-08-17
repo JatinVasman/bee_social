@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 interface AboutUsProps {
   onNavigate?: (page: any, slug?: string) => void;
-  onOpenLeaderModal?: (person: 'founder' | 'harsh' | 'co-founder' | 'khwahish' | 'why-us' | 'team') => void;
+  onOpenLeaderModal?: (person: 'founder' | 'why-us' | 'team') => void;
   onOpenStrategyModal?: (note?: string) => void;
   onSelectLocation?: (locationName: string) => void;
   backgroundColor?: string;
@@ -16,44 +16,44 @@ export const AboutUs: React.FC<AboutUsProps> = ({
   onSelectLocation: _onSelectLocation,
   backgroundColor
 }) => {
-  const [hoveredLeader, setHoveredLeader] = useState<'founder' | 'harsh' | 'co-founder' | 'khwahish' | null>(null);
+  const [hoveredLeader, setHoveredLeader] = useState<'founder' | null>(null);
 
   const coreServices = [
     {
-      title: 'Search Engine Optimization (SEO)',
-      slug: 'seo',
-      icon: '🔍',
-      desc: 'Technical SEO, Generative Engine Optimization (GEO), and high-intent keyword ranking that drives predictable organic pipeline.'
+      title: 'Social Media Marketing (SMM)',
+      slug: 'social-media-marketing',
+      icon: '📱',
+      desc: 'Engaging content calendars, viral reels, community management, and organic growth strategies that build loyal audiences for your brand.'
     },
     {
       title: 'Performance Marketing & Paid Ads',
       slug: 'paid-ads',
       icon: '🎯',
-      desc: 'High-ROAS Google Ads, Meta Advantage+ and YouTube campaigns engineered with continuous creative experimentation.'
+      desc: 'High-ROAS Google Ads, Meta Advantage+ and YouTube campaigns designed to drive targeted traffic and quality leads.'
     },
     {
-      title: 'Social Media Marketing (SMM)',
-      slug: 'social-media-marketing',
-      icon: '📱',
-      desc: 'Viral UGC reels, custom monthly content calendars, and community engagement designed for brand authority and inbound inquiries.'
+      title: 'Search Engine Optimization (SEO)',
+      slug: 'seo',
+      icon: '🔍',
+      desc: 'Technical SEO, on-page optimization, and high-intent keyword ranking that drives predictable organic pipeline for your business.'
     },
     {
       title: 'Conversion-First Web Development',
       slug: 'web-development',
       icon: '💻',
-      desc: 'Ultra-fast, mobile-responsive web applications built with React, Next.js, and modern SEO architecture.'
+      desc: 'Ultra-fast, mobile-responsive web applications built with modern architecture that turn visitors into customers.'
     },
     {
       title: 'Brand Identity & Graphic Design',
       slug: 'branding',
       icon: '🎨',
-      desc: 'Logos, packaging, pitch decks, and brand guideline systems that establish instant credibility and command higher margins.'
+      desc: 'Logos, social media templates, pitch decks, and brand guideline systems that establish instant credibility and recognition.'
     },
     {
-      title: 'B2B Lead Generation & Funnels',
-      slug: 'lead-generation',
+      title: 'Content Creation & UGC',
+      slug: 'ugc-reels-creator-marketing',
       icon: '⚡',
-      desc: 'Account-based outbound campaigns, automated CRM integrations, and WhatsApp conversion funnels that fill sales calendars.'
+      desc: 'Scroll-stopping reels, brand storytelling, creator collaborations, and UGC campaigns that capture attention and spark engagement.'
     }
   ];
 
@@ -64,14 +64,14 @@ export const AboutUs: React.FC<AboutUsProps> = ({
         {/* 1. HERO HEADER & TAGLINE */}
         <div className="section-header" style={{ textAlign: 'center', maxWidth: '850px', margin: '0 auto 4rem auto' }}>
           <div className="section-tag" style={{ letterSpacing: '0.1em' }}>
-            SEEN. HEARD. CHOSEN. — ABOUT DIGITAL DIGIX
+            SCROLL. STOP. ENGAGE. — ABOUT BEESOCIAL
           </div>
           <h2 style={{ fontSize: '3.2rem', fontWeight: 900, marginBottom: '1.25rem', lineHeight: 1.15 }}>
-            We Don't Just Run Ads. <br />
-            We Build Market Leaders.
+            We Don't Just Post Content. <br />
+            We Build Communities.
           </h2>
           <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', lineHeight: 1.7, maxWidth: '720px', margin: '0 auto' }}>
-            Premium creative, data-driven performance, transparent pricing, and custom live growth dashboards. Founded on accountability, zero lock-in contracts, and founder-led execution.
+            Creative storytelling, data-driven campaigns, and authentic engagement. We help brands find their voice, grow their audience, and turn followers into loyal customers.
           </p>
         </div>
 
@@ -87,7 +87,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({
               <div style={{ fontSize: '1.75rem', marginBottom: '0.5rem', color: 'var(--primary)' }}>👑</div>
               <h4 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '0.4rem', color: 'var(--secondary)', fontFamily: 'Outfit, sans-serif' }}>Founder-Led Accounts</h4>
               <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
-                Senior founders Harsh Chaudhary (CEO) and Khwahish Sahai (Creative Director) directly manage and oversee your campaigns.
+                Our founder Siddhi directly oversees strategy and creative direction for every client account.
               </p>
             </div>
 
@@ -100,47 +100,47 @@ export const AboutUs: React.FC<AboutUsProps> = ({
             </div>
 
             <div className="differentiator-card" onClick={() => { if (onOpenLeaderModal) onOpenLeaderModal('why-us'); }}>
-              <div style={{ fontSize: '1.75rem', marginBottom: '0.5rem', color: 'var(--primary)' }}>💳</div>
-              <h4 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '0.4rem', color: 'var(--secondary)', fontFamily: 'Outfit, sans-serif' }}>Post-Pay Flexibility</h4>
+              <div style={{ fontSize: '1.75rem', marginBottom: '0.5rem', color: 'var(--primary)' }}>🎨</div>
+              <h4 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '0.4rem', color: 'var(--secondary)', fontFamily: 'Outfit, sans-serif' }}>Creative Excellence</h4>
               <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
-                Flexible milestone-based payment structures aligned directly with campaign execution and performance deliverables.
+                Every post, reel, and campaign is crafted with attention to detail that makes your brand impossible to scroll past.
               </p>
             </div>
 
             <div className="differentiator-card" onClick={() => { if (onOpenLeaderModal) onOpenLeaderModal('why-us'); }}>
               <div style={{ fontSize: '1.75rem', marginBottom: '0.5rem', color: 'var(--primary)' }}>📊</div>
-              <h4 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '0.4rem', color: 'var(--secondary)', fontFamily: 'Outfit, sans-serif' }}>Data Science Meets Design</h4>
+              <h4 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '0.4rem', color: 'var(--secondary)', fontFamily: 'Outfit, sans-serif' }}>Data Meets Design</h4>
               <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
-                Custom real-time KPI and revenue dashboards giving you 100% complete transparency into ad spend, leads, and ROAS.
+                We track every metric that matters — reach, engagement, conversions — so your creative investment delivers real business results.
               </p>
             </div>
           </div>
         </div>
 
-        {/* 5. LEADERSHIP SECTION (WITH REAL FOUNDER PHOTOS) */}
+        {/* 5. LEADERSHIP SECTION */}
         <div style={{ marginBottom: '5rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <span className="section-tag">EXECUTIVE LEADERSHIP</span>
-            <h3 style={{ fontSize: '2.5rem', fontWeight: 900 }}>Meet the Founders Behind Digital Digix</h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>Direct founder oversight on every client strategy</p>
+            <span className="section-tag">LEADERSHIP</span>
+            <h3 style={{ fontSize: '2.5rem', fontWeight: 900 }}>Meet the Founder Behind BeeSocial</h3>
+            <p style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>Founder-led creative direction on every project</p>
           </div>
 
-          <div className="responsive-2-grid" style={{ maxWidth: '980px', margin: '0 auto' }}>
+          <div style={{ maxWidth: '600px', margin: '0 auto' }}>
             
-            {/* HARSH CHAUDHARY - FOUNDER & CEO */}
+            {/* SIDDHI - FOUNDER */}
             <div 
               style={{ 
                 background: 'linear-gradient(145deg, var(--bg-card) 0%, rgba(59, 130, 246, 0.02) 100%)', 
                 border: '1px solid var(--border-color)', 
-                borderTop: (hoveredLeader === 'founder' || hoveredLeader === 'harsh') ? '4px solid var(--primary)' : '4px solid var(--border-color)',
+                borderTop: hoveredLeader === 'founder' ? '4px solid var(--primary)' : '4px solid var(--border-color)',
                 borderRadius: '24px', 
                 padding: '2rem 1.75rem', 
                 display: 'flex', 
                 gap: '1.75rem', 
                 alignItems: 'center', 
-                boxShadow: (hoveredLeader === 'founder' || hoveredLeader === 'harsh') ? '0 20px 40px rgba(59, 130, 246, 0.08)' : 'var(--shadow-sm)', 
+                boxShadow: hoveredLeader === 'founder' ? '0 20px 40px rgba(59, 130, 246, 0.08)' : 'var(--shadow-sm)', 
                 cursor: 'pointer', 
-                transform: (hoveredLeader === 'founder' || hoveredLeader === 'harsh') ? 'translateY(-6px)' : 'translateY(0)',
+                transform: hoveredLeader === 'founder' ? 'translateY(-6px)' : 'translateY(0)',
                 transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)' 
               }}
               onClick={() => { if (onOpenLeaderModal) onOpenLeaderModal('founder'); }}
@@ -148,8 +148,8 @@ export const AboutUs: React.FC<AboutUsProps> = ({
               onMouseLeave={() => setHoveredLeader(null)}
             >
               <img
-                src="/harsh_chaudhary.png"
-                alt="Harsh Chaudhary - Founder & CEO"
+                src="/Siddhi.png"
+                alt="Siddhi - Founder"
                 width="100"
                 height="100"
                 loading="lazy"
@@ -159,42 +159,20 @@ export const AboutUs: React.FC<AboutUsProps> = ({
                   height: '100px',
                   borderRadius: '50%',
                   objectFit: 'cover',
-                  border: (hoveredLeader === 'founder' || hoveredLeader === 'harsh') ? '4px solid var(--primary)' : '3px solid var(--border-color)',
-                  boxShadow: (hoveredLeader === 'founder' || hoveredLeader === 'harsh') ? '0 8px 24px rgba(59, 130, 246, 0.2)' : 'var(--shadow-md)',
+                  border: hoveredLeader === 'founder' ? '4px solid var(--primary)' : '3px solid var(--border-color)',
+                  boxShadow: hoveredLeader === 'founder' ? '0 8px 24px rgba(59, 130, 246, 0.2)' : 'var(--shadow-md)',
                   flexShrink: 0,
-                  transform: (hoveredLeader === 'founder' || hoveredLeader === 'harsh') ? 'scale(1.08) rotate(4deg)' : 'scale(1) rotate(0)',
+                  transform: hoveredLeader === 'founder' ? 'scale(1.08) rotate(4deg)' : 'scale(1) rotate(0)',
                   transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
                 }}
               />
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem', flexGrow: 1 }}>
-                <h4 style={{ fontSize: '1.45rem', fontWeight: 900, color: 'var(--secondary)', margin: 0, fontFamily: 'Outfit, sans-serif' }}>Harsh Chaudhary</h4>
+                <h4 style={{ fontSize: '1.45rem', fontWeight: 900, color: 'var(--secondary)', margin: 0, fontFamily: 'Outfit, sans-serif' }}>Siddhi</h4>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem', flexWrap: 'wrap' }}>
-                  <div style={{ color: 'var(--primary)', fontWeight: 800, fontSize: '0.78rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Founder & CEO</div>
-                  <a
-                    href="https://www.linkedin.com/in/heyharsh2026/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      backgroundColor: '#0F172A',
-                      color: '#FFFFFF',
-                      padding: '0.35rem 0.85rem',
-                      borderRadius: '999px',
-                      fontSize: '0.7rem',
-                      fontWeight: 700,
-                      textDecoration: 'none',
-                      transition: 'all 0.2s ease'
-                    }}
-                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#0077B5'}
-                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#0F172A'}
-                  >
-                    LinkedIn ↗
-                  </a>
+                  <div style={{ color: 'var(--primary)', fontWeight: 800, fontSize: '0.78rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Founder</div>
                 </div>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.5, margin: '0.2rem 0', minHeight: '3.4rem' }}>
-                  Performance marketing architecture, brand positioning, and B2B growth strategy — scaling brands across India.
+                  The creative vision behind BeeSocial — building brands that connect, engage, and grow on social media.
                 </p>
                 <div style={{ 
                   color: 'var(--primary)', 
@@ -203,94 +181,10 @@ export const AboutUs: React.FC<AboutUsProps> = ({
                   display: 'flex', 
                   alignItems: 'center', 
                   gap: '0.25rem',
-                  transform: (hoveredLeader === 'founder' || hoveredLeader === 'harsh') ? 'translateX(6px)' : 'translateX(0)',
+                  transform: hoveredLeader === 'founder' ? 'translateX(6px)' : 'translateX(0)',
                   transition: 'all 0.3s ease'
                 }}>
-                  READ THEIR STORY →
-                </div>
-              </div>
-            </div>
-
-            {/* KHWAHISH SAHAI - CO-FOUNDER & CREATIVE DIRECTOR */}
-            <div 
-              className="leader-card" 
-              style={{ 
-                background: 'var(--bg-card)', 
-                border: (hoveredLeader === 'co-founder' || hoveredLeader === 'khwahish') ? '1px solid var(--green-accent)' : '1px solid var(--border-color)', 
-                borderRadius: '24px', 
-                padding: '2rem', 
-                display: 'flex', 
-                alignItems: 'center', 
-                gap: '1.75rem', 
-                boxShadow: (hoveredLeader === 'co-founder' || hoveredLeader === 'khwahish') ? '0 20px 40px rgba(16, 185, 129, 0.08)' : 'var(--shadow-sm)', 
-                cursor: 'pointer', 
-                transform: (hoveredLeader === 'co-founder' || hoveredLeader === 'khwahish') ? 'translateY(-6px)' : 'translateY(0)',
-                transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)' 
-              }}
-              onClick={() => { if (onOpenLeaderModal) onOpenLeaderModal('co-founder'); }}
-              onMouseEnter={() => setHoveredLeader('co-founder')}
-              onMouseLeave={() => setHoveredLeader(null)}
-            >
-              <img
-                src="/khwahish_sahai.png"
-                alt="Khwahish Sahai - Co-Founder & Creative Director"
-                width="100"
-                height="100"
-                loading="lazy"
-                decoding="async"
-                style={{
-                  width: '100px',
-                  height: '100px',
-                  borderRadius: '50%',
-                  objectFit: 'cover',
-                  border: (hoveredLeader === 'co-founder' || hoveredLeader === 'khwahish') ? '4px solid var(--green-accent)' : '3px solid var(--border-color)',
-                  boxShadow: (hoveredLeader === 'co-founder' || hoveredLeader === 'khwahish') ? '0 8px 24px rgba(16, 185, 129, 0.2)' : 'var(--shadow-md)',
-                  flexShrink: 0,
-                  transform: (hoveredLeader === 'co-founder' || hoveredLeader === 'khwahish') ? 'scale(1.08) rotate(-4deg)' : 'scale(1) rotate(0)',
-                  transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
-                }}
-              />
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem', flexGrow: 1 }}>
-                <h4 style={{ fontSize: '1.45rem', fontWeight: 900, color: 'var(--secondary)', margin: 0, fontFamily: 'Outfit, sans-serif' }}>Khwahish Sahai</h4>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem', flexWrap: 'wrap' }}>
-                  <div style={{ color: 'var(--green-accent)', fontWeight: 800, fontSize: '0.78rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Co-Founder & Creative Director</div>
-                  <a
-                    href="https://www.linkedin.com/in/khwahish-sahai/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      backgroundColor: '#0F172A',
-                      color: '#FFFFFF',
-                      padding: '0.35rem 0.85rem',
-                      borderRadius: '999px',
-                      fontSize: '0.7rem',
-                      fontWeight: 700,
-                      textDecoration: 'none',
-                      transition: 'all 0.2s ease'
-                    }}
-                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#0077B5'}
-                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#0F172A'}
-                  >
-                    LinkedIn ↗
-                  </a>
-                </div>
-                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.5, margin: '0.2rem 0', minHeight: '3.4rem' }}>
-                  The premium creative standard behind every identity, campaign and conversion-first design.
-                </p>
-                <div style={{ 
-                  color: 'var(--green-accent)', 
-                  fontWeight: 800, 
-                  fontSize: '0.78rem', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  gap: '0.25rem',
-                  transform: (hoveredLeader === 'co-founder' || hoveredLeader === 'khwahish') ? 'translateX(6px)' : 'translateX(0)',
-                  transition: 'all 0.3s ease'
-                }}>
-                  READ THEIR STORY →
+                  LEARN MORE →
                 </div>
               </div>
             </div>
@@ -301,9 +195,9 @@ export const AboutUs: React.FC<AboutUsProps> = ({
         {/* 6. CORE GROWTH SERVICES & CAPABILITIES */}
         <div style={{ marginBottom: '2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <span className="section-tag">SERVICES & EXECUTION</span>
-            <h3 style={{ fontSize: '2.2rem', fontWeight: 900 }}>Our Core Growth Disciplines</h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>Click any capability to view full deliverables, workflows, and pricing</p>
+            <span className="section-tag">SERVICES & CAPABILITIES</span>
+            <h3 style={{ fontSize: '2.2rem', fontWeight: 900 }}>What We Do Best</h3>
+            <p style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>Click any capability to view full details</p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', maxWidth: '1080px', margin: '0 auto' }}>
@@ -348,7 +242,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({
                   {srv.desc}
                 </p>
                 <div style={{ fontSize: '0.85rem', fontWeight: 800, color: '#FF4E27', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                  <span>Explore Service & Plans</span>
+                  <span>Explore Service</span>
                   <span>➔</span>
                 </div>
               </div>

@@ -119,4 +119,4 @@ As short as possible while still qualifying the user. Usually, Name, Phone Numbe
 ---
 
 **Struggling to generate high-quality leads?**
-Digital Digix builds automated, high-converting lead generation machines for Indian SMBs. Turn your website into a 24/7 salesperson, or connect with Digital Digix (digitaldigix.com) to strategize your next big campaign.
+BeeSocial builds automated, high-converting lead generation machines for Indian SMBs. Turn your website into a 24/7 salesperson, or connect with BeeSocial (beesocial) to strategize your next big campaign.

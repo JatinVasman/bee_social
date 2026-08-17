@@ -120,7 +120,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigate, onOpenStrategyMo
       {/* === HERO SECTION === */}
       <section className="bv-hero">
         <p className="bv-hero-eyebrow">— INSIGHTS —</p>
-        <h1 className="bv-hero-title">The Digital Digix Blog</h1>
+        <h1 className="bv-hero-title">The BeeSocial Blog</h1>
         <p className="bv-hero-sub">
           {ALL_BLOGS.length}+ SEO articles and pillar guides across services and industries —<br />
           written for humans, structured for Google and AI search.
@@ -244,8 +244,8 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigate, onOpenStrategyMo
             <button className="bv-btn bv-btn-primary" onClick={() => onOpenStrategyModal('Blog Page CTA')}>
               Get Free Strategy Call
             </button>
-            <a className="bv-btn bv-btn-outline" href="tel:+918586989832">
-              📞 +91 85869 89832
+            <a className="bv-btn bv-btn-outline" href="tel:+917020800621">
+              📞 +91 70208 00621
             </a>
           </div>
         </div>

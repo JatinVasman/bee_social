@@ -18,30 +18,30 @@ export const Hero: React.FC<HeroProps> = ({
       <div className="container hero-grid">
         <div className="hero-content">
           <div className="hero-tag">
-            🎯 AI-POWERED DIGITAL MARKETING AGENCY
+            🐝 CREATIVE SOCIAL MEDIA & MARKETING AGENCY
           </div>
           <h1 className="hero-title">
-            We Build Brands <br />
-            That Get <span className="text-red">Noticed.</span>
+            Your Brand, <br />
+            Socially <span className="text-red">Unstoppable.</span>
           </h1>
           <p className="hero-subtext">
-            From social media marketing and high-converting websites to scroll-stopping designs, we create digital experiences that turn attention into growth.
+            From scroll-stopping social media content and high-impact campaigns to stunning designs, we help brands build engaged communities that drive real growth.
           </p>
           <div className="hero-buttons">
             <button className="btn btn-primary" onClick={onNavigateServices}>
-              Grow Your Brand ➔
+              Explore Our Services ➔
             </button>
             <button className="btn btn-secondary" onClick={onNavigatePortfolio}>
-              Explore Our Work ➔
+              See Our Work ➔
             </button>
           </div>
         </div>
 
-        {/* Hero Building Visual Container matching Image 1 & Image 2 exactly */}
+        {/* Hero Building Visual Container */}
         <div className="hero-building-wrapper">
           <img
             src="/building.jpg"
-            alt="Digital Digix Headquarters Facade"
+            alt="BeeSocial Creative Agency"
             className="hero-building-img"
             fetchPriority="high"
             decoding="async"

@@ -97,7 +97,7 @@ On-page SEO is the art and science of making each page on your website as releva
 3. **Research:** Check search volume and competition using Ubersuggest (free) or Ahrefs Free Keyword Generator
 4. **Classify by intent:**
    - Informational: "How to save tax as an Indian small business owner"
-   - Navigational: "Digital Digix contact"
+   - Navigational: "BeeSocial contact"
    - Transactional: "digital marketing agency Pune pricing"
    - Commercial: "best CA firm Ahmedabad review"
 5. **Prioritise:** Start with low-competition, long-tail keywords that closely match your services
@@ -249,7 +249,7 @@ Many business owners give up on SEO because they measure the wrong metrics. Here
 Technical SEO fixes show results in 30–60 days. Local SEO (Google Business Profile) improvements show results in 30–90 days. Content SEO (blog posts ranking in Google) typically takes 3–6 months per article to reach meaningful positions. Full organic lead generation usually kicks in at the 6–12 month mark. SEO is a long game, but the compounding returns are unmatched.
 
 **Q2: Should I do SEO myself or hire an agency?**
-For basic local SEO and content publishing, a motivated business owner can self-manage with the right guidance. For technical SEO, competitive industries, or rapid growth targets, an experienced agency like Digital Digix that understands the Indian market will deliver significantly better results. A hybrid approach — agency for strategy and technical work, in-house for content — often yields the best ROI.
+For basic local SEO and content publishing, a motivated business owner can self-manage with the right guidance. For technical SEO, competitive industries, or rapid growth targets, an experienced agency like BeeSocial that understands the Indian market will deliver significantly better results. A hybrid approach — agency for strategy and technical work, in-house for content — often yields the best ROI.
 
 **Q3: Is it worth doing SEO in Hindi and regional languages?**
 Yes — emphatically. Hindi and regional language SEO has dramatically lower competition than English, and regional language searches are growing faster. For businesses targeting Tier 2/Tier 3 cities or regional markets (Marathi, Tamil, Telugu, Kannada speakers), regional language SEO can deliver first-page rankings within weeks that would take months in English.
@@ -262,19 +262,19 @@ Older and better does not mean better SEO. Your competitor likely has: more opti
 
 ---
 
-## Rank Higher, Grow Faster with Digital Digix's SEO Services
+## Rank Higher, Grow Faster with BeeSocial's SEO Services
 
-SEO is complex, technical, and constantly evolving — but it is also the marketing channel with the highest long-term ROI for Indian SMBs. **Digital Digix** provides end-to-end SEO services tailored to the Indian market: technical audits and fixes, local SEO and GBP management, keyword research and content strategy, on-page optimisation, link building, and monthly rank-tracking reports with actionable insights.
+SEO is complex, technical, and constantly evolving — but it is also the marketing channel with the highest long-term ROI for Indian SMBs. **BeeSocial** provides end-to-end SEO services tailored to the Indian market: technical audits and fixes, local SEO and GBP management, keyword research and content strategy, on-page optimisation, link building, and monthly rank-tracking reports with actionable insights.
 
 We've helped Indian businesses across Tier 1, 2, and 3 cities achieve first-page Google rankings and convert that visibility into consistent, measurable leads.
 
-🌐 **Visit:** [digitaldigix.com](https://digitaldigix.com)
+🌐 **Visit:** [beesocial](https://beesocial)
 📲 **WhatsApp us** for a free SEO audit — we'll show you exactly where your website stands and what it will take to rank.
 
-And join the **[Digital Digix](https://digitaldigix.com)** community — a thriving network of Indian entrepreneurs where you can learn from peers, share challenges, and find growth opportunities.
+And join the **[BeeSocial](https://beesocial)** community — a thriving network of Indian entrepreneurs where you can learn from peers, share challenges, and find growth opportunities.
 
 *SEO isn't a cost — it's an investment that pays dividends for years. Let's start building yours today.*
 
 ---
 
-*© 2026 Digital Digix. All rights reserved. Helping Indian businesses rank higher and grow faster through strategic SEO.*
+*© 2026 BeeSocial. All rights reserved. Helping Indian businesses rank higher and grow faster through strategic SEO.*

@@ -174,7 +174,7 @@ If you'd like a free 15-min call to apply this to your specific business, just r
 
 No obligation, just value. 🙏
 
-— [Your Name], Digital Digix
+— [Your Name], BeeSocial
 ```
 
 ---
@@ -208,7 +208,7 @@ Set up a simple monthly content audit:
 ## FAQ: Content Marketing for Indian Businesses in 2026
 
 **Q1: How long does it take to see results from content marketing in India?**
-Typically 4–6 months for initial organic traffic, and 9–12 months for consistent lead generation. This timeline shortens significantly if you target low-competition regional keywords or niche industries. Many of our clients at Digital Digix start seeing measurable organic traffic by month 3 when they follow a structured strategy.
+Typically 4–6 months for initial organic traffic, and 9–12 months for consistent lead generation. This timeline shortens significantly if you target low-competition regional keywords or niche industries. Many of our clients at BeeSocial start seeing measurable organic traffic by month 3 when they follow a structured strategy.
 
 **Q2: Should I write in Hindi or English for my blog?**
 It depends on your target audience. If your customers are primarily Hindi-speaking, regional-language content will have far less competition and higher relevance. English content works well for B2B, tech, finance, and urban markets. The safest strategy is to maintain an English blog for SEO and share Hindi/regional summaries via WhatsApp and Instagram.
@@ -220,23 +220,23 @@ There's no magic number, but most SEO experts agree that building a topical clus
 Absolutely—this is the most efficient content marketing strategy. One 2,000-word blog post can become: 1 LinkedIn article, 5 Instagram carousel slides, 1 YouTube script, 3 WhatsApp tips, 1 email newsletter, and 2 Twitter/X threads. This is called the "Content Multiplication" method and dramatically reduces your content creation workload.
 
 **Q5: Do I need to hire a content writer or can I do it myself?**
-You can absolutely write your own content, especially since you have domain expertise that a generalist writer won't have. The key is to invest 2–3 hours per post, follow an SEO structure, and edit ruthlessly. As your business grows, outsourcing to a quality agency like Digital Digix will free your time for higher-value activities while maintaining content quality and consistency.
+You can absolutely write your own content, especially since you have domain expertise that a generalist writer won't have. The key is to invest 2–3 hours per post, follow an SEO structure, and edit ruthlessly. As your business grows, outsourcing to a quality agency like BeeSocial will free your time for higher-value activities while maintaining content quality and consistency.
 
 ---
 
-## Your Next Step: Build Your Content Engine with Digital Digix
+## Your Next Step: Build Your Content Engine with BeeSocial
 
 Content marketing is one of the most powerful investments an Indian SMB can make in 2026—but it requires strategy, consistency, and execution. Most business owners start with good intentions and stall within 60 days because they're running a business, not a content studio.
 
-That's exactly where **Digital Digix** steps in. We build complete content ecosystems for Indian SMBs—keyword research, content calendars, SEO-optimised blog writing, WhatsApp content strategy, and monthly performance reports—so you can focus on running your business while your content works 24/7.
+That's exactly where **BeeSocial** steps in. We build complete content ecosystems for Indian SMBs—keyword research, content calendars, SEO-optimised blog writing, WhatsApp content strategy, and monthly performance reports—so you can focus on running your business while your content works 24/7.
 
-🌐 **Visit us:** [digitaldigix.com](https://digitaldigix.com)
+🌐 **Visit us:** [beesocial](https://beesocial)
 📲 **WhatsApp:** Start a conversation and get a free content audit for your business.
 
-And if you're a business owner looking to connect with like-minded entrepreneurs, growth resources, and marketing mentorship, check out **[Digital Digix](https://digitaldigix.com)**—a community dedicated to helping Indian businesses grow smarter.
+And if you're a business owner looking to connect with like-minded entrepreneurs, growth resources, and marketing mentorship, check out **[BeeSocial](https://beesocial)**—a community dedicated to helping Indian businesses grow smarter.
 
 *Ready to turn your expertise into a content machine? Let's build it together.*
 
 ---
 
-*© 2026 Digital Digix. All rights reserved. Written for Indian SMBs looking to grow through strategic content marketing.*
+*© 2026 BeeSocial. All rights reserved. Written for Indian SMBs looking to grow through strategic content marketing.*

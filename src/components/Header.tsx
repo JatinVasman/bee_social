@@ -70,26 +70,20 @@ export const Header: React.FC<HeaderProps> = ({
     <div className={`header-wrapper ${isScrolled ? 'header-wrapper--scrolled' : ''} ${isVisible ? 'header-wrapper--visible' : 'header-wrapper--hidden'}`}>
       <header className="header">
         <div className="header-container">
-          {/* OFFICIAL DIGITAL DIGIX LOGO */}
-          <div className="logo" onClick={() => onNavigate('home')} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', cursor: 'pointer', flexShrink: 0 }}>
+          {/* OFFICIAL BEESOCIAL LOGO */}
+          <div className="logo" onClick={() => onNavigate('home')} style={{ display: 'flex', alignItems: 'center', cursor: 'pointer', flexShrink: 0 }}>
             <img
-              src="/digital_digix_logo.png"
-              alt="Digital Digix Logo"
-              width="38"
-              height="38"
+              src="/bee_social_logo.png"
+              alt="BeeSocial"
               decoding="async"
               style={{
-                width: '38px',
-                height: '38px',
-                borderRadius: '10px',
-                objectFit: 'cover',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-                border: '1px solid rgba(255,255,255,0.1)'
+                height: '46px',
+                width: 'auto',
+                maxHeight: '46px',
+                objectFit: 'contain',
+                display: 'block'
               }}
             />
-            <span style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 900, fontSize: '1.3rem', letterSpacing: '-0.02em', color: 'var(--secondary)', whiteSpace: 'nowrap' }}>
-              Digital Digix
-            </span>
           </div>
 
           {/* Navigation Track (Desktop Only) */}
@@ -165,7 +159,7 @@ export const Header: React.FC<HeaderProps> = ({
                       onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFF1EE')}
                       onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
                     >
-                      About Digital Digix
+                      About BeeSocial
                     </button>
 
                     <button
@@ -188,30 +182,7 @@ export const Header: React.FC<HeaderProps> = ({
                       onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFF1EE')}
                       onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
                     >
-                      Founder — <strong>Harsh Chaudhary</strong>
-                    </button>
-
-                    <button
-                      onClick={() => {
-                        setIsAboutDropdownOpen(false);
-                        onNavigate('about', 'co-founder');
-                      }}
-                      style={{
-                        textAlign: 'left',
-                        padding: '0.65rem 1rem',
-                        borderRadius: '12px',
-                        fontSize: '0.875rem',
-                        fontWeight: 500,
-                        color: '#475569',
-                        transition: 'var(--transition)',
-                        background: 'transparent',
-                        border: 'none',
-                        cursor: 'pointer'
-                      }}
-                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFF1EE')}
-                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
-                    >
-                      Co-Founder — <strong>Khwahish Sahai</strong>
+                      Founder — <strong>Siddhi</strong>
                     </button>
 
                     <button
@@ -234,7 +205,7 @@ export const Header: React.FC<HeaderProps> = ({
                       onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFF1EE')}
                       onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
                     >
-                      Why Digital Digix
+                      Why BeeSocial
                     </button>
 
                     <button
@@ -276,13 +247,6 @@ export const Header: React.FC<HeaderProps> = ({
               className={`nav-link-item ${activePage === 'industries' ? 'active' : ''}`}
             >
               Industries
-            </button>
-
-            <button
-              onClick={() => onNavigate('legal')}
-              className={`nav-link-item ${activePage === 'legal' ? 'active' : ''}`}
-            >
-              Legal
             </button>
 
             <button
@@ -331,7 +295,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
 
-        {/* MOBILE SIDE SLIDE-OVER NAVIGATION DRAWER (EXACTLY MATCHING SCREENSHOT 1) */}
+        {/* MOBILE SIDE SLIDE-OVER NAVIGATION DRAWER */}
         {isMobileMenuOpen && (
           <div className="mobile-drawer-overlay">
             {/* Dark translucent backdrop on left side */}
@@ -341,7 +305,11 @@ export const Header: React.FC<HeaderProps> = ({
             <div className="mobile-drawer-panel animate-slide-left">
               {/* Drawer Top Header */}
               <div className="mobile-drawer-header">
-                <h3 className="mobile-drawer-title">Navigation</h3>
+                <img
+                  src="/bee_social_logo.png"
+                  alt="BeeSocial"
+                  style={{ height: '36px', width: 'auto', display: 'block' }}
+                />
                 <button
                   className="mobile-drawer-close"
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -374,10 +342,9 @@ export const Header: React.FC<HeaderProps> = ({
 
                   {isAboutDropdownOpen && (
                     <div className="mobile-drawer-sublinks">
-                      <button onClick={() => handleMobileNav('about')}>About Digital Digix</button>
-                      <button onClick={() => handleMobileNav('about', 'founder')}>Founder — Harsh Chaudhary</button>
-                      <button onClick={() => handleMobileNav('about', 'co-founder')}>Co-Founder — Khwahish Sahai</button>
-                      <button onClick={() => handleMobileNav('about', 'why-us')}>Why Digital Digix</button>
+                      <button onClick={() => handleMobileNav('about')}>About BeeSocial</button>
+                      <button onClick={() => handleMobileNav('about', 'founder')}>Founder — Siddhi</button>
+                      <button onClick={() => handleMobileNav('about', 'why-us')}>Why BeeSocial</button>
                       <button onClick={() => handleMobileNav('about', 'team')}>Our Team</button>
                     </div>
                   )}
@@ -402,13 +369,6 @@ export const Header: React.FC<HeaderProps> = ({
                   onClick={() => handleMobileNav('industries')}
                 >
                   <span>Industries</span>
-                </button>
-
-                <button
-                  className={`mobile-drawer-link ${activePage === 'legal' ? 'active' : ''}`}
-                  onClick={() => handleMobileNav('legal')}
-                >
-                  <span>Legal & Transparency</span>
                 </button>
 
                 <button

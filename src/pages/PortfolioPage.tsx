@@ -334,7 +334,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate, onOpen
 
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
               <button
-                onClick={() => window.open('https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20starting%20a%20project%20with%20Digital%20Digix', '_blank')}
+                onClick={() => window.open('https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20starting%20a%20project%20with%20Digital%20Digix', '_blank')}
                 style={{
                   backgroundColor: '#E0B56C',
                   color: '#0F172A',

@@ -65,8 +65,8 @@ const smmPackagesData = [
 ];
 
 const partnershipTiersData = [
-  { tier: 'TIER 1 RESELLER', discount: '10% OFF', desc: 'Starting 3+ Active Clients', tag: '' },
-  { tier: 'TIER 2 PARTNER', discount: '20% OFF', desc: 'Starting 8+ Active Clients', tag: 'BEST VALUE' },
+  { tier: 'TIER 1 RESELLER', discount: 'Dedicated Team', desc: 'Starting 3+ Active Clients', tag: '' },
+  { tier: 'TIER 2 PARTNER', discount: 'Dedicated Manager', desc: 'Starting 8+ Active Clients', tag: 'BEST VALUE' },
   { tier: 'TIER 3 STRATEGIC', discount: '30% OFF', desc: 'Starting 15+ Active Clients', tag: 'MOST POPULAR' },
   { tier: 'ENTERPRISE EXEC', discount: '40% OFF', desc: 'Starting 25+ Active Clients', tag: '' }
 ];
@@ -74,7 +74,7 @@ const partnershipTiersData = [
 const smmFaqsData = [
   { q: 'Is there a minimum contract commitment?', a: 'No lock-ins. All our retainers and service packages operate on a rolling month-to-month commitment. You can cancel, downgrade or scale up at any time with 7 days notice.' },
   { q: 'Who designs the social posts and writes the copies?', a: 'All creatives, hooks and copy scripts are produced by our in-house copywriters and design specialists under senior marketing management guidance. Nothing is outsourced.' },
-  { q: 'What is pay-as-you-go performance marketing?', a: 'If you prefer outcomes, we set up performance models where you pay per qualified lead generated, or purchase graphic assets individually (posters from ₹149, reels from ₹380, dashboards from ₹2000).' },
+  { q: 'What is pay-as-you-go performance marketing?', a: 'If you prefer outcomes, we set up performance models where you pay per qualified lead generated, or purchase graphic assets individually (custom deliverables and monthly retainers).' },
   { q: 'How long does onboarding take?', a: 'We can onboard your social channels and launch your first week content calendar within 48 hours of completing the strategy checklist and signing off on templates.' }
 ];
 
@@ -95,10 +95,10 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
     window.scrollTo(0, 0);
     if (!selectedService) return;
 
-    const pageTitle = `${selectedService.title} Services — Pricing, Strategy & Results | Digital Digix`;
+    const pageTitle = `${selectedService.title} Services — Strategy, Execution & Results | BeeSocial`;
     const pageDesc = selectedService.longDescription || selectedService.description;
     const cleanSlug = SERVICE_ID_TO_SLUG[selectedService.id] || selectedService.id;
-    const canonicalUrl = `https://digitaldigix.com/services/${cleanSlug}`;
+    const canonicalUrl = `/services/${cleanSlug}`;
 
     document.title = pageTitle;
 
@@ -129,12 +129,12 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
           "description": pageDesc,
           "provider": {
             "@type": "Organization",
-            "name": "Digital Digix",
-            "url": "https://digitaldigix.com"
+            "name": "BeeSocial",
+            "url": ""
           },
           "offers": {
             "@type": "Offer",
-            "price": selectedService.pricing ? selectedService.pricing.replace(/[^0-9,]/g, '') : "149",
+            
             "priceCurrency": "INR"
           }
         },
@@ -142,8 +142,8 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
           "@type": "BreadcrumbList",
           "@id": `${canonicalUrl}#breadcrumb`,
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://digitaldigix.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://digitaldigix.com/services" },
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "/" },
+            { "@type": "ListItem", "position": 2, "name": "Services", "item": "/services" },
             { "@type": "ListItem", "position": 3, "name": selectedService.title, "item": canonicalUrl }
           ]
         }
@@ -253,13 +253,13 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
             <div>
               <div style={{ fontSize: '0.75rem', color: '#64748B', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Price Range</div>
               <div style={{ fontFamily: 'Outfit', fontSize: '2rem', fontWeight: 900, color: '#D97706', marginTop: '0.2rem' }}>
-                {selectedService.pricing}
+                
               </div>
             </div>
 
             <div style={{ marginLeft: 'auto', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a
-                href={`https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20getting%20a%20quote%20for%20${encodeURIComponent(selectedService.title)}`}
+                href={`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20getting%20a%20quote%20for%20${encodeURIComponent(selectedService.title)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -280,7 +280,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
               </a>
               <button
                 onClick={() => {
-                  window.open(`https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20booking%20a%20growth%20call%20for%20${encodeURIComponent(selectedService.title)}`, '_blank');
+                  window.open(`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20booking%20a%20growth%20call%20for%20${encodeURIComponent(selectedService.title)}`, '_blank');
                 }}
                 style={{
                   backgroundColor: '#0F172A',
@@ -306,13 +306,13 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
           <div>
             <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
               <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#D97706', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-                — TRANSPARENT VALUE —
+                — STRATEGY & SCOPE —
               </div>
               <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '0.75rem' }}>
-                Packages & Pay-As-You-Go
+                Service Packages & Scope
               </h2>
               <p style={{ fontSize: '1.05rem', color: '#64748B' }}>
-                Flexible plans, no retainer traps. Only pay for outcomes that matter.
+                Tailored content creation, community growth, and viral reach campaigns.
               </p>
             </div>
 
@@ -360,7 +360,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                     </span>
                     <div style={{ display: 'flex', alignItems: 'baseline', marginTop: '0.4rem' }}>
                       <span style={{ fontSize: '2.5rem', fontWeight: 900, fontFamily: 'Outfit, serif' }}>
-                        ₹{pkg.price}
+                        Custom Plan
                       </span>
                       <span style={{ fontSize: '0.9rem', color: pkg.popular ? '#94A3B8' : '#64748B', marginLeft: '0.25rem', fontWeight: 600 }}>
                         /mo
@@ -378,7 +378,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                   </ul>
 
                   <a
-                    href={`https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services`}
+                    href={`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services`}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
@@ -417,7 +417,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                 — PAY-AS-YOU-GO —
               </div>
               <p style={{ fontSize: '1rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
-                Prefer outcomes over retainers? Our pay-per-performance model lets you pay only for leads that meet criteria agreed upfront — budget, location and intent. Single deliverables start tiny: posters from ₹149, reels from ₹380, dashboards from ₹2,000. <a href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" style={{ color: '#3B82F6', fontWeight: 800, textDecoration: 'underline' }}>Request a quote</a> and we'll build a plan around your numbers.
+                Prefer outcomes over retainers? Our pay-per-performance model lets you pay only for leads that meet criteria agreed upfront — budget, location and intent. From single creative deliverables to full multi-platform management. <a href="https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" style={{ color: '#3B82F6', fontWeight: 800, textDecoration: 'underline' }}>Request a quote</a> and we'll build a plan around your numbers.
               </p>
             </div>
 
@@ -430,7 +430,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                 B2B & Agency Tiers
               </h2>
               <p style={{ fontSize: '1.05rem', color: '#64748B' }}>
-                White-label execution and volume pricing for agencies, resellers and enterprise teams.
+                White-label execution and dedicated management for agencies, resellers and enterprise teams.
               </p>
             </div>
 
@@ -485,7 +485,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                 — COMMON QUESTIONS —
               </div>
               <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '0.75rem' }}>
-                Pricing & Process FAQs
+                Process & Execution FAQs
               </h2>
             </div>
 
@@ -535,14 +535,14 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
           <div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
               <span style={{ width: '50px', height: '1px', background: '#3B82F6', opacity: 0.6 }}></span>
-              <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#3B82F6', letterSpacing: '0.15em', textTransform: 'uppercase' }}>TRANSPARENT PRICING</span>
+              <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#3B82F6', letterSpacing: '0.15em', textTransform: 'uppercase' }}>DESIGN CATALOG</span>
               <span style={{ width: '50px', height: '1px', background: '#3B82F6', opacity: 0.6 }}></span>
             </div>
             <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '2.2rem', fontWeight: 900, color: '#0F172A', textAlign: 'center', marginBottom: '0.5rem' }}>
-              Graphic Design Price List
+              Graphic Design Catalog & Deliverables
             </h3>
             <p style={{ fontSize: '0.95rem', color: '#64748B', textAlign: 'center', marginBottom: '2.5rem', maxWidth: '650px', margin: '0 auto 2.5rem auto', lineHeight: 1.5 }}>
-              Clear per-design pricing across every format — no hidden charges. GST applicable as per norms; prices subject to change.
+              Browse our comprehensive catalog of graphic design deliverables for digital, social, and print formats.
             </p>
 
             {/* Grid container */}
@@ -616,7 +616,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                           }}
                         >
                           <span style={{ fontWeight: 500, flex: 1, paddingRight: '0.5rem', lineHeight: 1.3, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.name}</span>
-                          <span style={{ fontWeight: 700, color: '#3B82F6', whiteSpace: 'nowrap', flexShrink: 0, textAlign: 'right' }}>{item.price}</span>
+                          <span style={{ fontWeight: 700, color: '#3B82F6', whiteSpace: 'nowrap', flexShrink: 0, textAlign: 'right' }}></span>
                         </div>
                       );
                     })}
@@ -637,7 +637,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                   —— Our Approach
                 </div>
                 <p style={{ fontSize: '0.875rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
-                  Share your brief on WhatsApp, choose the design type, and we deliver print- and web-ready files with revisions. Transparent per-design pricing means you know the cost before we start — no surprises.
+                  Share your brief on WhatsApp, choose the design type, and we deliver print- and web-ready files with revisions. We deliver fast, print- and web-ready creative files tailored to your brand.
                 </p>
               </div>
               <div style={{ background: '#0F172A', borderRadius: '20px', padding: '1.5rem 1.75rem', color: '#FFF' }}>
@@ -829,7 +829,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
 
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <a
-              href={`https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20getting%20a%20proposal%20for%20${encodeURIComponent(selectedService.title)}`}
+              href={`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20getting%20a%20proposal%20for%20${encodeURIComponent(selectedService.title)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"
@@ -841,7 +841,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
               className="btn btn-secondary"
               style={{ color: '#FFF', borderColor: 'rgba(255,255,255,0.3)', padding: '0.9rem 1.8rem' }}
               onClick={() => {
-                window.open(`https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20booking%20a%20strategy%20call%20for%20${encodeURIComponent(selectedService.title)}`, '_blank');
+                window.open(`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20booking%20a%20strategy%20call%20for%20${encodeURIComponent(selectedService.title)}`, '_blank');
               }}
             >
               Book Strategy Call ➔

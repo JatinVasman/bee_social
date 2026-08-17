@@ -27,28 +27,23 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectLocation, on
         {/* MAIN FOOTER GRID */}
         <div className="footer-main-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1.2fr 1.2fr 1.5fr', gap: '3rem', marginBottom: '4rem' }}>
           <div>
-            <div style={{ fontSize: '1.6rem', fontWeight: 900, color: '#FFF', display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1.25rem', cursor: 'pointer' }} onClick={() => onNavigate('home')}>
               <img
-                src="/digital_digix_logo.png"
-                alt="Digital Digix Logo"
-                width="42"
-                height="42"
+                src="/bee_social_logo.png"
+                alt="BeeSocial"
                 loading="lazy"
                 decoding="async"
                 style={{
-                  width: '42px',
-                  height: '42px',
-                  borderRadius: '10px',
-                  objectFit: 'cover',
-                  border: '1px solid rgba(255,255,255,0.15)'
+                  height: '52px',
+                  width: 'auto',
+                  maxHeight: '52px',
+                  objectFit: 'contain',
+                  display: 'block'
                 }}
               />
-              <span style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 900, fontSize: '1.5rem', color: '#FFFFFF' }}>
-                Digital Digix
-              </span>
             </div>
             <p style={{ fontSize: '0.9rem', color: '#94A3B8', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-              Seen. Heard. Chosen. India's leading performance digital agency delivering data-driven ROI with zero lock-in contracts and founder-led execution.
+              Scroll. Stop. Engage. A creative social media and digital marketing agency crafting content that connects, campaigns that convert, and brands that buzz.
             </p>
           </div>
 
@@ -79,16 +74,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectLocation, on
           <div>
             <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#FFF', marginBottom: '1.25rem' }}>Direct Contact</h4>
             <div style={{ fontSize: '0.875rem', color: '#94A3B8', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <div>📍 Noida, Delhi NCR, India & Global</div>
-              <div>📞 +91 85869 89832</div>
-              <div>✉️ <a href="mailto:contact.digitaldigix@gmail.com" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.currentTarget.style.color = '#3B82F6'} onMouseLeave={(e) => e.currentTarget.style.color = 'inherit'}>contact.digitaldigix@gmail.com</a></div>
+              <div>📍 India</div>
+              <div>📞 <a href="tel:+917020800621" style={{ color: 'inherit', textDecoration: 'none' }}>+91 70208 00621</a></div>
+              <div>✉️ <a href="mailto:hello.thebeesocial@gmail.com" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.currentTarget.style.color = '#3B82F6'} onMouseLeave={(e) => e.currentTarget.style.color = 'inherit'}>hello.thebeesocial@gmail.com</a></div>
               <a
-                href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services"
+                href="https://www.instagram.com/beesocial._"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: '#D97706', fontWeight: 700, textDecoration: 'none', marginTop: '0.5rem' }}
               >
-                Chat on WhatsApp 💬 →
+                Follow on Instagram 📸 →
               </a>
             </div>
           </div>
@@ -96,7 +91,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectLocation, on
 
         <div style={{ height: '1px', background: '#261F1C', margin: '3rem 0' }}></div>
 
-        {/* DOMESTIC & INTERNATIONAL LOCATIONS SECTION (EXACT 2 SECTIONS MATCHING SCREENSHOT) */}
+        {/* DOMESTIC & INTERNATIONAL LOCATIONS SECTION */}
         <div>
           {/* SECTION 1: DOMESTIC LOCATIONS */}
           <div style={{ marginBottom: '2.5rem' }}>
@@ -213,10 +208,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectLocation, on
 
         </div>
 
-        {/* BOTTOM COPYRIGHT BAR: ALL RIGHTS TO DIGITAL DIGIX */}
+        {/* BOTTOM COPYRIGHT BAR */}
         <div style={{ height: '1px', background: '#261F1C', margin: '3rem 0 1.5rem 0' }}></div>
         <div style={{ textAlign: 'center', fontSize: '0.85rem', color: '#94A3B8' }}>
-          © 2012 <a href="https://digitaldigix.com" target="_blank" rel="noopener noreferrer" style={{ color: '#D97706', fontWeight: 800, textDecoration: 'none', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '0.85'} onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}>Digital Digix</a>. All Rights Reserved.
+          © {new Date().getFullYear()} <span style={{ color: '#D97706', fontWeight: 800 }}>BeeSocial</span>. All Rights Reserved.
         </div>
 
       </div>

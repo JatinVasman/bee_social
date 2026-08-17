@@ -111,9 +111,9 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
     window.scrollTo(0, 0);
     if (!matchedItem) return;
 
-    const pageTitle = `${matchedItem.name} Services — ₹${matchedItem.price} | Digital Digix`;
+    const pageTitle = `${matchedItem.name} Services — Creative Design & Deliverables | BeeSocial`;
     const pageDesc = customDesc;
-    const canonicalUrl = `https://digitaldigix.com/graphic-design/${itemId}`;
+    const canonicalUrl = `/graphic-design/${itemId}`;
 
     document.title = pageTitle;
 
@@ -143,7 +143,7 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
           "description": pageDesc,
           "brand": {
             "@type": "Brand",
-            "name": "Digital Digix"
+            "name": "BeeSocial"
           },
           "offers": {
             "@type": "Offer",
@@ -157,8 +157,8 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
           "@type": "BreadcrumbList",
           "@id": `${canonicalUrl}#breadcrumb`,
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://digitaldigix.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Graphic Design", "item": "https://digitaldigix.com/graphic-design" },
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "/" },
+            { "@type": "ListItem", "position": 2, "name": "Graphic Design", "item": "/graphic-design" },
             { "@type": "ListItem", "position": 3, "name": matchedItem.name, "item": canonicalUrl }
           ]
         }
@@ -198,7 +198,7 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
     requirements: ['Project goal & reference styles', 'Vector brand logos and brand guide', 'Core copy texts and layout outlines', 'Specified layout dimensions']
   };
 
-  const whatsappLink = `https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services`;
+  const whatsappLink = `https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services`;
 
   return (
     <div style={{ backgroundColor: '#FDFBF7', minHeight: '100vh', padding: '2rem 0 6.5rem 0' }}>
@@ -327,7 +327,7 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
               </a>
               <button
                 onClick={() => {
-                  window.open(`https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20a%20custom%20order%20for%20${encodeURIComponent(matchedItem?.name || '')}`, '_blank');
+                  window.open(`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20a%20custom%20order%20for%20${encodeURIComponent(matchedItem?.name || '')}`, '_blank');
                 }}
                 style={{
                   backgroundColor: '#0F172A',
@@ -410,7 +410,7 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
 
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <a
-              href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services"
+              href="https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"
@@ -421,7 +421,7 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
             <button
               className="btn btn-secondary"
               style={{ color: '#FFF', borderColor: 'rgba(255,255,255,0.3)', padding: '0.9rem 1.8rem' }}
-              onClick={() => window.open(`https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20a%20strategy%20call%20for%20${encodeURIComponent(matchedItem.name)}`, '_blank')}
+              onClick={() => window.open(`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20a%20strategy%20call%20for%20${encodeURIComponent(matchedItem.name)}`, '_blank')}
             >
               Book Strategy Call ➔
             </button>

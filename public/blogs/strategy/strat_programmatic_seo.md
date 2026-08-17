@@ -4,7 +4,7 @@ If you want to scale your business's organic search traffic, writing blog posts 
 
 This is where **Programmatic SEO** comes in.
 
-In this guide, the SEO experts at **Digital Digix** explain how to build a programmatic SEO system that scales organic search traffic using data-driven landing page architecture.
+In this guide, the SEO experts at **BeeSocial** explain how to build a programmatic SEO system that scales organic search traffic using data-driven landing page architecture.
 
 ---
 

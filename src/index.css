@@ -1327,7 +1327,7 @@ img { max-width: 100%; height: auto; display: block; }
   box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.1), 0 10px 10px -5px rgba(59, 130, 246, 0.04);
 }
 
-/* Green hover variant for Khwahish */
+/* Green hover variant */
 .modal-info-box-green:hover {
   border-color: var(--green-accent) !important;
   box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.1), 0 10px 10px -5px rgba(16, 185, 129, 0.04) !important;

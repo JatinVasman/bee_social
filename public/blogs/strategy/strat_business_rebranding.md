@@ -2,7 +2,7 @@
 
 Rebranding an established business is one of the most high-stakes visual projects a company can undertake. It is far more than simply changing a logo or choosing a new primary color palette. A successful rebrand updates your positioning, changes how customers perceive your value, and establishes a premium market authority.
 
-In this playbook, the branding and design experts at **Digital Digix** provide a step-by-step strategy to execute a business rebrand safely and successfully.
+In this playbook, the branding and design experts at **BeeSocial** provide a step-by-step strategy to execute a business rebrand safely and successfully.
 
 ---
 

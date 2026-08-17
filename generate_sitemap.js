@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 
+const BASE_URL = 'https://thebeesocial.in';
+
 const staticRoutes = [
   '',
   '/services',
@@ -28,7 +30,6 @@ const staticRoutes = [
   '/industries',
   '/portfolio',
   '/smm',
-  '/legal',
   '/locations',
   '/graphic-design'
 ];
@@ -36,7 +37,7 @@ const staticRoutes = [
 const urls = [];
 staticRoutes.forEach(r => {
   urls.push({
-    loc: 'https://digitaldigix.com' + r,
+    loc: BASE_URL + (r || ''),
     changefreq: r === '' ? 'daily' : 'weekly',
     priority: r === '' ? '1.0' : (r.startsWith('/services') || r === '/blogs' ? '0.9' : '0.8')
   });
@@ -49,7 +50,7 @@ if (fs.existsSync(blogsDir)) {
   files.forEach(f => {
     const slug = f.replace(/\.md$/, '');
     urls.push({
-      loc: 'https://digitaldigix.com/blogs/' + encodeURIComponent(slug),
+      loc: BASE_URL + '/blogs/' + encodeURIComponent(slug),
       changefreq: 'monthly',
       priority: '0.8'
     });
@@ -69,7 +70,7 @@ const topLocations = [
 
 topLocations.forEach(loc => {
   urls.push({
-    loc: 'https://digitaldigix.com/digital-marketing/' + loc,
+    loc: BASE_URL + '/digital-marketing/' + loc,
     changefreq: 'monthly',
     priority: '0.7'
   });
@@ -88,4 +89,4 @@ ${urls.map(u => `  <url>
 </urlset>`;
 
 fs.writeFileSync('public/sitemap.xml', xml, 'utf8');
-console.log('Successfully generated public/sitemap.xml with ' + urls.length + ' clean path URLs');
+console.log('Successfully generated public/sitemap.xml with ' + urls.length + ' absolute URLs for ' + BASE_URL);

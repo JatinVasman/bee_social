@@ -5,7 +5,6 @@ import { Hero } from './components/Hero';
 import { AboutUs } from './components/AboutUs';
 import { ServicesGrid } from './components/ServicesGrid';
 import { WhyChooseUs } from './components/WhyChooseUs';
-import { LegalSection } from './components/LegalSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 
@@ -31,7 +30,6 @@ import { PortfolioPage } from './pages/PortfolioPage';
 import { LocationPage } from './pages/LocationPage';
 import { BlogPage } from './pages/BlogPage';
 import { BlogPostPage } from './pages/BlogPostPage';
-import { LegalDetailsPage } from './pages/LegalDetailsPage';
 import { ServiceDetailPage } from './pages/ServiceDetailPage';
 import { GraphicDetailPage } from './pages/GraphicDetailPage';
 import { GraphicItemDetailPage } from './pages/GraphicItemDetailPage';
@@ -53,15 +51,11 @@ export const App: React.FC = () => {
   const [isLocationsModalOpen, setIsLocationsModalOpen] = useState(false);
 
   // Selected Location for location landing page
-  const [selectedLocation, setSelectedLocation] = useState<string>('Lucknow');
+  const [selectedLocation, setSelectedLocation] = useState<string>('Mumbai');
 
   // Selected Blog Slug for blog post page
   const [selectedBlogSlug, setSelectedBlogSlug] = useState<string>('');
 
-  // Legal section query pass-through state
-  const [initialLegalQuery, setInitialLegalQuery] = useState('');
-  const [initialLegalShowResults, setInitialLegalShowResults] = useState(false);
-  const [selectedLegalServiceTitle, setSelectedLegalServiceTitle] = useState<string>('');
   const [selectedServiceId, setSelectedServiceId] = useState<string>('');
   const [selectedIndustryId, setSelectedIndustryId] = useState<string>('');
   const [selectedGraphicCat, setSelectedGraphicCat] = useState<string>('');
@@ -80,9 +74,7 @@ export const App: React.FC = () => {
       } else if (page === 'about') {
         if (slug) {
           const lower = slug.toLowerCase();
-          if (lower.includes('co-founder') || lower.includes('cofounder') || lower.includes('khwahish') || lower.includes('creative')) {
-            setActiveLeaderModal('co-founder');
-          } else if (lower.includes('founder') || lower.includes('harsh')) {
+          if (lower.includes('founder') || lower.includes('siddhi')) {
             setActiveLeaderModal('founder');
           } else if (lower.includes('why') || lower.includes('diff')) {
             setActiveLeaderModal('why-us');
@@ -94,8 +86,6 @@ export const App: React.FC = () => {
         } else {
           setActiveLeaderModal(null);
         }
-      } else if (page === 'legal-details' && slug) {
-        setSelectedLegalServiceTitle(slug);
       } else if (page === 'graphic-details' && slug) {
         setSelectedGraphicCat(slug);
       } else if (page === 'design-item' && slug) {
@@ -120,50 +110,45 @@ export const App: React.FC = () => {
 
   // Dynamic SEO Metadata Manager
   useEffect(() => {
-    let title = 'Digital Digix — Digital Marketing Agency That Grows Your Brand';
-    let description = 'Digital Digix is India\'s leading digital growth agency specializing in Performance Marketing, Generative Engine Optimization (GEO/AEO), high-converting web applications, and B2B growth funnels.';
+    let title = 'BeeSocial — Creative Social Media & Digital Marketing Agency';
+    let description = 'BeeSocial is a creative social media and digital marketing agency that helps brands stand out, engage audiences, and grow online through scroll-stopping content and strategic campaigns.';
 
     switch (activePage) {
       case 'services':
-        title = 'Digital Marketing & Software Services — SEO, GEO, Ads & Development | Digital Digix';
-        description = 'Explore full-suite digital marketing services: Performance Marketing, Generative Engine Optimization (GEO), Google/Meta Ads, Custom Web Applications, and WhatsApp Automation.';
+        title = 'Social Media & Digital Marketing Services — SMM, Ads & Design | BeeSocial';
+        description = 'Explore full-suite social media and digital marketing services: Content Creation, Social Media Management, Paid Ads, Web Development, and Brand Design.';
         break;
       case 'industries':
-        title = '89+ Industry Digital Marketing & Growth Solutions | Digital Digix';
-        description = 'Tailored digital marketing, SEO, and lead generation frameworks customized for 89+ industries including Healthcare, Real Estate, E-Commerce, Education, and Tech.';
+        title = 'Industry-Specific Social Media & Marketing Solutions | BeeSocial';
+        description = 'Tailored social media marketing and digital growth strategies customized for multiple industries including Healthcare, Real Estate, E-Commerce, Education, and more.';
         break;
       case 'portfolio':
-        title = 'Client Case Studies & Verified Growth Results | Digital Digix';
-        description = 'Discover real-world case studies and ROI metrics from 2,700+ clients scaled across SEO, Google Ads, Meta Ads, and bespoke software development.';
+        title = 'Our Work — Creative Portfolio & Case Studies | BeeSocial';
+        description = 'Discover real-world creative campaigns, social media transformations, and brand growth results delivered by BeeSocial.';
         break;
       case 'blog':
-        title = 'Digital Marketing, SEO & Generative AI Insights Blog | Digital Digix';
-        description = 'Read 564+ expert articles and pillar guides on SEO, AI search optimization (GEO/AEO), paid media scaling, and digital business strategies.';
+        title = 'Social Media Marketing & Digital Growth Insights | BeeSocial Blog';
+        description = 'Read expert articles and guides on social media strategy, content creation, paid media, brand building, and digital marketing trends.';
         break;
       case 'location':
-        title = `Digital Marketing & SEO Agency in ${selectedLocation} | Digital Digix`;
-        description = `Local SEO, Performance Marketing, and Google Maps optimization services for businesses in ${selectedLocation} and surrounding regions.`;
+        title = `Social Media & Digital Marketing Agency in ${selectedLocation} | BeeSocial`;
+        description = `Social media marketing, content creation, and digital growth services for businesses in ${selectedLocation} and surrounding regions.`;
         break;
       case 'all-locations':
-        title = 'Global Locations & Digital Marketing Centers | Digital Digix';
-        description = 'Explore Digital Digix domestic and international marketing offices serving clients across India, the Middle East, the UK, and North America.';
+        title = 'Locations & Service Areas | BeeSocial';
+        description = 'Explore BeeSocial service locations across India and internationally.';
         break;
       case 'smm':
-        title = 'Social Media Marketing (SMM) & Viral Reels Strategy | Digital Digix';
-        description = 'Full-funnel organic and paid social media management for Instagram, LinkedIn, YouTube, and Facebook designed to build brand authority and generate leads.';
+        title = 'Social Media Marketing (SMM) & Content Strategy | BeeSocial';
+        description = 'Full-funnel organic and paid social media management for Instagram, LinkedIn, YouTube, and Facebook designed to build brand authority and generate engagement.';
         break;
       case 'about':
-        title = 'About Digital Digix — Leadership, Mission & AI-Powered Growth';
-        description = 'Learn about Digital Digix leadership, engineering philosophy, and performance-first methodology driving 2,700+ successful brand transformations.';
+        title = 'About BeeSocial — Our Story, Mission & Creative Vision';
+        description = 'Learn about BeeSocial, our creative approach to social media marketing, and the team behind impactful brand transformations.';
         break;
       case 'contact':
-        title = 'Contact Digital Digix — Free 30-Min Strategy Consultation';
-        description = 'Schedule a free 30-minute growth strategy session with Digital Digix marketing experts. No lock-in contracts, post-pay options available.';
-        break;
-      case 'legal':
-      case 'legal-details':
-        title = 'Legal Marketing & Corporate Compliance Digital Solutions | Digital Digix';
-        description = 'Specialized marketing, client acquisition funnels, and personal branding tailored for Law Firms, Advocates, and CA/CS professionals.';
+        title = 'Contact BeeSocial — Let\'s Create Something Amazing';
+        description = 'Get in touch with BeeSocial to discuss your social media and digital marketing goals. We\'d love to hear from you.';
         break;
       default:
         break;
@@ -184,13 +169,12 @@ export const App: React.FC = () => {
     const activeSlug = activePage === 'blog-post' ? selectedBlogSlug :
       activePage === 'service-details' ? selectedServiceId :
       activePage === 'location' ? selectedLocation :
-      activePage === 'legal-details' ? selectedLegalServiceTitle :
       activePage === 'graphic-details' ? selectedGraphicCat :
       activePage === 'design-item' ? selectedDesignItem :
       activePage === 'industries' ? selectedIndustryId : undefined;
 
     const cleanPath = getRoutePath(activePage, activeSlug);
-    const canonicalUrl = `https://digitaldigix.com${cleanPath === '/' ? '' : cleanPath}`;
+    const canonicalUrl = cleanPath === '/' ? '/' : cleanPath;
 
     // Update Canonical URL
     let canonical = document.querySelector('link[rel="canonical"]');
@@ -216,7 +200,7 @@ export const App: React.FC = () => {
     if (twDesc) twDesc.setAttribute('content', description);
     const twUrl = document.querySelector('meta[name="twitter:url"]');
     if (twUrl) twUrl.setAttribute('content', canonicalUrl);
-  }, [activePage, selectedLocation, selectedBlogSlug, selectedServiceId, selectedLegalServiceTitle, selectedGraphicCat, selectedDesignItem, selectedIndustryId]);
+  }, [activePage, selectedLocation, selectedBlogSlug, selectedServiceId, selectedGraphicCat, selectedDesignItem, selectedIndustryId]);
 
   const handleThemeToggle = () => {
     const nextTheme = theme === 'light' ? 'dark' : 'light';
@@ -246,9 +230,7 @@ export const App: React.FC = () => {
     if (page === 'about') {
       if (slug) {
         const lower = slug.toLowerCase();
-        if (lower.includes('co-founder') || lower.includes('cofounder') || lower.includes('khwahish') || lower.includes('creative')) {
-          setActiveLeaderModal('co-founder');
-        } else if (lower.includes('founder') || lower.includes('harsh')) {
+        if (lower.includes('founder') || lower.includes('siddhi')) {
           setActiveLeaderModal('founder');
         } else if (lower.includes('why') || lower.includes('diff')) {
           setActiveLeaderModal('why-us');
@@ -261,27 +243,11 @@ export const App: React.FC = () => {
         setActiveLeaderModal(null);
       }
     }
-    if (page === 'legal-details' && slug) {
-      setSelectedLegalServiceTitle(slug);
-    }
-    if (page === 'legal') {
-      setInitialLegalQuery('');
-      setInitialLegalShowResults(false);
-    }
 
     const cleanPath = getRoutePath(page, slug);
     window.history.pushState(null, '', cleanPath);
     
     setActivePage(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleRedirectToLegal = (query?: string, showResults?: boolean) => {
-    setInitialLegalQuery(query || '');
-    setInitialLegalShowResults(showResults ?? true);
-    setActivePage('legal');
-    const cleanPath = getRoutePath('legal');
-    window.history.pushState(null, '', cleanPath);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -363,12 +329,6 @@ export const App: React.FC = () => {
               onOpenStrategyModal={handleOpenStrategyModal}
               backgroundColor="var(--bg-main)"
             />
-            <LegalSection 
-              onOpenStrategyModal={handleOpenStrategyModal} 
-              isHomepage={true}
-              onRedirectToLegal={handleRedirectToLegal}
-              backgroundColor="#F8FAFC"
-            />
             <ContactSection backgroundColor="var(--bg-main)" />
           </>
         )}
@@ -395,16 +355,6 @@ export const App: React.FC = () => {
             onOpenStrategyModal={handleOpenStrategyModal}
           />
         )}
-
-         {activePage === 'legal' && (
-           <LegalSection 
-             onOpenStrategyModal={handleOpenStrategyModal} 
-             isHomepage={false}
-             initialQuery={initialLegalQuery}
-             initialShowResults={initialLegalShowResults}
-             backgroundColor="#F8FAFC"
-           />
-         )}
 
         {activePage === 'portfolio' && (
           <PortfolioPage
@@ -442,14 +392,6 @@ export const App: React.FC = () => {
         {activePage === 'blog-post' && (
           <BlogPostPage
             slug={selectedBlogSlug}
-            onNavigate={handleNavigate}
-            onOpenStrategyModal={handleOpenStrategyModal}
-          />
-        )}
-
-        {activePage === 'legal-details' && (
-          <LegalDetailsPage
-            serviceTitle={selectedLegalServiceTitle}
             onNavigate={handleNavigate}
             onOpenStrategyModal={handleOpenStrategyModal}
           />

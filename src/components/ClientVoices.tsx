@@ -14,7 +14,7 @@ const row1: Testimonial[] = [
     name: 'Dr. Rajesh Mehta',
     role: 'Director',
     company: 'Metro Heart Hospital',
-    quote: "Digital Digix transformed our digital presence completely. Our cardiac department is now fully booked 3 weeks in advance. The team's professionalism is unmatched.",
+    quote: "BeeSocial transformed our digital presence completely. Our cardiac department is now fully booked 3 weeks in advance. The team's professionalism is unmatched.",
     category: 'Healthcare',
     rating: 5
   },

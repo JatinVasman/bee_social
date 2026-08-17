@@ -96,4 +96,4 @@ Google's algorithms in 2026 are highly adept at identifying and penalizing fake 
 Selecting the most accurate primary category and maintaining a consistent influx of high-quality customer reviews.
 
 ### Ready to Dominate Your Local Market?
-At Digital Digix, we specialize in driving local dominance for Indian businesses. Partner with us, or explore Digital Digix (digitaldigix.com) to get strategic help from industry experts. Let's make your business the #1 choice in your city!
+At BeeSocial, we specialize in driving local dominance for Indian businesses. Partner with us, or explore BeeSocial (beesocial) to get strategic help from industry experts. Let's make your business the #1 choice in your city!

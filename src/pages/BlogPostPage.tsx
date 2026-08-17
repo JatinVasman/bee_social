@@ -88,7 +88,7 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ slug, onNavigate, on
           '',
           `## Ready to Accelerate Your Growth?`,
           '',
-          `At **Digital Digix**, we engineer end-to-end digital marketing and growth systems for 2,700+ businesses across 89+ industries. Schedule a free 30-minute strategic consultation with our growth specialists today to build your custom growth roadmap.`
+          `At **BeeSocial**, we engineer end-to-end digital marketing and growth systems for 2,700+ businesses across 89+ industries. Schedule a free 30-minute strategic consultation with our growth specialists today to build your custom growth roadmap.`
         ].join('\n');
 
         setContent(fallback);
@@ -106,7 +106,7 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ slug, onNavigate, on
   useEffect(() => {
     if (!blog) return;
 
-    const pageTitle = `${blog.title} | Digital Digix`;
+    const pageTitle = `${blog.title} | BeeSocial`;
     document.title = pageTitle;
 
     let metaDesc = document.querySelector('meta[name="description"]');
@@ -129,7 +129,7 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ slug, onNavigate, on
       document.head.appendChild(script);
     }
 
-    const postUrl = `https://digitaldigix.com/blogs/${encodeURIComponent(blog.slug)}`;
+    const postUrl = `/blogs/${encodeURIComponent(blog.slug)}`;
     const schemaData = {
       "@context": "https://schema.org",
       "@graph": [
@@ -148,15 +148,15 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ slug, onNavigate, on
           "dateModified": "2026-08-15",
           "author": {
             "@type": "Organization",
-            "name": "Digital Digix",
-            "url": "https://digitaldigix.com"
+            "name": "BeeSocial",
+            "url": ""
           },
           "publisher": {
             "@type": "Organization",
-            "name": "Digital Digix",
+            "name": "BeeSocial",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://digitaldigix.com/digital_digix_logo.png"
+              "url": "/bee_social_logo.png"
             }
           },
           "keywords": [blog.keyword, blog.keyword2, ...blog.tags].filter(Boolean).join(", ")
@@ -169,13 +169,13 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ slug, onNavigate, on
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://digitaldigix.com/"
+              "item": "/"
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "Blogs",
-              "item": "https://digitaldigix.com/blogs"
+              "item": "/blogs"
             },
             {
               "@type": "ListItem",
@@ -263,7 +263,7 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ slug, onNavigate, on
             <button className="bpp-cta-btn" onClick={() => onOpenStrategyModal(blog?.title)}>
               Get Free Strategy Call
             </button>
-            <a className="bpp-phone-link" href="tel:+918586989832">📞 +91 85869 89832</a>
+            <a className="bpp-phone-link" href="tel:+917020800621">📞 +91 70208 00621</a>
           </div>
 
           {/* Related Articles */}
@@ -286,8 +286,8 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ slug, onNavigate, on
           {/* Quick Links */}
           <div className="bpp-quick-links">
             <h3>Quick Links</h3>
-            <a href="tel:+918586989832" className="bql-link">📞 Call Us Now</a>
-            <a href="https://digitaldigix.com" target="_blank" rel="noreferrer" className="bql-link">🌐 Our Website</a>
+            <a href="tel:+917020800621" className="bql-link">📞 Call Us Now</a>
+            <a href="" target="_blank" rel="noreferrer" className="bql-link">🌐 Our Website</a>
             <button className="bql-link" onClick={() => onNavigate('blog')}>📚 All Blogs</button>
             <button className="bql-link" onClick={() => onNavigate('services')}>⚡ Our Services</button>
           </div>

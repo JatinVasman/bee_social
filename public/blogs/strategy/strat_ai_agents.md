@@ -2,7 +2,7 @@
 
 Welcome to the definitive guide on **How to Integrate AI Agents in Your Business in 2026**. If you run an enterprise or a growing company, you have likely heard about ChatGPT and Gemini. But there is a massive shift happening: moving from conversational chatbots to **autonomous AI agents** that can work in the background, making decisions, executing actions, and automating entire departments.
 
-At **Digital Digix**, we help businesses across India deploy custom-built AI agent workflows that run on autopilot. In this guide, we walk you through the exact blueprint to integrate AI agents into your business operations.
+At **BeeSocial**, we help businesses across India deploy custom-built AI agent workflows that run on autopilot. In this guide, we walk you through the exact blueprint to integrate AI agents into your business operations.
 
 ---
 

@@ -26,12 +26,12 @@ function resendDevPlugin() {
               }
 
               const apiKey = env.RESEND_API_KEY || process.env.RESEND_API_KEY;
-              const receiverEmail = env.RECEIVER_EMAIL || process.env.RECEIVER_EMAIL || 'contact.digitaldigix@gmail.com';
+              const receiverEmail = env.RECEIVER_EMAIL || process.env.RECEIVER_EMAIL || 'hello.thebeesocial@gmail.com';
 
               const isStrategy = formType === 'strategy' || !!planName || !!growthGoal;
               const subject = isStrategy
                 ? `🚀 New Strategy Booking: ${name} (${planName || 'General Strategy'})`
-                : `📩 New Contact Inquiry from ${name} - Digital Digix`;
+                : `📩 New Contact Inquiry from ${name} - BeeSocial`;
 
               const htmlContent = `
                 <!DOCTYPE html>
@@ -59,7 +59,7 @@ function resendDevPlugin() {
                   <div class="container">
                     <div class="header">
                       <div class="badge">${isStrategy ? 'Strategy Session' : 'Contact Lead'}</div>
-                      <h1>Digital Digix Website Inquiry</h1>
+                      <h1>BeeSocial Website Inquiry</h1>
                       <p>${isStrategy ? 'New consultation request submitted' : 'New lead received via contact form'}</p>
                     </div>
                     
@@ -132,13 +132,25 @@ function resendDevPlugin() {
               }
 
               const resend = new Resend(apiKey);
-              const response = await resend.emails.send({
-                from: 'Digital Digix Contact <onboarding@resend.dev>',
+              const senderEmail = env.SENDER_EMAIL || process.env.SENDER_EMAIL || 'BeeSocial <contact@thebeesocial.in>';
+              let response = await resend.emails.send({
+                from: senderEmail,
                 to: [receiverEmail],
                 replyTo: email,
                 subject: subject,
                 html: htmlContent,
               });
+
+              if (response.error && senderEmail !== 'BeeSocial <onboarding@resend.dev>') {
+                console.warn('[Resend Dev Server] Custom sender failed, falling back to onboarding@resend.dev...');
+                response = await resend.emails.send({
+                  from: 'BeeSocial <onboarding@resend.dev>',
+                  to: [receiverEmail],
+                  replyTo: email,
+                  subject: subject,
+                  html: htmlContent,
+                });
+              }
 
               if (response.error) {
                 console.error('[Resend Dev Server] API Error:', response.error);

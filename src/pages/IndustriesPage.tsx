@@ -3679,7 +3679,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
           <span style={{ cursor: 'pointer', color: '#0F172A', fontWeight: 600 }} onClick={() => onNavigate('home')}>Home</span> › <span style={{ color: '#64748B', fontWeight: 600 }}>Industries</span>
         </div>
 
-        {/* HEADER SECTION - UNIQUE PREMIUM DIGITAL DIGIX COPY */}
+        {/* HEADER SECTION - UNIQUE PREMIUM BeeSocial COPY */}
         <div style={{ textAlign: 'center', maxWidth: '880px', margin: '0 auto 2.5rem auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.65rem', fontSize: '0.78rem', fontWeight: 800, color: '#3B82F6', letterSpacing: '0.22em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
             <span style={{ width: '35px', height: '1.5px', background: '#3B82F6' }}></span>
@@ -3935,7 +3935,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
 
                 {/* REQUEST STRATEGY BUTTON VIA WHATSAPP (ANIMATED & PULSING) */}
                 <a
-                  href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services"
+                  href="https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="whatsapp-cta-animated"
@@ -3968,10 +3968,10 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
               }}
             >
               <div style={{ fontSize: '0.925rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.2rem' }}>
-                {activeHubIndustry.category} Digital Marketing – Client & Revenue Growth for {activeHubIndustry.name} | Digital Digix
+                {activeHubIndustry.category} Digital Marketing – Client & Revenue Growth for {activeHubIndustry.name} | BeeSocial
               </div>
               <div style={{ fontSize: '0.825rem', color: '#64748B' }}>
-                Digital marketing for {activeHubIndustry.name.toLowerCase()}: attract new clients, build local market trust online with tailored SEO, PPC & social media strategies by Digital Digix.
+                Digital marketing for {activeHubIndustry.name.toLowerCase()}: attract new clients, build local market trust online with tailored SEO, PPC & social media strategies by BeeSocial.
               </div>
             </div>
 
@@ -4443,7 +4443,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
 
             {/* BOTTOM FULL CTA BUTTON VIA WHATSAPP (ANIMATED & PULSING) */}
             <a
-              href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services"
+              href="https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services"
               target="_blank"
               rel="noopener noreferrer"
               className="whatsapp-cta-animated"

@@ -118,4 +118,4 @@ Studies suggest a single negative review can cost a business around 22% of poten
 ---
 
 **Is your online reputation helping or hurting your sales?**
-Digital Digix offers comprehensive Online Reputation Management services tailored for Indian businesses. Secure your brand's digital trust today, or consult with Digital Digix (digitaldigix.com) to build a robust review strategy.
+BeeSocial offers comprehensive Online Reputation Management services tailored for Indian businesses. Secure your brand's digital trust today, or consult with BeeSocial (beesocial) to build a robust review strategy.
