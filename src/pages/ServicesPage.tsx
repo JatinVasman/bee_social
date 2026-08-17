@@ -55,25 +55,25 @@ const smmPackagesData = [
 const partnershipTiersData = [
   {
     tier: '3-4 Accounts',
-    discount: 'Dedicated Team',
+    discount: '10% OFF',
     desc: 'Perfect for boutique agencies',
     tag: ''
   },
   {
     tier: '5-9 Accounts',
-    discount: 'Priority Turnaround',
+    discount: '15% OFF',
     desc: 'Mid-size agencies & resellers',
     tag: 'MOST POPULAR'
   },
   {
     tier: '10-49 Accounts',
-    discount: 'Dedicated Manager',
+    discount: '20% OFF',
     desc: 'Large agency portfolios',
     tag: 'BEST VALUE'
   },
   {
     tier: '50+ Accounts',
-    discount: 'Enterprise SLA',
+    discount: 'Custom',
     desc: 'Enterprise + dedicated manager',
     tag: 'ENTERPRISE'
   }

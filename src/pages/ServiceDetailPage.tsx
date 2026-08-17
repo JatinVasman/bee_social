@@ -65,10 +65,10 @@ const smmPackagesData = [
 ];
 
 const partnershipTiersData = [
-  { tier: 'TIER 1 RESELLER', discount: 'Dedicated Team', desc: 'Starting 3+ Active Clients', tag: '' },
-  { tier: 'TIER 2 PARTNER', discount: 'Dedicated Manager', desc: 'Starting 8+ Active Clients', tag: 'BEST VALUE' },
-  { tier: 'TIER 3 STRATEGIC', discount: '30% OFF', desc: 'Starting 15+ Active Clients', tag: 'MOST POPULAR' },
-  { tier: 'ENTERPRISE EXEC', discount: '40% OFF', desc: 'Starting 25+ Active Clients', tag: '' }
+  { tier: '3-4 Accounts', discount: '10% OFF', desc: 'Perfect for boutique agencies', tag: '' },
+  { tier: '5-9 Accounts', discount: '15% OFF', desc: 'Mid-size agencies & resellers', tag: 'MOST POPULAR' },
+  { tier: '10-49 Accounts', discount: '20% OFF', desc: 'Large agency portfolios', tag: 'BEST VALUE' },
+  { tier: '50+ Accounts', discount: 'Custom', desc: 'Enterprise + dedicated manager', tag: 'ENTERPRISE' }
 ];
 
 const smmFaqsData = [
