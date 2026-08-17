@@ -163,9 +163,20 @@ export const LeadershipModal: React.FC<LeadershipModalProps> = ({ person, onClos
 
                 <div style={{ width: '100%', height: '1.5px', background: '#E2E8F0' }} />
 
-                <p style={{ color: '#334155', fontSize: '0.975rem', lineHeight: 1.7, margin: 0 }}>
-                  Siddhi is the Founder of BeeSocial, a creative social media and digital marketing agency helping businesses build an unmistakable online presence and achieve measurable growth. With a focus on creative excellence, visual storytelling, and audience engagement, BeeSocial helps brands turn casual scrollers into loyal customers.
+                <p style={{ color: '#334155', fontSize: '0.975rem', lineHeight: 1.75, margin: 0 }}>
+                  Siddhi leads <strong>BeeSocial</strong> across brand strategy, digital marketing, social media, content direction, client partnerships, and day-to-day operations. From shaping scroll-stopping creative campaigns to architecting high-converting growth funnels, she seamlessly unites strategy, design excellence, and business acumen to help brands establish an unmistakable, high-impact digital presence.
                 </p>
+
+                {/* Purpose-Driven Leadership Callout */}
+                <div style={{ background: 'linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%)', border: '1px solid #FCD34D', borderRadius: '16px', padding: '1.25rem 1.4rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 800, fontSize: '0.925rem', marginBottom: '0.35rem', color: '#92400E' }}>
+                    <span style={{ fontSize: '1.15rem' }}>🐝</span>
+                    <span>Beyond Conventional Marketing</span>
+                  </div>
+                  <p style={{ fontSize: '0.85rem', lineHeight: 1.6, margin: 0, color: '#78350F' }}>
+                    Her leadership goes far beyond marketing — she steers the agency’s vision, orchestrates end-to-end operations, and ensures every creative idea moves from concept to execution with clarity, purpose, and measurable impact.
+                  </p>
+                </div>
 
                 {/* Areas of Expertise */}
                 <div>
@@ -174,14 +185,14 @@ export const LeadershipModal: React.FC<LeadershipModalProps> = ({ person, onClos
                     <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                       <span style={{ fontSize: '1.25rem' }}>📱</span>
                       <div>
-                        <h5 style={{ fontWeight: 800, fontSize: '0.875rem', color: '#0F172A', margin: '0 0 0.15rem 0' }}>Social Media Marketing</h5>
+                        <h5 style={{ fontWeight: 800, fontSize: '0.875rem', color: '#0F172A', margin: '0 0 0.15rem 0' }}>Social Media & Brand Strategy</h5>
                         <p style={{ fontSize: '0.78rem', color: '#64748B', margin: 0, lineHeight: 1.45 }}>Viral reels, content calendars, and community building across platforms.</p>
                       </div>
                     </div>
                     <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                       <span style={{ fontSize: '1.25rem' }}>📢</span>
                       <div>
-                        <h5 style={{ fontWeight: 800, fontSize: '0.875rem', color: '#0F172A', margin: '0 0 0.15rem 0' }}>Performance Marketing</h5>
+                        <h5 style={{ fontWeight: 800, fontSize: '0.875rem', color: '#0F172A', margin: '0 0 0.15rem 0' }}>Growth & Performance Marketing</h5>
                         <p style={{ fontSize: '0.78rem', color: '#64748B', margin: 0, lineHeight: 1.45 }}>ROI-focused paid campaigns across Meta, Google & YouTube.</p>
                       </div>
                     </div>
@@ -195,7 +206,7 @@ export const LeadershipModal: React.FC<LeadershipModalProps> = ({ person, onClos
                     <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                       <span style={{ fontSize: '1.25rem' }}>🔬</span>
                       <div>
-                        <h5 style={{ fontWeight: 800, fontSize: '0.875rem', color: '#0F172A', margin: '0 0 0.15rem 0' }}>Content Strategy & Hooks</h5>
+                        <h5 style={{ fontWeight: 800, fontSize: '0.875rem', color: '#0F172A', margin: '0 0 0.15rem 0' }}>Content Direction & Hooks</h5>
                         <p style={{ fontSize: '0.78rem', color: '#64748B', margin: 0, lineHeight: 1.45 }}>Scroll-stopping copy, creative angles, and narrative design.</p>
                       </div>
                     </div>
@@ -207,23 +218,23 @@ export const LeadershipModal: React.FC<LeadershipModalProps> = ({ person, onClos
                       </div>
                     </div>
                     <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                      <span style={{ fontSize: '1.25rem' }}>👥</span>
+                      <span style={{ fontSize: '1.25rem' }}>⚙️</span>
                       <div>
-                        <h5 style={{ fontWeight: 800, fontSize: '0.875rem', color: '#0F172A', margin: '0 0 0.15rem 0' }}>Creative Direction</h5>
-                        <p style={{ fontSize: '0.78rem', color: '#64748B', margin: 0, lineHeight: 1.45 }}>Leading creative campaigns with consistency, detail, and quality control.</p>
+                        <h5 style={{ fontWeight: 800, fontSize: '0.875rem', color: '#0F172A', margin: '0 0 0.15rem 0' }}>End-to-End Operations</h5>
+                        <p style={{ fontSize: '0.78rem', color: '#64748B', margin: 0, lineHeight: 1.45 }}>Orchestrating campaign timelines, client relations, and quality assurance.</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* My Journey */}
+                {/* Leadership Philosophy */}
                 <div>
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem' }}>My Journey</h3>
-                  <p style={{ color: '#475569', fontSize: '0.875rem', lineHeight: 1.6, margin: '0 0 0.5rem 0' }}>
-                    My journey began with a simple belief — social media should do more than look pretty; it must create genuine connections and measurable business momentum. Over the years, I've partnered with diverse brands to turn creative concepts into high-engagement campaigns.
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem' }}>Leadership & Philosophy</h3>
+                  <p style={{ color: '#475569', fontSize: '0.875rem', lineHeight: 1.65, margin: '0 0 0.5rem 0' }}>
+                    "At BeeSocial, we believe that modern marketing must do more than just look aesthetic — it must create authentic connections, engage dedicated communities, and drive meaningful business momentum."
                   </p>
-                  <p style={{ color: '#475569', fontSize: '0.875rem', lineHeight: 1.6, margin: 0 }}>
-                    BeeSocial represents a commitment to high-impact creativity, reliable execution, and helping brands find their unique voice in a crowded digital world.
+                  <p style={{ color: '#475569', fontSize: '0.875rem', lineHeight: 1.65, margin: 0 }}>
+                    By pairing bold visual creativity with structured business thinking, Siddhi ensures that every client collaboration is backed by dedicated founder involvement and purposeful execution.
                   </p>
                 </div>
 

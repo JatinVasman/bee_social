@@ -171,8 +171,8 @@ export const AboutUs: React.FC<AboutUsProps> = ({
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem', flexWrap: 'wrap' }}>
                   <div style={{ color: 'var(--primary)', fontWeight: 800, fontSize: '0.78rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Founder</div>
                 </div>
-                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.5, margin: '0.2rem 0', minHeight: '3.4rem' }}>
-                  The creative vision behind BeeSocial — building brands that connect, engage, and grow on social media.
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.55, margin: '0.2rem 0', minHeight: '3.4rem' }}>
+                  Leading brand strategy, creative direction, and operations — uniting storytelling and business thinking to help brands build a high-impact digital presence. 🐝
                 </p>
                 <div style={{ 
                   color: 'var(--primary)', 
