@@ -25,7 +25,7 @@ import { LocationsModal } from './components/LocationsModal';
 // Dedicated Pages
 import { ServicesPage } from './pages/ServicesPage';
 import { SmmPage } from './pages/SmmPage';
-import { IndustriesPage } from './pages/IndustriesPage';
+import { IndustriesPage, all89IndustriesList } from './pages/IndustriesPage';
 import { PortfolioPage } from './pages/PortfolioPage';
 import { LocationPage } from './pages/LocationPage';
 import { BlogPage } from './pages/BlogPage';
@@ -35,7 +35,9 @@ import { GraphicDetailPage } from './pages/GraphicDetailPage';
 import { GraphicItemDetailPage } from './pages/GraphicItemDetailPage';
 import { LocationsDirectoryPage } from './pages/LocationsDirectoryPage';
 
-import { parseRoute, getRoutePath } from './utils/routes';
+import { parseRoute, getRoutePath, SERVICE_SLUG_TO_ID } from './utils/routes';
+import { ALL_BLOGS } from './data/blogData';
+import { detailed17Services } from './components/ServicesGrid';
 
 export const App: React.FC = () => {
   const [activePage, setActivePage] = useState<PageView>('home');
@@ -118,10 +120,54 @@ export const App: React.FC = () => {
         title = 'Social Media & Digital Marketing Services — SMM, Ads & Design | BeeSocial';
         description = 'Explore full-suite social media and digital marketing services: Content Creation, Social Media Management, Paid Ads, Web Development, and Brand Design.';
         break;
-      case 'industries':
-        title = 'Industry-Specific Social Media & Marketing Solutions | BeeSocial';
-        description = 'Tailored social media marketing and digital growth strategies customized for multiple industries including Healthcare, Real Estate, E-Commerce, Education, and more.';
+      case 'industries': {
+        if (selectedIndustryId) {
+          const raw = decodeURIComponent(selectedIndustryId).toLowerCase().trim();
+          const clean = raw
+            .replace(/^marketing-for-/i, '')
+            .replace(/^marketing-to-/i, '')
+            .replace(/^marketing-for\s+/i, '')
+            .replace(/^marketing\s+for\s+/i, '')
+            .replace(/^marketing-/i, '')
+            .replace(/^marketing\s+/i, '')
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-|-$/g, '');
+
+          const cleanPlural = clean.endsWith('s') ? clean : `${clean}s`;
+          const cleanSingular = clean.replace(/s$/, '');
+
+          const matched = all89IndustriesList.find(i => {
+            const itemCleanId = i.id.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+            const itemCleanName = i.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+            return itemCleanId === clean ||
+                   itemCleanName === clean ||
+                   itemCleanId === cleanPlural ||
+                   itemCleanId === cleanSingular ||
+                   itemCleanName === cleanPlural ||
+                   itemCleanName === cleanSingular;
+          });
+
+          const matchedCategory = all89IndustriesList.find(i => 
+            i.category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') === clean
+          );
+
+          if (matched) {
+            title = `Digital Marketing for ${matched.name} (${matched.category}) — Growth Strategy & ROI | BeeSocial`;
+            description = matched.overview || `Scale your ${matched.name} business with BeeSocial. High-ROI customer acquisition, local SEO, Meta Ads, and automated WhatsApp CRM funnels tailored for ${matched.name}.`;
+          } else if (matchedCategory) {
+            title = `Digital Marketing for ${matchedCategory.category} — Growth Strategy & ROI | BeeSocial`;
+            description = `Tailored digital marketing, performance advertising, and customer acquisition playbooks for ${matchedCategory.category} businesses across India by BeeSocial.`;
+          } else {
+            const prettyName = clean.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+            title = `Digital Marketing for ${prettyName} — Growth Strategy & Playbooks | BeeSocial`;
+            description = `Tailored digital marketing and customer acquisition systems engineered for ${prettyName}. SEO, performance ads, and conversion funnels by BeeSocial.`;
+          }
+        } else {
+          title = 'Industry-Specific Social Media & Marketing Solutions | BeeSocial';
+          description = 'Tailored social media marketing and digital growth strategies customized for 89+ industries including Healthcare, Real Estate, E-Commerce, Education, and more.';
+        }
         break;
+      }
       case 'portfolio':
         title = 'Our Work — Creative Portfolio & Case Studies | BeeSocial';
         description = 'Discover real-world creative campaigns, social media transformations, and brand growth results delivered by BeeSocial.';
@@ -129,6 +175,43 @@ export const App: React.FC = () => {
       case 'blog':
         title = 'Social Media Marketing & Digital Growth Insights | BeeSocial Blog';
         description = 'Read expert articles and guides on social media strategy, content creation, paid media, brand building, and digital marketing trends.';
+        break;
+      case 'blog-post': {
+        const blog = ALL_BLOGS.find(b => 
+          b.slug === selectedBlogSlug || 
+          b.slug === decodeURIComponent(selectedBlogSlug || '') ||
+          b.slug.toLowerCase() === selectedBlogSlug?.toLowerCase()
+        );
+        if (blog) {
+          title = `${blog.title} | BeeSocial Blog`;
+          description = blog.excerpt || description;
+        } else {
+          title = 'Blog Post & Growth Insights | BeeSocial';
+        }
+        break;
+      }
+      case 'service-details': {
+        const normalizedId = SERVICE_SLUG_TO_ID[selectedServiceId?.toLowerCase() || ''] || selectedServiceId;
+        const service = detailed17Services.find(s => 
+          s.id === normalizedId || 
+          s.id === selectedServiceId || 
+          s.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') === selectedServiceId?.toLowerCase()
+        );
+        if (service) {
+          title = `${service.title} Services — Strategy, Pricing & Deliverables | BeeSocial`;
+          description = service.longDescription || service.description || description;
+        } else {
+          title = 'Services & Capabilities | BeeSocial';
+        }
+        break;
+      }
+      case 'graphic-details':
+        title = 'Graphic Design Services & Creative Pricing | BeeSocial';
+        description = 'Explore professional graphic design services: social media posts, pitch decks, packaging, brochures, logos, and branding with 24-hour turnaround.';
+        break;
+      case 'design-item':
+        title = `Graphic Design for ${selectedDesignItem.replace(/-/g, ' ')} | BeeSocial`;
+        description = `Professional custom design services for ${selectedDesignItem.replace(/-/g, ' ')}. High-resolution vector files, print-ready PDFs, and fast turnaround.`;
         break;
       case 'location':
         title = `Social Media & Digital Marketing Agency in ${selectedLocation} | BeeSocial`;

@@ -3644,6 +3644,61 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
       if (matched) {
         setActiveHubIndustry(matched);
         setActiveHubTab('Overview');
+
+        // Dynamic Title & Meta for Industry Hub
+        const pageTitle = `Digital Marketing for ${matched.name} (${matched.category}) — Growth Strategy & ROI | BeeSocial`;
+        const pageDesc = matched.overview;
+        document.title = pageTitle;
+
+        let metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', pageDesc);
+
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) ogTitle.setAttribute('content', pageTitle);
+
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) ogDesc.setAttribute('content', pageDesc);
+
+        // Inject Industry Schema
+        const scriptId = 'industry-hub-schema';
+        let script = document.getElementById(scriptId) as HTMLScriptElement | null;
+        if (!script) {
+          script = document.createElement('script');
+          script.id = scriptId;
+          script.type = 'application/ld+json';
+          document.head.appendChild(script);
+        }
+
+        const cleanSlug = `marketing-for-${matched.id}`;
+        const canonicalUrl = `/industries/${cleanSlug}`;
+        const schemaData = {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Service",
+              "@id": `${canonicalUrl}#service`,
+              "name": `Digital Marketing for ${matched.name}`,
+              "description": matched.overview,
+              "provider": {
+                "@type": "Organization",
+                "name": "BeeSocial",
+                "url": ""
+              },
+              "areaServed": "India",
+              "serviceType": `Digital Marketing & Social Media for ${matched.name}`
+            },
+            {
+              "@type": "BreadcrumbList",
+              "@id": `${canonicalUrl}#breadcrumb`,
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "/" },
+                { "@type": "ListItem", "position": 2, "name": "Industries", "item": "/industries" },
+                { "@type": "ListItem", "position": 3, "name": `Marketing for ${matched.name}`, "item": canonicalUrl }
+              ]
+            }
+          ]
+        };
+        script.text = JSON.stringify(schemaData);
       }
     } else {
       setActiveHubIndustry(null);

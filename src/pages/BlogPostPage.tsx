@@ -14,7 +14,13 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ slug, onNavigate, on
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  const blog = ALL_BLOGS.find(b => b.slug === slug);
+  const decodedSlug = decodeURIComponent(slug || '');
+  const blog = ALL_BLOGS.find(b => 
+    b.slug === slug || 
+    b.slug === decodedSlug ||
+    b.slug.toLowerCase() === slug?.toLowerCase() ||
+    b.slug.toLowerCase() === decodedSlug.toLowerCase()
+  );
 
   useEffect(() => {
     setLoading(true);
