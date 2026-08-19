@@ -169,12 +169,12 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
 
   if (!matchedItem || !matchedCategory) {
     return (
-      <div style={{ padding: '6rem 0', textAlign: 'center', backgroundColor: '#FDFBF7', minHeight: '80vh' }}>
+      <div style={{ padding: '6rem 0', textAlign: 'center', backgroundColor: 'var(--bg-card)', minHeight: '80vh' }}>
         <div className="container">
-          <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '1.5rem' }}>
+          <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '1.5rem' }}>
             Design Domain Not Found
           </h2>
-          <p style={{ fontSize: '1.1rem', color: '#64748B', marginBottom: '2rem' }}>
+          <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', marginBottom: '2rem' }}>
             The requested design service details page is invalid or has been updated.
           </p>
           <button 
@@ -201,15 +201,15 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
   const whatsappLink = `https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services`;
 
   return (
-    <div style={{ backgroundColor: '#FDFBF7', minHeight: '100vh', padding: '2rem 0 6.5rem 0' }}>
+    <div style={{ backgroundColor: 'var(--bg-main, #FFF7F8)', minHeight: '100vh', padding: '2rem 0 6.5rem 0' }}>
       <div className="container" style={{ maxWidth: '1350px' }}>
         
         {/* Breadcrumb */}
-        <div style={{ fontSize: '0.875rem', color: '#64748B', marginBottom: '1.5rem' }}>
-          <span style={{ cursor: 'pointer', color: '#3B82F6' }} onClick={() => onNavigate('home')}>Home</span> /{' '}
-          <span style={{ cursor: 'pointer', color: '#3B82F6' }} onClick={() => onNavigate('services')}>Services</span> /{' '}
-          <span style={{ cursor: 'pointer', color: '#3B82F6' }} onClick={() => onNavigate('graphic-details')}>Graphic Design</span> /{' '}
-          <span style={{ color: '#0F172A', fontWeight: 700 }}>{matchedItem.name}</span>
+        <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
+          <span style={{ cursor: 'pointer', color: 'var(--primary)' }} onClick={() => onNavigate('home')}>Home</span> /{' '}
+          <span style={{ cursor: 'pointer', color: 'var(--primary)' }} onClick={() => onNavigate('services')}>Services</span> /{' '}
+          <span style={{ cursor: 'pointer', color: 'var(--primary)' }} onClick={() => onNavigate('graphic-details')}>Graphic Design</span> /{' '}
+          <span style={{ color: 'var(--secondary)', fontWeight: 700 }}>{matchedItem.name}</span>
         </div>
 
         {/* Back / Close button */}
@@ -229,9 +229,9 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
               gap: '0.5rem',
               fontSize: '0.9rem',
               fontWeight: 800,
-              color: '#0F172A',
-              backgroundColor: '#FFFFFF',
-              border: '1px solid #CBD5E1',
+              color: 'var(--secondary)',
+              backgroundColor: 'var(--bg-card)',
+              border: '1px solid var(--border-color)',
               padding: '0.6rem 1.25rem',
               borderRadius: '999px',
               cursor: 'pointer',
@@ -239,7 +239,7 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
               transition: 'all 0.25s ease'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#F1F5F9';
+              e.currentTarget.style.backgroundColor = 'var(--border-color-subtle, #F0E4E8)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = '#FFFFFF';
@@ -251,24 +251,24 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
 
         {/* Hero Section Card - Clean Typography & Specification Layout */}
         <div style={{ 
-          background: '#FFFFFF', 
-          borderTop: '4px solid #FF4E27', 
-          borderLeft: '1px solid #E2E8F0', 
-          borderRight: '1px solid #E2E8F0', 
-          borderBottom: '1px solid #E2E8F0', 
+          background: 'var(--bg-card)', 
+          borderTop: '4px solid var(--primary)', 
+          borderLeft: '1px solid var(--border-color-subtle)', 
+          borderRight: '1px solid var(--border-color-subtle)', 
+          borderBottom: '1px solid var(--border-color-subtle)', 
           borderRadius: '24px', 
           padding: '3.5rem 3rem', 
           marginBottom: '2.5rem', 
           boxShadow: '0 15px 35px rgba(0,0,0,0.03)'
         }}>
           <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem', background: '#EFF6FF', padding: '0.35rem 1rem', borderRadius: '999px' }}>
-              <span style={{ fontSize: '0.75rem', fontWeight: 900, color: '#3B82F6', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem', background: 'rgba(214, 51, 108, 0.04)', padding: '0.35rem 1rem', borderRadius: '999px' }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 900, color: 'var(--primary)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 {matchedCategory.title}
               </span>
             </div>
 
-            <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3.2rem', fontWeight: 900, color: '#0F172A', marginBottom: '1.25rem', lineHeight: 1.15 }}>
+            <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3.2rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '1.25rem', lineHeight: 1.15 }}>
               {matchedItem.name}
             </h1>
 
@@ -281,24 +281,24 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
               display: 'grid', 
               gridTemplateColumns: 'repeat(3, 1fr)', 
               gap: '1.5rem', 
-              background: '#F8FAFC', 
-              border: '1px solid #E2E8F0', 
+              background: 'var(--bg-subtle, #FFF0F2)', 
+              border: '1px solid var(--border-color-subtle)', 
               borderRadius: '20px', 
               padding: '2rem 1.5rem', 
               marginBottom: '2.5rem',
               textAlign: 'center'
             }} className="graphics-pricing-grid">
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <div style={{ fontSize: '0.75rem', color: '#64748B', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Turnaround Time</div>
-                <div style={{ fontSize: '1.25rem', fontWeight: 900, color: '#0F172A', marginTop: '0.35rem', fontFamily: 'Outfit, sans-serif' }}>{customData.turnaround}</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Turnaround Time</div>
+                <div style={{ fontSize: '1.25rem', fontWeight: 900, color: 'var(--secondary)', marginTop: '0.35rem', fontFamily: 'Outfit, sans-serif' }}>{customData.turnaround}</div>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', borderLeft: '1px solid #E2E8F0', borderRight: '1px solid #E2E8F0', padding: '0 1rem' }}>
-                <div style={{ fontSize: '0.75rem', color: '#64748B', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Deliverable Formats</div>
-                <div style={{ fontSize: '0.875rem', fontWeight: 700, color: '#0F172A', marginTop: '0.35rem', lineHeight: 1.4 }}>{customData.formats}</div>
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', borderLeft: '1px solid var(--border-color-subtle)', borderRight: '1px solid var(--border-color-subtle)', padding: '0 1rem' }}>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Deliverable Formats</div>
+                <div style={{ fontSize: '0.875rem', fontWeight: 700, color: 'var(--secondary)', marginTop: '0.35rem', lineHeight: 1.4 }}>{customData.formats}</div>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <div style={{ fontSize: '0.75rem', color: '#64748B', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Fixed Starting Price</div>
-                <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.75rem', fontWeight: 900, color: '#D97706', marginTop: '0.2rem' }}>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Fixed Starting Price</div>
+                <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.75rem', fontWeight: 900, color: 'var(--primary)', marginTop: '0.2rem' }}>
                   {matchedItem.price}
                 </div>
               </div>
@@ -312,7 +312,7 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
-                  backgroundColor: '#D97706',
+                  backgroundColor: 'var(--primary-raw, #D6336C)',
                   color: '#FFFFFF',
                   padding: '0.95rem 2.2rem',
                   borderRadius: '999px',
@@ -330,7 +330,7 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
                   window.open(`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20a%20custom%20order%20for%20${encodeURIComponent(matchedItem?.name || '')}`, '_blank');
                 }}
                 style={{
-                  backgroundColor: '#0F172A',
+                  backgroundColor: 'var(--secondary)',
                   color: '#FFFFFF',
                   border: 'none',
                   padding: '0.95rem 2.2rem',
@@ -352,14 +352,14 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '2rem', marginBottom: '4.5rem' }} className="graphics-info-blocks">
           
           {/* Deliverables list */}
-          <div style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '24px', padding: '2.25rem 2rem', boxShadow: '0 10px 30px rgba(0,0,0,0.01)' }}>
-            <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.25rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.25rem', borderBottom: '1px solid #F1F5F9', paddingBottom: '0.5rem' }}>
+          <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border-color-subtle)', borderRadius: '24px', padding: '2.25rem 2rem', boxShadow: '0 10px 30px rgba(0,0,0,0.01)' }}>
+            <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.25rem', fontWeight: 800, color: 'var(--secondary)', marginBottom: '1.25rem', borderBottom: '1px solid var(--border-color-subtle, #F0E4E8)', paddingBottom: '0.5rem' }}>
               📦 What is Included / Deliverables
             </h3>
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', listStyle: 'none', padding: 0, margin: 0 }}>
               {customData.inclusions.map((inc, index) => (
                 <li key={index} style={{ display: 'flex', alignItems: 'start', gap: '0.6rem', fontSize: '0.925rem', color: '#475569', lineHeight: 1.5 }}>
-                  <span style={{ color: '#FF4E27', fontWeight: 900 }}>✓</span>
+                  <span style={{ color: 'var(--primary)', fontWeight: 900 }}>✓</span>
                   <span>{inc}</span>
                 </li>
               ))}
@@ -367,14 +367,14 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
           </div>
 
           {/* Requirements list */}
-          <div style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '24px', padding: '2.25rem 2rem', boxShadow: '0 10px 30px rgba(0,0,0,0.01)' }}>
-            <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.25rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.25rem', borderBottom: '1px solid #F1F5F9', paddingBottom: '0.5rem' }}>
+          <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border-color-subtle)', borderRadius: '24px', padding: '2.25rem 2rem', boxShadow: '0 10px 30px rgba(0,0,0,0.01)' }}>
+            <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.25rem', fontWeight: 800, color: 'var(--secondary)', marginBottom: '1.25rem', borderBottom: '1px solid var(--border-color-subtle, #F0E4E8)', paddingBottom: '0.5rem' }}>
               📋 What We Need From You
             </h3>
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', listStyle: 'none', padding: 0, margin: 0 }}>
               {customData.requirements.map((req, index) => (
                 <li key={index} style={{ display: 'flex', alignItems: 'start', gap: '0.6rem', fontSize: '0.925rem', color: '#475569', lineHeight: 1.5 }}>
-                  <span style={{ color: '#3B82F6', fontWeight: 900 }}>➜</span>
+                  <span style={{ color: 'var(--primary)', fontWeight: 900 }}>➜</span>
                   <span>{req}</span>
                 </li>
               ))}
@@ -384,7 +384,7 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
 
         {/* Global CTA Consultation Banner */}
         <div style={{ 
-          background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)', 
+          background: 'linear-gradient(135deg, var(--secondary) 0%, var(--secondary) 100%)', 
           borderRadius: '28px', 
           padding: '3.5rem 3rem', 
           color: '#FFF', 
@@ -397,13 +397,13 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
           flexWrap: 'wrap' 
         }}>
           <div style={{ maxWidth: '640px' }}>
-            <span className="section-tag" style={{ background: 'rgba(255,78,39,0.2)', color: '#FF4E27', border: 'none', marginBottom: '0.75rem' }}>
+            <span className="section-tag" style={{ background: 'rgba(214, 51, 108, 0.12)', color: 'var(--primary)', border: 'none', marginBottom: '0.75rem' }}>
               TRANSPARENT CREATIVE ENGINE
             </span>
             <h3 style={{ fontSize: '2.2rem', fontWeight: 900, color: '#FFF', marginBottom: '0.5rem' }}>
               Interested in a Monthly Design Retainer?
             </h3>
-            <p style={{ fontSize: '1rem', color: '#94A3B8', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
               Unlock flat-rate agency graphic assets, logo branding, packaging setups, and custom templates with unlimited revisions. Tailored for scalable teams.
             </p>
           </div>
@@ -419,11 +419,11 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
               Chat on WhatsApp 💬
             </a>
             <button
-              className="btn btn-secondary"
-              style={{ color: '#FFF', borderColor: 'rgba(255,255,255,0.3)', padding: '0.9rem 1.8rem' }}
-              onClick={() => window.open(`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20a%20strategy%20call%20for%20${encodeURIComponent(matchedItem.name)}`, '_blank')}
+              className="btn btn-outline-light"
+              style={{ padding: '0.9rem 1.8rem' }}
+              onClick={() => window.open(`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20a%20call%20for%20${encodeURIComponent(matchedItem.name)}`, '_blank')}
             >
-              Book Strategy Call ➔
+              Book a Call ➔
             </button>
           </div>
         </div>

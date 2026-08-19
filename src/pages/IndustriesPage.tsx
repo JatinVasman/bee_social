@@ -3671,27 +3671,27 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
   }, [selectedCategory, searchQuery]);
 
   return (
-    <div style={{ backgroundColor: '#F0F4F8', color: '#1F2937', minHeight: '100vh', padding: '2.5rem 0 6rem 0' }}>
+    <div style={{ backgroundColor: 'var(--bg-main, #FFF7F8)', color: 'var(--secondary)', minHeight: '100vh', padding: '2.5rem 0 6rem 0' }}>
       <div className="container">
         
         {/* BREADCRUMB */}
-        <div style={{ fontSize: '0.825rem', color: '#64748B', marginBottom: '2rem' }}>
-          <span style={{ cursor: 'pointer', color: '#0F172A', fontWeight: 600 }} onClick={() => onNavigate('home')}>Home</span> › <span style={{ color: '#64748B', fontWeight: 600 }}>Industries</span>
+        <div style={{ fontSize: '0.825rem', color: 'var(--text-muted)', marginBottom: '2rem' }}>
+          <span style={{ cursor: 'pointer', color: 'var(--secondary)', fontWeight: 600 }} onClick={() => onNavigate('home')}>Home</span> › <span style={{ color: 'var(--text-muted)', fontWeight: 600 }}>Industries</span>
         </div>
 
         {/* HEADER SECTION - UNIQUE PREMIUM BeeSocial COPY */}
         <div style={{ textAlign: 'center', maxWidth: '880px', margin: '0 auto 2.5rem auto' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.65rem', fontSize: '0.78rem', fontWeight: 800, color: '#3B82F6', letterSpacing: '0.22em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-            <span style={{ width: '35px', height: '1.5px', background: '#3B82F6' }}></span>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.65rem', fontSize: '0.78rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.22em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+            <span style={{ width: '35px', height: '1.5px', background: 'var(--primary)' }}></span>
             <span>INDUSTRY-SPECIFIC GROWTH ENGINES</span>
-            <span style={{ width: '35px', height: '1.5px', background: '#3B82F6' }}></span>
+            <span style={{ width: '35px', height: '1.5px', background: 'var(--primary)' }}></span>
           </div>
 
-          <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3.4rem', fontWeight: 900, color: '#0F172A', marginBottom: '1rem', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
+          <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3.4rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '1rem', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
             89 Sectors Scaled. Zero Generic Marketing.
           </h1>
 
-          <p style={{ fontSize: '1.1rem', color: '#64748B', lineHeight: 1.6, maxWidth: '750px', margin: '0 auto' }}>
+          <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: 1.6, maxWidth: '750px', margin: '0 auto' }}>
             Every niche has its own rules. Explore our 89 dedicated authority hubs powered by real Indian market intelligence, verified acquisition funnels, and battle-tested digital playbooks.
           </p>
         </div>
@@ -3708,15 +3708,15 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
                 width: '100%',
                 padding: '0.85rem 1.75rem',
                 borderRadius: '999px',
-                border: '1px solid #E2E8F0',
-                backgroundColor: '#FFFFFF',
+                border: '1px solid var(--border-color-subtle)',
+                backgroundColor: 'var(--bg-card)',
                 fontSize: '0.925rem',
                 color: '#1F2937',
                 outline: 'none',
                 boxShadow: '0 8px 30px rgba(0, 0, 0, 0.05)',
                 transition: 'all 0.25s ease'
               }}
-              onFocus={(e) => e.target.style.borderColor = '#3B82F6'}
+              onFocus={(e) => e.target.style.borderColor = 'var(--primary)'}
               onBlur={(e) => e.target.style.borderColor = '#E2E8F0'}
             />
           </div>
@@ -3740,9 +3740,9 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 style={{
-                  backgroundColor: isActive ? '#0F172A' : '#FFFFFF',
+                  backgroundColor: isActive ? 'var(--secondary)' : '#FFFFFF',
                   color: isActive ? '#FFFFFF' : '#475569',
-                  border: isActive ? '1px solid #0F172A' : '1px solid #E2E8F0',
+                  border: isActive ? '1px solid var(--secondary)' : '1px solid var(--border-color-subtle)',
                   borderRadius: '999px',
                   padding: '0.45rem 1.1rem',
                   fontSize: '0.825rem',
@@ -3759,7 +3759,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
         </div>
 
         {/* COUNTER SUBTEXT */}
-        <div style={{ textAlign: 'center', fontSize: '0.75rem', fontWeight: 800, color: '#94A3B8', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '2.5rem' }}>
+        <div style={{ textAlign: 'center', fontSize: '0.75rem', fontWeight: 800, color: 'var(--text-muted)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '2.5rem' }}>
           {filteredIndustries.length} INDUSTRIES SHOWN
         </div>
 
@@ -3776,10 +3776,10 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
               key={item.id}
               onClick={() => handleOpenHub(item)}
               style={{
-                backgroundColor: '#FFFFFF',
+                backgroundColor: 'var(--bg-card)',
                 borderRadius: '20px',
                 padding: '1.25rem 1.1rem',
-                border: '1px solid #F1F5F9',
+                border: '1px solid var(--border-color-subtle, #F0E4E8)',
                 boxShadow: '0 8px 25px rgba(0, 0, 0, 0.04)',
                 position: 'relative',
                 display: 'flex',
@@ -3795,7 +3795,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
                 e.currentTarget.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.04)';
-                e.currentTarget.style.borderColor = '#F1F5F9';
+                e.currentTarget.style.borderColor = 'var(--border-color-subtle, #F0E4E8)';
               }}
             >
               {/* TOP ROW: ICON ON LEFT, LIVE BADGE ON RIGHT */}
@@ -3803,7 +3803,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
                 <span style={{ fontSize: '1.75rem', lineHeight: 1 }}>{item.icon}</span>
                 <span
                   style={{
-                    backgroundColor: '#E0B56C',
+                    backgroundColor: 'var(--primary-light, #FF9EAF)',
                     color: '#FFFFFF',
                     fontSize: '0.625rem',
                     fontWeight: 900,
@@ -3822,7 +3822,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
                   fontFamily: 'Outfit, serif',
                   fontSize: '1rem',
                   fontWeight: 900,
-                  color: '#0F172A',
+                  color: 'var(--secondary)',
                   marginBottom: '0.2rem',
                   lineHeight: 1.3
                 }}
@@ -3831,12 +3831,12 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
               </h3>
 
               {/* CATEGORY SUBTEXT */}
-              <div style={{ fontSize: '0.75rem', color: '#94A3B8', fontWeight: 600, marginBottom: '1rem' }}>
+              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600, marginBottom: '1rem' }}>
                 {item.category}
               </div>
 
               {/* EXPLORE LINK AT BOTTOM LEFT */}
-              <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', gap: '0.25rem', color: '#3B82F6', fontSize: '0.78rem', fontWeight: 800 }}>
+              <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', gap: '0.25rem', color: 'var(--primary)', fontSize: '0.78rem', fontWeight: 800 }}>
                 <span>Explore</span>
                 <span>→</span>
               </div>
@@ -3855,7 +3855,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
               maxWidth: '1080px',
               width: '95%',
               padding: '2rem',
-              backgroundColor: '#F0F4F8',
+              backgroundColor: 'var(--bg-main, #FFF7F8)',
               maxHeight: '90vh',
               overflowY: 'auto'
             }}
@@ -3863,8 +3863,8 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
           >
             {/* CLOSE BUTTON */}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-              <div style={{ fontSize: '0.85rem', color: '#64748B' }}>
-                <span style={{ cursor: 'pointer', color: '#0F172A', fontWeight: 600 }} onClick={handleCloseHub}>Industries</span> › <span style={{ color: '#3B82F6', fontWeight: 700 }}>{activeHubIndustry.name} Hub</span>
+              <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+                <span style={{ cursor: 'pointer', color: 'var(--secondary)', fontWeight: 600 }} onClick={handleCloseHub}>Industries</span> › <span style={{ color: 'var(--primary)', fontWeight: 700 }}>{activeHubIndustry.name} Hub</span>
               </div>
               <button
                 onClick={handleCloseHub}
@@ -3872,15 +3872,15 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
                   width: '36px',
                   height: '36px',
                   borderRadius: '50%',
-                  backgroundColor: '#FFFFFF',
-                  border: '1px solid #CBD5E1',
+                  backgroundColor: 'var(--bg-card)',
+                  border: '1px solid var(--border-color)',
                   fontSize: '1.2rem',
                   fontWeight: 800,
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: '#0F172A'
+                  color: 'var(--secondary)'
                 }}
               >
                 ✕
@@ -3890,10 +3890,10 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
             {/* 1. TOP HEADER BANNER MATCHING SCREENSHOT 1 EXACTLY */}
             <div
               style={{
-                backgroundColor: '#FFFFFF',
+                backgroundColor: 'var(--bg-card)',
                 borderRadius: '24px',
                 padding: '2rem 2.5rem',
-                borderTop: '4px solid #3B82F6',
+                borderTop: '4px solid var(--primary)',
                 boxShadow: '0 12px 35px rgba(0, 0, 0, 0.05)',
                 marginBottom: '1.5rem',
                 position: 'relative'
@@ -3918,11 +3918,11 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
                       </span>
                     </div>
 
-                    <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: '#0F172A', margin: 0, lineHeight: 1.1 }}>
+                    <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: 'var(--secondary)', margin: 0, lineHeight: 1.1 }}>
                       {activeHubIndustry.name}
                     </h1>
 
-                    <p style={{ fontSize: '1rem', color: '#64748B', margin: '0.35rem 0 0.6rem 0' }}>
+                    <p style={{ fontSize: '1rem', color: 'var(--text-muted)', margin: '0.35rem 0 0.6rem 0' }}>
                       {activeHubIndustry.subtitle}
                     </p>
 
@@ -3960,17 +3960,17 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
             {/* 2. SEO META INFO CARD MATCHING SCREENSHOT 1 */}
             <div
               style={{
-                backgroundColor: '#FFFFFF',
+                backgroundColor: 'var(--bg-card)',
                 borderRadius: '16px',
                 padding: '1rem 1.5rem',
-                border: '1px solid #E2E8F0',
+                border: '1px solid var(--border-color-subtle)',
                 marginBottom: '1.5rem'
               }}
             >
-              <div style={{ fontSize: '0.925rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.2rem' }}>
+              <div style={{ fontSize: '0.925rem', fontWeight: 800, color: 'var(--secondary)', marginBottom: '0.2rem' }}>
                 {activeHubIndustry.category} Digital Marketing – Client & Revenue Growth for {activeHubIndustry.name} | BeeSocial
               </div>
-              <div style={{ fontSize: '0.825rem', color: '#64748B' }}>
+              <div style={{ fontSize: '0.825rem', color: 'var(--text-muted)' }}>
                 Digital marketing for {activeHubIndustry.name.toLowerCase()}: attract new clients, build local market trust online with tailored SEO, PPC & social media strategies by BeeSocial.
               </div>
             </div>
@@ -3984,13 +3984,13 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
                     key={tab}
                     onClick={() => setActiveHubTab(tab)}
                     style={{
-                      backgroundColor: isActive ? '#0F172A' : '#FFFFFF',
+                      backgroundColor: isActive ? 'var(--secondary)' : '#FFFFFF',
                       color: isActive ? '#FFFFFF' : '#475569',
                       borderRadius: '999px',
                       padding: '0.5rem 1.25rem',
                       fontSize: '0.825rem',
                       fontWeight: isActive ? 800 : 600,
-                      border: '1px solid #E2E8F0',
+                      border: '1px solid var(--border-color-subtle)',
                       cursor: 'pointer',
                       whiteSpace: 'nowrap',
                       boxShadow: isActive ? '0 4px 12px rgba(15,23,42,0.15)' : '0 2px 5px rgba(0,0,0,0.02)',
@@ -4008,15 +4008,15 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
               <>
                 <div
                   style={{
-                    backgroundColor: '#FFFFFF',
+                    backgroundColor: 'var(--bg-card)',
                     borderRadius: '24px',
                     padding: '2.25rem',
-                    border: '1px solid #E2E8F0',
+                    border: '1px solid var(--border-color-subtle)',
                     boxShadow: '0 8px 25px rgba(0,0,0,0.03)',
                     marginBottom: '1.75rem'
                   }}
                 >
-                  <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '1.8rem', fontWeight: 900, color: '#0F172A', marginBottom: '1rem' }}>
+                  <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '1.8rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '1rem' }}>
                     Industry Overview — {activeHubIndustry.name}
                   </h2>
                   <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.7, margin: 0 }}>
@@ -4026,7 +4026,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
 
                 <div
                   style={{
-                    backgroundColor: '#FDFBF7',
+                    backgroundColor: 'var(--bg-card)',
                     borderRadius: '20px',
                     padding: '1.75rem',
                     border: '1px solid #F3EFE6',
@@ -4041,10 +4041,10 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
                       <div
                         key={fIdx}
                         style={{
-                          backgroundColor: '#FFFFFF',
+                          backgroundColor: 'var(--bg-card)',
                           borderRadius: '14px',
                           padding: '1.25rem',
-                          borderLeft: '4px solid #3B82F6',
+                          borderLeft: '4px solid var(--primary)',
                           boxShadow: '0 4px 15px rgba(0, 0, 0, 0.03)',
                           fontSize: '0.875rem',
                           color: '#334155',
@@ -4062,7 +4062,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
 
             {activeHubTab === 'Market Stats' && (
               <div style={{ marginBottom: '2rem' }}>
-                <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '1.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '1.25rem' }}>
+                <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '1.5rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '1.25rem' }}>
                   Market Size & Opportunity ({activeHubIndustry.name})
                 </h3>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '1rem', marginBottom: '1.75rem' }}>
@@ -4070,18 +4070,18 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
                     <div
                       key={mIdx}
                       style={{
-                        backgroundColor: '#FFFFFF',
+                        backgroundColor: 'var(--bg-card)',
                         borderRadius: '18px',
                         padding: '1.25rem 0.85rem',
                         textAlign: 'center',
-                        border: '1px solid #E2E8F0',
-                        boxShadow: '0 6px 20px rgba(0,0,0,0.03)'
+                        border: '1px solid var(--border-color-subtle)',
+                        boxShadow: 'var(--shadow-card)'
                       }}
                     >
-                      <div style={{ fontFamily: 'Outfit, serif', fontSize: '1.6rem', fontWeight: 900, color: '#3B82F6', marginBottom: '0.2rem' }}>
+                      <div style={{ fontFamily: 'Outfit, serif', fontSize: '1.6rem', fontWeight: 900, color: 'var(--primary)', marginBottom: '0.2rem' }}>
                         {m.value}
                       </div>
-                      <div style={{ fontSize: '0.725rem', color: '#64748B', fontWeight: 700, textTransform: 'uppercase' }}>
+                      <div style={{ fontSize: '0.725rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase' }}>
                         {m.label}
                       </div>
                     </div>
@@ -4091,8 +4091,8 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
             )}
 
             {activeHubTab === 'Challenges' && (
-              <div style={{ backgroundColor: '#FFFFFF', padding: '2rem', borderRadius: '20px', border: '1px solid #E2E8F0', marginBottom: '2rem' }}>
-                <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '1.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '1.25rem' }}>
+              <div style={{ backgroundColor: 'var(--bg-card)', padding: '2rem', borderRadius: '20px', border: '1px solid var(--border-color-subtle)', marginBottom: '2rem' }}>
+                <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '1.5rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '1.25rem' }}>
                   Core Growth Challenges in {activeHubIndustry.name}
                 </h3>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
@@ -4109,10 +4109,10 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
             {/* 6 CORE TAILORED SERVICE CARDS WITH ORANGE TOP BORDER, HOVER ANIMATION & WHATSAPP POP-UP MATCHING USER SCREENSHOT */}
             <div style={{ marginBottom: '2.5rem' }}>
               <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-                <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '1.8rem', fontWeight: 900, color: '#0F172A', margin: '0 0 0.35rem 0' }}>
+                <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '1.8rem', fontWeight: 900, color: 'var(--secondary)', margin: '0 0 0.35rem 0' }}>
                   6 Tailored Growth Engines for {activeHubIndustry.name}
                 </h3>
-                <p style={{ fontSize: '0.95rem', color: '#64748B', margin: 0 }}>
+                <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', margin: 0 }}>
                   Click any service card for an instant strategy breakdown & WhatsApp proposal for {activeHubIndustry.name}
                 </p>
               </div>
@@ -4126,11 +4126,11 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
                   style={{
                     display: 'block',
                     textDecoration: 'none',
-                    background: '#FFFFFF',
-                    borderTop: '4px solid #FF4E27',
-                    borderLeft: '1px solid #E2E8F0',
-                    borderRight: '1px solid #E2E8F0',
-                    borderBottom: '1px solid #E2E8F0',
+                    background: 'var(--bg-card)',
+                    borderTop: '4px solid var(--primary)',
+                    borderLeft: '1px solid var(--border-color-subtle)',
+                    borderRight: '1px solid var(--border-color-subtle)',
+                    borderBottom: '1px solid var(--border-color-subtle)',
                     borderRadius: '20px',
                     padding: '1.75rem 1.5rem',
                     boxShadow: '0 8px 25px rgba(0,0,0,0.03)',
@@ -4139,13 +4139,13 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
                   }}
                 >
                   <div style={{ fontSize: '2.2rem', marginBottom: '0.75rem' }}>🔍</div>
-                  <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem', fontFamily: 'Outfit, sans-serif' }}>
+                  <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--secondary)', marginBottom: '0.5rem', fontFamily: 'Outfit, sans-serif' }}>
                     Search Engine Optimisation (SEO)
                   </h4>
-                  <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: 1.6, margin: 0 }}>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', lineHeight: 1.6, margin: 0 }}>
                     Rank your {activeHubIndustry.name} business at the top of Google and capture high-intent local searches.
                   </p>
-                  <div style={{ marginTop: '1rem', fontSize: '0.8rem', fontWeight: 800, color: '#FF4E27' }}>
+                  <div style={{ marginTop: '1rem', fontSize: '0.8rem', fontWeight: 800, color: 'var(--primary)' }}>
                     Explore SEO Services & Pricing ➔
                   </div>
                 </div>
@@ -4157,11 +4157,11 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
                   style={{
                     display: 'block',
                     textDecoration: 'none',
-                    background: '#FFFFFF',
-                    borderTop: '4px solid #FF4E27',
-                    borderLeft: '1px solid #E2E8F0',
-                    borderRight: '1px solid #E2E8F0',
-                    borderBottom: '1px solid #E2E8F0',
+                    background: 'var(--bg-card)',
+                    borderTop: '4px solid var(--primary)',
+                    borderLeft: '1px solid var(--border-color-subtle)',
+                    borderRight: '1px solid var(--border-color-subtle)',
+                    borderBottom: '1px solid var(--border-color-subtle)',
                     borderRadius: '20px',
                     padding: '1.75rem 1.5rem',
                     boxShadow: '0 8px 25px rgba(0,0,0,0.03)',
@@ -4170,13 +4170,13 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
                   }}
                 >
                   <div style={{ fontSize: '2.2rem', marginBottom: '0.75rem' }}>🎯</div>
-                  <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem', fontFamily: 'Outfit, sans-serif' }}>
+                  <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--secondary)', marginBottom: '0.5rem', fontFamily: 'Outfit, sans-serif' }}>
                     Google Ads (PPC)
                   </h4>
-                  <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: 1.6, margin: 0 }}>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', lineHeight: 1.6, margin: 0 }}>
                     High-intent Search, Display & YouTube campaigns engineered for ROI in the {activeHubIndustry.name} market.
                   </p>
-                  <div style={{ marginTop: '1rem', fontSize: '0.8rem', fontWeight: 800, color: '#FF4E27' }}>
+                  <div style={{ marginTop: '1rem', fontSize: '0.8rem', fontWeight: 800, color: 'var(--primary)' }}>
                     Explore Google Ads Management ➔
                   </div>
                 </div>
@@ -4188,11 +4188,11 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
                   style={{
                     display: 'block',
                     textDecoration: 'none',
-                    background: '#FFFFFF',
-                    borderTop: '4px solid #FF4E27',
-                    borderLeft: '1px solid #E2E8F0',
-                    borderRight: '1px solid #E2E8F0',
-                    borderBottom: '1px solid #E2E8F0',
+                    background: 'var(--bg-card)',
+                    borderTop: '4px solid var(--primary)',
+                    borderLeft: '1px solid var(--border-color-subtle)',
+                    borderRight: '1px solid var(--border-color-subtle)',
+                    borderBottom: '1px solid var(--border-color-subtle)',
                     borderRadius: '20px',
                     padding: '1.75rem 1.5rem',
                     boxShadow: '0 8px 25px rgba(0,0,0,0.03)',
@@ -4201,13 +4201,13 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
                   }}
                 >
                   <div style={{ fontSize: '2.2rem', marginBottom: '0.75rem' }}>📱</div>
-                  <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem', fontFamily: 'Outfit, sans-serif' }}>
+                  <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--secondary)', marginBottom: '0.5rem', fontFamily: 'Outfit, sans-serif' }}>
                     Meta Ads (Facebook & Instagram)
                   </h4>
-                  <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: 1.6, margin: 0 }}>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', lineHeight: 1.6, margin: 0 }}>
                     Targeted social campaigns that turn {activeHubIndustry.name} audiences into real leads.
                   </p>
-                  <div style={{ marginTop: '1rem', fontSize: '0.8rem', fontWeight: 800, color: '#FF4E27' }}>
+                  <div style={{ marginTop: '1rem', fontSize: '0.8rem', fontWeight: 800, color: 'var(--primary)' }}>
                     Explore Meta Ads Management ➔
                   </div>
                 </div>
@@ -4219,11 +4219,11 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
                   style={{
                     display: 'block',
                     textDecoration: 'none',
-                    background: '#FFFFFF',
-                    borderTop: '4px solid #FF4E27',
-                    borderLeft: '1px solid #E2E8F0',
-                    borderRight: '1px solid #E2E8F0',
-                    borderBottom: '1px solid #E2E8F0',
+                    background: 'var(--bg-card)',
+                    borderTop: '4px solid var(--primary)',
+                    borderLeft: '1px solid var(--border-color-subtle)',
+                    borderRight: '1px solid var(--border-color-subtle)',
+                    borderBottom: '1px solid var(--border-color-subtle)',
                     borderRadius: '20px',
                     padding: '1.75rem 1.5rem',
                     boxShadow: '0 8px 25px rgba(0,0,0,0.03)',
@@ -4232,13 +4232,13 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
                   }}
                 >
                   <div style={{ fontSize: '2.2rem', marginBottom: '0.75rem' }}>📣</div>
-                  <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem', fontFamily: 'Outfit, sans-serif' }}>
+                  <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--secondary)', marginBottom: '0.5rem', fontFamily: 'Outfit, sans-serif' }}>
                     Social Media Marketing
                   </h4>
-                  <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: 1.6, margin: 0 }}>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', lineHeight: 1.6, margin: 0 }}>
                     Content, reels and community management that grow your {activeHubIndustry.name} brand.
                   </p>
-                  <div style={{ marginTop: '1rem', fontSize: '0.8rem', fontWeight: 800, color: '#FF4E27' }}>
+                  <div style={{ marginTop: '1rem', fontSize: '0.8rem', fontWeight: 800, color: 'var(--primary)' }}>
                     Explore SMM Packages & Plans ➔
                   </div>
                 </div>
@@ -4250,11 +4250,11 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
                   style={{
                     display: 'block',
                     textDecoration: 'none',
-                    background: '#FFFFFF',
-                    borderTop: '4px solid #FF4E27',
-                    borderLeft: '1px solid #E2E8F0',
-                    borderRight: '1px solid #E2E8F0',
-                    borderBottom: '1px solid #E2E8F0',
+                    background: 'var(--bg-card)',
+                    borderTop: '4px solid var(--primary)',
+                    borderLeft: '1px solid var(--border-color-subtle)',
+                    borderRight: '1px solid var(--border-color-subtle)',
+                    borderBottom: '1px solid var(--border-color-subtle)',
                     borderRadius: '20px',
                     padding: '1.75rem 1.5rem',
                     boxShadow: '0 8px 25px rgba(0,0,0,0.03)',
@@ -4263,13 +4263,13 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
                   }}
                 >
                   <div style={{ fontSize: '2.2rem', marginBottom: '0.75rem' }}>💻</div>
-                  <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem', fontFamily: 'Outfit, sans-serif' }}>
+                  <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--secondary)', marginBottom: '0.5rem', fontFamily: 'Outfit, sans-serif' }}>
                     Website Design & Development
                   </h4>
-                  <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: 1.6, margin: 0 }}>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', lineHeight: 1.6, margin: 0 }}>
                     Fast, SEO-ready, mobile-first websites built to convert {activeHubIndustry.name} visitors.
                   </p>
-                  <div style={{ marginTop: '1rem', fontSize: '0.8rem', fontWeight: 800, color: '#FF4E27' }}>
+                  <div style={{ marginTop: '1rem', fontSize: '0.8rem', fontWeight: 800, color: 'var(--primary)' }}>
                     Explore Web Development Services ➔
                   </div>
                 </div>
@@ -4281,11 +4281,11 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
                   style={{
                     display: 'block',
                     textDecoration: 'none',
-                    background: '#FFFFFF',
-                    borderTop: '4px solid #FF4E27',
-                    borderLeft: '1px solid #E2E8F0',
-                    borderRight: '1px solid #E2E8F0',
-                    borderBottom: '1px solid #E2E8F0',
+                    background: 'var(--bg-card)',
+                    borderTop: '4px solid var(--primary)',
+                    borderLeft: '1px solid var(--border-color-subtle)',
+                    borderRight: '1px solid var(--border-color-subtle)',
+                    borderBottom: '1px solid var(--border-color-subtle)',
                     borderRadius: '20px',
                     padding: '1.75rem 1.5rem',
                     boxShadow: '0 8px 25px rgba(0,0,0,0.03)',
@@ -4294,13 +4294,13 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
                   }}
                 >
                   <div style={{ fontSize: '2.2rem', marginBottom: '0.75rem' }}>🎨</div>
-                  <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem', fontFamily: 'Outfit, sans-serif' }}>
+                  <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--secondary)', marginBottom: '0.5rem', fontFamily: 'Outfit, sans-serif' }}>
                     Graphic Design & Branding
                   </h4>
-                  <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: 1.6, margin: 0 }}>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', lineHeight: 1.6, margin: 0 }}>
                     Posters, logos, packaging and brand identity — from ₹150 per design.
                   </p>
-                  <div style={{ marginTop: '1rem', fontSize: '0.8rem', fontWeight: 800, color: '#FF4E27' }}>
+                  <div style={{ marginTop: '1rem', fontSize: '0.8rem', fontWeight: 800, color: 'var(--primary)' }}>
                     Explore Graphic Design Catalog ➔
                   </div>
                 </div>
@@ -4309,8 +4309,8 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
             </div>
 
             {activeHubTab === 'Services' && (
-              <div style={{ backgroundColor: '#FFFFFF', padding: '2rem', borderRadius: '20px', border: '1px solid #E2E8F0', marginBottom: '2rem' }}>
-                <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '1.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '1.25rem' }}>
+              <div style={{ backgroundColor: 'var(--bg-card)', padding: '2rem', borderRadius: '20px', border: '1px solid var(--border-color-subtle)', marginBottom: '2rem' }}>
+                <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '1.5rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '1.25rem' }}>
                   Tailored Digital Marketing Solutions for {activeHubIndustry.name}
                 </h3>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
@@ -4362,24 +4362,24 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
             )}
 
             {activeHubTab === 'Benefits & ROI' && (
-              <div style={{ backgroundColor: '#FFFFFF', padding: '2rem', borderRadius: '20px', border: '1px solid #E2E8F0', marginBottom: '2rem' }}>
-                <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '1.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '1.25rem' }}>
+              <div style={{ backgroundColor: 'var(--bg-card)', padding: '2rem', borderRadius: '20px', border: '1px solid var(--border-color-subtle)', marginBottom: '2rem' }}>
+                <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '1.5rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '1.25rem' }}>
                   Expected ROI & Revenue Impact for {activeHubIndustry.name}
                 </h3>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.25rem' }}>
-                  <div style={{ backgroundColor: '#F8FAFC', padding: '1.5rem', borderRadius: '16px', borderTop: '3px solid #3B82F6', textAlign: 'center' }}>
-                    <div style={{ fontFamily: 'Outfit', fontSize: '2.2rem', fontWeight: 900, color: '#3B82F6' }}>+340%</div>
+                  <div style={{ backgroundColor: 'var(--bg-subtle, #FFF0F2)', padding: '1.5rem', borderRadius: '16px', borderTop: '3px solid var(--primary)', textAlign: 'center' }}>
+                    <div style={{ fontFamily: 'Outfit', fontSize: '2.2rem', fontWeight: 900, color: 'var(--primary)' }}>+340%</div>
                     <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#334155', marginTop: '0.3rem' }}>Inbound Inquiry Growth</div>
                   </div>
-                  <div style={{ backgroundColor: '#F8FAFC', padding: '1.5rem', borderRadius: '16px', borderTop: '3px solid #10B981', textAlign: 'center' }}>
+                  <div style={{ backgroundColor: 'var(--bg-subtle, #FFF0F2)', padding: '1.5rem', borderRadius: '16px', borderTop: '3px solid #10B981', textAlign: 'center' }}>
                     <div style={{ fontFamily: 'Outfit', fontSize: '2.2rem', fontWeight: 900, color: '#10B981' }}>-45%</div>
                     <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#334155', marginTop: '0.3rem' }}>CAC Reduction</div>
                   </div>
-                  <div style={{ backgroundColor: '#F8FAFC', padding: '1.5rem', borderRadius: '16px', borderTop: '3px solid #8B5CF6', textAlign: 'center' }}>
-                    <div style={{ fontFamily: 'Outfit', fontSize: '2.2rem', fontWeight: 900, color: '#8B5CF6' }}>3.4x</div>
+                  <div style={{ backgroundColor: 'var(--bg-subtle, #FFF0F2)', padding: '1.5rem', borderRadius: '16px', borderTop: '3px solid var(--primary)', textAlign: 'center' }}>
+                    <div style={{ fontFamily: 'Outfit', fontSize: '2.2rem', fontWeight: 900, color: 'var(--primary)' }}>3.4x</div>
                     <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#334155', marginTop: '0.3rem' }}>Review Conversion Lift</div>
                   </div>
-                  <div style={{ backgroundColor: '#F8FAFC', padding: '1.5rem', borderRadius: '16px', borderTop: '3px solid #F59E0B', textAlign: 'center' }}>
+                  <div style={{ backgroundColor: 'var(--bg-subtle, #FFF0F2)', padding: '1.5rem', borderRadius: '16px', borderTop: '3px solid #F59E0B', textAlign: 'center' }}>
                     <div style={{ fontFamily: 'Outfit', fontSize: '2.2rem', fontWeight: 900, color: '#F59E0B' }}>98%</div>
                     <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#334155', marginTop: '0.3rem' }}>Client Campaign Retention</div>
                   </div>
@@ -4388,34 +4388,34 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
             )}
 
             {activeHubTab === 'Blog Library' && (
-              <div style={{ backgroundColor: '#FFFFFF', padding: '2rem', borderRadius: '20px', border: '1px solid #E2E8F0', marginBottom: '2rem' }}>
-                <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '1.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '1.25rem' }}>
+              <div style={{ backgroundColor: 'var(--bg-card)', padding: '2rem', borderRadius: '20px', border: '1px solid var(--border-color-subtle)', marginBottom: '2rem' }}>
+                <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '1.5rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '1.25rem' }}>
                   {activeHubIndustry.name} Industry Growth Guides & Articles
                 </h3>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem' }}>
-                  <div style={{ padding: '1.25rem', borderRadius: '14px', border: '1px solid #E2E8F0', backgroundColor: '#F8FAFC' }}>
-                    <span style={{ fontSize: '0.725rem', color: '#FF4E27', fontWeight: 800, textTransform: 'uppercase' }}>CASE STUDY</span>
-                    <h4 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0F172A', margin: '0.4rem 0 0.5rem 0' }}>How Digital Marketing Transformed {activeHubIndustry.name} in 2026</h4>
-                    <p style={{ fontSize: '0.825rem', color: '#64748B', lineHeight: 1.5 }}>Proven blueprint for scaling customer acquisition and brand authority online.</p>
+                  <div style={{ padding: '1.25rem', borderRadius: '14px', border: '1px solid var(--border-color-subtle)', backgroundColor: 'var(--bg-subtle, #FFF0F2)' }}>
+                    <span style={{ fontSize: '0.725rem', color: 'var(--primary)', fontWeight: 800, textTransform: 'uppercase' }}>CASE STUDY</span>
+                    <h4 style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--secondary)', margin: '0.4rem 0 0.5rem 0' }}>How Digital Marketing Transformed {activeHubIndustry.name} in 2026</h4>
+                    <p style={{ fontSize: '0.825rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>Proven blueprint for scaling customer acquisition and brand authority online.</p>
                   </div>
-                  <div style={{ padding: '1.25rem', borderRadius: '14px', border: '1px solid #E2E8F0', backgroundColor: '#F8FAFC' }}>
-                    <span style={{ fontSize: '0.725rem', color: '#3B82F6', fontWeight: 800, textTransform: 'uppercase' }}>STRATEGY GUIDE</span>
-                    <h4 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0F172A', margin: '0.4rem 0 0.5rem 0' }}>SEO vs Meta Ads for {activeHubIndustry.name}: The ROI Breakdown</h4>
-                    <p style={{ fontSize: '0.825rem', color: '#64748B', lineHeight: 1.5 }}>Comparing search intent channels vs social ads for optimal budget allocation.</p>
+                  <div style={{ padding: '1.25rem', borderRadius: '14px', border: '1px solid var(--border-color-subtle)', backgroundColor: 'var(--bg-subtle, #FFF0F2)' }}>
+                    <span style={{ fontSize: '0.725rem', color: 'var(--primary)', fontWeight: 800, textTransform: 'uppercase' }}>STRATEGY GUIDE</span>
+                    <h4 style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--secondary)', margin: '0.4rem 0 0.5rem 0' }}>SEO vs Meta Ads for {activeHubIndustry.name}: The ROI Breakdown</h4>
+                    <p style={{ fontSize: '0.825rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>Comparing search intent channels vs social ads for optimal budget allocation.</p>
                   </div>
                 </div>
               </div>
             )}
 
             {activeHubTab === 'FAQs' && (
-              <div style={{ backgroundColor: '#FFFFFF', padding: '2rem', borderRadius: '20px', border: '1px solid #E2E8F0', marginBottom: '2rem' }}>
-                <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '1.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '1.25rem' }}>
+              <div style={{ backgroundColor: 'var(--bg-card)', padding: '2rem', borderRadius: '20px', border: '1px solid var(--border-color-subtle)', marginBottom: '2rem' }}>
+                <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '1.5rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '1.25rem' }}>
                   Frequently Asked Questions ({activeHubIndustry.name})
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   {activeHubIndustry.faqs.map((faq, fIdx) => (
-                    <div key={fIdx} style={{ backgroundColor: '#F8FAFC', padding: '1.25rem', borderRadius: '14px', border: '1px solid #E2E8F0' }}>
-                      <div style={{ fontSize: '0.975rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.4rem' }}>{faq.question}</div>
+                    <div key={fIdx} style={{ backgroundColor: 'var(--bg-subtle, #FFF0F2)', padding: '1.25rem', borderRadius: '14px', border: '1px solid var(--border-color-subtle)' }}>
+                      <div style={{ fontSize: '0.975rem', fontWeight: 800, color: 'var(--secondary)', marginBottom: '0.4rem' }}>{faq.question}</div>
                       <div style={{ fontSize: '0.875rem', color: '#475569', lineHeight: 1.6 }}>{faq.answer}</div>
                     </div>
                   ))}
@@ -4424,17 +4424,17 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
             )}
 
             {activeHubTab === 'Success Metrics' && (
-              <div style={{ backgroundColor: '#FFFFFF', padding: '2rem', borderRadius: '20px', border: '1px solid #E2E8F0', marginBottom: '2rem' }}>
-                <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '1.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '1.25rem' }}>
+              <div style={{ backgroundColor: 'var(--bg-card)', padding: '2rem', borderRadius: '20px', border: '1px solid var(--border-color-subtle)', marginBottom: '2rem' }}>
+                <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '1.5rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '1.25rem' }}>
                   Verified Client Results & Track Record ({activeHubIndustry.name})
                 </h3>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.25rem' }}>
-                  <div style={{ backgroundColor: '#F0F9FF', padding: '1.5rem', borderRadius: '16px', border: '1px solid #BAE6FD', textAlign: 'center' }}>
-                    <div style={{ fontFamily: 'Outfit', fontSize: '2.2rem', fontWeight: 900, color: '#0284C7' }}>₹12.4 Cr+</div>
-                    <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#0369A1', marginTop: '0.3rem' }}>Client Revenue Generated</div>
+                  <div style={{ backgroundColor: 'var(--bg-subtle, #FFF0F2)', padding: '1.5rem', borderRadius: '16px', border: '1px solid var(--border-color-subtle)', textAlign: 'center' }}>
+                    <div style={{ fontFamily: 'Outfit', fontSize: '2.2rem', fontWeight: 900, color: 'var(--primary)' }}>₹12.4 Cr+</div>
+                    <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--secondary)', marginTop: '0.3rem' }}>Client Revenue Generated</div>
                   </div>
                   <div style={{ backgroundColor: '#FEF3C7', padding: '1.5rem', borderRadius: '16px', border: '1px solid #FDE68A', textAlign: 'center' }}>
-                    <div style={{ fontFamily: 'Outfit', fontSize: '2.2rem', fontWeight: 900, color: '#D97706' }}>4.9 ★★★★★</div>
+                    <div style={{ fontFamily: 'Outfit', fontSize: '2.2rem', fontWeight: 900, color: 'var(--primary)' }}>4.9 ★★★★★</div>
                     <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#B45309', marginTop: '0.3rem' }}>Average Client Rating</div>
                   </div>
                 </div>

@@ -17,12 +17,12 @@ export const WorkShowcaseMarquee: React.FC<WorkShowcaseMarqueeProps> = ({ locati
   return (
     <section style={{ padding: '6rem 0', backgroundColor: 'var(--bg-main)', overflow: 'hidden', borderBottom: '1px solid var(--border-color)', position: 'relative' }}>
       {/* Ambient background blur blobs */}
-      <div style={{ position: 'absolute', top: '20%', left: '-10%', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(59, 130, 246, 0.04) 0%, rgba(59, 130, 246, 0) 70%)', filter: 'blur(50px)', zIndex: 0, pointerEvents: 'none' }}></div>
-      <div style={{ position: 'absolute', bottom: '20%', right: '-10%', width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(96, 165, 250, 0.05) 0%, rgba(96, 165, 250, 0) 70%)', filter: 'blur(60px)', zIndex: 0, pointerEvents: 'none' }}></div>
+      <div style={{ position: 'absolute', top: '20%', left: '-10%', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(214, 51, 108, 0.04) 0%, transparent 70%)', filter: 'blur(50px)', zIndex: 0, pointerEvents: 'none' }}></div>
+      <div style={{ position: 'absolute', bottom: '20%', right: '-10%', width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(255, 158, 175, 0.04) 0%, transparent 70%)', filter: 'blur(60px)', zIndex: 0, pointerEvents: 'none' }}></div>
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ textAlign: 'center', marginBottom: '4.5rem' }}>
-          <span className="section-tag" style={{ color: '#3B82F6', background: 'rgba(59, 130, 246, 0.1)' }}>OUR SHOWCASE</span>
+          <span className="section-tag" style={{ color: 'var(--primary)', background: 'rgba(214, 51, 108, 0.08)' }}>OUR SHOWCASE</span>
           <h2 style={{ fontSize: '2.8rem', fontWeight: 900, fontFamily: 'Outfit, sans-serif', color: 'var(--secondary)', marginTop: '0.5rem', marginBottom: '1rem', letterSpacing: '-0.02em' }}>
             Live Campaign Showcase {locationName ? `in ${locationName}` : ''}
           </h2>
@@ -50,8 +50,8 @@ export const WorkShowcaseMarquee: React.FC<WorkShowcaseMarqueeProps> = ({ locati
         }
         .showcase-marquee-card:hover {
           transform: translateY(-8px) scale(1.03);
-          box-shadow: 0 20px 40px rgba(59, 130, 246, 0.12) !important;
-          border-color: rgba(59, 130, 246, 0.3) !important;
+          box-shadow: 0 20px 40px rgba(214, 51, 108, 0.12) !important;
+          border-color: rgba(214, 51, 108, 0.25) !important;
         }
         .showcase-marquee-card img.showcase-image {
           width: 100%;
@@ -82,7 +82,7 @@ export const WorkShowcaseMarquee: React.FC<WorkShowcaseMarqueeProps> = ({ locati
               onClick={() => setActiveLightboxProject(item)}
             >
               {/* BRAND HEADER */}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '0.75rem 1rem', borderBottom: '1px solid var(--border-color)', backgroundColor: '#FFFFFF', textAlign: 'center', width: '100%' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '0.75rem 1rem', borderBottom: '1px solid var(--border-color)', backgroundColor: 'var(--bg-card)', textAlign: 'center', width: '100%' }}>
                 <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--secondary)', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap', width: '100%' }}>{item.name}</div>
                 <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap', width: '100%', marginTop: '0.1rem' }}>{item.niche}</div>
               </div>
@@ -112,7 +112,7 @@ export const WorkShowcaseMarquee: React.FC<WorkShowcaseMarqueeProps> = ({ locati
               onClick={() => setActiveLightboxProject(item)}
             >
               {/* BRAND HEADER */}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '0.75rem 1rem', borderBottom: '1px solid var(--border-color)', backgroundColor: '#FFFFFF', textAlign: 'center', width: '100%' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '0.75rem 1rem', borderBottom: '1px solid var(--border-color)', backgroundColor: 'var(--bg-card)', textAlign: 'center', width: '100%' }}>
                 <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--secondary)', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap', width: '100%' }}>{item.name}</div>
                 <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap', width: '100%', marginTop: '0.1rem' }}>{item.niche}</div>
               </div>
@@ -142,7 +142,7 @@ export const WorkShowcaseMarquee: React.FC<WorkShowcaseMarqueeProps> = ({ locati
               onClick={() => setActiveLightboxProject(item)}
             >
               {/* BRAND HEADER */}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '0.75rem 1rem', borderBottom: '1px solid var(--border-color)', backgroundColor: '#FFFFFF', textAlign: 'center', width: '100%' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '0.75rem 1rem', borderBottom: '1px solid var(--border-color)', backgroundColor: 'var(--bg-card)', textAlign: 'center', width: '100%' }}>
                 <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--secondary)', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap', width: '100%' }}>{item.name}</div>
                 <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap', width: '100%', marginTop: '0.1rem' }}>{item.niche}</div>
               </div>

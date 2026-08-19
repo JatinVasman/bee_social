@@ -114,14 +114,14 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
   return (
     <div style={{
       padding: '3rem 0 6rem 0',
-      background: 'linear-gradient(135deg, #F0F6FC 0%, #E8F0F8 50%, #F1F7FC 100%)',
+      background: 'linear-gradient(135deg, #FFF7F8 0%, #FFF0F2 50%, #FFFAFA 100%)',
       minHeight: '100vh',
       position: 'relative',
       overflow: 'hidden'
     }}>
       {/* Ambient background blur blobs */}
-      <div style={{ position: 'absolute', top: '10%', left: '-10%', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, rgba(59, 130, 246, 0) 70%)', filter: 'blur(50px)', zIndex: 0, pointerEvents: 'none' }}></div>
-      <div style={{ position: 'absolute', bottom: '15%', right: '-10%', width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(96, 165, 250, 0.06) 0%, rgba(96, 165, 250, 0) 70%)', filter: 'blur(60px)', zIndex: 0, pointerEvents: 'none' }}></div>
+      <div style={{ position: 'absolute', top: '10%', left: '-10%', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(214, 51, 108, 0.06) 0%, rgba(214, 51, 108, 0) 70%)', filter: 'blur(50px)', zIndex: 0, pointerEvents: 'none' }}></div>
+      <div style={{ position: 'absolute', bottom: '15%', right: '-10%', width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(255, 158, 175, 0.08) 0%, rgba(255, 158, 175, 0) 70%)', filter: 'blur(60px)', zIndex: 0, pointerEvents: 'none' }}></div>
 
       <style>{`
         .smm-card {
@@ -130,12 +130,12 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
         }
         .smm-card:hover {
           transform: translateY(-10px);
-          box-shadow: 0 22px 40px rgba(0, 0, 0, 0.07);
+          box-shadow: 0 22px 40px rgba(214, 51, 108, 0.08);
         }
         .smm-growth-card:hover {
           transform: translateY(-10px);
-          box-shadow: 0 25px 45px rgba(217, 119, 6, 0.16) !important;
-          border-color: #D97706 !important;
+          box-shadow: 0 25px 45px rgba(214, 51, 108, 0.16) !important;
+          border-color: var(--primary) !important;
         }
         .partnership-card {
           transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -143,7 +143,7 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
         .partnership-card:hover {
           transform: translateY(-6px);
           box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
-          border-color: #3B82F6 !important;
+          border-color: var(--primary) !important;
         }
         .faq-accordion-header {
           cursor: pointer;
@@ -152,12 +152,12 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
           align-items: center;
           padding: 1.25rem 1.75rem;
           font-weight: 700;
-          color: #0F172A;
+          color: var(--secondary);
           transition: background-color 0.2s, color 0.2s;
         }
         .faq-accordion-header:hover {
-          background-color: #F8FAFC;
-          color: #3B82F6;
+          background-color: var(--bg-subtle, #FFF0F2);
+          color: var(--primary);
         }
         .faq-accordion-content {
           max-height: 0;
@@ -168,7 +168,7 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
         .faq-accordion-content.open {
           max-height: 250px;
           padding: 1rem 1.75rem 1.5rem 1.75rem;
-          border-top: 1px solid #F1F5F9;
+          border-top: 1px solid var(--border-color-subtle, #F0E4E8);
         }
         .btn-package {
           transition: all 0.3s ease;
@@ -182,13 +182,13 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         {/* Breadcrumb */}
         <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
-          <span style={{ cursor: 'pointer', fontWeight: 600, color: '#0F172A' }} onClick={() => onNavigate('home')}>Home</span> / <span style={{ color: '#3B82F6', fontWeight: 700 }}>Social Media Marketing (SMM)</span>
+          <span style={{ cursor: 'pointer', fontWeight: 600, color: 'var(--secondary)' }} onClick={() => onNavigate('home')}>Home</span> / <span style={{ color: 'var(--primary)', fontWeight: 700 }}>Social Media Marketing (SMM)</span>
         </div>
 
         {/* HEADER & SUBTITLE */}
         <div className="section-header" style={{ textAlign: 'center', maxWidth: '850px', margin: '0 auto 4rem auto' }}>
-          <div className="section-tag" style={{ color: '#3B82F6', background: 'rgba(59, 130, 246, 0.1)' }}>SMM HUB & CREATOR NETWORK</div>
-          <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3.4rem', fontWeight: 900, marginBottom: '1rem', color: '#0F172A', letterSpacing: '-0.02em' }}>
+          <div className="section-tag" style={{ color: 'var(--primary)', background: 'rgba(214, 51, 108, 0.08)' }}>SMM HUB & CREATOR NETWORK</div>
+          <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3.4rem', fontWeight: 900, marginBottom: '1rem', color: 'var(--secondary)', letterSpacing: '-0.02em' }}>
             Social Media Marketing & Viral Reach Engine
           </h1>
           <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', lineHeight: 1.7, maxWidth: '750px', margin: '0 auto' }}>
@@ -198,10 +198,10 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
 
         {/* 1. PACKAGES & PAY-AS-YOU-GO SECTION */}
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#D97706', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+          <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
             — STRATEGY & SCOPE —
           </div>
-          <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '0.75rem' }}>
+          <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '0.75rem' }}>
             Social Media Packages
           </h2>
           <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)' }}>
@@ -217,8 +217,8 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
               className={pkg.popular ? 'smm-card smm-growth-card' : 'smm-card'}
               style={{
                 backgroundColor: pkg.popular ? '#1A1311' : '#FFFFFF',
-                color: pkg.popular ? '#FFFFFF' : '#0F172A',
-                border: pkg.popular ? '2px solid #D97706' : '1px solid #E2E8F0',
+                color: pkg.popular ? '#FFFFFF' : 'var(--secondary)',
+                border: pkg.popular ? '2px solid var(--primary)' : '1px solid var(--border-color-subtle)',
                 borderRadius: '28px',
                 padding: '2.25rem 2rem 2rem 2rem',
                 display: 'flex',
@@ -235,14 +235,14 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
                     top: '-14px',
                     left: '50%',
                     transform: 'translateX(-50%)',
-                    backgroundColor: '#D97706',
+                    backgroundColor: 'var(--primary-raw, #D6336C)',
                     color: '#FFFFFF',
                     padding: '0.4rem 1.25rem',
                     borderRadius: '999px',
                     fontSize: '0.75rem',
                     fontWeight: 900,
                     letterSpacing: '0.08em',
-                    boxShadow: '0 4px 12px rgba(217, 119, 6, 0.25)'
+                    boxShadow: '0 4px 12px rgba(214, 51, 108, 0.20)'
                   }}
                 >
                   {pkg.badge}
@@ -250,14 +250,14 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
               )}
 
               <div style={{ marginBottom: '1.25rem' }}>
-                <span style={{ fontSize: '0.8rem', fontWeight: 800, color: pkg.popular ? '#E0B56C' : '#D97706', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
+                <span style={{ fontSize: '0.8rem', fontWeight: 800, color: pkg.popular ? 'var(--primary-light, #FF9EAF)' : 'var(--primary-raw, #D6336C)', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
                   {pkg.name}
                 </span>
                 <div style={{ display: 'flex', alignItems: 'baseline', marginTop: '0.4rem' }}>
                   <span style={{ fontSize: '2.5rem', fontWeight: 900, fontFamily: 'Outfit, serif' }}>
                     Custom Plan
                   </span>
-                  <span style={{ fontSize: '0.9rem', color: pkg.popular ? '#94A3B8' : '#64748B', marginLeft: '0.25rem', fontWeight: 600 }}>
+                  <span style={{ fontSize: '0.9rem', color: pkg.popular ? 'var(--text-muted)' : 'var(--text-muted)', marginLeft: '0.25rem', fontWeight: 600 }}>
                     
                   </span>
                 </div>
@@ -267,7 +267,7 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem', listStyle: 'none', padding: 0, margin: '0 0 1.75rem 0', flex: 1, fontSize: '0.95rem' }}>
                 {pkg.features.map((feature, fIdx) => (
                   <li key={fIdx} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                    <span style={{ color: pkg.popular ? '#E0B56C' : '#D97706', fontWeight: 900 }}>✓</span>
+                    <span style={{ color: pkg.popular ? 'var(--primary-light, #FF9EAF)' : 'var(--primary-raw, #D6336C)', fontWeight: 900 }}>✓</span>
                     <span style={{ color: pkg.popular ? '#E2E8F0' : '#475569', fontWeight: 500 }}>{feature}</span>
                   </li>
                 ))}
@@ -287,7 +287,7 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
                   fontWeight: 800,
                   fontSize: '0.95rem',
                   textDecoration: 'none',
-                  backgroundColor: pkg.popular ? '#E0B56C' : '#1A1311',
+                  backgroundColor: pkg.popular ? 'var(--primary-light, #FF9EAF)' : '#1A1311',
                   color: pkg.popular ? '#1A1311' : '#FFFFFF',
                   border: 'none',
                   cursor: 'pointer'
@@ -304,27 +304,27 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
           style={{
             maxWidth: '1140px',
             margin: '0 auto 5rem auto',
-            background: 'linear-gradient(135deg, #F0F6FC 0%, #E3EBF4 100%)',
-            border: '1px dashed rgba(59, 130, 246, 0.35)',
+            background: 'linear-gradient(135deg, #FFF7F8 0%, #FFF0F2 100%)',
+            border: '1px dashed rgba(214, 51, 108, 0.35)',
             borderRadius: '24px',
             padding: '2.5rem',
-            boxShadow: '0 10px 30px rgba(59, 130, 246, 0.03)'
+            boxShadow: '0 10px 30px rgba(214, 51, 108, 0.04)'
           }}
         >
-          <div style={{ fontSize: '0.725rem', fontWeight: 900, color: '#3B82F6', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+          <div style={{ fontSize: '0.725rem', fontWeight: 900, color: 'var(--primary)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
             — PAY-AS-YOU-GO —
           </div>
           <p style={{ fontSize: '1rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
-            Prefer outcomes over retainers? Our pay-per-performance model lets you pay only for leads that meet criteria agreed upfront — budget, location and intent. From single creative deliverables to full multi-platform management. <a href="https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" style={{ color: '#3B82F6', fontWeight: 800, textDecoration: 'underline' }}>Request a quote</a> and we'll build a plan around your numbers.
+            Prefer outcomes over retainers? Our pay-per-performance model lets you pay only for leads that meet criteria agreed upfront — budget, location and intent. From single creative deliverables to full multi-platform management. <a href="https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)', fontWeight: 800, textDecoration: 'underline' }}>Request a quote</a> and we'll build a plan around your numbers.
           </p>
         </div>
 
         {/* 2. PARTNERSHIPS SECTION: B2B & AGENCY TIERS */}
         <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-          <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#3B82F6', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+          <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
             — PARTNERSHIPS —
           </div>
-          <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '0.75rem' }}>
+          <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '0.75rem' }}>
             B2B & Agency Tiers
           </h2>
           <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)' }}>
@@ -339,8 +339,8 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
               key={idx}
               className="partnership-card"
               style={{
-                backgroundColor: '#FFFFFF',
-                border: '1px solid #E2E8F0',
+                backgroundColor: 'var(--bg-card)',
+                border: '1px solid var(--border-color-subtle)',
                 borderRadius: '24px',
                 padding: '2.25rem 1.5rem',
                 textAlign: 'center',
@@ -369,9 +369,9 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
                 </span>
               )}
 
-              <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem' }}>{tier.tier}</div>
-              <div style={{ fontSize: '2rem', fontWeight: 900, color: '#3B82F6', fontFamily: 'Outfit, serif', margin: '0.75rem 0' }}>{tier.discount}</div>
-              <div style={{ fontSize: '0.8rem', color: '#64748B', fontWeight: 600 }}>{tier.desc}</div>
+              <div style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--secondary)', marginBottom: '0.5rem' }}>{tier.tier}</div>
+              <div style={{ fontSize: '2rem', fontWeight: 900, color: 'var(--primary)', fontFamily: 'Outfit, serif', margin: '0.75rem 0' }}>{tier.discount}</div>
+              <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600 }}>{tier.desc}</div>
             </div>
           ))}
         </div>
@@ -382,10 +382,10 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         {/* 3. FAQS SECTION: PRICING & PROCESS FAQS */}
         <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-          <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#64748B', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+          <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--text-muted)', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
             — COMMON QUESTIONS —
           </div>
-          <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '0.75rem' }}>
+          <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '0.75rem' }}>
             Pricing & Process FAQs
           </h2>
         </div>
@@ -398,9 +398,9 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
               <div
                 key={index}
                 style={{
-                  backgroundColor: '#FFFFFF',
+                  backgroundColor: 'var(--bg-card)',
                   borderRadius: '16px',
-                  border: '1px solid #E2E8F0',
+                  border: '1px solid var(--border-color-subtle)',
                   overflow: 'hidden',
                   boxShadow: isOpen ? '0 10px 25px rgba(0, 0, 0, 0.03)' : 'none',
                   transition: 'box-shadow 0.3s ease'
@@ -411,7 +411,7 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
                   onClick={() => setOpenFaq(isOpen ? null : index)}
                 >
                   <span>{faq.q}</span>
-                  <span style={{ fontSize: '1.25rem', fontWeight: 400, color: '#64748B', transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)', transition: 'transform 0.25s' }}>
+                  <span style={{ fontSize: '1.25rem', fontWeight: 400, color: 'var(--text-muted)', transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)', transition: 'transform 0.25s' }}>
                     ＋
                   </span>
                 </div>
@@ -431,7 +431,7 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
             rel="noopener noreferrer"
             style={{
               display: 'inline-block',
-              backgroundColor: '#D97706',
+              backgroundColor: 'var(--primary-raw, #D6336C)',
               color: '#FFFFFF',
               padding: '1rem 2.5rem',
               borderRadius: '999px',
@@ -448,15 +448,15 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
         </div>
 
         {/* SMM CREATIVE CTA BANNER */}
-        <div style={{ background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)', borderRadius: '28px', padding: '3.5rem 3rem', color: '#FFF', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '2rem', boxShadow: 'var(--shadow-lg)', border: '1px solid rgba(255,255,255,0.1)', flexWrap: 'wrap' }}>
+        <div style={{ background: 'linear-gradient(135deg, var(--secondary) 0%, var(--secondary) 100%)', borderRadius: '28px', padding: '3.5rem 3rem', color: '#FFF', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '2rem', boxShadow: 'var(--shadow-lg)', border: '1px solid rgba(255,255,255,0.1)', flexWrap: 'wrap' }}>
           <div style={{ maxWidth: '640px' }}>
-            <span className="section-tag" style={{ background: 'rgba(255,78,39,0.2)', color: '#FF4E27', border: 'none', marginBottom: '0.75rem' }}>
+            <span className="section-tag" style={{ background: 'rgba(214, 51, 108, 0.12)', color: 'var(--primary)', border: 'none', marginBottom: '0.75rem' }}>
               VIRAL GROWTH ENGINE
             </span>
             <h2 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF', marginBottom: '0.5rem' }}>
               Ready to Dominate Social Media?
             </h2>
-            <p style={{ fontSize: '1.05rem', color: '#94A3B8', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
               Get a custom content calendar and UGC creator growth strategy tailored for your brand within 2 hours.
             </p>
           </div>
@@ -472,11 +472,11 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
               💬 Discuss SMM on WhatsApp
             </a>
             <button
-              className="btn btn-secondary"
-              style={{ color: '#FFF', borderColor: 'rgba(255,255,255,0.3)', padding: '1rem 2.2rem', fontSize: '1rem' }}
-              onClick={() => window.open('https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services', '_blank')}
+              className="btn btn-outline-light"
+              style={{ padding: '1rem 2.2rem', fontSize: '1rem' }}
+              onClick={() => window.open('https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20booking%20a%20call', '_blank')}
             >
-              Book SMM Strategy Call ➔
+              Book a Call ➔
             </button>
           </div>
         </div>

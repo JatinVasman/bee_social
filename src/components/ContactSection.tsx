@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { sendEmail } from '../utils/emailService';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 interface ContactSectionProps {
   backgroundColor?: string;
 }
 
 export const ContactSection: React.FC<ContactSectionProps> = ({ backgroundColor }) => {
+  const reveal = useScrollReveal();
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -41,13 +43,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ backgroundColor 
     <section id="contact" style={{ padding: '5rem 0', backgroundColor: backgroundColor || 'transparent' }}>
       <div className="container">
         <div className="section-header">
-          <div className="section-tag">GET IN TOUCH</div>
-          <h2 className="section-title">Let's Create Something Buzz-Worthy Together</h2>
-          <p className="section-subtitle">Tell us about your brand and our creative team will get back to you within 24 hours.</p>
+          <div ref={reveal} className="section-tag">GET IN TOUCH</div>
+          <h2 ref={reveal} className="section-title scroll-delay-1">Let's Create Something Buzz-Worthy Together</h2>
+          <p ref={reveal} className="section-subtitle scroll-delay-2">Tell us about your brand and our creative team will get back to you within 24 hours.</p>
         </div>
 
         <div className="contact-grid">
-          <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: '24px', padding: '2.5rem', boxShadow: 'var(--shadow-sm)' }}>
+          <div ref={reveal} className="card-shimmer scroll-delay-1" style={{ background: 'var(--bg-card)', border: '1px solid var(--border-color-subtle)', borderTop: '4px solid var(--primary)', borderRadius: '24px', padding: '2.5rem', boxShadow: 'var(--shadow-card)' }}>
             {submitted ? (
               <div style={{ padding: '2rem', textAlign: 'center', color: 'var(--green-accent)' }}>
                 <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>🎉 Message Sent Successfully!</h3>
@@ -62,22 +64,22 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ backgroundColor 
                 )}
                 <div style={{ marginBottom: '1.25rem' }}>
                   <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem', color: 'var(--secondary)' }}>Full Name</label>
-                  <input type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required placeholder="Enter your name" style={{ width: '100%', padding: '0.8rem 1rem', border: '1px solid var(--border-color)', borderRadius: '12px', background: 'var(--bg-subtle)', outline: 'none' }} />
+                  <input type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required placeholder="Enter your name" style={{ width: '100%', padding: '0.8rem 1rem', border: '1px solid var(--border-color-subtle)', borderRadius: '12px', background: 'var(--bg-subtle)', outline: 'none', color: 'var(--text-main)' }} />
                 </div>
 
                 <div style={{ marginBottom: '1.25rem' }}>
                   <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem', color: 'var(--secondary)' }}>Email Address</label>
-                  <input type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required placeholder="Enter your email" style={{ width: '100%', padding: '0.8rem 1rem', border: '1px solid var(--border-color)', borderRadius: '12px', background: 'var(--bg-subtle)', outline: 'none' }} />
+                  <input type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required placeholder="Enter your email" style={{ width: '100%', padding: '0.8rem 1rem', border: '1px solid var(--border-color-subtle)', borderRadius: '12px', background: 'var(--bg-subtle)', outline: 'none', color: 'var(--text-main)' }} />
                 </div>
 
                 <div style={{ marginBottom: '1.25rem' }}>
                   <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem', color: 'var(--secondary)' }}>Phone Number</label>
-                  <input type="tel" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} required placeholder="Enter your phone number" style={{ width: '100%', padding: '0.8rem 1rem', border: '1px solid var(--border-color)', borderRadius: '12px', background: 'var(--bg-subtle)', outline: 'none' }} />
+                  <input type="tel" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} required placeholder="Enter your phone number" style={{ width: '100%', padding: '0.8rem 1rem', border: '1px solid var(--border-color-subtle)', borderRadius: '12px', background: 'var(--bg-subtle)', outline: 'none', color: 'var(--text-main)' }} />
                 </div>
 
                 <div style={{ marginBottom: '1.25rem' }}>
                   <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem', color: 'var(--secondary)' }}>Your Message</label>
-                  <textarea value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} required placeholder="Tell us about your brand..." style={{ width: '100%', padding: '0.8rem 1rem', border: '1px solid var(--border-color)', borderRadius: '12px', background: 'var(--bg-subtle)', outline: 'none', minHeight: '120px' }} />
+                  <textarea value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} required placeholder="Tell us about your brand..." style={{ width: '100%', padding: '0.8rem 1rem', border: '1px solid var(--border-color-subtle)', borderRadius: '12px', background: 'var(--bg-subtle)', outline: 'none', minHeight: '120px', color: 'var(--text-main)' }} />
                 </div>
 
                 <button type="submit" className="btn btn-primary" disabled={loading} style={{ width: '100%', opacity: loading ? 0.7 : 1 }}>
@@ -88,7 +90,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ backgroundColor 
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: '14px', padding: '1.25rem' }}>
+            <div ref={reveal} className="scroll-delay-2" style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'var(--bg-card)', border: '1px solid var(--border-color-subtle)', borderRadius: '14px', padding: '1.25rem', boxShadow: 'var(--shadow-card)' }}>
               <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'var(--bg-badge)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>✉️</div>
               <div>
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Email Us</div>
@@ -98,7 +100,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ backgroundColor 
               </div>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: '14px', padding: '1.25rem' }}>
+            <div ref={reveal} className="scroll-delay-3" style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'var(--bg-card)', border: '1px solid var(--border-color-subtle)', borderRadius: '14px', padding: '1.25rem', boxShadow: 'var(--shadow-card)' }}>
               <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'var(--bg-badge)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>📞</div>
               <div>
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Call Us</div>
@@ -106,7 +108,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ backgroundColor 
               </div>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: '14px', padding: '1.25rem' }}>
+            <div ref={reveal} className="scroll-delay-4" style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'var(--bg-card)', border: '1px solid var(--border-color-subtle)', borderRadius: '14px', padding: '1.25rem', boxShadow: 'var(--shadow-card)' }}>
               <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'var(--bg-badge)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>📸</div>
               <div>
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Instagram</div>
@@ -114,11 +116,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ backgroundColor 
               </div>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: '14px', padding: '1.25rem' }}>
+            <div ref={reveal} className="scroll-delay-5" style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'var(--bg-card)', border: '1px solid var(--border-color-subtle)', borderRadius: '14px', padding: '1.25rem', boxShadow: 'var(--shadow-card)' }}>
               <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'var(--bg-badge)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>📍</div>
               <div>
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Office</div>
-                <div style={{ fontWeight: 700 }}>BeeSocial, India</div>
+                <div style={{ fontWeight: 700, color: 'var(--secondary)' }}>BeeSocial, India</div>
                 <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Working Hours: Mon - Sat: 9AM - 7PM</div>
               </div>
             </div>

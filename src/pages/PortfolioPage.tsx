@@ -12,16 +12,16 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate, onOpen
 
   return (
     <div style={{
-      backgroundColor: '#A8B4C3',
-      color: '#0F172A',
+      backgroundColor: 'var(--bg-main, #FFF7F8)',
+      color: 'var(--secondary)',
       minHeight: '100vh',
       padding: '2.5rem 0 5rem 0',
       position: 'relative',
       overflow: 'hidden'
     }}>
       {/* Ambient background blur blobs */}
-      <div style={{ position: 'absolute', top: '10%', left: '-10%', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, rgba(59, 130, 246, 0) 70%)', filter: 'blur(50px)', zIndex: 0, pointerEvents: 'none' }}></div>
-      <div style={{ position: 'absolute', bottom: '15%', right: '-10%', width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(96, 165, 250, 0.06) 0%, rgba(96, 165, 250, 0) 70%)', filter: 'blur(60px)', zIndex: 0, pointerEvents: 'none' }}></div>
+      <div style={{ position: 'absolute', top: '10%', left: '-10%', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(214, 51, 108, 0.06) 0%, rgba(214, 51, 108, 0) 70%)', filter: 'blur(50px)', zIndex: 0, pointerEvents: 'none' }}></div>
+      <div style={{ position: 'absolute', bottom: '15%', right: '-10%', width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(255, 158, 175, 0.08) 0%, rgba(255, 158, 175, 0) 70%)', filter: 'blur(60px)', zIndex: 0, pointerEvents: 'none' }}></div>
       <style>{`
         .portfolio-card {
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -30,8 +30,8 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate, onOpen
         }
         .portfolio-card:hover {
           transform: translateY(-10px) scale(1.02);
-          box-shadow: 0 25px 50px rgba(59, 130, 246, 0.15), 0 2px 8px rgba(59, 130, 246, 0.05) !important;
-          border-color: rgba(59, 130, 246, 0.4) !important;
+          box-shadow: 0 25px 50px rgba(214, 51, 108, 0.15), 0 2px 8px rgba(214, 51, 108, 0.05) !important;
+          border-color: rgba(214, 51, 108, 0.4) !important;
         }
         .portfolio-image-wrapper {
           position: relative;
@@ -51,27 +51,27 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate, onOpen
         .filter-tab {
           transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
           background-color: #FFFFFF;
-          border: 1px solid #E2E8F0 !important;
+          border: 1px solid var(--border-color-subtle) !important;
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
           transform: translateY(0);
         }
         .filter-tab:hover {
           background-color: #FFFFFF !important;
-          color: #3B82F6 !important;
-          border-color: #3B82F6 !important;
+          color: var(--primary) !important;
+          border-color: var(--primary) !important;
           transform: translateY(-3px) scale(1.02);
-          box-shadow: 0 8px 20px rgba(59, 130, 246, 0.08);
+          box-shadow: 0 8px 20px rgba(214, 51, 108, 0.12);
         }
         .filter-tab.active {
-          background-color: #3B82F6 !important;
+          background-color: var(--primary) !important;
           color: #FFFFFF !important;
-          border-color: #3B82F6 !important;
-          box-shadow: 0 8px 24px rgba(59, 130, 246, 0.25) !important;
+          border-color: var(--primary) !important;
+          box-shadow: 0 8px 24px rgba(214, 51, 108, 0.25) !important;
           transform: translateY(0) scale(1.02);
         }
         .filter-tab.active:hover {
           transform: translateY(-2px) scale(1.04);
-          box-shadow: 0 10px 28px rgba(59, 130, 246, 0.3) !important;
+          box-shadow: 0 10px 28px rgba(214, 51, 108, 0.3) !important;
         }
         .metric-card {
           transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -80,8 +80,8 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate, onOpen
         }
         .metric-card:hover {
           transform: translateY(-4px);
-          box-shadow: 0 12px 24px rgba(59, 130, 246, 0.08) !important;
-          border-color: rgba(59, 130, 246, 0.25) !important;
+          box-shadow: 0 12px 24px rgba(214, 51, 108, 0.10) !important;
+          border-color: rgba(214, 51, 108, 0.25) !important;
         }
         .animate-fade-in {
           animation: fadeIn 0.4s ease forwards;
@@ -158,26 +158,26 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate, onOpen
       <div className="container">
         
         {/* BREADCRUMB */}
-        <div style={{ fontSize: '0.825rem', color: '#64748B', marginBottom: '1.5rem', textAlign: 'center' }}>
-          <span style={{ cursor: 'pointer', color: '#0F172A', fontWeight: 600 }} onClick={() => onNavigate('home')}>Home</span> / <span style={{ color: '#3B82F6', fontWeight: 700 }}>Our Portfolio</span>
+        <div style={{ fontSize: '0.825rem', color: 'var(--text-muted)', marginBottom: '1.5rem', textAlign: 'center' }}>
+          <span style={{ cursor: 'pointer', color: 'var(--secondary)', fontWeight: 600 }} onClick={() => onNavigate('home')}>Home</span> / <span style={{ color: 'var(--primary)', fontWeight: 700 }}>Our Portfolio</span>
         </div>
 
         {/* HEADER */}
         <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 2.25rem auto' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.6rem', fontSize: '0.75rem', fontWeight: 800, color: '#3B82F6', letterSpacing: '0.22em', textTransform: 'uppercase', marginBottom: '0.6rem' }}>
-            <span style={{ width: '30px', height: '1.5px', background: '#3B82F6' }}></span>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.6rem', fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.22em', textTransform: 'uppercase', marginBottom: '0.6rem' }}>
+            <span style={{ width: '30px', height: '1.5px', background: 'var(--primary)' }}></span>
             <span>THE WORK</span>
-            <span style={{ width: '30px', height: '1.5px', background: '#3B82F6' }}></span>
+            <span style={{ width: '30px', height: '1.5px', background: 'var(--primary)' }}></span>
           </div>
 
-          <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3rem', fontWeight: 900, color: '#0F172A', marginBottom: '0.75rem', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '0.75rem', letterSpacing: '-0.02em' }}>
             Our Work Gallery
           </h1>
 
-          <p style={{ fontSize: '1rem', color: '#64748B', lineHeight: 1.5, marginBottom: '0.2rem' }}>
+          <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.5, marginBottom: '0.2rem' }}>
             Real campaigns designed, published, and automated for top-tier Indian brands.
           </p>
-          <p style={{ fontSize: '1rem', color: '#64748B', lineHeight: 1.5 }}>
+          <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
             Explore our aesthetic layout catalogs below.
           </p>
         </div>
@@ -189,11 +189,11 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate, onOpen
               value: '40+', 
               label: 'Brands Transformed', 
               icon: '💎',
-              bg: 'linear-gradient(135deg, #E0F2FE 0%, #C7D2FE 100%)',
-              borderColor: 'rgba(99, 102, 241, 0.25)',
-              textColor: '#4F46E5',
-              labelColor: '#6366F1',
-              shadow: '0 10px 25px rgba(99, 102, 241, 0.12)',
+              bg: 'linear-gradient(135deg, #FFF0F2 0%, #FFE4E8 100%)',
+              borderColor: 'rgba(214, 51, 108, 0.25)',
+              textColor: 'var(--primary)',
+              labelColor: 'var(--primary)',
+              shadow: '0 10px 25px rgba(214, 51, 108, 0.12)',
               class: 'metric-card-1'
             },
             { 
@@ -224,7 +224,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate, onOpen
               icon: '🚀',
               bg: 'linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%)',
               borderColor: 'rgba(245, 158, 11, 0.25)',
-              textColor: '#D97706',
+              textColor: 'var(--primary-raw, #D6336C)',
               labelColor: '#F59E0B',
               shadow: '0 10px 25px rgba(245, 158, 11, 0.12)',
               class: 'metric-card-4'
@@ -259,11 +259,11 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate, onOpen
                 className="portfolio-card animate-fade-in"
                 onClick={() => setSelectedSocialProject(project)}
                 style={{
-                  backgroundColor: '#FFFFFF',
+                  backgroundColor: 'var(--bg-card)',
                   borderRadius: '24px',
                   padding: '0',
                   boxShadow: '0 8px 24px rgba(0, 0, 0, 0.03)',
-                  border: '1px solid #E2E8F0',
+                  border: '1px solid var(--border-color-subtle)',
                   cursor: 'pointer',
                   display: 'flex',
                   flexDirection: 'column',
@@ -272,11 +272,11 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate, onOpen
                 }}
               >
                 {/* BRAND HEADER */}
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '1.25rem 1.25rem 1rem 1.25rem', backgroundColor: '#FFFFFF', borderBottom: '1px solid #F1F5F9', textAlign: 'center', width: '100%' }}>
-                  <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '0.95rem', fontWeight: 800, color: '#0F172A', margin: '0 0 0.15rem 0', lineHeight: 1.2 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '1.25rem 1.25rem 1rem 1.25rem', backgroundColor: 'var(--bg-card)', borderBottom: '1px solid var(--border-color-subtle, #F0E4E8)', textAlign: 'center', width: '100%' }}>
+                  <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '0.95rem', fontWeight: 800, color: 'var(--secondary)', margin: '0 0 0.15rem 0', lineHeight: 1.2 }}>
                     {project.name}
                   </h3>
-                  <div style={{ fontSize: '0.7rem', color: '#64748B', fontWeight: 600 }}>
+                  <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', fontWeight: 600 }}>
                     {project.niche}
                   </div>
                 </div>
@@ -306,29 +306,29 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate, onOpen
         <div style={{ marginTop: '4rem', marginBottom: '1rem', display: 'flex', justifyContent: 'center' }}>
           <div
             style={{
-              backgroundColor: '#0F172A',
+              backgroundColor: 'var(--secondary)',
               borderRadius: '24px',
               padding: '2.5rem 2rem',
               maxWidth: '850px',
               width: '100%',
               textAlign: 'center',
-              borderTop: '3px solid #3B82F6',
+              borderTop: '3px solid var(--primary)',
               boxShadow: '0 15px 35px rgba(0, 0, 0, 0.15)',
               position: 'relative',
               overflow: 'hidden'
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.6rem', fontSize: '0.75rem', fontWeight: 800, color: '#3B82F6', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.6rem' }}>
-              <span style={{ width: '30px', height: '1.5px', background: '#3B82F6' }}></span>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.6rem', fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.6rem' }}>
+              <span style={{ width: '30px', height: '1.5px', background: 'var(--primary)' }}></span>
               <span>YOUR PROJECT NEXT?</span>
-              <span style={{ width: '30px', height: '1.5px', background: '#3B82F6' }}></span>
+              <span style={{ width: '30px', height: '1.5px', background: 'var(--primary)' }}></span>
             </div>
 
             <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.2rem', fontWeight: 900, color: '#FFFFFF', marginBottom: '0.6rem', letterSpacing: '-0.01em' }}>
               Let's add your brand to this gallery
             </h2>
 
-            <p style={{ fontSize: '0.95rem', color: '#94A3B8', maxWidth: '600px', margin: '0 auto 1.75rem auto', lineHeight: 1.5 }}>
+            <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto 1.75rem auto', lineHeight: 1.5 }}>
               Social media glow-up or brand-new website — premium, transparent, on time.
             </p>
 
@@ -336,8 +336,8 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate, onOpen
               <button
                 onClick={() => window.open('https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20starting%20a%20project%20with%20Digital%20Digix', '_blank')}
                 style={{
-                  backgroundColor: '#E0B56C',
-                  color: '#0F172A',
+                  backgroundColor: 'var(--primary-light, #FF9EAF)',
+                  color: 'var(--secondary)',
                   padding: '0.65rem 1.75rem',
                   borderRadius: '999px',
                   fontSize: '0.875rem',

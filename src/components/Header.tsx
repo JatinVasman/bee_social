@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import type { Currency, PageView } from '../types';
 import type { LeaderPerson } from './LeadershipModal';
 
@@ -25,6 +25,12 @@ export const Header: React.FC<HeaderProps> = ({
   const [isScrolled, setIsScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
+  // Sliding pill indicator state
+  const navMenuRef = useRef<HTMLElement>(null);
+  const navItemRefs = useRef<Map<string, HTMLButtonElement>>(new Map());
+  const [indicatorStyle, setIndicatorStyle] = useState<{ left: number; width: number }>({ left: 0, width: 0 });
+  const [indicatorReady, setIndicatorReady] = useState(false);
+
   const [isMobileScreen, setIsMobileScreen] = useState(false);
 
   useEffect(() => {
@@ -35,6 +41,33 @@ export const Header: React.FC<HeaderProps> = ({
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  // Update sliding indicator position when active page changes
+  const updateIndicator = useCallback(() => {
+    const activeEl = navItemRefs.current.get(activePage);
+    const menuEl = navMenuRef.current;
+    if (activeEl && menuEl) {
+      const menuRect = menuEl.getBoundingClientRect();
+      const itemRect = activeEl.getBoundingClientRect();
+      setIndicatorStyle({
+        left: itemRect.left - menuRect.left,
+        width: itemRect.width,
+      });
+      setIndicatorReady(true);
+    }
+  }, [activePage]);
+
+  useEffect(() => {
+    updateIndicator();
+    window.addEventListener('resize', updateIndicator);
+    return () => window.removeEventListener('resize', updateIndicator);
+  }, [updateIndicator]);
+
+  // Small delay to ensure layout is ready on first mount
+  useEffect(() => {
+    const timer = setTimeout(updateIndicator, 100);
+    return () => clearTimeout(timer);
+  }, [updateIndicator]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -87,8 +120,17 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Navigation Track (Desktop Only) */}
-          <nav className="nav-menu desktop-nav-only">
+          <nav className="nav-menu desktop-nav-only" ref={navMenuRef as React.RefObject<HTMLElement>}>
+            {/* Sliding pill indicator */}
+            {indicatorReady && (
+              <div
+                className="nav-active-indicator"
+                style={{ left: indicatorStyle.left, width: indicatorStyle.width }}
+              />
+            )}
+
             <button
+              ref={(el) => { if (el) navItemRefs.current.set('home', el); }}
               onClick={() => onNavigate('home')}
               className={`nav-link-item ${activePage === 'home' ? 'active' : ''}`}
             >
@@ -102,6 +144,7 @@ export const Header: React.FC<HeaderProps> = ({
               onMouseLeave={() => setIsAboutDropdownOpen(false)}
             >
               <button
+                ref={(el) => { if (el) navItemRefs.current.set('about', el); }}
                 onClick={() => {
                   setIsAboutDropdownOpen(false);
                   onNavigate('about');
@@ -129,10 +172,10 @@ export const Header: React.FC<HeaderProps> = ({
                   <div
                     style={{
                       width: '260px',
-                      background: '#FFFFFF',
+                      background: 'var(--bg-card)',
                       borderRadius: '20px',
-                      boxShadow: '0 20px 40px rgba(11, 19, 42, 0.15)',
-                      border: '1px solid #E2E8F0',
+                      boxShadow: '0 20px 40px rgba(214, 51, 108, 0.12)',
+                      border: '1px solid var(--border-color-subtle)',
                       padding: '0.75rem',
                       display: 'flex',
                       flexDirection: 'column',
@@ -156,7 +199,7 @@ export const Header: React.FC<HeaderProps> = ({
                         border: 'none',
                         cursor: 'pointer'
                       }}
-                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFF1EE')}
+                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(214, 51, 108, 0.06)')}
                       onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
                     >
                       About BeeSocial
@@ -179,7 +222,7 @@ export const Header: React.FC<HeaderProps> = ({
                         border: 'none',
                         cursor: 'pointer'
                       }}
-                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFF1EE')}
+                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(214, 51, 108, 0.06)')}
                       onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
                     >
                       Founder — <strong>Siddhi</strong>
@@ -202,7 +245,7 @@ export const Header: React.FC<HeaderProps> = ({
                         border: 'none',
                         cursor: 'pointer'
                       }}
-                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFF1EE')}
+                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(214, 51, 108, 0.06)')}
                       onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
                     >
                       Why BeeSocial
@@ -225,7 +268,7 @@ export const Header: React.FC<HeaderProps> = ({
                         border: 'none',
                         cursor: 'pointer'
                       }}
-                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFF1EE')}
+                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(214, 51, 108, 0.06)')}
                       onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
                     >
                       Our Team
@@ -236,6 +279,7 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
 
             <button
+              ref={(el) => { if (el) navItemRefs.current.set('services', el); }}
               onClick={() => onNavigate('services')}
               className={`nav-link-item ${activePage === 'services' ? 'active' : ''}`}
             >
@@ -243,6 +287,7 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
 
             <button
+              ref={(el) => { if (el) navItemRefs.current.set('industries', el); }}
               onClick={() => onNavigate('industries')}
               className={`nav-link-item ${activePage === 'industries' ? 'active' : ''}`}
             >
@@ -250,6 +295,7 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
 
             <button
+              ref={(el) => { if (el) navItemRefs.current.set('portfolio', el); }}
               onClick={() => onNavigate('portfolio')}
               className={`nav-link-item ${activePage === 'portfolio' ? 'active' : ''}`}
             >
@@ -257,6 +303,7 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
 
             <button
+              ref={(el) => { if (el) navItemRefs.current.set('blog', el); }}
               onClick={() => onNavigate('blog')}
               className={`nav-link-item ${activePage === 'blog' ? 'active' : ''}`}
             >
@@ -264,6 +311,7 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
 
             <button
+              ref={(el) => { if (el) navItemRefs.current.set('smm', el); }}
               onClick={() => onNavigate('smm')}
               className={`nav-link-item ${activePage === 'smm' ? 'active' : ''}`}
             >
@@ -271,6 +319,7 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
 
             <button
+              ref={(el) => { if (el) navItemRefs.current.set('contact', el); }}
               onClick={() => onNavigate('contact')}
               className={`nav-link-item ${activePage === 'contact' ? 'active' : ''}`}
             >
@@ -322,13 +371,13 @@ export const Header: React.FC<HeaderProps> = ({
               {/* Drawer Menu Items */}
               <div className="mobile-drawer-body">
                 <button
-                  className={`mobile-drawer-link ${activePage === 'home' ? 'active' : ''}`}
+                  className={`mobile-drawer-link drawer-stagger-1 ${activePage === 'home' ? 'active' : ''}`}
                   onClick={() => handleMobileNav('home')}
                 >
                   <span>Home</span>
                 </button>
 
-                <div className="mobile-drawer-link-group">
+                <div className="mobile-drawer-link-group drawer-stagger-2">
                   <button
                     className={`mobile-drawer-link ${activePage === 'about' ? 'active' : ''}`}
                     onClick={() => {
@@ -351,42 +400,42 @@ export const Header: React.FC<HeaderProps> = ({
                 </div>
 
                 <button
-                  className={`mobile-drawer-link ${activePage === 'services' ? 'active' : ''}`}
+                  className={`mobile-drawer-link drawer-stagger-3 ${activePage === 'services' ? 'active' : ''}`}
                   onClick={() => handleMobileNav('services')}
                 >
                   <span>Services</span>
                 </button>
 
                 <button
-                  className={`mobile-drawer-link ${activePage === 'portfolio' ? 'active' : ''}`}
+                  className={`mobile-drawer-link drawer-stagger-4 ${activePage === 'portfolio' ? 'active' : ''}`}
                   onClick={() => handleMobileNav('portfolio')}
                 >
                   <span>Portfolio</span>
                 </button>
 
                 <button
-                  className={`mobile-drawer-link ${activePage === 'industries' ? 'active' : ''}`}
+                  className={`mobile-drawer-link drawer-stagger-5 ${activePage === 'industries' ? 'active' : ''}`}
                   onClick={() => handleMobileNav('industries')}
                 >
                   <span>Industries</span>
                 </button>
 
                 <button
-                  className={`mobile-drawer-link ${activePage === 'blog' ? 'active' : ''}`}
+                  className={`mobile-drawer-link drawer-stagger-6 ${activePage === 'blog' ? 'active' : ''}`}
                   onClick={() => handleMobileNav('blog')}
                 >
                   <span>Blog</span>
                 </button>
 
                 <button
-                  className={`mobile-drawer-link ${activePage === 'smm' ? 'active' : ''}`}
+                  className={`mobile-drawer-link drawer-stagger-7 ${activePage === 'smm' ? 'active' : ''}`}
                   onClick={() => handleMobileNav('smm')}
                 >
                   <span>SMM</span>
                 </button>
 
                 <button
-                  className={`mobile-drawer-link ${activePage === 'contact' ? 'active' : ''}`}
+                  className={`mobile-drawer-link drawer-stagger-7 ${activePage === 'contact' ? 'active' : ''}`}
                   onClick={() => handleMobileNav('contact')}
                 >
                   <span>Contact</span>
@@ -396,7 +445,7 @@ export const Header: React.FC<HeaderProps> = ({
               {/* Drawer Bottom CTA Button matching Screenshot 1 */}
               <div className="mobile-drawer-footer">
                 <button
-                  className="mobile-drawer-cta-btn"
+                  className="mobile-drawer-cta-btn drawer-cta-animate"
                   onClick={() => {
                     setIsMobileMenuOpen(false);
                     onOpenStrategyModal();

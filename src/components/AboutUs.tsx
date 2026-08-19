@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 
 interface AboutUsProps {
@@ -16,6 +17,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({
   onSelectLocation: _onSelectLocation,
   backgroundColor
 }) => {
+  const reveal = useScrollReveal();
   const [hoveredLeader, setHoveredLeader] = useState<'founder' | null>(null);
 
   const coreServices = [
@@ -63,14 +65,14 @@ export const AboutUs: React.FC<AboutUsProps> = ({
         
         {/* 1. HERO HEADER & TAGLINE */}
         <div className="section-header" style={{ textAlign: 'center', maxWidth: '850px', margin: '0 auto 4rem auto' }}>
-          <div className="section-tag" style={{ letterSpacing: '0.1em' }}>
+          <div ref={reveal} className="section-tag" style={{ letterSpacing: '0.1em' }}>
             SCROLL. STOP. ENGAGE. — ABOUT BEESOCIAL
           </div>
-          <h2 style={{ fontSize: '3.2rem', fontWeight: 900, marginBottom: '1.25rem', lineHeight: 1.15 }}>
+          <h2 ref={reveal} className="scroll-delay-1" style={{ fontSize: '3.2rem', fontWeight: 900, marginBottom: '1.25rem', lineHeight: 1.15 }}>
             We Don't Just Post Content. <br />
             We Build Communities.
           </h2>
-          <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', lineHeight: 1.7, maxWidth: '720px', margin: '0 auto' }}>
+          <p ref={reveal} className="scroll-delay-2" style={{ fontSize: '1.15rem', color: 'var(--text-muted)', lineHeight: 1.7, maxWidth: '720px', margin: '0 auto' }}>
             Creative storytelling, data-driven campaigns, and authentic engagement. We help brands find their voice, grow their audience, and turn followers into loyal customers.
           </p>
         </div>
@@ -78,12 +80,12 @@ export const AboutUs: React.FC<AboutUsProps> = ({
         {/* 4. OUR CORE VALUE PILLARS GRID */}
         <div style={{ marginBottom: '5rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <span className="section-tag">OUR DIFFERENTIATORS</span>
-            <h3 style={{ fontSize: '1.75rem', fontWeight: 900, fontFamily: 'Outfit, sans-serif' }}>Core Value Pillars That Drive Results</h3>
+            <span ref={reveal} className="section-tag">OUR DIFFERENTIATORS</span>
+            <h3 ref={reveal} className="scroll-delay-1" style={{ fontSize: '1.75rem', fontWeight: 900, fontFamily: 'Outfit, sans-serif', color: 'var(--secondary)' }}>Core Value Pillars That Drive Results</h3>
           </div>
 
           <div className="responsive-4-grid" style={{ maxWidth: '1000px', margin: '0 auto' }}>
-            <div className="differentiator-card" onClick={() => { if (onOpenLeaderModal) onOpenLeaderModal('why-us'); }}>
+            <div ref={reveal} className="differentiator-card card-shimmer scroll-delay-1" onClick={() => { if (onOpenLeaderModal) onOpenLeaderModal('why-us'); }}>
               <div style={{ fontSize: '1.75rem', marginBottom: '0.5rem', color: 'var(--primary)' }}>👑</div>
               <h4 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '0.4rem', color: 'var(--secondary)', fontFamily: 'Outfit, sans-serif' }}>Founder-Led Accounts</h4>
               <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
@@ -91,7 +93,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({
               </p>
             </div>
 
-            <div className="differentiator-card" onClick={() => { if (onOpenLeaderModal) onOpenLeaderModal('why-us'); }}>
+            <div ref={reveal} className="differentiator-card card-shimmer scroll-delay-2" onClick={() => { if (onOpenLeaderModal) onOpenLeaderModal('why-us'); }}>
               <div style={{ fontSize: '1.75rem', marginBottom: '0.5rem', color: 'var(--primary)' }}>🔓</div>
               <h4 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '0.4rem', color: 'var(--secondary)', fontFamily: 'Outfit, sans-serif' }}>Zero Lock-In Contracts</h4>
               <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
@@ -99,7 +101,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({
               </p>
             </div>
 
-            <div className="differentiator-card" onClick={() => { if (onOpenLeaderModal) onOpenLeaderModal('why-us'); }}>
+            <div ref={reveal} className="differentiator-card card-shimmer scroll-delay-3" onClick={() => { if (onOpenLeaderModal) onOpenLeaderModal('why-us'); }}>
               <div style={{ fontSize: '1.75rem', marginBottom: '0.5rem', color: 'var(--primary)' }}>🎨</div>
               <h4 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '0.4rem', color: 'var(--secondary)', fontFamily: 'Outfit, sans-serif' }}>Creative Excellence</h4>
               <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
@@ -107,7 +109,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({
               </p>
             </div>
 
-            <div className="differentiator-card" onClick={() => { if (onOpenLeaderModal) onOpenLeaderModal('why-us'); }}>
+            <div ref={reveal} className="differentiator-card card-shimmer scroll-delay-4" onClick={() => { if (onOpenLeaderModal) onOpenLeaderModal('why-us'); }}>
               <div style={{ fontSize: '1.75rem', marginBottom: '0.5rem', color: 'var(--primary)' }}>📊</div>
               <h4 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '0.4rem', color: 'var(--secondary)', fontFamily: 'Outfit, sans-serif' }}>Data Meets Design</h4>
               <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
@@ -120,28 +122,29 @@ export const AboutUs: React.FC<AboutUsProps> = ({
         {/* 5. LEADERSHIP SECTION */}
         <div style={{ marginBottom: '5rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <span className="section-tag">LEADERSHIP</span>
-            <h3 style={{ fontSize: '2.5rem', fontWeight: 900 }}>Meet the Founder Behind BeeSocial</h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>Founder-led creative direction on every project</p>
+            <span ref={reveal} className="section-tag">LEADERSHIP</span>
+            <h3 ref={reveal} className="scroll-delay-1" style={{ fontSize: '2.5rem', fontWeight: 900, color: 'var(--secondary)' }}>Meet the Founder Behind BeeSocial</h3>
+            <p ref={reveal} className="scroll-delay-2" style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>Founder-led creative direction on every project</p>
           </div>
 
-          <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+          <div ref={reveal} className="scroll-delay-3" style={{ maxWidth: '600px', margin: '0 auto' }}>
             
             {/* SIDDHI - FOUNDER */}
             <div 
+              className="card-shimmer"
               style={{ 
-                background: 'linear-gradient(145deg, var(--bg-card) 0%, rgba(59, 130, 246, 0.02) 100%)', 
-                border: '1px solid var(--border-color)', 
-                borderTop: hoveredLeader === 'founder' ? '4px solid var(--primary)' : '4px solid var(--border-color)',
+                background: 'var(--bg-card)', 
+                border: '1px solid var(--border-color-subtle)', 
+                borderTop: '4px solid var(--primary)',
                 borderRadius: '24px', 
                 padding: '2rem 1.75rem', 
                 display: 'flex', 
                 gap: '1.75rem', 
                 alignItems: 'center', 
-                boxShadow: hoveredLeader === 'founder' ? '0 20px 40px rgba(59, 130, 246, 0.08)' : 'var(--shadow-sm)', 
+                boxShadow: hoveredLeader === 'founder' ? 'var(--shadow-card-hover)' : 'var(--shadow-card)', 
                 cursor: 'pointer', 
                 transform: hoveredLeader === 'founder' ? 'translateY(-6px)' : 'translateY(0)',
-                transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)' 
+                transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)' 
               }}
               onClick={() => { if (onOpenLeaderModal) onOpenLeaderModal('founder'); }}
               onMouseEnter={() => setHoveredLeader('founder')}
@@ -159,8 +162,8 @@ export const AboutUs: React.FC<AboutUsProps> = ({
                   height: '100px',
                   borderRadius: '50%',
                   objectFit: 'cover',
-                  border: hoveredLeader === 'founder' ? '4px solid var(--primary)' : '3px solid var(--border-color)',
-                  boxShadow: hoveredLeader === 'founder' ? '0 8px 24px rgba(59, 130, 246, 0.2)' : 'var(--shadow-md)',
+                  border: hoveredLeader === 'founder' ? '4px solid var(--primary)' : '3px solid var(--border-color-subtle)',
+                  boxShadow: hoveredLeader === 'founder' ? '0 8px 24px rgba(214, 51, 108, 0.25)' : 'var(--shadow-card)',
                   flexShrink: 0,
                   transform: hoveredLeader === 'founder' ? 'scale(1.08) rotate(4deg)' : 'scale(1) rotate(0)',
                   transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
@@ -195,15 +198,17 @@ export const AboutUs: React.FC<AboutUsProps> = ({
         {/* 6. CORE GROWTH SERVICES & CAPABILITIES */}
         <div style={{ marginBottom: '2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <span className="section-tag">SERVICES & CAPABILITIES</span>
-            <h3 style={{ fontSize: '2.2rem', fontWeight: 900 }}>What We Do Best</h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>Click any capability to view full details</p>
+            <span ref={reveal} className="section-tag">SERVICES & CAPABILITIES</span>
+            <h3 ref={reveal} className="scroll-delay-1" style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--secondary)' }}>What We Do Best</h3>
+            <p ref={reveal} className="scroll-delay-2" style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>Click any capability to view full details</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', maxWidth: '1080px', margin: '0 auto' }}>
+          <div className="responsive-3-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', maxWidth: '1080px', margin: '0 auto' }}>
             {coreServices.map((srv, srvIdx) => (
               <div
                 key={srvIdx}
+                ref={reveal}
+                className={`card-shimmer scroll-delay-${(srvIdx % 3) + 1}`}
                 onClick={() => {
                   if (onNavigate) {
                     onNavigate('service-details', srv.slug);
@@ -212,36 +217,36 @@ export const AboutUs: React.FC<AboutUsProps> = ({
                   }
                 }}
                 style={{
-                  backgroundColor: '#FFFFFF',
-                  borderTop: '4px solid #FF4E27',
-                  borderLeft: '1px solid #E2E8F0',
-                  borderRight: '1px solid #E2E8F0',
-                  borderBottom: '1px solid #E2E8F0',
+                  backgroundColor: 'var(--bg-card)',
+                  borderTop: '4px solid var(--primary)',
+                  borderLeft: '1px solid var(--border-color-subtle)',
+                  borderRight: '1px solid var(--border-color-subtle)',
+                  borderBottom: '1px solid var(--border-color-subtle)',
                   borderRadius: '20px',
                   padding: '2rem 1.75rem',
-                  boxShadow: '0 6px 20px rgba(0,0,0,0.03)',
+                  boxShadow: 'var(--shadow-card)',
                   cursor: 'pointer',
-                  transition: 'all 0.3s ease',
+                  transition: 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease',
                   display: 'flex',
                   flexDirection: 'column'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 15px 35px rgba(255, 78, 39, 0.1)';
+                  e.currentTarget.style.transform = 'translateY(-6px)';
+                  e.currentTarget.style.boxShadow = 'var(--shadow-card-hover)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.03)';
+                  e.currentTarget.style.boxShadow = 'var(--shadow-card)';
                 }}
               >
                 <div style={{ fontSize: '2.2rem', marginBottom: '0.75rem' }}>{srv.icon}</div>
-                <h4 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem', fontFamily: 'Outfit, sans-serif' }}>
+                <h4 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--secondary)', marginBottom: '0.5rem', fontFamily: 'Outfit, sans-serif' }}>
                   {srv.title}
                 </h4>
-                <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: 1.6, margin: '0 0 1.25rem 0', flexGrow: 1 }}>
+                <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', lineHeight: 1.6, margin: '0 0 1.25rem 0', flexGrow: 1 }}>
                   {srv.desc}
                 </p>
-                <div style={{ fontSize: '0.85rem', fontWeight: 800, color: '#FF4E27', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                <div style={{ fontSize: '0.85rem', fontWeight: 800, color: 'var(--primary)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
                   <span>Explore Service</span>
                   <span>➔</span>
                 </div>

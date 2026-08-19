@@ -21,7 +21,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectLocation, on
   };
 
   return (
-    <footer style={{ background: '#110D0C', color: '#F1F5F9', paddingTop: '5rem', paddingBottom: '3rem', borderTop: '1px solid #261F1C' }}>
+    <footer style={{ background: '#110D0C', color: 'var(--border-color-subtle, #F0E4E8)', paddingTop: '5rem', paddingBottom: '3rem', borderTop: '1px solid #261F1C' }}>
       <div className="container">
         
         {/* MAIN FOOTER GRID */}
@@ -42,14 +42,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectLocation, on
                 }}
               />
             </div>
-            <p style={{ fontSize: '0.9rem', color: '#94A3B8', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
               Scroll. Stop. Engage. A creative social media and digital marketing agency crafting content that connects, campaigns that convert, and brands that buzz.
             </p>
           </div>
 
           <div>
             <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#FFF', marginBottom: '1.25rem' }}>Navigation</h4>
-            <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', fontSize: '0.875rem', color: '#94A3B8' }}>
+            <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', fontSize: '0.875rem', color: 'var(--text-muted)' }}>
               <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('home')}>Home</li>
               <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('about')}>About Us</li>
               <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('portfolio')}>Our Work</li>
@@ -61,7 +61,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectLocation, on
 
           <div>
             <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#FFF', marginBottom: '1.25rem' }}>Services</h4>
-            <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', fontSize: '0.875rem', color: '#94A3B8' }}>
+            <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', fontSize: '0.875rem', color: 'var(--text-muted)' }}>
               <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('services')}>SEO Services</li>
               <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('services')}>Google Ads (PPC)</li>
               <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('services')}>Meta Ads</li>
@@ -73,15 +73,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectLocation, on
 
           <div>
             <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#FFF', marginBottom: '1.25rem' }}>Direct Contact</h4>
-            <div style={{ fontSize: '0.875rem', color: '#94A3B8', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <div>📍 India</div>
               <div>📞 <a href="tel:+917020800621" style={{ color: 'inherit', textDecoration: 'none' }}>+91 70208 00621</a></div>
-              <div>✉️ <a href="mailto:hello.thebeesocial@gmail.com" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.currentTarget.style.color = '#3B82F6'} onMouseLeave={(e) => e.currentTarget.style.color = 'inherit'}>hello.thebeesocial@gmail.com</a></div>
+              <div>✉️ <a href="mailto:hello.thebeesocial@gmail.com" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary)'} onMouseLeave={(e) => e.currentTarget.style.color = 'inherit'}>hello.thebeesocial@gmail.com</a></div>
               <a
                 href="https://www.instagram.com/beesocial._"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: '#D97706', fontWeight: 700, textDecoration: 'none', marginTop: '0.5rem' }}
+                style={{ color: 'var(--primary)', fontWeight: 700, textDecoration: 'none', marginTop: '0.5rem' }}
               >
                 Follow on Instagram 📸 →
               </a>
@@ -116,9 +116,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectLocation, on
                     transition: 'all 0.2s ease'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#D97706';
-                    e.currentTarget.style.color = '#0F172A';
-                    e.currentTarget.style.borderColor = '#D97706';
+                    e.currentTarget.style.backgroundColor = 'var(--primary-raw, #D6336C)';
+                    e.currentTarget.style.color = 'var(--secondary)';
+                    e.currentTarget.style.borderColor = 'var(--primary-raw, #D6336C)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = '#1E1815';
@@ -155,9 +155,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectLocation, on
                     transition: 'all 0.2s ease'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#D97706';
-                    e.currentTarget.style.color = '#0F172A';
-                    e.currentTarget.style.borderColor = '#D97706';
+                    e.currentTarget.style.backgroundColor = 'var(--primary-raw, #D6336C)';
+                    e.currentTarget.style.color = 'var(--secondary)';
+                    e.currentTarget.style.borderColor = 'var(--primary-raw, #D6336C)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = '#1E1815';
@@ -179,8 +179,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectLocation, on
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.75rem',
-                backgroundColor: 'rgba(255, 78, 39, 0.1)',
-                color: '#FF4E27',
+                backgroundColor: 'rgba(214, 51, 108, 0.10)',
+                color: 'var(--primary)',
                 border: '1.5px solid rgba(255, 78, 39, 0.4)',
                 padding: '0.95rem 2.25rem',
                 borderRadius: '999px',
@@ -191,13 +191,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectLocation, on
                 boxShadow: '0 8px 25px rgba(255, 78, 39, 0.15)'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#FF4E27';
+                e.currentTarget.style.backgroundColor = 'var(--primary)';
                 e.currentTarget.style.color = '#FFFFFF';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgba(255, 78, 39, 0.1)';
-                e.currentTarget.style.color = '#FF4E27';
+                e.currentTarget.style.backgroundColor = 'rgba(214, 51, 108, 0.10)';
+                e.currentTarget.style.color = 'var(--primary)';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
@@ -210,8 +210,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectLocation, on
 
         {/* BOTTOM COPYRIGHT BAR */}
         <div style={{ height: '1px', background: '#261F1C', margin: '3rem 0 1.5rem 0' }}></div>
-        <div style={{ textAlign: 'center', fontSize: '0.85rem', color: '#94A3B8' }}>
-          © {new Date().getFullYear()} <span style={{ color: '#D97706', fontWeight: 800 }}>BeeSocial</span>. All Rights Reserved.
+        <div style={{ textAlign: 'center', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+          © {new Date().getFullYear()} <a href="https://thebeesocial.in/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)', fontWeight: 800, textDecoration: 'none', transition: 'opacity 0.2s ease' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'} onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}>BeeSocial</a>. All Rights Reserved.
         </div>
 
       </div>

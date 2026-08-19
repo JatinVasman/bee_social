@@ -1,5 +1,6 @@
 import React from 'react';
 import type { StatType } from './StatCardModal';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 interface HeroProps {
   onOpenStrategyModal: () => void;
@@ -13,21 +14,23 @@ export const Hero: React.FC<HeroProps> = ({
   onNavigatePortfolio,
   onOpenStatModal
 }) => {
+  const reveal = useScrollReveal();
+
   return (
     <section className="hero-section">
       <div className="container hero-grid">
         <div className="hero-content">
-          <div className="hero-tag">
+          <div ref={reveal} className="hero-tag">
             🐝 CREATIVE SOCIAL MEDIA & MARKETING AGENCY
           </div>
-          <h1 className="hero-title">
+          <h1 ref={reveal} className="hero-title scroll-delay-1">
             Your Brand, <br />
             Socially <span className="text-red">Unstoppable.</span>
           </h1>
-          <p className="hero-subtext">
+          <p ref={reveal} className="hero-subtext scroll-delay-2">
             From scroll-stopping social media content and high-impact campaigns to stunning designs, we help brands build engaged communities that drive real growth.
           </p>
-          <div className="hero-buttons">
+          <div ref={reveal} className="hero-buttons scroll-delay-3">
             <button className="btn btn-primary" onClick={onNavigateServices}>
               Explore Our Services ➔
             </button>
@@ -40,7 +43,7 @@ export const Hero: React.FC<HeroProps> = ({
         {/* Hero Building Visual Container */}
         <div className="hero-building-wrapper">
           <img
-            src="/building.jpg"
+            src="/hero_new.jpg"
             alt="BeeSocial Creative Agency"
             className="hero-building-img"
             fetchPriority="high"

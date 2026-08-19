@@ -313,7 +313,7 @@ export const App: React.FC = () => {
             <ServicesGrid
               onOpenStrategyModal={handleOpenStrategyModal}
               onNavigate={handleNavigate}
-              backgroundColor="#FFFFFF"
+              backgroundColor="var(--bg-card)"
             />
             <AboutUs
               onNavigate={handleNavigate}
@@ -322,7 +322,7 @@ export const App: React.FC = () => {
               onSelectLocation={handleSelectLocation}
               backgroundColor="var(--bg-main)"
             />
-            <ClientVoices backgroundColor="#FFFFFF" />
+            <ClientVoices backgroundColor="var(--bg-card)" />
             <WorkShowcaseMarquee />
             <WhyChooseUs
               onSelectLocation={handleSelectLocation}

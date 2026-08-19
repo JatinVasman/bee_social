@@ -53,7 +53,7 @@ export const LocationsModal: React.FC<LocationsModalProps> = ({ isOpen, onClose,
           maxHeight: '90vh',
           display: 'flex',
           flexDirection: 'column',
-          backgroundColor: '#FFFFFF',
+          backgroundColor: 'var(--bg-card)',
           borderRadius: '24px',
           overflow: 'hidden',
           padding: 0,
@@ -62,9 +62,9 @@ export const LocationsModal: React.FC<LocationsModalProps> = ({ isOpen, onClose,
         onClick={(e) => e.stopPropagation()}
       >
         {/* MODAL HEADER */}
-        <div style={{ padding: '1.75rem 2.25rem', backgroundColor: '#0F172A', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid #1E293B' }}>
+        <div style={{ padding: '1.75rem 2.25rem', backgroundColor: 'var(--secondary)', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid var(--secondary)' }}>
           <div>
-            <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#3B82F6', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.2rem' }}>
+            <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.2rem' }}>
               PAN-INDIA & INTERNATIONAL COVERAGE
             </div>
             <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '1.6rem', fontWeight: 900, color: '#FFFFFF', margin: 0 }}>
@@ -96,7 +96,7 @@ export const LocationsModal: React.FC<LocationsModalProps> = ({ isOpen, onClose,
         </div>
 
         {/* SEARCH BAR & FILTER TABS */}
-        <div style={{ padding: '1.25rem 2.25rem', backgroundColor: '#F8FAFC', borderBottom: '1px solid #E2E8F0', display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div style={{ padding: '1.25rem 2.25rem', backgroundColor: 'var(--bg-subtle, #FFF0F2)', borderBottom: '1px solid var(--border-color-subtle)', display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ position: 'relative', width: '100%', maxWidth: '420px' }}>
             <input
               type="text"
@@ -107,10 +107,10 @@ export const LocationsModal: React.FC<LocationsModalProps> = ({ isOpen, onClose,
                 width: '100%',
                 padding: '0.75rem 1.25rem',
                 borderRadius: '999px',
-                border: '1.5px solid #CBD5E1',
+                border: '1.5px solid var(--border-color)',
                 fontSize: '0.9rem',
                 outline: 'none',
-                backgroundColor: '#FFFFFF',
+                backgroundColor: 'var(--bg-card)',
                 boxShadow: '0 2px 5px rgba(0,0,0,0.02)'
               }}
             />
@@ -122,9 +122,9 @@ export const LocationsModal: React.FC<LocationsModalProps> = ({ isOpen, onClose,
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 style={{
-                  backgroundColor: activeTab === tab ? '#FF4E27' : '#FFFFFF',
+                  backgroundColor: activeTab === tab ? 'var(--primary)' : '#FFFFFF',
                   color: activeTab === tab ? '#FFFFFF' : '#475569',
-                  border: activeTab === tab ? 'none' : '1px solid #CBD5E1',
+                  border: activeTab === tab ? 'none' : '1px solid var(--border-color)',
                   padding: '0.45rem 1.1rem',
                   borderRadius: '999px',
                   fontSize: '0.825rem',
@@ -140,12 +140,12 @@ export const LocationsModal: React.FC<LocationsModalProps> = ({ isOpen, onClose,
         </div>
 
         {/* MODAL SCROLLABLE BODY */}
-        <div style={{ padding: '2rem 2.25rem', overflowY: 'auto', flex: 1, backgroundColor: '#FFFFFF' }}>
+        <div style={{ padding: '2rem 2.25rem', overflowY: 'auto', flex: 1, backgroundColor: 'var(--bg-card)' }}>
           
           {/* INTERNATIONAL SECTION */}
           {(activeTab === 'All' || activeTab === 'International') && filteredIntl.length > 0 && (
-            <div style={{ marginBottom: '2.5rem', backgroundColor: '#F0F9FF', padding: '1.5rem', borderRadius: '18px', border: '1px solid #BAE6FD' }}>
-              <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '1.25rem', fontWeight: 900, color: '#0369A1', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <div style={{ marginBottom: '2.5rem', backgroundColor: 'var(--bg-subtle, #FFF0F2)', padding: '1.5rem', borderRadius: '18px', border: '1px solid var(--border-color-subtle, #F0E4E8)' }}>
+              <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '1.25rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 🌐 International Offices & Global Markets
               </h3>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.65rem' }}>
@@ -154,9 +154,9 @@ export const LocationsModal: React.FC<LocationsModalProps> = ({ isOpen, onClose,
                     key={loc}
                     onClick={() => handleCityClick(loc)}
                     style={{
-                      backgroundColor: '#FFFFFF',
-                      color: '#0284C7',
-                      border: '1px solid #7DD3FC',
+                      backgroundColor: 'var(--bg-card)',
+                      color: 'var(--primary)',
+                      border: '1px solid var(--border-color-subtle, #F0E4E8)',
                       borderRadius: '999px',
                       padding: '0.45rem 1.25rem',
                       fontSize: '0.875rem',
@@ -197,19 +197,19 @@ export const LocationsModal: React.FC<LocationsModalProps> = ({ isOpen, onClose,
                   <div
                     key={stateData.state}
                     style={{
-                      backgroundColor: '#F8FAFC',
+                      backgroundColor: 'var(--bg-subtle, #FFF0F2)',
                       borderRadius: '20px',
                       padding: '1.75rem',
-                      border: '1px solid #E2E8F0',
+                      border: '1px solid var(--border-color-subtle)',
                       boxShadow: '0 4px 15px rgba(0,0,0,0.02)'
                     }}
                   >
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem', paddingBottom: '0.75rem', borderBottom: '1px solid #E2E8F0' }}>
-                      <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '1.35rem', fontWeight: 900, color: '#0F172A', margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem', paddingBottom: '0.75rem', borderBottom: '1px solid var(--border-color-subtle)' }}>
+                      <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '1.35rem', fontWeight: 900, color: 'var(--secondary)', margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                         <span>📍</span>
                         <span>{stateData.state} Coverage</span>
                       </h3>
-                      <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#FF4E27', backgroundColor: '#FFF0ED', padding: '0.25rem 0.75rem', borderRadius: '999px' }}>
+                      <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary)', backgroundColor: 'rgba(214, 51, 108, 0.08)', padding: '0.25rem 0.75rem', borderRadius: '999px' }}>
                         {stateData.tier2.length + stateData.tier3_4.length} Cities Covered
                       </span>
                     </div>
@@ -217,7 +217,7 @@ export const LocationsModal: React.FC<LocationsModalProps> = ({ isOpen, onClose,
                     {/* TIER 2 CITIES */}
                     {showTier2 && tier2List.length > 0 && (
                       <div style={{ marginBottom: '1.25rem' }}>
-                        <div style={{ fontSize: '0.775rem', fontWeight: 800, color: '#3B82F6', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.65rem' }}>
+                        <div style={{ fontSize: '0.775rem', fontWeight: 800, color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.65rem' }}>
                           TIER 2 MAJOR METRO HUBS
                         </div>
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.55rem' }}>
@@ -226,9 +226,9 @@ export const LocationsModal: React.FC<LocationsModalProps> = ({ isOpen, onClose,
                               key={city}
                               onClick={() => handleCityClick(city)}
                               style={{
-                                backgroundColor: '#FFFFFF',
-                                color: '#0F172A',
-                                border: '1px solid #CBD5E1',
+                                backgroundColor: 'var(--bg-card)',
+                                color: 'var(--secondary)',
+                                border: '1px solid var(--border-color)',
                                 borderRadius: '999px',
                                 padding: '0.4rem 1.1rem',
                                 fontSize: '0.825rem',
@@ -238,14 +238,14 @@ export const LocationsModal: React.FC<LocationsModalProps> = ({ isOpen, onClose,
                                 boxShadow: '0 2px 4px rgba(0,0,0,0.02)'
                               }}
                               onMouseEnter={(e) => {
-                                e.currentTarget.style.backgroundColor = '#FF4E27';
+                                e.currentTarget.style.backgroundColor = 'var(--primary)';
                                 e.currentTarget.style.color = '#FFFFFF';
-                                e.currentTarget.style.borderColor = '#FF4E27';
+                                e.currentTarget.style.borderColor = 'var(--primary)';
                               }}
                               onMouseLeave={(e) => {
                                 e.currentTarget.style.backgroundColor = '#FFFFFF';
-                                e.currentTarget.style.color = '#0F172A';
-                                e.currentTarget.style.borderColor = '#CBD5E1';
+                                e.currentTarget.style.color = 'var(--secondary)';
+                                e.currentTarget.style.borderColor = 'var(--border-color)';
                               }}
                             >
                               {city}
@@ -258,7 +258,7 @@ export const LocationsModal: React.FC<LocationsModalProps> = ({ isOpen, onClose,
                     {/* TIER 3 & 4 CITIES */}
                     {showTier3 && tier3List.length > 0 && (
                       <div>
-                        <div style={{ fontSize: '0.775rem', fontWeight: 800, color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.65rem' }}>
+                        <div style={{ fontSize: '0.775rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.65rem' }}>
                           TIER 3 & TIER 4 LOCAL MARKET COVERAGE
                         </div>
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.45rem' }}>
@@ -267,9 +267,9 @@ export const LocationsModal: React.FC<LocationsModalProps> = ({ isOpen, onClose,
                               key={city}
                               onClick={() => handleCityClick(city)}
                               style={{
-                                backgroundColor: '#FFFFFF',
+                                backgroundColor: 'var(--bg-card)',
                                 color: '#475569',
-                                border: '1px solid #E2E8F0',
+                                border: '1px solid var(--border-color-subtle)',
                                 borderRadius: '999px',
                                 padding: '0.35rem 0.9rem',
                                 fontSize: '0.785rem',
@@ -278,9 +278,9 @@ export const LocationsModal: React.FC<LocationsModalProps> = ({ isOpen, onClose,
                                 transition: 'all 0.2s ease'
                               }}
                               onMouseEnter={(e) => {
-                                e.currentTarget.style.backgroundColor = '#0F172A';
+                                e.currentTarget.style.backgroundColor = 'var(--secondary)';
                                 e.currentTarget.style.color = '#FFFFFF';
-                                e.currentTarget.style.borderColor = '#0F172A';
+                                e.currentTarget.style.borderColor = 'var(--secondary)';
                               }}
                               onMouseLeave={(e) => {
                                 e.currentTarget.style.backgroundColor = '#FFFFFF';
@@ -304,7 +304,7 @@ export const LocationsModal: React.FC<LocationsModalProps> = ({ isOpen, onClose,
         </div>
 
         {/* MODAL FOOTER */}
-        <div style={{ padding: '1.25rem 2.25rem', backgroundColor: '#F8FAFC', borderTop: '1px solid #E2E8F0', textAlign: 'center', fontSize: '0.85rem', color: '#64748B' }}>
+        <div style={{ padding: '1.25rem 2.25rem', backgroundColor: 'var(--bg-subtle, #FFF0F2)', borderTop: '1px solid var(--border-color-subtle)', textAlign: 'center', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
           Click any city above to open dedicated localized Digital Marketing & SMM strategies.
         </div>
       </div>

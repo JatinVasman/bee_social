@@ -33,24 +33,24 @@ export const LocationsDirectoryPage: React.FC<LocationsDirectoryPageProps> = ({ 
   const totalCitiesCount = ALL_STATE_LOCATIONS.reduce((acc, curr) => acc + curr.tier2.length + curr.tier3_4.length, 0) + TOP_FOOTER_INTERNATIONAL_LOCATIONS.length;
 
   return (
-    <div style={{ backgroundColor: '#FDFBF7', minHeight: '100vh', padding: '2rem 0 6rem 0' }}>
+    <div style={{ backgroundColor: 'var(--bg-main, #FFF7F8)', minHeight: '100vh', padding: '2rem 0 6rem 0' }}>
       <div className="container" style={{ maxWidth: '1180px' }}>
         
         {/* 1. BREADCRUMB */}
-        <div style={{ fontSize: '0.875rem', color: '#64748B', marginBottom: '1.5rem' }}>
-          <span style={{ cursor: 'pointer', color: '#3B82F6' }} onClick={() => onNavigate('home')}>Home</span> / <span style={{ color: '#0F172A', fontWeight: 700 }}>Complete Locations Directory</span>
+        <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
+          <span style={{ cursor: 'pointer', color: 'var(--primary)' }} onClick={() => onNavigate('home')}>Home</span> / <span style={{ color: 'var(--secondary)', fontWeight: 700 }}>Complete Locations Directory</span>
         </div>
 
         {/* 2. HERO HEADER BANNER */}
-        <div className="responsive-hero-card" style={{ background: '#FFFFFF', borderTop: '4px solid #FF4E27', borderLeft: '1px solid #E2E8F0', borderRight: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0', borderRadius: '24px', padding: '3.5rem 3rem', marginBottom: '3rem', boxShadow: '0 15px 35px rgba(11,19,42,0.05)' }}>
+        <div className="responsive-hero-card" style={{ background: 'var(--bg-card)', borderTop: '4px solid var(--primary)', borderLeft: '1px solid var(--border-color-subtle)', borderRight: '1px solid var(--border-color-subtle)', borderBottom: '1px solid var(--border-color-subtle)', borderRadius: '24px', padding: '3.5rem 3rem', marginBottom: '3rem', boxShadow: 'var(--shadow-card)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-            <span style={{ width: '30px', height: '1px', background: '#FF4E27' }}></span>
-            <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#FF4E27', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+            <span style={{ width: '30px', height: '1px', background: 'var(--primary)' }}></span>
+            <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
               PAN-INDIA & GLOBAL GEOGRAPHIC COVERAGE ({totalCitiesCount}+ MARKETS)
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3.2rem', fontWeight: 900, color: '#0F172A', lineHeight: 1.15, marginBottom: '1.25rem' }}>
+          <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3.2rem', fontWeight: 900, color: 'var(--secondary)', lineHeight: 1.15, marginBottom: '1.25rem' }}>
             Explore Our Complete Digital Marketing Locations Directory
           </h1>
 
@@ -59,7 +59,7 @@ export const LocationsDirectoryPage: React.FC<LocationsDirectoryPageProps> = ({ 
           </p>
 
           {/* SEARCH BAR & CATEGORY TABS CONTAINER */}
-          <div style={{ background: '#F8FAFC', padding: '1.5rem', borderRadius: '20px', border: '1px solid #E2E8F0', display: 'flex', flexWrap: 'wrap', gap: '1.25rem', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ background: 'var(--bg-subtle, #FFF0F2)', padding: '1.5rem', borderRadius: '20px', border: '1px solid var(--border-color-subtle)', display: 'flex', flexWrap: 'wrap', gap: '1.25rem', alignItems: 'center', justifyContent: 'space-between' }}>
             <div style={{ position: 'relative', width: '100%', maxWidth: '480px' }}>
               <input
                 type="text"
@@ -70,11 +70,11 @@ export const LocationsDirectoryPage: React.FC<LocationsDirectoryPageProps> = ({ 
                   width: '100%',
                   padding: '0.85rem 1.4rem',
                   borderRadius: '999px',
-                  border: '1.5px solid #CBD5E1',
+                  border: '1.5px solid var(--border-color)',
                   fontSize: '0.95rem',
                   outline: 'none',
-                  backgroundColor: '#FFFFFF',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.03)'
+                  backgroundColor: 'var(--bg-card)',
+                  boxShadow: 'var(--shadow-sm)'
                 }}
               />
             </div>
@@ -85,9 +85,9 @@ export const LocationsDirectoryPage: React.FC<LocationsDirectoryPageProps> = ({ 
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   style={{
-                    backgroundColor: activeTab === tab ? '#0F172A' : '#FFFFFF',
+                    backgroundColor: activeTab === tab ? 'var(--secondary)' : '#FFFFFF',
                     color: activeTab === tab ? '#FFFFFF' : '#475569',
-                    border: activeTab === tab ? 'none' : '1px solid #CBD5E1',
+                    border: activeTab === tab ? 'none' : '1px solid var(--border-color)',
                     padding: '0.55rem 1.25rem',
                     borderRadius: '999px',
                     fontSize: '0.875rem',
@@ -106,7 +106,7 @@ export const LocationsDirectoryPage: React.FC<LocationsDirectoryPageProps> = ({ 
 
         {/* 3. INTERNATIONAL OFFICES CAROUSEL / BLOCK */}
         {(activeTab === 'All' || activeTab === 'International') && filteredIntl.length > 0 && (
-          <div style={{ marginBottom: '3rem', backgroundColor: '#FFFFFF', padding: '2rem 2.25rem', borderRadius: '24px', border: '1px solid #BAE6FD', boxShadow: '0 8px 25px rgba(0,0,0,0.03)' }}>
+          <div style={{ marginBottom: '3rem', backgroundColor: 'var(--bg-card)', padding: '2rem 2.25rem', borderRadius: '24px', border: '1px solid var(--border-color-subtle, #F0E4E8)', boxShadow: '0 8px 25px rgba(0,0,0,0.03)' }}>
             <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '1.5rem', fontWeight: 900, color: '#0284C7', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               🌐 International Markets & Overseas Client Reach
             </h2>
@@ -116,7 +116,7 @@ export const LocationsDirectoryPage: React.FC<LocationsDirectoryPageProps> = ({ 
                   key={loc}
                   onClick={() => handleCityClick(loc)}
                   style={{
-                    backgroundColor: '#F0F9FF',
+                    backgroundColor: 'var(--bg-subtle, #FFF0F2)',
                     color: '#0284C7',
                     border: '1.5px solid #7DD3FC',
                     borderRadius: '999px',
@@ -131,7 +131,7 @@ export const LocationsDirectoryPage: React.FC<LocationsDirectoryPageProps> = ({ 
                     e.currentTarget.style.color = '#FFFFFF';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#F0F9FF';
+                    e.currentTarget.style.backgroundColor = 'var(--bg-subtle, #FFF0F2)';
                     e.currentTarget.style.color = '#0284C7';
                   }}
                 >
@@ -158,19 +158,19 @@ export const LocationsDirectoryPage: React.FC<LocationsDirectoryPageProps> = ({ 
                 <div
                   key={stateData.state}
                   style={{
-                    backgroundColor: '#FFFFFF',
+                    backgroundColor: 'var(--bg-card)',
                     borderRadius: '24px',
                     padding: '2.25rem',
-                    border: '1px solid #E2E8F0',
+                    border: '1px solid var(--border-color-subtle)',
                     boxShadow: '0 8px 25px rgba(0,0,0,0.03)'
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem', paddingBottom: '1rem', borderBottom: '1px solid #F1F5F9' }}>
-                    <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '1.6rem', fontWeight: 900, color: '#0F172A', margin: 0, display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem', paddingBottom: '1rem', borderBottom: '1px solid var(--border-color-subtle, #F0E4E8)' }}>
+                    <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '1.6rem', fontWeight: 900, color: 'var(--secondary)', margin: 0, display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                       <span style={{ fontSize: '1.4rem' }}>📍</span>
                       <span>{stateData.state} Coverage</span>
                     </h2>
-                    <span style={{ fontSize: '0.825rem', fontWeight: 800, color: '#FF4E27', backgroundColor: '#FFF0ED', padding: '0.35rem 0.9rem', borderRadius: '999px' }}>
+                    <span style={{ fontSize: '0.825rem', fontWeight: 800, color: 'var(--primary)', backgroundColor: 'rgba(214, 51, 108, 0.08)', padding: '0.35rem 0.9rem', borderRadius: '999px' }}>
                       {stateData.tier2.length + stateData.tier3_4.length} Cities Covered
                     </span>
                   </div>
@@ -178,7 +178,7 @@ export const LocationsDirectoryPage: React.FC<LocationsDirectoryPageProps> = ({ 
                   {/* TIER 2 METROS */}
                   {showTier2 && tier2List.length > 0 && (
                     <div style={{ marginBottom: '1.5rem' }}>
-                      <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#3B82F6', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.85rem' }}>
+                      <div style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.85rem' }}>
                         TIER 2 MAJOR METRO HUBS
                       </div>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.65rem' }}>
@@ -187,9 +187,9 @@ export const LocationsDirectoryPage: React.FC<LocationsDirectoryPageProps> = ({ 
                             key={city}
                             onClick={() => handleCityClick(city)}
                             style={{
-                              backgroundColor: '#F8FAFC',
-                              color: '#0F172A',
-                              border: '1px solid #CBD5E1',
+                              backgroundColor: 'var(--bg-subtle, #FFF0F2)',
+                              color: 'var(--secondary)',
+                              border: '1px solid var(--border-color)',
                               borderRadius: '999px',
                               padding: '0.5rem 1.25rem',
                               fontSize: '0.875rem',
@@ -199,14 +199,14 @@ export const LocationsDirectoryPage: React.FC<LocationsDirectoryPageProps> = ({ 
                               boxShadow: '0 2px 4px rgba(0,0,0,0.02)'
                             }}
                             onMouseEnter={(e) => {
-                              e.currentTarget.style.backgroundColor = '#FF4E27';
+                              e.currentTarget.style.backgroundColor = 'var(--primary)';
                               e.currentTarget.style.color = '#FFFFFF';
-                              e.currentTarget.style.borderColor = '#FF4E27';
+                              e.currentTarget.style.borderColor = 'var(--primary)';
                             }}
                             onMouseLeave={(e) => {
-                              e.currentTarget.style.backgroundColor = '#F8FAFC';
-                              e.currentTarget.style.color = '#0F172A';
-                              e.currentTarget.style.borderColor = '#CBD5E1';
+                              e.currentTarget.style.backgroundColor = 'var(--bg-subtle, #FFF0F2)';
+                              e.currentTarget.style.color = 'var(--secondary)';
+                              e.currentTarget.style.borderColor = 'var(--border-color)';
                             }}
                           >
                             {city} →
@@ -219,7 +219,7 @@ export const LocationsDirectoryPage: React.FC<LocationsDirectoryPageProps> = ({ 
                   {/* TIER 3 & 4 CITIES */}
                   {showTier3 && tier3List.length > 0 && (
                     <div>
-                      <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.85rem' }}>
+                      <div style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.85rem' }}>
                         TIER 3 & TIER 4 LOCAL MARKET COVERAGE
                       </div>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
@@ -228,9 +228,9 @@ export const LocationsDirectoryPage: React.FC<LocationsDirectoryPageProps> = ({ 
                             key={city}
                             onClick={() => handleCityClick(city)}
                             style={{
-                              backgroundColor: '#FFFFFF',
+                              backgroundColor: 'var(--bg-card)',
                               color: '#475569',
-                              border: '1px solid #E2E8F0',
+                              border: '1px solid var(--border-color-subtle)',
                               borderRadius: '999px',
                               padding: '0.4rem 1rem',
                               fontSize: '0.825rem',
@@ -239,9 +239,9 @@ export const LocationsDirectoryPage: React.FC<LocationsDirectoryPageProps> = ({ 
                               transition: 'all 0.2s ease'
                             }}
                             onMouseEnter={(e) => {
-                              e.currentTarget.style.backgroundColor = '#0F172A';
+                              e.currentTarget.style.backgroundColor = 'var(--secondary)';
                               e.currentTarget.style.color = '#FFFFFF';
-                              e.currentTarget.style.borderColor = '#0F172A';
+                              e.currentTarget.style.borderColor = 'var(--secondary)';
                             }}
                             onMouseLeave={(e) => {
                               e.currentTarget.style.backgroundColor = '#FFFFFF';
@@ -272,7 +272,7 @@ export const LocationsDirectoryPage: React.FC<LocationsDirectoryPageProps> = ({ 
           <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: '#FFFFFF', marginBottom: '0.5rem' }}>
             Don't see your city listed?
           </h2>
-          <p style={{ fontSize: '1rem', color: '#94A3B8', marginBottom: '2rem' }}>
+          <p style={{ fontSize: '1rem', color: 'var(--text-muted)', marginBottom: '2rem' }}>
             We provide full-spectrum digital marketing and social growth for businesses in any location across India & Globally.
           </p>
 

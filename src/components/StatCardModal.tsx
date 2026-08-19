@@ -13,18 +13,18 @@ export const StatCardModal: React.FC<StatCardModalProps> = ({ statType, onClose,
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div style={{ position: 'sticky', top: 0, zIndex: 10, backgroundColor: '#FFFFFF', borderBottom: '1px solid #E2E8F0', padding: '1rem 2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <button onClick={onClose} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.95rem', fontWeight: 700, color: '#0F172A', backgroundColor: '#F1F5F9', padding: '0.5rem 1.25rem', borderRadius: '999px', border: '1px solid #CBD5E1' }}>
+      <div style={{ position: 'sticky', top: 0, zIndex: 10, backgroundColor: 'var(--bg-card)', borderBottom: '1px solid var(--border-color-subtle)', padding: '1rem 2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <button onClick={onClose} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.95rem', fontWeight: 700, color: 'var(--secondary)', backgroundColor: 'var(--bg-subtle)', padding: '0.5rem 1.25rem', borderRadius: '999px', border: '1px solid var(--border-color)' }}>
           ← Back to Main Page
         </button>
-        <button onClick={onClose} style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#F1F5F9', border: '1px solid #CBD5E1', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.25rem', fontWeight: 800, color: '#0F172A' }}>✕</button>
+        <button onClick={onClose} style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'var(--bg-subtle)', border: '1px solid var(--border-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.25rem', fontWeight: 800, color: 'var(--secondary)' }}>✕</button>
       </div>
       <div className="modal-card" style={{ maxWidth: '950px', padding: '3.5rem 2rem 6rem 2rem' }} onClick={(e) => e.stopPropagation()}>
 
         {statType === 'revenue' && (
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-              <div style={{ width: '48px', height: '48px', borderRadius: '14px', background: '#FFF1EE', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem' }}>📈</div>
+              <div style={{ width: '48px', height: '48px', borderRadius: '14px', background: 'rgba(214, 51, 108, 0.08)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem' }}>📈</div>
               <div>
                 <span className="section-tag" style={{ fontSize: '0.7rem', marginBottom: '0.2rem' }}>REVENUE PERFORMANCE</span>
                 <h3 style={{ fontSize: '1.75rem', fontWeight: 800 }}>8.7M Client Revenue Breakdown</h3>
@@ -47,7 +47,7 @@ export const StatCardModal: React.FC<StatCardModalProps> = ({ statType, onClose,
                   <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Meta & Social Ads</div>
                 </div>
                 <div style={{ background: 'var(--bg-card)', padding: '0.85rem', borderRadius: '10px', border: '1px solid var(--border-color)' }}>
-                  <div style={{ fontFamily: 'Outfit', fontSize: '1.4rem', fontWeight: 800, color: '#3B82F6' }}>20%</div>
+                  <div style={{ fontFamily: 'Outfit', fontSize: '1.4rem', fontWeight: 800, color: 'var(--primary)' }}>20%</div>
                   <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Organic Search (SEO)</div>
                 </div>
               </div>
@@ -62,7 +62,7 @@ export const StatCardModal: React.FC<StatCardModalProps> = ({ statType, onClose,
         {statType === 'clicks' && (
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-              <div style={{ width: '48px', height: '48px', borderRadius: '14px', background: '#EFF6FF', color: '#3B82F6', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem' }}>🖱️</div>
+              <div style={{ width: '48px', height: '48px', borderRadius: '14px', background: 'rgba(214, 51, 108, 0.04)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem' }}>🖱️</div>
               <div>
                 <span className="section-tag" style={{ fontSize: '0.7rem', marginBottom: '0.2rem' }}>TRAFFIC & CTR ANALYTICS</span>
                 <h3 style={{ fontSize: '1.75rem', fontWeight: 800 }}>324K High-Intent Clicks Delivered</h3>

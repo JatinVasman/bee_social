@@ -154,12 +154,12 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
 
   if (!selectedService) {
     return (
-      <div style={{ padding: '6rem 0', textAlign: 'center', backgroundColor: '#FDFBF7', minHeight: '80vh' }}>
+      <div style={{ padding: '6rem 0', textAlign: 'center', backgroundColor: 'var(--bg-card)', minHeight: '80vh' }}>
         <div className="container">
-          <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '1.5rem' }}>
+          <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '1.5rem' }}>
             Service Not Found
           </h2>
-          <p style={{ fontSize: '1.1rem', color: '#64748B', marginBottom: '2rem' }}>
+          <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', marginBottom: '2rem' }}>
             The requested service link is invalid or has been moved.
           </p>
           <button 
@@ -178,14 +178,14 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
   const isGraphicDesign = selectedService.title === 'Graphic Design';
 
   return (
-    <div style={{ backgroundColor: '#FDFBF7', minHeight: '100vh', padding: '2rem 0 6rem 0' }}>
+    <div style={{ backgroundColor: 'var(--bg-main, #FFF7F8)', minHeight: '100vh', padding: '2rem 0 6rem 0' }}>
       <div className="container" style={{ maxWidth: '1100px' }}>
         
         {/* Breadcrumb */}
-        <div style={{ fontSize: '0.875rem', color: '#64748B', marginBottom: '1.5rem' }}>
-          <span style={{ cursor: 'pointer', color: '#3B82F6' }} onClick={() => onNavigate('home')}>Home</span> /{' '}
-          <span style={{ cursor: 'pointer', color: '#3B82F6' }} onClick={() => onNavigate('services')}>Services</span> /{' '}
-          <span style={{ color: '#0F172A', fontWeight: 700 }}>{selectedService.title}</span>
+        <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
+          <span style={{ cursor: 'pointer', color: 'var(--primary)' }} onClick={() => onNavigate('home')}>Home</span> /{' '}
+          <span style={{ cursor: 'pointer', color: 'var(--primary)' }} onClick={() => onNavigate('services')}>Services</span> /{' '}
+          <span style={{ color: 'var(--secondary)', fontWeight: 700 }}>{selectedService.title}</span>
         </div>
 
         {/* Back Button */}
@@ -198,9 +198,9 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
               gap: '0.5rem',
               fontSize: '0.9rem',
               fontWeight: 800,
-              color: '#0F172A',
-              backgroundColor: '#FFFFFF',
-              border: '1px solid #CBD5E1',
+              color: 'var(--secondary)',
+              backgroundColor: 'var(--bg-card)',
+              border: '1px solid var(--border-color)',
               padding: '0.6rem 1.25rem',
               borderRadius: '999px',
               cursor: 'pointer',
@@ -208,7 +208,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
               transition: 'all 0.25s ease'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#F1F5F9';
+              e.currentTarget.style.backgroundColor = 'var(--border-color-subtle, #F0E4E8)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = '#FFFFFF';
@@ -220,27 +220,27 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
 
         {/* Hero Section */}
         <div style={{ 
-          background: '#FFFFFF', 
-          borderTop: '4px solid #FF4E27', 
-          borderLeft: '1px solid #E2E8F0', 
-          borderRight: '1px solid #E2E8F0', 
-          borderBottom: '1px solid #E2E8F0', 
+          background: 'var(--bg-card)', 
+          borderTop: '4px solid var(--primary)', 
+          borderLeft: '1px solid var(--border-color-subtle)', 
+          borderRight: '1px solid var(--border-color-subtle)', 
+          borderBottom: '1px solid var(--border-color-subtle)', 
           borderRadius: '24px', 
           padding: '3.5rem 3rem', 
           marginBottom: '4rem', 
-          boxShadow: '0 15px 35px rgba(11,19,42,0.05)',
+          boxShadow: 'var(--shadow-card)',
           position: 'relative'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
-            <span style={{ width: '30px', height: '1px', background: '#3B82F6' }}></span>
-            <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#3B82F6', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+            <span style={{ width: '30px', height: '1px', background: 'var(--primary)' }}></span>
+            <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
               {selectedService.category}
             </span>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
             <div style={{ fontSize: '3.5rem' }}>{selectedService.icon}</div>
-            <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3.4rem', fontWeight: 900, color: '#0F172A', lineHeight: 1.1, margin: 0 }}>
+            <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3.4rem', fontWeight: 900, color: 'var(--secondary)', lineHeight: 1.1, margin: 0 }}>
               {selectedService.title}
             </h1>
           </div>
@@ -249,10 +249,10 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
             {selectedService.longDescription || selectedService.description}
           </p>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap', borderTop: '1px solid #F1F5F9', paddingTop: '2rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap', borderTop: '1px solid var(--border-color-subtle, #F0E4E8)', paddingTop: '2rem' }}>
             <div>
-              <div style={{ fontSize: '0.75rem', color: '#64748B', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Price Range</div>
-              <div style={{ fontFamily: 'Outfit', fontSize: '2rem', fontWeight: 900, color: '#D97706', marginTop: '0.2rem' }}>
+              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Price Range</div>
+              <div style={{ fontFamily: 'Outfit', fontSize: '2rem', fontWeight: 900, color: 'var(--primary)', marginTop: '0.2rem' }}>
                 
               </div>
             </div>
@@ -262,40 +262,25 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                 href={`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20getting%20a%20quote%20for%20${encodeURIComponent(selectedService.title)}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="btn btn-primary"
                 style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  backgroundColor: '#D97706',
-                  color: '#FFFFFF',
                   padding: '0.9rem 2rem',
-                  borderRadius: '999px',
-                  fontWeight: 800,
-                  fontSize: '0.95rem',
-                  textDecoration: 'none',
-                  boxShadow: '0 8px 20px rgba(217,119,6,0.15)',
-                  transition: 'all 0.3s ease'
+                  fontSize: '0.95rem'
                 }}
               >
                 Chat on WhatsApp 💬
               </a>
               <button
                 onClick={() => {
-                  window.open(`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20booking%20a%20growth%20call%20for%20${encodeURIComponent(selectedService.title)}`, '_blank');
+                  window.open(`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20booking%20a%20call%20for%20${encodeURIComponent(selectedService.title)}`, '_blank');
                 }}
+                className="btn btn-secondary"
                 style={{
-                  backgroundColor: '#0F172A',
-                  color: '#FFFFFF',
-                  border: 'none',
                   padding: '0.9rem 2rem',
-                  borderRadius: '999px',
-                  fontWeight: 800,
-                  fontSize: '0.95rem',
-                  cursor: 'pointer',
-                  boxShadow: '0 8px 20px rgba(15,23,42,0.1)',
-                  transition: 'all 0.3s ease'
+                  fontSize: '0.95rem'
                 }}
               >
-                Book Growth Call →
+                Book a Call ➔
               </button>
             </div>
           </div>
@@ -305,13 +290,13 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
         {isSmm ? (
           <div>
             <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#D97706', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
                 — STRATEGY & SCOPE —
               </div>
-              <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '0.75rem' }}>
+              <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '0.75rem' }}>
                 Service Packages & Scope
               </h2>
-              <p style={{ fontSize: '1.05rem', color: '#64748B' }}>
+              <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)' }}>
                 Tailored content creation, community growth, and viral reach campaigns.
               </p>
             </div>
@@ -323,8 +308,8 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                   key={idx}
                   style={{
                     backgroundColor: pkg.popular ? '#1A1311' : '#FFFFFF',
-                    color: pkg.popular ? '#FFFFFF' : '#0F172A',
-                    border: pkg.popular ? '2px solid #D97706' : '1px solid #E2E8F0',
+                    color: pkg.popular ? '#FFFFFF' : 'var(--secondary)',
+                    border: pkg.popular ? '2px solid var(--primary)' : '1px solid var(--border-color-subtle)',
                     borderRadius: '28px',
                     padding: '2.25rem 2rem 2rem 2rem',
                     display: 'flex',
@@ -340,14 +325,14 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                         top: '-14px',
                         left: '50%',
                         transform: 'translateX(-50%)',
-                        backgroundColor: '#D97706',
+                        backgroundColor: 'var(--primary-raw, #D6336C)',
                         color: '#FFFFFF',
                         padding: '0.4rem 1.25rem',
                         borderRadius: '999px',
                         fontSize: '0.75rem',
                         fontWeight: 900,
                         letterSpacing: '0.08em',
-                        boxShadow: '0 4px 12px rgba(217, 119, 6, 0.25)'
+                        boxShadow: '0 4px 12px rgba(214, 51, 108, 0.20)'
                       }}
                     >
                       {pkg.badge}
@@ -355,14 +340,14 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                   )}
 
                   <div style={{ marginBottom: '1.25rem' }}>
-                    <span style={{ fontSize: '0.8rem', fontWeight: 800, color: pkg.popular ? '#E0B56C' : '#D97706', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
+                    <span style={{ fontSize: '0.8rem', fontWeight: 800, color: pkg.popular ? 'var(--primary-light, #FF9EAF)' : 'var(--primary-raw, #D6336C)', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
                       {pkg.name}
                     </span>
                     <div style={{ display: 'flex', alignItems: 'baseline', marginTop: '0.4rem' }}>
                       <span style={{ fontSize: '2.5rem', fontWeight: 900, fontFamily: 'Outfit, serif' }}>
                         Custom Plan
                       </span>
-                      <span style={{ fontSize: '0.9rem', color: pkg.popular ? '#94A3B8' : '#64748B', marginLeft: '0.25rem', fontWeight: 600 }}>
+                      <span style={{ fontSize: '0.9rem', color: pkg.popular ? 'var(--text-muted)' : 'var(--text-muted)', marginLeft: '0.25rem', fontWeight: 600 }}>
                         /mo
                       </span>
                     </div>
@@ -371,7 +356,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                   <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem', listStyle: 'none', padding: 0, margin: '0 0 1.75rem 0', flex: 1, fontSize: '0.95rem' }}>
                     {pkg.features.map((feature, fIdx) => (
                       <li key={fIdx} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                        <span style={{ color: pkg.popular ? '#E0B56C' : '#D97706', fontWeight: 900 }}>✓</span>
+                        <span style={{ color: pkg.popular ? 'var(--primary-light, #FF9EAF)' : 'var(--primary-raw, #D6336C)', fontWeight: 900 }}>✓</span>
                         <span style={{ color: pkg.popular ? '#E2E8F0' : '#475569', fontWeight: 500 }}>{feature}</span>
                       </li>
                     ))}
@@ -389,7 +374,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                       fontWeight: 800,
                       fontSize: '0.95rem',
                       textDecoration: 'none',
-                      backgroundColor: pkg.popular ? '#E0B56C' : '#1A1311',
+                      backgroundColor: pkg.popular ? 'var(--primary-light, #FF9EAF)' : '#1A1311',
                       color: pkg.popular ? '#1A1311' : '#FFFFFF',
                       border: 'none',
                       cursor: 'pointer'
@@ -404,32 +389,32 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
             {/* SMM Pay-as-you-go box */}
             <div
               style={{
-                background: 'linear-gradient(135deg, #F0F6FC 0%, #E3EBF4 100%)',
-                border: '1px dashed rgba(59, 130, 246, 0.35)',
+                background: 'linear-gradient(135deg, #FFF7F8 0%, #FFF0F2 100%)',
+                border: '1px dashed rgba(214, 51, 108, 0.35)',
                 borderRadius: '24px',
                 padding: '2.5rem',
-                boxShadow: '0 10px 30px rgba(59, 130, 246, 0.03)',
+                boxShadow: '0 10px 30px rgba(214, 51, 108, 0.04)',
                 textAlign: 'left',
                 marginBottom: '5rem'
               }}
             >
-              <div style={{ fontSize: '0.725rem', fontWeight: 900, color: '#3B82F6', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+              <div style={{ fontSize: '0.725rem', fontWeight: 900, color: 'var(--primary)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
                 — PAY-AS-YOU-GO —
               </div>
               <p style={{ fontSize: '1rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
-                Prefer outcomes over retainers? Our pay-per-performance model lets you pay only for leads that meet criteria agreed upfront — budget, location and intent. From single creative deliverables to full multi-platform management. <a href="https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" style={{ color: '#3B82F6', fontWeight: 800, textDecoration: 'underline' }}>Request a quote</a> and we'll build a plan around your numbers.
+                Prefer outcomes over retainers? Our pay-per-performance model lets you pay only for leads that meet criteria agreed upfront — budget, location and intent. From single creative deliverables to full multi-platform management. <a href="https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)', fontWeight: 800, textDecoration: 'underline' }}>Request a quote</a> and we'll build a plan around your numbers.
               </p>
             </div>
 
             {/* B2B Reseller Tiers */}
             <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#3B82F6', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
                 — PARTNERSHIPS —
               </div>
-              <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '0.75rem' }}>
+              <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '0.75rem' }}>
                 B2B & Agency Tiers
               </h2>
-              <p style={{ fontSize: '1.05rem', color: '#64748B' }}>
+              <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)' }}>
                 White-label execution and dedicated management for agencies, resellers and enterprise teams.
               </p>
             </div>
@@ -439,8 +424,8 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                 <div
                   key={idx}
                   style={{
-                    backgroundColor: '#FFFFFF',
-                    border: '1px solid #E2E8F0',
+                    backgroundColor: 'var(--bg-card)',
+                    border: '1px solid var(--border-color-subtle)',
                     borderRadius: '24px',
                     padding: '2.25rem 1.5rem',
                     textAlign: 'center',
@@ -467,9 +452,9 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                       {tier.tag}
                     </span>
                   )}
-                  <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem' }}>{tier.tier}</div>
-                  <div style={{ fontSize: '2rem', fontWeight: 900, color: '#3B82F6', fontFamily: 'Outfit, serif', margin: '0.75rem 0' }}>{tier.discount}</div>
-                  <div style={{ fontSize: '0.8rem', color: '#64748B', fontWeight: 600 }}>{tier.desc}</div>
+                  <div style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--secondary)', marginBottom: '0.5rem' }}>{tier.tier}</div>
+                  <div style={{ fontSize: '2rem', fontWeight: 900, color: 'var(--primary)', fontFamily: 'Outfit, serif', margin: '0.75rem 0' }}>{tier.discount}</div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600 }}>{tier.desc}</div>
                 </div>
               ))}
             </div>
@@ -481,10 +466,10 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
 
             {/* SMM FAQs accordion */}
             <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#64748B', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--text-muted)', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
                 — COMMON QUESTIONS —
               </div>
-              <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '0.75rem' }}>
+              <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '0.75rem' }}>
                 Process & Execution FAQs
               </h2>
             </div>
@@ -496,9 +481,9 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                   <div
                     key={index}
                     style={{
-                      backgroundColor: '#FFFFFF',
+                      backgroundColor: 'var(--bg-card)',
                       borderRadius: '16px',
-                      border: '1px solid #E2E8F0',
+                      border: '1px solid var(--border-color-subtle)',
                       overflow: 'hidden',
                       boxShadow: isOpen ? '0 10px 25px rgba(0, 0, 0, 0.03)' : 'none',
                       transition: 'box-shadow 0.3s ease'
@@ -512,17 +497,17 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                         alignItems: 'center',
                         padding: '1.25rem 1.75rem',
                         fontWeight: 700,
-                        color: '#0F172A'
+                        color: 'var(--secondary)'
                       }}
                       onClick={() => setOpenInlineSmmFaqIndex(isOpen ? null : index)}
                     >
                       <span>{faq.q}</span>
-                      <span style={{ fontSize: '1.25rem', fontWeight: 400, color: '#64748B', transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)', transition: 'transform 0.25s' }}>
+                      <span style={{ fontSize: '1.25rem', fontWeight: 400, color: 'var(--text-muted)', transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)', transition: 'transform 0.25s' }}>
                         ＋
                       </span>
                     </div>
                     {isOpen && (
-                      <div style={{ padding: '1rem 1.75rem 1.5rem 1.75rem', borderTop: '1px solid #F1F5F9', backgroundColor: '#FFFFFF' }}>
+                      <div style={{ padding: '1rem 1.75rem 1.5rem 1.75rem', borderTop: '1px solid var(--border-color-subtle, #F0E4E8)', backgroundColor: 'var(--bg-card)' }}>
                         <p style={{ margin: 0, fontSize: '0.925rem', color: '#475569', lineHeight: 1.6 }}>{faq.a}</p>
                       </div>
                     )}
@@ -534,14 +519,14 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
         ) : isGraphicDesign ? (
           <div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
-              <span style={{ width: '50px', height: '1px', background: '#3B82F6', opacity: 0.6 }}></span>
-              <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#3B82F6', letterSpacing: '0.15em', textTransform: 'uppercase' }}>DESIGN CATALOG</span>
-              <span style={{ width: '50px', height: '1px', background: '#3B82F6', opacity: 0.6 }}></span>
+              <span style={{ width: '50px', height: '1px', background: 'var(--primary)', opacity: 0.6 }}></span>
+              <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>DESIGN CATALOG</span>
+              <span style={{ width: '50px', height: '1px', background: 'var(--primary)', opacity: 0.6 }}></span>
             </div>
-            <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '2.2rem', fontWeight: 900, color: '#0F172A', textAlign: 'center', marginBottom: '0.5rem' }}>
+            <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '2.2rem', fontWeight: 900, color: 'var(--secondary)', textAlign: 'center', marginBottom: '0.5rem' }}>
               Graphic Design Catalog & Deliverables
             </h3>
-            <p style={{ fontSize: '0.95rem', color: '#64748B', textAlign: 'center', marginBottom: '2.5rem', maxWidth: '650px', margin: '0 auto 2.5rem auto', lineHeight: 1.5 }}>
+            <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', textAlign: 'center', marginBottom: '2.5rem', maxWidth: '650px', margin: '0 auto 2.5rem auto', lineHeight: 1.5 }}>
               Browse our comprehensive catalog of graphic design deliverables for digital, social, and print formats.
             </p>
 
@@ -551,11 +536,11 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                 <div
                   key={catIdx}
                   style={{
-                    background: '#FFFFFF',
-                    borderTop: '4px solid #FF4E27',
-                    borderLeft: '1px solid #E2E8F0',
-                    borderRight: '1px solid #E2E8F0',
-                    borderBottom: '1px solid #E2E8F0',
+                    background: 'var(--bg-card)',
+                    borderTop: '4px solid var(--primary)',
+                    borderLeft: '1px solid var(--border-color-subtle)',
+                    borderRight: '1px solid var(--border-color-subtle)',
+                    borderBottom: '1px solid var(--border-color-subtle)',
                     borderRadius: '20px',
                     padding: '1.5rem 1.25rem 1.75rem 1.25rem',
                     boxShadow: '0 8px 25px rgba(11, 19, 42, 0.03)',
@@ -577,10 +562,10 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                     onNavigate('graphic-details', slug);
                   }}
                 >
-                  <h4 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0F172A', margin: '0 0 0.25rem 0', fontFamily: 'Outfit, sans-serif' }}>
+                  <h4 style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--secondary)', margin: '0 0 0.25rem 0', fontFamily: 'Outfit, sans-serif' }}>
                     {cat.title}
                   </h4>
-                  <p style={{ fontSize: '0.78rem', color: '#64748B', margin: '0 0 1.25rem 0', lineHeight: 1.4 }}>
+                  <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', margin: '0 0 1.25rem 0', lineHeight: 1.4 }}>
                     {cat.subtitle}
                   </p>
                   
@@ -597,13 +582,13 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                             fontSize: '0.81rem',
                             color: '#334155',
                             padding: '0.4rem 0.5rem',
-                            borderBottom: '1px solid #F1F5F9',
+                            borderBottom: '1px solid var(--border-color-subtle, #F0E4E8)',
                             borderRadius: '6px',
                             cursor: 'pointer',
                             transition: 'background-color 0.2s ease'
                           }}
                           onMouseEnter={(e) => {
-                            e.currentTarget.style.backgroundColor = '#F8FAFC';
+                            e.currentTarget.style.backgroundColor = 'var(--bg-subtle, #FFF0F2)';
                             e.currentTarget.style.textDecoration = 'underline';
                           }}
                           onMouseLeave={(e) => {
@@ -616,13 +601,13 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                           }}
                         >
                           <span style={{ fontWeight: 500, flex: 1, paddingRight: '0.5rem', lineHeight: 1.3, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.name}</span>
-                          <span style={{ fontWeight: 700, color: '#3B82F6', whiteSpace: 'nowrap', flexShrink: 0, textAlign: 'right' }}></span>
+                          <span style={{ fontWeight: 700, color: 'var(--primary)', whiteSpace: 'nowrap', flexShrink: 0, textAlign: 'right' }}></span>
                         </div>
                       );
                     })}
                   </div>
                   
-                  <div style={{ marginTop: 'auto', paddingTop: '1.25rem', fontSize: '0.8rem', fontWeight: 800, color: '#FF4E27', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+                  <div style={{ marginTop: 'auto', paddingTop: '1.25rem', fontSize: '0.8rem', fontWeight: 800, color: 'var(--primary)', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
                     <span>View Explanation & Details</span>
                     <span style={{ fontSize: '0.9rem' }}>➔</span>
                   </div>
@@ -632,19 +617,19 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
 
             {/* Our Approach / Typical Results blocks side-by-side */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem', marginBottom: '3.5rem' }} className="graphics-info-blocks">
-              <div style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '20px', padding: '1.5rem 1.75rem', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
-                <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#3B82F6', letterSpacing: '0.08em', marginBottom: '0.5rem', textTransform: 'uppercase' }}>
+              <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border-color-subtle)', borderRadius: '20px', padding: '1.5rem 1.75rem', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.08em', marginBottom: '0.5rem', textTransform: 'uppercase' }}>
                   —— Our Approach
                 </div>
                 <p style={{ fontSize: '0.875rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
                   Share your brief on WhatsApp, choose the design type, and we deliver print- and web-ready files with revisions. We deliver fast, print- and web-ready creative files tailored to your brand.
                 </p>
               </div>
-              <div style={{ background: '#0F172A', borderRadius: '20px', padding: '1.5rem 1.75rem', color: '#FFF' }}>
+              <div style={{ background: 'var(--secondary)', borderRadius: '20px', padding: '1.5rem 1.75rem', color: '#FFF' }}>
                 <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#FBBF24', letterSpacing: '0.08em', marginBottom: '0.5rem', textTransform: 'uppercase' }}>
                   —— Typical Results
                 </div>
-                <p style={{ fontSize: '0.875rem', color: '#94A3B8', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', lineHeight: 1.6, margin: 0 }}>
                   Brands get consistent, conversion-focused creatives delivered fast — often within 24–48 hours for standard formats — at a fraction of typical agency rates.
                 </p>
               </div>
@@ -655,11 +640,11 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
             {/* General Domain Detail Layout */}
             <div style={{ marginBottom: '3rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
-                <span style={{ width: '50px', height: '1px', background: '#D97706', opacity: 0.6 }}></span>
-                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#D97706', letterSpacing: '0.15em', textTransform: 'uppercase' }}>DELIVERABLES</span>
-                <span style={{ width: '50px', height: '1px', background: '#D97706', opacity: 0.6 }}></span>
+                <span style={{ width: '50px', height: '1px', background: 'var(--primary-raw, #D6336C)', opacity: 0.6 }}></span>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>DELIVERABLES</span>
+                <span style={{ width: '50px', height: '1px', background: 'var(--primary-raw, #D6336C)', opacity: 0.6 }}></span>
               </div>
-              <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '2rem', fontWeight: 900, color: '#0F172A', textAlign: 'center', marginBottom: '1.5rem' }}>
+              <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '2rem', fontWeight: 900, color: 'var(--secondary)', textAlign: 'center', marginBottom: '1.5rem' }}>
                 What We Offer & Deliver
               </h3>
 
@@ -669,20 +654,20 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                   <div
                     key={idx}
                     style={{
-                      background: '#FFF1EE',
-                      border: '1px solid rgba(255,78,39,0.2)',
+                      background: 'rgba(214, 51, 108, 0.08)',
+                      border: '1px solid rgba(214, 51, 108, 0.12)',
                       padding: '0.75rem 1.25rem',
                       borderRadius: '14px',
                       fontSize: '0.9rem',
                       fontWeight: 600,
-                      color: '#0F172A',
+                      color: 'var(--secondary)',
                       display: 'flex',
                       alignItems: 'center',
                       gap: '0.5rem',
                       boxShadow: '0 2px 8px rgba(255,78,39,0.03)'
                     }}
                   >
-                    <span style={{ color: '#D97706', fontWeight: 900 }}>✓</span>
+                    <span style={{ color: 'var(--primary)', fontWeight: 900 }}>✓</span>
                     <span>{item}</span>
                   </div>
                 ))}
@@ -691,19 +676,19 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
               {/* Our Approach / Typical Results blocks side-by-side */}
               {serviceApproachResults[selectedService.title] && (
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem', marginBottom: '4rem' }} className="graphics-info-blocks">
-                  <div style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '20px', padding: '1.75rem 2rem', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
-                    <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#3B82F6', letterSpacing: '0.08em', marginBottom: '0.5rem', textTransform: 'uppercase' }}>
+                  <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border-color-subtle)', borderRadius: '20px', padding: '1.75rem 2rem', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
+                    <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.08em', marginBottom: '0.5rem', textTransform: 'uppercase' }}>
                       —— Our Approach
                     </div>
                     <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
                       {serviceApproachResults[selectedService.title].approach}
                     </p>
                   </div>
-                  <div style={{ background: '#0F172A', borderRadius: '20px', padding: '1.75rem 2rem', color: '#FFF' }}>
+                  <div style={{ background: 'var(--secondary)', borderRadius: '20px', padding: '1.75rem 2rem', color: '#FFF' }}>
                     <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#FBBF24', letterSpacing: '0.08em', marginBottom: '0.5rem', textTransform: 'uppercase' }}>
                       —— Typical Results
                     </div>
-                    <p style={{ fontSize: '0.9rem', color: '#94A3B8', lineHeight: 1.6, margin: 0 }}>
+                    <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.6, margin: 0 }}>
                       {serviceApproachResults[selectedService.title].typicalResults}
                     </p>
                   </div>
@@ -717,11 +702,11 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
         {!isSmm && selectedService.faqs && selectedService.faqs.length > 0 && (
           <div style={{ marginBottom: '4rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
-              <span style={{ width: '50px', height: '1px', background: '#D97706', opacity: 0.6 }}></span>
-              <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#D97706', letterSpacing: '0.15em', textTransform: 'uppercase' }}>QUESTIONS</span>
-              <span style={{ width: '50px', height: '1px', background: '#D97706', opacity: 0.6 }}></span>
+              <span style={{ width: '50px', height: '1px', background: 'var(--primary-raw, #D6336C)', opacity: 0.6 }}></span>
+              <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>QUESTIONS</span>
+              <span style={{ width: '50px', height: '1px', background: 'var(--primary-raw, #D6336C)', opacity: 0.6 }}></span>
             </div>
-            <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '2.2rem', fontWeight: 900, color: '#0F172A', textAlign: 'center', marginBottom: '1.5rem' }}>
+            <h3 style={{ fontFamily: 'Outfit, serif', fontSize: '2.2rem', fontWeight: 900, color: 'var(--secondary)', textAlign: 'center', marginBottom: '1.5rem' }}>
               {selectedService.title} FAQs
             </h3>
 
@@ -732,8 +717,8 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                   <div
                     key={fIdx}
                     style={{
-                      background: '#FFFFFF',
-                      border: '1px solid #E2E8F0',
+                      background: 'var(--bg-card)',
+                      border: '1px solid var(--border-color-subtle)',
                       borderRadius: '16px',
                       overflow: 'hidden',
                       boxShadow: '0 4px 12px rgba(11, 19, 42, 0.03)',
@@ -754,7 +739,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                         textAlign: 'left'
                       }}
                     >
-                      <span style={{ fontSize: '1.025rem', fontWeight: 800, color: '#0F172A' }}>
+                      <span style={{ fontSize: '1.025rem', fontWeight: 800, color: 'var(--secondary)' }}>
                         Q: {faq.q}
                       </span>
                       <span
@@ -762,7 +747,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                           width: '28px',
                           height: '28px',
                           borderRadius: '50%',
-                          backgroundColor: isOpen ? '#FF4E27' : '#F1F5F9',
+                          backgroundColor: isOpen ? 'var(--primary)' : 'var(--border-color-subtle, #F0E4E8)',
                           color: isOpen ? '#FFFFFF' : '#475569',
                           display: 'flex',
                           alignItems: 'center',
@@ -785,7 +770,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
                           color: '#475569',
                           fontSize: '0.925rem',
                           lineHeight: 1.6,
-                          borderTop: '1px solid #F1F5F9',
+                          borderTop: '1px solid var(--border-color-subtle, #F0E4E8)',
                           marginTop: '-0.25rem',
                           paddingTop: '0.85rem'
                         }}
@@ -803,7 +788,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
 
         {/* CTA Consultation Banner */}
         <div style={{ 
-          background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)', 
+          background: 'linear-gradient(135deg, var(--secondary) 0%, var(--secondary) 100%)', 
           borderRadius: '28px', 
           padding: '3.5rem 3rem', 
           color: '#FFF', 
@@ -816,13 +801,13 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
           flexWrap: 'wrap' 
         }}>
           <div style={{ maxWidth: '640px' }}>
-            <span className="section-tag" style={{ background: 'rgba(255,78,39,0.2)', color: '#FF4E27', border: 'none', marginBottom: '0.75rem' }}>
+            <span className="section-tag" style={{ background: 'rgba(214, 51, 108, 0.12)', color: 'var(--primary)', border: 'none', marginBottom: '0.75rem' }}>
               TRANSPARENT GROWTH ENGINE
             </span>
             <h3 style={{ fontSize: '2.2rem', fontWeight: 900, color: '#FFF', marginBottom: '0.5rem' }}>
               Interested in a Custom Performance Campaign?
             </h3>
-            <p style={{ fontSize: '1rem', color: '#94A3B8', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
               Book a zero-risk 30-minute strategy call with our founders. We provide custom proposals tailored to your budget with zero lock-in contracts.
             </p>
           </div>
@@ -838,13 +823,13 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ serviceId,
               Chat on WhatsApp 💬
             </a>
             <button
-              className="btn btn-secondary"
-              style={{ color: '#FFF', borderColor: 'rgba(255,255,255,0.3)', padding: '0.9rem 1.8rem' }}
+              className="btn btn-outline-light"
+              style={{ padding: '0.9rem 1.8rem' }}
               onClick={() => {
                 window.open(`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20booking%20a%20strategy%20call%20for%20${encodeURIComponent(selectedService.title)}`, '_blank');
               }}
             >
-              Book Strategy Call ➔
+              Book a Call ➔
             </button>
           </div>
         </div>

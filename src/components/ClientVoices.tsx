@@ -1,4 +1,5 @@
 import React from 'react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 interface Testimonial {
   name: string;
@@ -140,14 +141,16 @@ interface ClientVoicesProps {
 }
 
 export const ClientVoices: React.FC<ClientVoicesProps> = ({ backgroundColor }) => {
+  const reveal = useScrollReveal();
+
   return (
     <section style={{ padding: '6rem 0', backgroundColor: backgroundColor || 'var(--bg-main)', overflow: 'hidden', borderBottom: '1px solid var(--border-color)' }}>
       <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-        <span className="section-tag" style={{ color: '#D97706', background: 'rgba(217, 119, 6, 0.1)' }}>CLIENT VOICES</span>
-        <h2 style={{ fontSize: '2.8rem', fontWeight: 900, fontFamily: 'Outfit, sans-serif', color: 'var(--secondary)', marginTop: '0.5rem', marginBottom: '1rem' }}>
+        <span ref={reveal} className="section-tag" style={{ color: 'var(--primary)', background: 'rgba(214, 51, 108, 0.08)' }}>CLIENT VOICES</span>
+        <h2 ref={reveal} className="scroll-delay-1" style={{ fontSize: '2.8rem', fontWeight: 900, fontFamily: 'Outfit, sans-serif', color: 'var(--secondary)', marginTop: '0.5rem', marginBottom: '1rem', letterSpacing: '-0.02em' }}>
           Loved by Businesses Across India
         </h2>
-        <p style={{ color: 'var(--text-muted)', fontSize: '1rem', maxWidth: '600px', margin: '0 auto', lineHeight: 1.5 }}>
+        <p ref={reveal} className="scroll-delay-2" style={{ color: 'var(--text-muted)', fontSize: '1rem', maxWidth: '600px', margin: '0 auto', lineHeight: 1.5 }}>
           Real words from the founders, doctors and directors we partner with.
         </p>
       </div>
@@ -158,11 +161,11 @@ export const ClientVoices: React.FC<ClientVoicesProps> = ({ backgroundColor }) =
           {[...row1, ...row1, ...row1].map((item, idx) => (
             <div
               key={`r1-${idx}`}
-              className="testimonial-marquee-card"
+              className="testimonial-marquee-card card-shimmer"
               style={{
                 position: 'relative',
                 background: 'var(--bg-card)',
-                border: '1px solid var(--border-color)',
+                border: '1px solid var(--border-color-subtle)',
                 borderRadius: '24px',
                 padding: '2.25rem 2rem',
                 width: '350px',
@@ -170,16 +173,16 @@ export const ClientVoices: React.FC<ClientVoicesProps> = ({ backgroundColor }) =
                 display: 'flex',
                 flexDirection: 'column',
                 flexShrink: 0,
-                boxShadow: 'var(--shadow-sm)',
-                transition: 'all 0.3s ease'
+                boxShadow: 'var(--shadow-card)',
+                transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)'
               }}
             >
               {/* Quote Mark Icon */}
               <span
                 style={{
                   fontSize: '4.5rem',
-                  color: '#D97706',
-                  opacity: 0.12,
+                  color: 'var(--primary)',
+                  opacity: 0.15,
                   position: 'absolute',
                   top: '0.25rem',
                   left: '1.5rem',
@@ -223,8 +226,8 @@ export const ClientVoices: React.FC<ClientVoicesProps> = ({ backgroundColor }) =
                     style={{
                       fontSize: '0.7rem',
                       fontWeight: 700,
-                      color: '#D97706',
-                      backgroundColor: 'rgba(217, 119, 6, 0.08)',
+                      color: 'var(--primary)',
+                      backgroundColor: 'rgba(214, 51, 108, 0.08)',
                       padding: '0.25rem 0.65rem',
                       borderRadius: '999px'
                     }}
@@ -244,11 +247,11 @@ export const ClientVoices: React.FC<ClientVoicesProps> = ({ backgroundColor }) =
           {[...row2, ...row2, ...row2].map((item, idx) => (
             <div
               key={`r2-${idx}`}
-              className="testimonial-marquee-card"
+              className="testimonial-marquee-card card-shimmer"
               style={{
                 position: 'relative',
                 background: 'var(--bg-card)',
-                border: '1px solid var(--border-color)',
+                border: '1px solid var(--border-color-subtle)',
                 borderRadius: '24px',
                 padding: '2.25rem 2rem',
                 width: '350px',
@@ -256,16 +259,16 @@ export const ClientVoices: React.FC<ClientVoicesProps> = ({ backgroundColor }) =
                 display: 'flex',
                 flexDirection: 'column',
                 flexShrink: 0,
-                boxShadow: 'var(--shadow-sm)',
-                transition: 'all 0.3s ease'
+                boxShadow: 'var(--shadow-card)',
+                transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)'
               }}
             >
               {/* Quote Mark Icon */}
               <span
                 style={{
                   fontSize: '4.5rem',
-                  color: '#D97706',
-                  opacity: 0.12,
+                  color: 'var(--primary)',
+                  opacity: 0.15,
                   position: 'absolute',
                   top: '0.25rem',
                   left: '1.5rem',
@@ -309,8 +312,8 @@ export const ClientVoices: React.FC<ClientVoicesProps> = ({ backgroundColor }) =
                     style={{
                       fontSize: '0.7rem',
                       fontWeight: 700,
-                      color: '#D97706',
-                      backgroundColor: 'rgba(217, 119, 6, 0.08)',
+                      color: 'var(--primary)',
+                      backgroundColor: 'rgba(214, 51, 108, 0.08)',
                       padding: '0.25rem 0.65rem',
                       borderRadius: '999px'
                     }}

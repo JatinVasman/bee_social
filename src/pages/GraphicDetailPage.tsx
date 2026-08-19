@@ -79,14 +79,14 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
   };
 
   return (
-    <div style={{ backgroundColor: '#FDFBF7', minHeight: '100vh', padding: '2.5rem 0 7rem 0' }}>
+    <div style={{ backgroundColor: 'var(--bg-main, #FFF7F8)', minHeight: '100vh', padding: '2.5rem 0 7rem 0' }}>
       <div className="container" style={{ maxWidth: '1380px' }}>
         
         {/* Breadcrumb */}
-        <div style={{ fontSize: '0.875rem', color: '#64748B', marginBottom: '1.5rem' }}>
-          <span style={{ cursor: 'pointer', color: '#3B82F6' }} onClick={() => onNavigate('home')}>Home</span> /{' '}
-          <span style={{ cursor: 'pointer', color: '#3B82F6' }} onClick={() => onNavigate('services')}>Services</span> /{' '}
-          <span style={{ color: '#0F172A', fontWeight: 700 }}>Graphic Design Deliverables</span>
+        <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
+          <span style={{ cursor: 'pointer', color: 'var(--primary)' }} onClick={() => onNavigate('home')}>Home</span> /{' '}
+          <span style={{ cursor: 'pointer', color: 'var(--primary)' }} onClick={() => onNavigate('services')}>Services</span> /{' '}
+          <span style={{ color: 'var(--secondary)', fontWeight: 700 }}>Graphic Design Deliverables</span>
         </div>
 
         {/* Back / Close button */}
@@ -106,9 +106,9 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
               gap: '0.5rem',
               fontSize: '0.9rem',
               fontWeight: 800,
-              color: '#0F172A',
-              backgroundColor: '#FFFFFF',
-              border: '1px solid #CBD5E1',
+              color: 'var(--secondary)',
+              backgroundColor: 'var(--bg-card)',
+              border: '1px solid var(--border-color)',
               padding: '0.6rem 1.25rem',
               borderRadius: '999px',
               cursor: 'pointer',
@@ -116,7 +116,7 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
               transition: 'all 0.25s ease'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#F1F5F9';
+              e.currentTarget.style.backgroundColor = 'var(--border-color-subtle, #F0E4E8)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = '#FFFFFF';
@@ -128,13 +128,13 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
 
         {/* Hero Section */}
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <span className="section-tag" style={{ background: '#FFF1EE', color: '#FF4E27', border: 'none', marginBottom: '0.75rem' }}>
+          <span className="section-tag" style={{ background: 'rgba(214, 51, 108, 0.08)', color: 'var(--primary)', border: 'none', marginBottom: '0.75rem' }}>
             TRANSPARENT VALUE
           </span>
-          <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '1rem', lineHeight: 1.1 }}>
+          <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3.5rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '1rem', lineHeight: 1.1 }}>
             Graphic Design Catalog
           </h1>
-          <p style={{ fontSize: '1.15rem', color: '#64748B', maxWidth: '750px', margin: '0 auto', lineHeight: 1.6 }}>
+          <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', maxWidth: '750px', margin: '0 auto', lineHeight: 1.6 }}>
             Browse explanations, deliverable lists, turnaround times, and specifications across each of our professional design domains.
           </p>
         </div>
@@ -152,7 +152,7 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
           backgroundColor: 'rgba(253, 251, 247, 0.9)',
           padding: '0.75rem 0',
           backdropFilter: 'blur(8px)',
-          borderBottom: '1px solid #E2E8F0'
+          borderBottom: '1px solid var(--border-color-subtle)'
         }}>
           {graphicDesignPricingData.map((cat, idx) => {
             const slug = cat.title.toLowerCase().replace(' & ', '-').replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-');
@@ -167,8 +167,8 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
                   fontSize: '0.85rem',
                   fontWeight: 800,
                   cursor: 'pointer',
-                  border: isActive ? '1.5px solid #FF4E27' : '1px solid #E2E8F0',
-                  backgroundColor: isActive ? '#FF4E27' : '#FFFFFF',
+                  border: isActive ? '1.5px solid var(--primary)' : '1px solid var(--border-color-subtle)',
+                  backgroundColor: isActive ? 'var(--primary)' : '#FFFFFF',
                   color: isActive ? '#FFFFFF' : '#475569',
                   boxShadow: '0 2px 6px rgba(0,0,0,0.03)',
                   transition: 'all 0.2s ease'
@@ -199,11 +199,11 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
                   display: 'grid',
                   gridTemplateColumns: '1.2fr 1fr',
                   gap: '3rem',
-                  background: '#FFFFFF',
-                  borderTop: '4px solid #FF4E27',
-                  borderLeft: '1px solid #E2E8F0',
-                  borderRight: '1px solid #E2E8F0',
-                  borderBottom: '1px solid #E2E8F0',
+                  background: 'var(--bg-card)',
+                  borderTop: '4px solid var(--primary)',
+                  borderLeft: '1px solid var(--border-color-subtle)',
+                  borderRight: '1px solid var(--border-color-subtle)',
+                  borderBottom: '1px solid var(--border-color-subtle)',
                   borderRadius: '24px',
                   padding: '3rem',
                   boxShadow: '0 15px 35px rgba(0,0,0,0.03)',
@@ -216,12 +216,12 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
                 <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
                     <span style={{ fontSize: '1.5rem' }}>🎨</span>
-                    <span style={{ fontSize: '0.75rem', fontWeight: 900, color: '#3B82F6', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 900, color: 'var(--primary)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                       DESIGN DOMAIN {idx + 1}
                     </span>
                   </div>
 
-                  <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.4rem', fontWeight: 900, color: '#0F172A', marginBottom: '1.25rem', lineHeight: 1.15 }}>
+                  <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.4rem', fontWeight: 900, color: 'var(--secondary)', marginBottom: '1.25rem', lineHeight: 1.15 }}>
                     {cat.title}
                   </h2>
 
@@ -229,17 +229,17 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
                     {explanation.desc}
                   </p>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '1.5rem', marginTop: 'auto', borderTop: '1px solid #F1F5F9', paddingTop: '1.75rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '1.5rem', marginTop: 'auto', borderTop: '1px solid var(--border-color-subtle, #F0E4E8)', paddingTop: '1.75rem' }}>
                     <div>
-                      <div style={{ fontSize: '0.725rem', fontWeight: 800, color: '#64748B', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Turnaround</div>
-                      <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#0F172A', marginTop: '0.2rem' }}>{explanation.turnaround}</div>
+                      <div style={{ fontSize: '0.725rem', fontWeight: 800, color: 'var(--text-muted)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Turnaround</div>
+                      <div style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--secondary)', marginTop: '0.2rem' }}>{explanation.turnaround}</div>
                     </div>
                     <div>
-                      <div style={{ fontSize: '0.725rem', fontWeight: 800, color: '#64748B', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Deliverable formats</div>
-                      <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#0F172A', marginTop: '0.2rem', lineHeight: 1.4 }}>{explanation.formats}</div>
+                      <div style={{ fontSize: '0.725rem', fontWeight: 800, color: 'var(--text-muted)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Deliverable formats</div>
+                      <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--secondary)', marginTop: '0.2rem', lineHeight: 1.4 }}>{explanation.formats}</div>
                     </div>
-                    <div style={{ gridColumn: '1 / -1', borderTop: '1px solid #F1F5F9', paddingTop: '1.25rem' }}>
-                      <div style={{ fontSize: '0.725rem', fontWeight: 800, color: '#64748B', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.25rem' }}>Primary use-cases</div>
+                    <div style={{ gridColumn: '1 / -1', borderTop: '1px solid var(--border-color-subtle, #F0E4E8)', paddingTop: '1.25rem' }}>
+                      <div style={{ fontSize: '0.725rem', fontWeight: 800, color: 'var(--text-muted)', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.25rem' }}>Primary use-cases</div>
                       <div style={{ fontSize: '0.85rem', color: '#475569', lineHeight: 1.5 }}>{explanation.useCase}</div>
                     </div>
                   </div>
@@ -247,15 +247,15 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
 
                 {/* Price Table list */}
                 <div style={{ 
-                  background: '#F8FAFC', 
-                  border: '1px solid #E2E8F0', 
+                  background: 'var(--bg-subtle, #FFF0F2)', 
+                  border: '1px solid var(--border-color-subtle)', 
                   borderRadius: '20px', 
                   padding: '2rem 1.75rem',
                   display: 'flex',
                   flexDirection: 'column',
                   height: '100%'
                 }}>
-                  <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.25rem', fontWeight: 800, color: '#0F172A', marginBottom: '1rem', borderBottom: '1px solid #E2E8F0', paddingBottom: '0.5rem' }}>
+                  <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.25rem', fontWeight: 800, color: 'var(--secondary)', marginBottom: '1rem', borderBottom: '1px solid var(--border-color-subtle)', paddingBottom: '0.5rem' }}>
                     Deliverable Price List
                   </h3>
 
@@ -272,7 +272,7 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
                             fontSize: '0.84rem',
                             color: '#334155',
                             padding: '0.4rem 0.5rem',
-                            borderBottom: '1px solid #E2E8F0',
+                            borderBottom: '1px solid var(--border-color-subtle)',
                             borderRadius: '6px',
                             cursor: 'pointer',
                             transition: 'background-color 0.2s ease'
@@ -291,7 +291,7 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
                           }}
                         >
                           <span style={{ fontWeight: 600, flex: 1, paddingRight: '0.5rem', lineHeight: 1.3, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.name}</span>
-                          <span style={{ fontWeight: 800, color: '#3B82F6', whiteSpace: 'nowrap', flexShrink: 0, textAlign: 'right' }}></span>
+                          <span style={{ fontWeight: 800, color: 'var(--primary)', whiteSpace: 'nowrap', flexShrink: 0, textAlign: 'right' }}></span>
                         </div>
                       );
                     })}
@@ -305,7 +305,7 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
                       style={{
                         flex: 1.2,
                         textAlign: 'center',
-                        backgroundColor: '#D97706',
+                        backgroundColor: 'var(--primary-raw, #D6336C)',
                         color: '#FFFFFF',
                         padding: '0.75rem',
                         borderRadius: '999px',
@@ -322,7 +322,7 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
                       onClick={() => window.open(`https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20a%20design%20project%20for%20${encodeURIComponent(cat.title)}`, '_blank')}
                       style={{
                         flex: 1,
-                        backgroundColor: '#0F172A',
+                        backgroundColor: 'var(--secondary)',
                         color: '#FFFFFF',
                         padding: '0.75rem',
                         borderRadius: '999px',
@@ -345,7 +345,7 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
 
         {/* Global CTA Consultation Banner */}
         <div style={{ 
-          background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)', 
+          background: 'linear-gradient(135deg, var(--secondary) 0%, var(--secondary) 100%)', 
           borderRadius: '28px', 
           padding: '3.5rem 3rem', 
           color: '#FFF', 
@@ -358,13 +358,13 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
           flexWrap: 'wrap' 
         }}>
           <div style={{ maxWidth: '640px' }}>
-            <span className="section-tag" style={{ background: 'rgba(255,78,39,0.2)', color: '#FF4E27', border: 'none', marginBottom: '0.75rem' }}>
+            <span className="section-tag" style={{ background: 'rgba(214, 51, 108, 0.12)', color: 'var(--primary)', border: 'none', marginBottom: '0.75rem' }}>
               TRANSPARENT CREATIVE ENGINE
             </span>
             <h3 style={{ fontSize: '2.2rem', fontWeight: 900, color: '#FFF', marginBottom: '0.5rem' }}>
               Need a Custom Design Proposal?
             </h3>
-            <p style={{ fontSize: '1rem', color: '#94A3B8', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
               Request dedicated creative support or book a monthly design retainer package with zero lock-in contracts. Custom proposals ready within 24h.
             </p>
           </div>
@@ -380,11 +380,11 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
               Chat on WhatsApp 💬
             </a>
             <button
-              className="btn btn-secondary"
-              style={{ color: '#FFF', borderColor: 'rgba(255,255,255,0.3)', padding: '0.9rem 1.8rem' }}
-              onClick={() => window.open('https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20a%20custom%20graphic%20design%20partnership', '_blank')}
+              className="btn btn-outline-light"
+              style={{ padding: '0.9rem 1.8rem' }}
+              onClick={() => window.open('https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20booking%20a%20call', '_blank')}
             >
-              Book Custom Quote ➔
+              Book a Call ➔
             </button>
           </div>
         </div>
