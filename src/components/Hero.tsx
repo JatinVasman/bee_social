@@ -24,11 +24,11 @@ export const Hero: React.FC<HeroProps> = ({
             🐝 CREATIVE SOCIAL MEDIA & MARKETING AGENCY
           </div>
           <h1 ref={reveal} className="hero-title scroll-delay-1">
-            Your Brand, <br />
-            Socially <span className="text-red">Unstoppable.</span>
+            Elevate your brand <br />
+            with <span className="text-red">BeeSocial</span> 🐝
           </h1>
           <p ref={reveal} className="hero-subtext scroll-delay-2">
-            From scroll-stopping social media content and high-impact campaigns to stunning designs, we help brands build engaged communities that drive real growth.
+            Ready to take your business to the next level? BeeSocial helps growing brands stand out with professional, high-impact marketing—without the premium price tag.
           </p>
           <div ref={reveal} className="hero-buttons scroll-delay-3">
             <button className="btn btn-primary" onClick={onNavigateServices}>
