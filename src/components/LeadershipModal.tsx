@@ -49,15 +49,16 @@ export const LeadershipModal: React.FC<LeadershipModalProps> = ({ person, onClos
                   <div style={{ position: 'absolute', bottom: '-30px', right: '-30px', width: '120px', height: '120px', borderRadius: '50%', background: 'rgba(214, 51, 108, 0.08)' }} />
                   
                   <img
-                    src="/Siddhi.png"
+                    src="/Siddhi.PNG"
                     alt="Siddhi - Founder"
                     style={{
-                      width: '180px',
-                      height: '180px',
-                      borderRadius: '50%',
+                      width: '230px',
+                      height: '300px',
+                      borderRadius: '20px',
                       objectFit: 'cover',
+                      objectPosition: 'center 18%',
                       border: '6px solid #FFF',
-                      boxShadow: '0 8px 30px rgba(15, 23, 42, 0.08)',
+                      boxShadow: '0 12px 32px rgba(15, 23, 42, 0.12)',
                       margin: '0 auto 1.5rem auto',
                       display: 'block',
                       position: 'relative',
@@ -420,7 +421,7 @@ export const LeadershipModal: React.FC<LeadershipModalProps> = ({ person, onClos
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.25rem', marginBottom: '1.75rem' }}>
               <div style={{ background: 'var(--bg-subtle)', padding: '1.25rem', borderRadius: '16px', border: '1px solid var(--border-color)', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <img src="/Siddhi.png" alt="Siddhi" style={{ width: '60px', height: '60px', borderRadius: '50%', objectFit: 'cover' }} />
+                <img src="/Siddhi.PNG" alt="Siddhi" style={{ width: '65px', height: '85px', borderRadius: '12px', objectFit: 'cover', objectPosition: 'center 18%', flexShrink: 0 }} />
                 <div>
                   <h4 style={{ fontWeight: 800, color: 'var(--primary)', marginBottom: '0.1rem' }}>Siddhi</h4>
                   <div style={{ fontSize: '0.8rem', color: 'var(--secondary)', fontWeight: 600 }}>Founder</div>

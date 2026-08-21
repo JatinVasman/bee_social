@@ -118,7 +118,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
   const [viewingSmmDetails, setViewingSmmDetails] = useState(false);
   const [openInlineSmmFaqIndex, setOpenInlineSmmFaqIndex] = useState<number | null>(null);
 
-  const categories = ['All', 'Social Growth', 'Design & Branding', 'Web Engineering', 'Video & Reels', 'Data & Analytics', 'Viral Content', 'Search Engine Rank', 'Paid Search', 'Social Acquisition', 'Ecommerce Growth', 'Revenue Operations', 'Performance Leads', 'Content Engine', 'Local Search', 'Direct Marketing'];
+  const categories = ['All', 'Social Growth', 'Design & Branding', 'Web Engineering', 'Video & Reels', 'Data & Analytics', 'Viral Content', 'Search Engine Rank', 'Paid Search', 'Social Acquisition', 'Ecommerce Growth', 'Performance Leads', 'Content Engine', 'Local Search', 'Direct Marketing'];
 
   const filteredServices = selectedCategory === 'All'
     ? detailed17Services

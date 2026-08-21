@@ -21,12 +21,22 @@ const industryOptions = [
 ];
 
 const helpOptions = [
-  'Branding & Identity',
-  'Social Media Management',
-  'Content Creation (Reels, Photography)',
-  'Performance Marketing (Ads)',
+  'Social Media Marketing',
   'Graphic Design',
-  'Influencer Marketing',
+  'UGC Reels & Creator Marketing',
+  'Dashboard & KPI Systems',
+  'SEO Services',
+  'Google Ads Management',
+  'Meta Ads Management',
+  'Website Development',
+  'Poster Design',
+  'Reels & Video Production',
+  'E-commerce Marketing',
+  'Lead Generation',
+  'Content Marketing',
+  'Local SEO',
+  'WhatsApp Marketing',
+  'Logo & Branding',
   'Complete Digital Growth',
   'Other'
 ];

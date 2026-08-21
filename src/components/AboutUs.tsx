@@ -161,21 +161,22 @@ export const AboutUs: React.FC<AboutUsProps> = ({
               onMouseLeave={() => setHoveredLeader(null)}
             >
               <img
-                src="/Siddhi.png"
+                src="/Siddhi.PNG"
                 alt="Siddhi - Founder"
-                width="100"
-                height="100"
+                width="120"
+                height="160"
                 loading="lazy"
                 decoding="async"
                 style={{
-                  width: '100px',
-                  height: '100px',
-                  borderRadius: '50%',
+                  width: '120px',
+                  height: '160px',
+                  borderRadius: '18px',
                   objectFit: 'cover',
+                  objectPosition: 'center 18%',
                   border: hoveredLeader === 'founder' ? '4px solid var(--primary)' : '3px solid var(--border-color-subtle)',
                   boxShadow: hoveredLeader === 'founder' ? '0 8px 24px rgba(214, 51, 108, 0.25)' : 'var(--shadow-card)',
                   flexShrink: 0,
-                  transform: hoveredLeader === 'founder' ? 'scale(1.08) rotate(4deg)' : 'scale(1) rotate(0)',
+                  transform: hoveredLeader === 'founder' ? 'scale(1.04) translateY(-2px)' : 'scale(1) translateY(0)',
                   transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
                 }}
               />
