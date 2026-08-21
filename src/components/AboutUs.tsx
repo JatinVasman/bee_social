@@ -66,15 +66,25 @@ export const AboutUs: React.FC<AboutUsProps> = ({
         {/* 1. HERO HEADER & TAGLINE */}
         <div className="section-header" style={{ textAlign: 'center', maxWidth: '850px', margin: '0 auto 4rem auto' }}>
           <div ref={reveal} className="section-tag" style={{ letterSpacing: '0.1em' }}>
-            SCROLL. STOP. ENGAGE. — ABOUT BEESOCIAL
+            ABOUT BEESOCIAL
           </div>
           <h2 ref={reveal} className="scroll-delay-1" style={{ fontSize: '3.2rem', fontWeight: 900, marginBottom: '1.25rem', lineHeight: 1.15 }}>
-            We Don't Just Post Content. <br />
-            We Build Communities.
+            We Make Brands <br />
+            Impossible to Ignore. 🐝
           </h2>
           <p ref={reveal} className="scroll-delay-2" style={{ fontSize: '1.15rem', color: 'var(--text-muted)', lineHeight: 1.7, maxWidth: '720px', margin: '0 auto' }}>
-            Creative storytelling, data-driven campaigns, and authentic engagement. We help brands find their voice, grow their audience, and turn followers into loyal customers.
+            At BeeSocial, we combine strategy, creativity and technology to help businesses grow in a crowded digital world. From your logo and brand identity to social media, professional photography, reels, paid advertising and influencer collaborations — we bring everything together under one roof.
           </p>
+          {onNavigate && (
+            <button
+              ref={reveal}
+              className="btn btn-primary scroll-delay-3"
+              onClick={() => onNavigate('about')}
+              style={{ marginTop: '1.5rem' }}
+            >
+              Know More About BeeSocial →
+            </button>
+          )}
         </div>
 
         {/* 4. OUR CORE VALUE PILLARS GRID */}

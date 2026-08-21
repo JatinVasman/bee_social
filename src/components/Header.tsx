@@ -1,16 +1,15 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import type { Currency, PageView } from '../types';
-import type { LeaderPerson } from './LeadershipModal';
+import type { PageView } from '../types';
 
 interface HeaderProps {
   activePage: PageView;
   onNavigate: (page: PageView, slug?: string) => void;
-  currency?: Currency;
-  onCurrencyChange?: (c: Currency) => void;
+  currency?: string;
+  onCurrencyChange?: (c: any) => void;
   theme?: 'light' | 'dark';
   onThemeToggle?: () => void;
   onOpenStrategyModal: () => void;
-  onOpenLeaderModal: (person: LeaderPerson) => void;
+  onOpenLeaderModal: (person: any) => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -19,7 +18,6 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenStrategyModal,
   onOpenLeaderModal: _onOpenLeaderModal,
 }) => {
-  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -99,6 +97,18 @@ export const Header: React.FC<HeaderProps> = ({
     onNavigate(page, slug);
   };
 
+  // Client-specified nav: Home | About | Services | Work | Packages | Case Studies | Blog | Contact
+  const navItems: { page: PageView; label: string }[] = [
+    { page: 'home', label: 'Home' },
+    { page: 'about', label: 'About' },
+    { page: 'services', label: 'Services' },
+    { page: 'portfolio', label: 'Work' },
+    { page: 'packages', label: 'Packages' },
+    { page: 'case-studies', label: 'Case Studies' },
+    { page: 'blog', label: 'Blog' },
+    { page: 'contact', label: 'Contact' },
+  ];
+
   return (
     <div className={`header-wrapper ${isScrolled ? 'header-wrapper--scrolled' : ''} ${isVisible ? 'header-wrapper--visible' : 'header-wrapper--hidden'}`}>
       <header className="header">
@@ -129,209 +139,32 @@ export const Header: React.FC<HeaderProps> = ({
               />
             )}
 
-            <button
-              ref={(el) => { if (el) navItemRefs.current.set('home', el); }}
-              onClick={() => onNavigate('home')}
-              className={`nav-link-item ${activePage === 'home' ? 'active' : ''}`}
-            >
-              Home
-            </button>
-
-            {/* ABOUT ▾ DROPDOWN MENU */}
-            <div
-              style={{ position: 'relative', display: 'inline-block' }}
-              onMouseEnter={() => setIsAboutDropdownOpen(true)}
-              onMouseLeave={() => setIsAboutDropdownOpen(false)}
-            >
+            {navItems.map(item => (
               <button
-                ref={(el) => { if (el) navItemRefs.current.set('about', el); }}
-                onClick={() => {
-                  setIsAboutDropdownOpen(false);
-                  onNavigate('about');
-                }}
-                className={`nav-link-item ${activePage === 'about' ? 'active' : ''}`}
-                style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', cursor: 'pointer' }}
-                title="Click to view About Us Page"
+                key={item.page}
+                ref={(el) => { if (el) navItemRefs.current.set(item.page, el); }}
+                onClick={() => onNavigate(item.page)}
+                className={`nav-link-item ${activePage === item.page ? 'active' : ''}`}
               >
-                About ▾
+                {item.label}
               </button>
-
-              {/* Dropdown Menu Card with seamless top hover bridge */}
-              {isAboutDropdownOpen && (
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '100%',
-                    left: '0',
-                    paddingTop: '0.45rem',
-                    zIndex: 1100
-                  }}
-                  onMouseEnter={() => setIsAboutDropdownOpen(true)}
-                  onMouseLeave={() => setIsAboutDropdownOpen(false)}
-                >
-                  <div
-                    style={{
-                      width: '260px',
-                      background: 'var(--bg-card)',
-                      borderRadius: '20px',
-                      boxShadow: '0 20px 40px rgba(214, 51, 108, 0.12)',
-                      border: '1px solid var(--border-color-subtle)',
-                      padding: '0.75rem',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: '0.2rem'
-                    }}
-                  >
-                    <button
-                      onClick={() => {
-                        setIsAboutDropdownOpen(false);
-                        onNavigate('about');
-                      }}
-                      style={{
-                        textAlign: 'left',
-                        padding: '0.65rem 1rem',
-                        borderRadius: '12px',
-                        fontSize: '0.9rem',
-                        fontWeight: 600,
-                        color: 'var(--text-main)',
-                        transition: 'var(--transition)',
-                        background: 'transparent',
-                        border: 'none',
-                        cursor: 'pointer'
-                      }}
-                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(214, 51, 108, 0.06)')}
-                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
-                    >
-                      About BeeSocial
-                    </button>
-
-                    <button
-                      onClick={() => {
-                        setIsAboutDropdownOpen(false);
-                        onNavigate('about', 'founder');
-                      }}
-                      style={{
-                        textAlign: 'left',
-                        padding: '0.65rem 1rem',
-                        borderRadius: '12px',
-                        fontSize: '0.875rem',
-                        fontWeight: 500,
-                        color: '#475569',
-                        transition: 'var(--transition)',
-                        background: 'transparent',
-                        border: 'none',
-                        cursor: 'pointer'
-                      }}
-                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(214, 51, 108, 0.06)')}
-                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
-                    >
-                      Founder — <strong>Siddhi</strong>
-                    </button>
-
-                    <button
-                      onClick={() => {
-                        setIsAboutDropdownOpen(false);
-                        onNavigate('about', 'why-us');
-                      }}
-                      style={{
-                        textAlign: 'left',
-                        padding: '0.65rem 1rem',
-                        borderRadius: '12px',
-                        fontSize: '0.875rem',
-                        fontWeight: 500,
-                        color: '#475569',
-                        transition: 'var(--transition)',
-                        background: 'transparent',
-                        border: 'none',
-                        cursor: 'pointer'
-                      }}
-                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(214, 51, 108, 0.06)')}
-                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
-                    >
-                      Why BeeSocial
-                    </button>
-
-                    <button
-                      onClick={() => {
-                        setIsAboutDropdownOpen(false);
-                        onNavigate('about', 'team');
-                      }}
-                      style={{
-                        textAlign: 'left',
-                        padding: '0.65rem 1rem',
-                        borderRadius: '12px',
-                        fontSize: '0.875rem',
-                        fontWeight: 500,
-                        color: '#475569',
-                        transition: 'var(--transition)',
-                        background: 'transparent',
-                        border: 'none',
-                        cursor: 'pointer'
-                      }}
-                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(214, 51, 108, 0.06)')}
-                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
-                    >
-                      Our Team
-                    </button>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            <button
-              ref={(el) => { if (el) navItemRefs.current.set('services', el); }}
-              onClick={() => onNavigate('services')}
-              className={`nav-link-item ${activePage === 'services' ? 'active' : ''}`}
-            >
-              Services
-            </button>
-
-            <button
-              ref={(el) => { if (el) navItemRefs.current.set('industries', el); }}
-              onClick={() => onNavigate('industries')}
-              className={`nav-link-item ${activePage === 'industries' ? 'active' : ''}`}
-            >
-              Industries
-            </button>
-
-            <button
-              ref={(el) => { if (el) navItemRefs.current.set('portfolio', el); }}
-              onClick={() => onNavigate('portfolio')}
-              className={`nav-link-item ${activePage === 'portfolio' ? 'active' : ''}`}
-            >
-              Our Work
-            </button>
-
-            <button
-              ref={(el) => { if (el) navItemRefs.current.set('blog', el); }}
-              onClick={() => onNavigate('blog')}
-              className={`nav-link-item ${activePage === 'blog' ? 'active' : ''}`}
-            >
-              Blog
-            </button>
-
-            <button
-              ref={(el) => { if (el) navItemRefs.current.set('smm', el); }}
-              onClick={() => onNavigate('smm')}
-              className={`nav-link-item ${activePage === 'smm' ? 'active' : ''}`}
-            >
-              SMM
-            </button>
-
-            <button
-              ref={(el) => { if (el) navItemRefs.current.set('contact', el); }}
-              onClick={() => onNavigate('contact')}
-              className={`nav-link-item ${activePage === 'contact' ? 'active' : ''}`}
-            >
-              Contact
-            </button>
+            ))}
           </nav>
 
           {/* Right Header Actions */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexShrink: 0 }}>
+            {/* Desktop CTA Button */}
+            {!isMobileScreen && (
+              <button
+                className="btn btn-primary"
+                onClick={onOpenStrategyModal}
+                style={{ fontSize: '0.85rem', padding: '0.6rem 1.25rem', borderRadius: '999px' }}
+              >
+                Get a Free Consultation
+              </button>
+            )}
 
-
-            {/* MOBILE HAMBURGER MENU BUTTON (STRICTLY MOBILE PHONES <= 768px) */}
+            {/* MOBILE HAMBURGER MENU BUTTON */}
             {isMobileScreen && (
               <button
                 className="mobile-menu-trigger"
@@ -370,79 +203,18 @@ export const Header: React.FC<HeaderProps> = ({
 
               {/* Drawer Menu Items */}
               <div className="mobile-drawer-body">
-                <button
-                  className={`mobile-drawer-link drawer-stagger-1 ${activePage === 'home' ? 'active' : ''}`}
-                  onClick={() => handleMobileNav('home')}
-                >
-                  <span>Home</span>
-                </button>
-
-                <div className="mobile-drawer-link-group drawer-stagger-2">
+                {navItems.map((item, idx) => (
                   <button
-                    className={`mobile-drawer-link ${activePage === 'about' ? 'active' : ''}`}
-                    onClick={() => {
-                      setIsAboutDropdownOpen(!isAboutDropdownOpen);
-                    }}
-                    style={{ justifyContent: 'space-between' }}
+                    key={item.page}
+                    className={`mobile-drawer-link drawer-stagger-${idx + 1} ${activePage === item.page ? 'active' : ''}`}
+                    onClick={() => handleMobileNav(item.page)}
                   >
-                    <span>About</span>
-                    <span style={{ fontSize: '0.75rem' }}>{isAboutDropdownOpen ? '▲' : '▾'}</span>
+                    <span>{item.label}</span>
                   </button>
-
-                  {isAboutDropdownOpen && (
-                    <div className="mobile-drawer-sublinks">
-                      <button onClick={() => handleMobileNav('about')}>About BeeSocial</button>
-                      <button onClick={() => handleMobileNav('about', 'founder')}>Founder — Siddhi</button>
-                      <button onClick={() => handleMobileNav('about', 'why-us')}>Why BeeSocial</button>
-                      <button onClick={() => handleMobileNav('about', 'team')}>Our Team</button>
-                    </div>
-                  )}
-                </div>
-
-                <button
-                  className={`mobile-drawer-link drawer-stagger-3 ${activePage === 'services' ? 'active' : ''}`}
-                  onClick={() => handleMobileNav('services')}
-                >
-                  <span>Services</span>
-                </button>
-
-                <button
-                  className={`mobile-drawer-link drawer-stagger-4 ${activePage === 'portfolio' ? 'active' : ''}`}
-                  onClick={() => handleMobileNav('portfolio')}
-                >
-                  <span>Portfolio</span>
-                </button>
-
-                <button
-                  className={`mobile-drawer-link drawer-stagger-5 ${activePage === 'industries' ? 'active' : ''}`}
-                  onClick={() => handleMobileNav('industries')}
-                >
-                  <span>Industries</span>
-                </button>
-
-                <button
-                  className={`mobile-drawer-link drawer-stagger-6 ${activePage === 'blog' ? 'active' : ''}`}
-                  onClick={() => handleMobileNav('blog')}
-                >
-                  <span>Blog</span>
-                </button>
-
-                <button
-                  className={`mobile-drawer-link drawer-stagger-7 ${activePage === 'smm' ? 'active' : ''}`}
-                  onClick={() => handleMobileNav('smm')}
-                >
-                  <span>SMM</span>
-                </button>
-
-                <button
-                  className={`mobile-drawer-link drawer-stagger-7 ${activePage === 'contact' ? 'active' : ''}`}
-                  onClick={() => handleMobileNav('contact')}
-                >
-                  <span>Contact</span>
-                </button>
+                ))}
               </div>
 
-              {/* Drawer Bottom CTA Button matching Screenshot 1 */}
+              {/* Drawer Bottom CTA Button */}
               <div className="mobile-drawer-footer">
                 <button
                   className="mobile-drawer-cta-btn drawer-cta-animate"
@@ -451,7 +223,7 @@ export const Header: React.FC<HeaderProps> = ({
                     onOpenStrategyModal();
                   }}
                 >
-                  Book Strategy Call ➔
+                  Get a Free Consultation ➔
                 </button>
               </div>
             </div>

@@ -6,9 +6,51 @@ interface ContactSectionProps {
   backgroundColor?: string;
 }
 
+const industryOptions = [
+  'Jewellery & Luxury',
+  'Real Estate',
+  'Furniture & Interiors',
+  'Food & Hospitality',
+  'Construction',
+  'Retail & Lifestyle',
+  'Professional Services',
+  'Education',
+  'Healthcare',
+  'Events & Weddings',
+  'Other'
+];
+
+const helpOptions = [
+  'Branding & Identity',
+  'Social Media Management',
+  'Content Creation (Reels, Photography)',
+  'Performance Marketing (Ads)',
+  'Graphic Design',
+  'Influencer Marketing',
+  'Complete Digital Growth',
+  'Other'
+];
+
+const budgetOptions = [
+  '₹15K - ₹30K',
+  '₹30K - ₹50K',
+  '₹50K - ₹1L',
+  '₹1L+',
+  'Not sure yet'
+];
+
 export const ContactSection: React.FC<ContactSectionProps> = ({ backgroundColor }) => {
   const reveal = useScrollReveal();
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  const [formData, setFormData] = useState({
+    name: '',
+    businessName: '',
+    email: '',
+    phone: '',
+    industry: '',
+    helpWith: '',
+    budget: '',
+    message: ''
+  });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
@@ -23,7 +65,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ backgroundColor 
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
-      message: formData.message,
+      message: `Business: ${formData.businessName}\nIndustry: ${formData.industry}\nHelp With: ${formData.helpWith}\nBudget: ${formData.budget}\n\n${formData.message}`,
     });
 
     setLoading(false);
@@ -32,11 +74,31 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ backgroundColor 
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        setFormData({ name: '', businessName: '', email: '', phone: '', industry: '', helpWith: '', budget: '', message: '' });
       }, 6000);
     } else {
       setErrorMsg(res.message || 'Failed to send message. Please try again.');
     }
+  };
+
+  const inputStyle: React.CSSProperties = {
+    width: '100%',
+    padding: '0.8rem 1rem',
+    border: '1px solid var(--border-color-subtle)',
+    borderRadius: '12px',
+    background: 'var(--bg-subtle)',
+    outline: 'none',
+    color: 'var(--text-main)',
+    fontSize: '0.9rem',
+    fontFamily: 'inherit'
+  };
+
+  const labelStyle: React.CSSProperties = {
+    display: 'block',
+    fontSize: '0.85rem',
+    fontWeight: 600,
+    marginBottom: '0.4rem',
+    color: 'var(--secondary)'
   };
 
   return (
@@ -44,8 +106,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ backgroundColor 
       <div className="container">
         <div className="section-header">
           <div ref={reveal} className="section-tag">GET IN TOUCH</div>
-          <h2 ref={reveal} className="section-title scroll-delay-1">Let's Create Something Buzz-Worthy Together</h2>
-          <p ref={reveal} className="section-subtitle scroll-delay-2">Tell us about your brand and our creative team will get back to you within 24 hours.</p>
+          <h2 ref={reveal} className="section-title scroll-delay-1">Let's Build Something People Remember.</h2>
+          <p ref={reveal} className="section-subtitle scroll-delay-2">Have a business that deserves more attention? Let's talk.</p>
         </div>
 
         <div className="contact-grid">
@@ -53,7 +115,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ backgroundColor 
             {submitted ? (
               <div style={{ padding: '2rem', textAlign: 'center', color: 'var(--green-accent)' }}>
                 <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>🎉 Message Sent Successfully!</h3>
-                <p style={{ color: 'var(--text-muted)' }}>Thank you. Our team will contact you at {formData.email || 'your email'} shortly.</p>
+                <p style={{ color: 'var(--text-muted)' }}>Thank you, {formData.name || 'friend'}! Our team will contact you shortly.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
@@ -62,28 +124,66 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ backgroundColor 
                     {errorMsg}
                   </div>
                 )}
-                <div style={{ marginBottom: '1.25rem' }}>
-                  <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem', color: 'var(--secondary)' }}>Full Name</label>
-                  <input type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required placeholder="Enter your name" style={{ width: '100%', padding: '0.8rem 1rem', border: '1px solid var(--border-color-subtle)', borderRadius: '12px', background: 'var(--bg-subtle)', outline: 'none', color: 'var(--text-main)' }} />
+
+                {/* Row: Name + Business Name */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.25rem' }}>
+                  <div>
+                    <label style={labelStyle}>Name</label>
+                    <input type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required placeholder="Your name" style={inputStyle} />
+                  </div>
+                  <div>
+                    <label style={labelStyle}>Business Name</label>
+                    <input type="text" value={formData.businessName} onChange={(e) => setFormData({ ...formData, businessName: e.target.value })} placeholder="Your business name" style={inputStyle} />
+                  </div>
                 </div>
 
-                <div style={{ marginBottom: '1.25rem' }}>
-                  <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem', color: 'var(--secondary)' }}>Email Address</label>
-                  <input type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required placeholder="Enter your email" style={{ width: '100%', padding: '0.8rem 1rem', border: '1px solid var(--border-color-subtle)', borderRadius: '12px', background: 'var(--bg-subtle)', outline: 'none', color: 'var(--text-main)' }} />
+                {/* Row: Phone + Email */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.25rem' }}>
+                  <div>
+                    <label style={labelStyle}>Phone Number</label>
+                    <input type="tel" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} required placeholder="+91 XXXXX XXXXX" style={inputStyle} />
+                  </div>
+                  <div>
+                    <label style={labelStyle}>Email Address</label>
+                    <input type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required placeholder="your@email.com" style={inputStyle} />
+                  </div>
                 </div>
 
-                <div style={{ marginBottom: '1.25rem' }}>
-                  <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem', color: 'var(--secondary)' }}>Phone Number</label>
-                  <input type="tel" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} required placeholder="Enter your phone number" style={{ width: '100%', padding: '0.8rem 1rem', border: '1px solid var(--border-color-subtle)', borderRadius: '12px', background: 'var(--bg-subtle)', outline: 'none', color: 'var(--text-main)' }} />
+                {/* Row: Industry + Budget */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.25rem' }}>
+                  <div>
+                    <label style={labelStyle}>Industry</label>
+                    <select value={formData.industry} onChange={(e) => setFormData({ ...formData, industry: e.target.value })} style={{ ...inputStyle, cursor: 'pointer' }}>
+                      <option value="">Select your industry</option>
+                      {industryOptions.map(opt => <option key={opt} value={opt}>{opt}</option>)}
+                    </select>
+                  </div>
+                  <div>
+                    <label style={labelStyle}>Monthly Marketing Budget</label>
+                    <select value={formData.budget} onChange={(e) => setFormData({ ...formData, budget: e.target.value })} style={{ ...inputStyle, cursor: 'pointer' }}>
+                      <option value="">Select budget range</option>
+                      {budgetOptions.map(opt => <option key={opt} value={opt}>{opt}</option>)}
+                    </select>
+                  </div>
                 </div>
 
+                {/* Help With */}
                 <div style={{ marginBottom: '1.25rem' }}>
-                  <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem', color: 'var(--secondary)' }}>Your Message</label>
-                  <textarea value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} required placeholder="Tell us about your brand..." style={{ width: '100%', padding: '0.8rem 1rem', border: '1px solid var(--border-color-subtle)', borderRadius: '12px', background: 'var(--bg-subtle)', outline: 'none', minHeight: '120px', color: 'var(--text-main)' }} />
+                  <label style={labelStyle}>What do you need help with?</label>
+                  <select value={formData.helpWith} onChange={(e) => setFormData({ ...formData, helpWith: e.target.value })} style={{ ...inputStyle, cursor: 'pointer' }}>
+                    <option value="">Select a service</option>
+                    {helpOptions.map(opt => <option key={opt} value={opt}>{opt}</option>)}
+                  </select>
                 </div>
 
-                <button type="submit" className="btn btn-primary" disabled={loading} style={{ width: '100%', opacity: loading ? 0.7 : 1 }}>
-                  {loading ? 'Sending Message...' : 'Send Message ➔'}
+                {/* Message */}
+                <div style={{ marginBottom: '1.25rem' }}>
+                  <label style={labelStyle}>Your Message (Optional)</label>
+                  <textarea value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} placeholder="Tell us about your brand goals..." style={{ ...inputStyle, minHeight: '100px', resize: 'vertical' }} />
+                </div>
+
+                <button type="submit" className="btn btn-primary" disabled={loading} style={{ width: '100%', opacity: loading ? 0.7 : 1, fontSize: '1rem', padding: '0.9rem' }}>
+                  {loading ? 'Sending...' : "Let's Grow My Brand 🚀"}
                 </button>
               </form>
             )}
@@ -91,16 +191,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ backgroundColor 
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             <div ref={reveal} className="scroll-delay-2" style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'var(--bg-card)', border: '1px solid var(--border-color-subtle)', borderRadius: '14px', padding: '1.25rem', boxShadow: 'var(--shadow-card)' }}>
-              <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'var(--bg-badge)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>✉️</div>
-              <div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Email Us</div>
-                <a href="mailto:hello.thebeesocial@gmail.com" style={{ fontWeight: 700, color: 'inherit', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary)'} onMouseLeave={(e) => e.currentTarget.style.color = 'inherit'}>
-                  hello.thebeesocial@gmail.com
-                </a>
-              </div>
-            </div>
-
-            <div ref={reveal} className="scroll-delay-3" style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'var(--bg-card)', border: '1px solid var(--border-color-subtle)', borderRadius: '14px', padding: '1.25rem', boxShadow: 'var(--shadow-card)' }}>
               <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'var(--bg-badge)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>📞</div>
               <div>
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Call Us</div>
@@ -108,20 +198,29 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ backgroundColor 
               </div>
             </div>
 
-            <div ref={reveal} className="scroll-delay-4" style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'var(--bg-card)', border: '1px solid var(--border-color-subtle)', borderRadius: '14px', padding: '1.25rem', boxShadow: 'var(--shadow-card)' }}>
-              <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'var(--bg-badge)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>📸</div>
+            <div ref={reveal} className="scroll-delay-3" style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'var(--bg-card)', border: '1px solid var(--border-color-subtle)', borderRadius: '14px', padding: '1.25rem', boxShadow: 'var(--shadow-card)' }}>
+              <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'var(--bg-badge)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>✉️</div>
               <div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Instagram</div>
-                <a href="https://www.instagram.com/beesocial._" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 700, color: 'inherit', textDecoration: 'none' }}>@beesocial._</a>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Email Us</div>
+                <a href="mailto:hello.thebeesocial@gmail.com" style={{ fontWeight: 700, color: 'inherit', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary)'} onMouseLeave={(e) => e.currentTarget.style.color = 'inherit'}>hello.thebeesocial@gmail.com</a>
+              </div>
+            </div>
+
+            <div ref={reveal} className="scroll-delay-4" style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'var(--bg-card)', border: '1px solid var(--border-color-subtle)', borderRadius: '14px', padding: '1.25rem', boxShadow: 'var(--shadow-card)' }}>
+              <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'var(--bg-badge)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>📍</div>
+              <div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Location</div>
+                <div style={{ fontWeight: 700, color: 'var(--secondary)' }}>Pune, Maharashtra</div>
               </div>
             </div>
 
             <div ref={reveal} className="scroll-delay-5" style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'var(--bg-card)', border: '1px solid var(--border-color-subtle)', borderRadius: '14px', padding: '1.25rem', boxShadow: 'var(--shadow-card)' }}>
-              <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'var(--bg-badge)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>📍</div>
+              <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'var(--bg-badge)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>📱</div>
               <div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Office</div>
-                <div style={{ fontWeight: 700, color: 'var(--secondary)' }}>BeeSocial, India</div>
-                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Working Hours: Mon - Sat: 9AM - 7PM</div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Follow Us</div>
+                <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '0.25rem' }}>
+                  <a href="https://www.instagram.com/beesocial._" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 700, color: 'var(--primary)', textDecoration: 'none', fontSize: '0.85rem' }}>Instagram (@beesocial._)</a>
+                </div>
               </div>
             </div>
           </div>

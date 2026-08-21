@@ -186,6 +186,14 @@ export function parseRoute(pathname: string, search: string): RouteInfo {
     return { page: 'portfolio' };
   }
 
+  if (first === 'packages' || first === 'pricing') {
+    return { page: 'packages' };
+  }
+
+  if (first === 'case-studies' || first === 'case-study') {
+    return { page: 'case-studies' };
+  }
+
   if (first === 'smm' || first === 'social-media-marketing') {
     return { page: 'smm' };
   }
@@ -269,6 +277,10 @@ export function getRoutePath(page: PageView, slug?: string): string {
     }
     case 'portfolio':
       return '/portfolio';
+    case 'packages':
+      return '/packages';
+    case 'case-studies':
+      return '/case-studies';
     case 'smm':
       return '/smm';
 

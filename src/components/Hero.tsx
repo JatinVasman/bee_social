@@ -10,7 +10,7 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({
-  onNavigateServices,
+  onOpenStrategyModal,
   onNavigatePortfolio,
   onOpenStatModal
 }) => {
@@ -21,21 +21,21 @@ export const Hero: React.FC<HeroProps> = ({
       <div className="container hero-grid">
         <div className="hero-content">
           <div ref={reveal} className="hero-tag">
-            🐝 CREATIVE SOCIAL MEDIA & MARKETING AGENCY
+            🐝 STRATEGY. CREATIVITY. GROWTH.
           </div>
           <h1 ref={reveal} className="hero-title scroll-delay-1">
-            Elevate your brand <br />
-            with <span className="text-red">BeeSocial</span> 🐝
+            Your Brand. Our Creativity. <br />
+            <span className="text-red">Real Growth.</span>
           </h1>
           <p ref={reveal} className="hero-subtext scroll-delay-2">
-            Ready to take your business to the next level? BeeSocial helps growing brands stand out with professional, high-impact marketing—without the premium price tag.
+            BeeSocial is a creative branding and digital marketing agency helping businesses build a powerful online presence through strategy, content, design, social media and influencer marketing.
           </p>
           <div ref={reveal} className="hero-buttons scroll-delay-3">
-            <button className="btn btn-primary" onClick={onNavigateServices}>
-              Explore Our Services ➔
+            <button className="btn btn-primary" onClick={onOpenStrategyModal}>
+              Get a Free Consultation
             </button>
             <button className="btn btn-secondary" onClick={onNavigatePortfolio}>
-              See Our Work ➔
+              View Our Work
             </button>
           </div>
         </div>

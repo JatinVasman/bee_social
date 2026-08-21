@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const FloatingSocials: React.FC = () => {
-  const whatsappUrl = "https://wa.me/917020800621?text=Hi%2C%20I%20am%20interested%20in%20your%20services";
+  const whatsappUrl = "https://wa.me/917020800621?text=Hi%20BeeSocial%2C%20I%27d%20like%20to%20know%20more%20about%20your%20digital%20marketing%20packages.";
   const instagramUrl = "https://www.instagram.com/beesocial._";
 
   return (

@@ -43,48 +43,44 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectLocation, on
               />
             </div>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-              Scroll. Stop. Engage. A creative social media and digital marketing agency crafting content that connects, campaigns that convert, and brands that buzz.
+              Branding • Content • Social Media • Digital Growth
+            </p>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.5, fontStyle: 'italic' }}>
+              Let's grow your brand.
             </p>
           </div>
 
           <div>
-            <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#FFF', marginBottom: '1.25rem' }}>Navigation</h4>
+            <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#FFF', marginBottom: '1.25rem' }}>Quick Links</h4>
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', fontSize: '0.875rem', color: 'var(--text-muted)' }}>
-              <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('home')}>Home</li>
-              <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('about')}>About Us</li>
-              <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('portfolio')}>Our Work</li>
-              <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('blog')}>Blog Articles</li>
-              <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('smm')}>Social Growth (SMM)</li>
-              <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('contact')}>Contact Us</li>
+              <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('about')}>About</li>
+              <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('services')}>Services</li>
+              <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('portfolio')}>Portfolio</li>
+              <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('packages')}>Packages</li>
+              <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('case-studies')}>Case Studies</li>
+              <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('blog')}>Blog</li>
+              <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('contact')}>Contact</li>
             </ul>
           </div>
 
           <div>
-            <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#FFF', marginBottom: '1.25rem' }}>Services</h4>
+            <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#FFF', marginBottom: '1.25rem' }}>Follow Us</h4>
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', fontSize: '0.875rem', color: 'var(--text-muted)' }}>
-              <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('services')}>SEO Services</li>
-              <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('services')}>Google Ads (PPC)</li>
-              <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('services')}>Meta Ads</li>
-              <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('smm')}>SMM Growth</li>
-              <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('services')}>Custom Web App</li>
-              <li style={{ cursor: 'pointer' }} onClick={() => onNavigate('services')}>Graphic Design</li>
+              <li>
+                <a href="https://www.instagram.com/beesocial._" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.2s ease', display: 'flex', alignItems: 'center', gap: '0.4rem' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary)'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-muted)'}>
+                  <span>📸</span>
+                  <span>Instagram (@beesocial._)</span>
+                </a>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#FFF', marginBottom: '1.25rem' }}>Direct Contact</h4>
             <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <div>📍 India</div>
+              <div>📍 Pune, Maharashtra</div>
               <div>📞 <a href="tel:+917020800621" style={{ color: 'inherit', textDecoration: 'none' }}>+91 70208 00621</a></div>
               <div>✉️ <a href="mailto:hello.thebeesocial@gmail.com" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary)'} onMouseLeave={(e) => e.currentTarget.style.color = 'inherit'}>hello.thebeesocial@gmail.com</a></div>
-              <a
-                href="https://www.instagram.com/beesocial._"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: 'var(--primary)', fontWeight: 700, textDecoration: 'none', marginTop: '0.5rem' }}
-              >
-                Follow on Instagram 📸 →
-              </a>
             </div>
           </div>
         </div>

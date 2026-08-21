@@ -88,6 +88,16 @@ export const InteractiveStatsBar: React.FC<InteractiveStatsBarProps> = ({
 
   return (
     <>
+      {/* TRUST BAR HEADING */}
+      <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+        <h3 style={{ fontSize: '1.5rem', fontWeight: 900, color: 'var(--secondary)', fontFamily: 'Outfit, sans-serif', marginBottom: '0.5rem' }}>
+          Trusted by Growing Businesses
+        </h3>
+        <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', fontWeight: 600 }}>
+          50+ Brands &nbsp;|&nbsp; 100+ Campaigns &nbsp;|&nbsp; 10+ Industries &nbsp;|&nbsp; Pan-India
+        </p>
+      </div>
+
       {/* 4-COLUMN ANIMATED STATS BAR MATCHING SCREENSHOT 1 */}
       <div
         className="responsive-4-grid"

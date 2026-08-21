@@ -13,6 +13,19 @@ import { ClientVoices } from './components/ClientVoices';
 import { FloatingSocials } from './components/FloatingSocials';
 import { WorkShowcaseMarquee } from './components/WorkShowcaseMarquee';
 
+// New sections from client brief
+import { OneAgencySection } from './components/OneAgencySection';
+import { ProcessSection } from './components/ProcessSection';
+import { PackagesSection } from './components/PackagesSection';
+import { DigitalToolkitSection } from './components/DigitalToolkitSection';
+import { AIPoweredSection } from './components/AIPoweredSection';
+import { InfluencerSection } from './components/InfluencerSection';
+import { IndustriesShowcase } from './components/IndustriesShowcase';
+import { FAQSection } from './components/FAQSection';
+import { CaseStudiesSection } from './components/CaseStudiesSection';
+import { ClientLogosCarousel } from './components/ClientLogosCarousel';
+import { LeadMagnetSection } from './components/LeadMagnetSection';
+
 // Modals
 import { StatCardModal } from './components/StatCardModal';
 import type { StatType } from './components/StatCardModal';
@@ -112,8 +125,8 @@ export const App: React.FC = () => {
 
   // Dynamic SEO Metadata Manager
   useEffect(() => {
-    let title = 'BeeSocial — Creative Social Media & Digital Marketing Agency';
-    let description = 'BeeSocial is a creative social media and digital marketing agency that helps brands stand out, engage audiences, and grow online through scroll-stopping content and strategic campaigns.';
+    let title = 'BeeSocial — Strategy. Creativity. Growth.';
+    let description = 'BeeSocial is a creative branding and digital marketing agency helping businesses build a powerful online presence through strategy, content, design, social media and influencer marketing.';
 
     switch (activePage) {
       case 'services':
@@ -171,6 +184,14 @@ export const App: React.FC = () => {
       case 'portfolio':
         title = 'Our Work — Creative Portfolio & Case Studies | BeeSocial';
         description = 'Discover real-world creative campaigns, social media transformations, and brand growth results delivered by BeeSocial.';
+        break;
+      case 'packages':
+        title = 'Marketing Packages & Pricing — Starting ₹15,999/month | BeeSocial';
+        description = 'Simple, transparent and scalable digital marketing packages for businesses at every growth stage. Starting from ₹15,999/month.';
+        break;
+      case 'case-studies':
+        title = 'Case Studies — Real Results for Real Brands | BeeSocial';
+        description = 'See how BeeSocial has helped brands build their digital presence with strategy, content, design and marketing campaigns.';
         break;
       case 'blog':
         title = 'Social Media Marketing & Digital Growth Insights | BeeSocial Blog';
@@ -230,8 +251,8 @@ export const App: React.FC = () => {
         description = 'Learn about BeeSocial, our creative approach to social media marketing, and the team behind impactful brand transformations.';
         break;
       case 'contact':
-        title = 'Contact BeeSocial — Let\'s Create Something Amazing';
-        description = 'Get in touch with BeeSocial to discuss your social media and digital marketing goals. We\'d love to hear from you.';
+        title = 'Contact BeeSocial — Let\'s Build Something People Remember';
+        description = 'Get in touch with BeeSocial to discuss your branding and digital marketing goals. We\'d love to hear from you.';
         break;
       default:
         break;
@@ -363,6 +384,12 @@ export const App: React.FC = () => {
     }
   };
 
+  // Suppress unused variable warnings
+  void currency;
+  void setCurrency;
+  void handleThemeToggle;
+  void isSearchModalOpen;
+
   return (
     <div className="app-container" data-theme={theme}>
       {/* GLASSMORPHIC HEADER */}
@@ -381,38 +408,109 @@ export const App: React.FC = () => {
       <main>
         {activePage === 'home' && (
           <>
+            {/* 1. HERO */}
             <Hero
               onOpenStatModal={setActiveStatModal}
               onOpenStrategyModal={() => handleOpenStrategyModal()}
               onNavigateServices={() => handleNavigate('services')}
               onNavigatePortfolio={() => handleNavigate('portfolio')}
             />
+
+            {/* 2. TRUST BAR */}
             <div style={{ backgroundColor: 'var(--bg-main)', paddingTop: '4rem', paddingBottom: '2rem' }}>
               <InteractiveStatsBar
                 onSelectLocation={handleSelectLocation}
                 onOpenStrategyModal={handleOpenStrategyModal}
               />
             </div>
-            <ServicesGrid
-              onOpenStrategyModal={handleOpenStrategyModal}
-              onNavigate={handleNavigate}
-              backgroundColor="var(--bg-card)"
-            />
+
+            {/* 3. ABOUT BEESOCIAL */}
             <AboutUs
               onNavigate={handleNavigate}
               onOpenLeaderModal={handleOpenLeaderModal}
               onOpenStrategyModal={handleOpenStrategyModal}
               onSelectLocation={handleSelectLocation}
+              backgroundColor="var(--bg-card)"
+            />
+
+            {/* 4. SERVICES GRID */}
+            <ServicesGrid
+              onOpenStrategyModal={handleOpenStrategyModal}
+              onNavigate={handleNavigate}
               backgroundColor="var(--bg-main)"
             />
-            <ClientVoices backgroundColor="var(--bg-card)" />
-            <WorkShowcaseMarquee />
+
+            {/* 5. WHY BEESOCIAL */}
             <WhyChooseUs
               onSelectLocation={handleSelectLocation}
               onOpenStrategyModal={handleOpenStrategyModal}
+              backgroundColor="var(--bg-card)"
+            />
+
+            {/* 6. ONE AGENCY. EVERY TOUCHPOINT. */}
+            <OneAgencySection
+              onOpenStrategyModal={() => handleOpenStrategyModal()}
               backgroundColor="var(--bg-main)"
             />
-            <ContactSection backgroundColor="var(--bg-main)" />
+
+            {/* 7. PORTFOLIO / WORK SHOWCASE */}
+            <WorkShowcaseMarquee />
+
+            {/* 8. CASE STUDIES */}
+            <CaseStudiesSection
+              onNavigate={handleNavigate}
+              backgroundColor="var(--bg-card)"
+            />
+
+            {/* 9. PROCESS — FROM IDEA TO IMPACT */}
+            <ProcessSection backgroundColor="var(--bg-main)" />
+
+            {/* 10. PACKAGES */}
+            <PackagesSection
+              onNavigate={handleNavigate}
+              onOpenStrategyModal={() => handleOpenStrategyModal()}
+              backgroundColor="var(--bg-card)"
+            />
+
+            {/* 11. DIGITAL GROWTH TOOLKIT */}
+            <DigitalToolkitSection backgroundColor="var(--bg-main)" />
+
+            {/* 12. AI-POWERED CREATIVITY */}
+            <AIPoweredSection
+              onOpenStrategyModal={() => handleOpenStrategyModal()}
+              backgroundColor="var(--bg-card)"
+            />
+
+            {/* 13. INFLUENCER MARKETING */}
+            <InfluencerSection
+              onOpenStrategyModal={() => handleOpenStrategyModal()}
+              backgroundColor="var(--bg-main)"
+            />
+
+            {/* 14. TESTIMONIALS */}
+            <ClientVoices backgroundColor="var(--bg-card)" />
+
+            {/* 15. CLIENT LOGOS */}
+            <ClientLogosCarousel backgroundColor="var(--bg-main)" />
+
+            {/* 16. INDUSTRIES SHOWCASE */}
+            <IndustriesShowcase
+              onNavigate={handleNavigate}
+              onOpenStrategyModal={() => handleOpenStrategyModal()}
+              backgroundColor="var(--bg-card)"
+            />
+
+            {/* 17. FAQ */}
+            <FAQSection backgroundColor="var(--bg-main)" />
+
+            {/* 18. CONTACT SECTION */}
+            <ContactSection backgroundColor="var(--bg-card)" />
+
+            {/* 19. LEAD MAGNET — FREE BRAND AUDIT */}
+            <LeadMagnetSection
+              onOpenStrategyModal={() => handleOpenStrategyModal()}
+              backgroundColor="var(--bg-main)"
+            />
           </>
         )}
 
@@ -444,6 +542,29 @@ export const App: React.FC = () => {
             onNavigate={handleNavigate}
             onOpenStrategyModal={handleOpenStrategyModal}
           />
+        )}
+
+        {activePage === 'packages' && (
+          <>
+            <PackagesSection
+              onNavigate={handleNavigate}
+              onOpenStrategyModal={() => handleOpenStrategyModal()}
+            />
+            <FAQSection backgroundColor="var(--bg-main)" />
+            <ContactSection backgroundColor="var(--bg-card)" />
+          </>
+        )}
+
+        {activePage === 'case-studies' && (
+          <>
+            <CaseStudiesSection
+              onNavigate={handleNavigate}
+              backgroundColor="var(--bg-main)"
+              isStandalonePage={true}
+            />
+            <ClientVoices backgroundColor="var(--bg-card)" />
+            <ContactSection />
+          </>
         )}
 
         {activePage === 'smm' && (
