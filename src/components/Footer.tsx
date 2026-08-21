@@ -9,9 +9,15 @@ interface FooterProps {
   onNavigate: (page: PageView, slug?: string) => void;
   onSelectLocation?: (locationName: string) => void;
   onOpenLocationsModal?: () => void;
+  onOpenStrategyModal?: (planName?: string) => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectLocation, onOpenLocationsModal: _onOpenLocationsModal }) => {
+export const Footer: React.FC<FooterProps> = ({
+  onNavigate,
+  onSelectLocation,
+  onOpenLocationsModal: _onOpenLocationsModal,
+  onOpenStrategyModal
+}) => {
   const handleLocationClick = (loc: string) => {
     if (onSelectLocation) {
       onSelectLocation(loc);
@@ -80,7 +86,23 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectLocation, on
             <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <div>📍 Pune, Maharashtra</div>
               <div>📞 <a href="tel:+917020800621" style={{ color: 'inherit', textDecoration: 'none' }}>+91 70208 00621</a></div>
-              <div>✉️ <a href="mailto:hello.thebeesocial@gmail.com" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary)'} onMouseLeave={(e) => e.currentTarget.style.color = 'inherit'}>hello.thebeesocial@gmail.com</a></div>
+              <div>
+                ✉️{' '}
+                <a
+                  href="mailto:hello.thebeesocial@gmail.com"
+                  onClick={(e) => {
+                    if (onOpenStrategyModal) {
+                      e.preventDefault();
+                      onOpenStrategyModal('Email Inquiry from Footer');
+                    }
+                  }}
+                  style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s ease', cursor: 'pointer' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'inherit')}
+                >
+                  hello.thebeesocial@gmail.com
+                </a>
+              </div>
             </div>
           </div>
         </div>

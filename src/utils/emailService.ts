@@ -2,10 +2,14 @@ export interface EmailPayload {
   name: string;
   email: string;
   phone?: string;
-  message?: string;
+  businessName?: string;
   website?: string;
+  industry?: string;
+  budget?: string;
   growthGoal?: string;
   planName?: string;
+  selectedServices?: string[] | string;
+  message?: string;
   formType: 'contact' | 'strategy';
 }
 

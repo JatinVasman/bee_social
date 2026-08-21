@@ -22,7 +22,21 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     const body = typeof req.body === 'string' ? JSON.parse(req.body) : (req.body || {});
-    const { name, email, phone, message, planName, growthGoal, website, formType } = body;
+    const {
+      name,
+      email,
+      phone,
+      businessName,
+      industry,
+      budget,
+      services,
+      selectedServices,
+      message,
+      planName,
+      growthGoal,
+      website,
+      formType
+    } = body;
 
     if (!name || !email) {
       return res.status(400).json({ error: 'Name and email are required fields.' });
@@ -32,10 +46,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const receiverEmail = process.env.RECEIVER_EMAIL || MAIN_RECEIVER_EMAIL;
     const senderEmail = process.env.SENDER_EMAIL || DEFAULT_SENDER_EMAIL;
 
-    const isStrategy = formType === 'strategy' || !!planName || !!growthGoal;
+    const isStrategy = formType === 'strategy' || !!planName || !!growthGoal || !!selectedServices;
+    
+    // Format services display
+    const rawServicesList = selectedServices || services;
+    const formattedServices = Array.isArray(rawServicesList)
+      ? rawServicesList.join(', ')
+      : (typeof rawServicesList === 'string' ? rawServicesList : '');
+
     const subject = isStrategy
-      ? `🚀 New Strategy Booking: ${name} (${planName || 'General Strategy'}) — BeeSocial`
-      : `📩 New Contact Inquiry from ${name} — BeeSocial`;
+      ? `🚀 New Strategy Booking: ${name} ${businessName ? `(${businessName})` : ''} — ${planName || formattedServices || 'Strategy Call'}`
+      : `📩 New Contact Inquiry from ${name} ${businessName ? `(${businessName})` : ''} — BeeSocial`;
 
     const htmlContent = `
       <!DOCTYPE html>
@@ -44,7 +65,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         <meta charset="utf-8">
         <style>
           body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8fafc; margin: 0; padding: 20px; color: #0f172a; }
-          .container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; }
+          .container { max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; }
           .header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #ffffff; padding: 28px 24px; text-align: center; }
           .header h1 { margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; }
           .header p { margin: 6px 0 0 0; font-size: 14px; color: #94a3b8; }
@@ -53,8 +74,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           .data-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
           .data-table td { padding: 12px 14px; border-bottom: 1px solid #f1f5f9; font-size: 14px; }
           .data-table tr:last-child td { border-bottom: none; }
-          .label { font-weight: 700; color: #475569; width: 140px; }
+          .label { font-weight: 700; color: #475569; width: 150px; }
           .value { color: #0f172a; font-weight: 500; }
+          .tag { display: inline-block; background: #fef3c7; color: #92400e; padding: 3px 8px; border-radius: 6px; font-weight: 600; font-size: 13px; margin: 2px 4px 2px 0; }
           .message-box { background: #f8fafc; border-left: 4px solid #d97706; padding: 16px; border-radius: 0 8px 8px 0; margin-top: 12px; font-size: 14px; line-height: 1.6; color: #334155; white-space: pre-wrap; }
           .footer { background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 18px 24px; text-align: center; font-size: 12px; color: #64748b; }
           .footer a { color: #d97706; text-decoration: none; font-weight: 600; }
@@ -63,9 +85,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       <body>
         <div class="container">
           <div class="header">
-            <div class="badge">${isStrategy ? 'Strategy Session' : 'Lead Inquiry'}</div>
+            <div class="badge">${isStrategy ? 'Strategy Session Booking' : 'Lead Inquiry'}</div>
             <h1>BeeSocial Website Lead</h1>
-            <p>${isStrategy ? 'New consultation request submitted' : 'New lead received via website contact form'}</p>
+            <p>${isStrategy ? 'New 30-min strategy & audit consultation requested' : 'New lead received via website contact form'}</p>
           </div>
           
           <div class="content">
@@ -75,13 +97,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
                 <td class="value"><strong>${name}</strong></td>
               </tr>
               <tr>
-                <td class="label">Email Address</td>
+                <td class="label">Work Email</td>
                 <td class="value"><a href="mailto:${email}" style="color: #d97706; text-decoration: none; font-weight: 600;">${email}</a></td>
               </tr>
               ${phone ? `
               <tr>
-                <td class="label">Phone Number</td>
-                <td class="value"><a href="tel:${phone}" style="color: #0f172a; text-decoration: none;">${phone}</a></td>
+                <td class="label">Phone / WhatsApp</td>
+                <td class="value"><a href="tel:${phone}" style="color: #0f172a; text-decoration: none; font-weight: 600;">${phone}</a></td>
+              </tr>
+              ` : ''}
+              ${businessName ? `
+              <tr>
+                <td class="label">Business / Brand</td>
+                <td class="value"><strong>${businessName}</strong></td>
               </tr>
               ` : ''}
               ${website ? `
@@ -90,16 +118,38 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
                 <td class="value">${website}</td>
               </tr>
               ` : ''}
+              ${industry ? `
+              <tr>
+                <td class="label">Industry</td>
+                <td class="value">${industry}</td>
+              </tr>
+              ` : ''}
               ${planName ? `
               <tr>
-                <td class="label">Interested Scope</td>
-                <td class="value"><span style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 6px; font-weight: 600;">${planName}</span></td>
+                <td class="label">Selected Plan / Scope</td>
+                <td class="value"><span class="tag">${planName}</span></td>
+              </tr>
+              ` : ''}
+              ${formattedServices ? `
+              <tr>
+                <td class="label">Interested Services</td>
+                <td class="value">
+                  ${Array.isArray(rawServicesList) 
+                    ? rawServicesList.map((s: string) => `<span class="tag">${s}</span>`).join('') 
+                    : `<span class="tag">${formattedServices}</span>`}
+                </td>
               </tr>
               ` : ''}
               ${growthGoal ? `
               <tr>
-                <td class="label">Growth Goal</td>
-                <td class="value">${growthGoal}</td>
+                <td class="label">Primary Goal</td>
+                <td class="value"><strong>${growthGoal}</strong></td>
+              </tr>
+              ` : ''}
+              ${budget ? `
+              <tr>
+                <td class="label">Budget Range</td>
+                <td class="value">${budget}</td>
               </tr>
               ` : ''}
               <tr>
@@ -110,7 +160,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
             ${message ? `
             <div style="margin-top: 24px;">
-              <div class="label" style="margin-bottom: 6px;">Client Message:</div>
+              <div class="label" style="margin-bottom: 6px;">Client Message / Objective:</div>
               <div class="message-box">${message}</div>
             </div>
             ` : ''}

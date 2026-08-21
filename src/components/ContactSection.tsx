@@ -4,6 +4,7 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 
 interface ContactSectionProps {
   backgroundColor?: string;
+  onOpenStrategyModal?: (planName?: string) => void;
 }
 
 const industryOptions = [
@@ -49,7 +50,7 @@ const budgetOptions = [
   'Not sure yet'
 ];
 
-export const ContactSection: React.FC<ContactSectionProps> = ({ backgroundColor }) => {
+export const ContactSection: React.FC<ContactSectionProps> = ({ backgroundColor, onOpenStrategyModal }) => {
   const reveal = useScrollReveal();
   const [formData, setFormData] = useState({
     name: '',
@@ -316,7 +317,20 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ backgroundColor 
               <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'var(--bg-badge)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>✉️</div>
               <div>
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Email Us</div>
-                <a href="mailto:hello.thebeesocial@gmail.com" style={{ fontWeight: 700, color: 'inherit', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary)'} onMouseLeave={(e) => e.currentTarget.style.color = 'inherit'}>hello.thebeesocial@gmail.com</a>
+                <a
+                  href="mailto:hello.thebeesocial@gmail.com"
+                  onClick={(e) => {
+                    if (onOpenStrategyModal) {
+                      e.preventDefault();
+                      onOpenStrategyModal('Email Inquiry from Contact Section');
+                    }
+                  }}
+                  style={{ fontWeight: 700, color: 'inherit', textDecoration: 'none', transition: 'color 0.2s ease', cursor: 'pointer' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'inherit')}
+                >
+                  hello.thebeesocial@gmail.com
+                </a>
               </div>
             </div>
 

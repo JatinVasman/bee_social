@@ -7,17 +7,53 @@ interface StrategyModalProps {
   onClose: () => void;
 }
 
+const ALL_SERVICES = [
+  'Social Media Marketing',
+  'Graphic Design & Branding',
+  'UGC Reels & Creator Marketing',
+  'Meta Ads (Facebook & Instagram)',
+  'Google Ads & PPC',
+  'SEO & AI Search Optimization',
+  'Website Development',
+  'Dashboard & KPI Systems',
+  'WhatsApp Automation',
+  'Poster & Marketing Creatives',
+  'Reels & Video Production',
+  'E-commerce Marketing & Scaling',
+  'B2B Lead Generation',
+  'Content Marketing & Copywriting',
+  'Local SEO & Google Maps',
+  'Logo & Visual Identity',
+  'Complete Digital Growth (Full-Suite)',
+  'Other / Custom Scope'
+];
+
+const GROWTH_GOALS = [
+  'Scale Inbound Leads & Customer Inquiries',
+  '3x-5x Paid Ad ROAS & Lower Acquisition Cost',
+  'Viral Social Media Reach & Follower Growth',
+  'Modern Website Redesign & Conversion Optimization',
+  'Top-3 Google Search & Local SEO Rankings',
+  'Consistent High-Volume Creative Content',
+  'E-commerce Revenue Scaling',
+  'Complete 360° Digital Agency Partnership'
+];
+
 export const StrategyModal: React.FC<StrategyModalProps> = ({ isOpen, planName, onClose }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    website: '',
-    growthGoal: 'Scale Lead Generation'
+    phone: '',
+    businessOrWebsite: '',
+    service: ALL_SERVICES[0],
+    growthGoal: GROWTH_GOALS[0],
+    message: ''
   });
+
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
-  const [sendMethod, setSendMethod] = useState<'whatsapp' | 'email'>('whatsapp');
+  const [sendMethod, setSendMethod] = useState<'email' | 'whatsapp'>('email');
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -25,9 +61,27 @@ export const StrategyModal: React.FC<StrategyModalProps> = ({ isOpen, planName, 
     };
     if (isOpen) {
       window.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
     }
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'auto';
+    };
   }, [isOpen, onClose]);
+
+  // If a plan or service name is passed, pre-select it
+  useEffect(() => {
+    if (planName) {
+      const match = ALL_SERVICES.find(s =>
+        planName.toLowerCase().includes(s.toLowerCase()) || s.toLowerCase().includes(planName.toLowerCase())
+      );
+      if (match) {
+        setFormData(prev => ({ ...prev, service: match }));
+      } else {
+        setFormData(prev => ({ ...prev, service: planName }));
+      }
+    }
+  }, [planName, isOpen]);
 
   if (!isOpen) return null;
 
@@ -36,38 +90,49 @@ export const StrategyModal: React.FC<StrategyModalProps> = ({ isOpen, planName, 
     setLoading(true);
     setErrorMsg('');
 
+    const emailPayload = {
+      formType: 'strategy' as const,
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      website: formData.businessOrWebsite,
+      growthGoal: formData.growthGoal,
+      planName: planName || formData.service,
+      selectedServices: [formData.service],
+      message: formData.message,
+    };
+
     if (sendMethod === 'whatsapp') {
       const lines = [
-        `Hi BeeSocial! I'd like to book a Strategy Call.`,
+        `*🚀 New Strategy Call Booking — BeeSocial*`,
         ``,
-        `*Plan:* ${planName || 'General Strategy Session'}`,
         `*Name:* ${formData.name}`,
-        formData.email ? `*Email:* ${formData.email}` : '',
-        formData.website ? `*Website/Phone:* ${formData.website}` : '',
-        `*Growth Goal:* ${formData.growthGoal}`,
+        `*Phone:* ${formData.phone}`,
+        `*Email:* ${formData.email}`,
+        formData.businessOrWebsite ? `*Business/Website:* ${formData.businessOrWebsite}` : '',
+        `*Service Needed:* ${formData.service}`,
+        `*Goal:* ${formData.growthGoal}`,
+        formData.message ? `*Note:* ${formData.message}` : '',
       ].filter(Boolean).join('\n');
 
       const whatsappUrl = `https://wa.me/917020800621?text=${encodeURIComponent(lines)}`;
       window.open(whatsappUrl, '_blank');
 
+      // Dispatch to email inbox in background so no leads are lost
+      sendEmail(emailPayload).catch(err => console.warn('Background email sync error:', err));
+
       setLoading(false);
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
-        setFormData({ name: '', email: '', website: '', growthGoal: 'Scale Lead Generation' });
+        resetForm();
         onClose();
       }, 4000);
       return;
     }
 
-    const res = await sendEmail({
-      formType: 'strategy',
-      name: formData.name,
-      email: formData.email,
-      website: formData.website,
-      growthGoal: formData.growthGoal,
-      planName: planName || 'General Strategy Session',
-    });
+    // Direct Email Dispatch (Resend backend)
+    const res = await sendEmail(emailPayload);
 
     setLoading(false);
 
@@ -75,144 +140,386 @@ export const StrategyModal: React.FC<StrategyModalProps> = ({ isOpen, planName, 
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
-        setFormData({ name: '', email: '', website: '', growthGoal: 'Scale Lead Generation' });
+        resetForm();
         onClose();
       }, 4000);
     } else {
-      setErrorMsg(res.message || 'Failed to submit booking. Please try again.');
+      setErrorMsg(res.message || 'Failed to submit request. Please try again or reach out on WhatsApp.');
     }
+  };
+
+  const resetForm = () => {
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      businessOrWebsite: '',
+      service: ALL_SERVICES[0],
+      growthGoal: GROWTH_GOALS[0],
+      message: ''
+    });
+  };
+
+  const inputStyle: React.CSSProperties = {
+    width: '100%',
+    padding: '0.75rem 0.9rem',
+    borderRadius: '10px',
+    border: '1px solid var(--border-color-subtle)',
+    background: 'var(--bg-subtle)',
+    color: 'var(--text-main)',
+    fontSize: '0.9rem',
+    outline: 'none',
+    fontFamily: 'inherit'
+  };
+
+  const labelStyle: React.CSSProperties = {
+    display: 'block',
+    fontSize: '0.82rem',
+    fontWeight: 600,
+    marginBottom: '0.35rem',
+    color: 'var(--secondary)'
   };
 
   return (
     <div className="modal-overlay" onClick={onClose} role="dialog" aria-modal="true" aria-label="Book Strategy Call">
-      <div style={{ position: 'sticky', top: 0, zIndex: 10, backgroundColor: 'var(--bg-card)', borderBottom: '1px solid var(--border-color-subtle)', padding: '1rem 2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <button onClick={onClose} aria-label="Back to Main Page" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.95rem', fontWeight: 700, color: 'var(--secondary)', backgroundColor: 'var(--bg-subtle)', padding: '0.5rem 1.25rem', borderRadius: '999px', border: '1px solid var(--border-color)' }}>
-          ← Back to Main Page
+      {/* Sticky Top Bar */}
+      <div
+        style={{
+          position: 'sticky',
+          top: 0,
+          zIndex: 100,
+          backgroundColor: 'var(--bg-card)',
+          borderBottom: '1px solid var(--border-color-subtle)',
+          padding: '0.85rem 1.5rem',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          backdropFilter: 'blur(10px)'
+        }}
+      >
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Back to Main Page"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.4rem',
+            fontSize: '0.85rem',
+            fontWeight: 700,
+            color: 'var(--secondary)',
+            backgroundColor: 'var(--bg-subtle)',
+            padding: '0.45rem 1rem',
+            borderRadius: '999px',
+            border: '1px solid var(--border-color)',
+            cursor: 'pointer'
+          }}
+        >
+          ← Back
         </button>
-        <button onClick={onClose} aria-label="Close Strategy Modal" style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'var(--bg-subtle)', border: '1px solid var(--border-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.25rem', fontWeight: 800, color: 'var(--secondary)' }}>✕</button>
+
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close Modal"
+          style={{
+            width: '36px',
+            height: '36px',
+            borderRadius: '50%',
+            backgroundColor: 'var(--bg-subtle)',
+            border: '1px solid var(--border-color)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '1.1rem',
+            fontWeight: 800,
+            color: 'var(--secondary)',
+            cursor: 'pointer'
+          }}
+        >
+          ✕
+        </button>
       </div>
-      <div className="modal-card" style={{ maxWidth: '850px', padding: '3.5rem 2rem 6rem 2rem' }} onClick={(e) => e.stopPropagation()}>
-        <h3 style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>
-          {planName ? `Book Strategy Call - ${planName}` : 'Book a Strategy Call'}
-        </h3>
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
-          Speak with our senior growth strategists and receive a free digital audit roadmap.
-        </p>
+
+      {/* Modal Card */}
+      <div
+        className="modal-card"
+        style={{
+          maxWidth: '580px',
+          padding: '2rem 1.5rem 4rem 1.5rem',
+          minHeight: 'auto',
+          margin: '0 auto',
+          background: 'var(--bg-main)'
+        }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Header */}
+        <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+          <div
+            style={{
+              display: 'inline-block',
+              background: 'var(--bg-badge)',
+              color: 'var(--primary)',
+              padding: '4px 12px',
+              borderRadius: '999px',
+              fontSize: '0.75rem',
+              fontWeight: 700,
+              letterSpacing: '0.04em',
+              textTransform: 'uppercase',
+              marginBottom: '0.6rem',
+              border: '1px solid var(--border-color-subtle)'
+            }}
+          >
+            ⚡ Free 30-Min Strategy Call
+          </div>
+
+          <h3 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '0.35rem', color: 'var(--secondary)' }}>
+            {planName ? `Book: ${planName}` : 'Book Your Strategy Call'}
+          </h3>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', margin: 0 }}>
+            Get a tailored digital growth audit and 90-day roadmap for your brand.
+          </p>
+        </div>
 
         {submitted ? (
-          <div style={{ textAlign: 'center', padding: '2rem 0', color: 'var(--green-accent)' }}>
-            <h4 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>🚀 Strategy Session Confirmed!</h4>
-            <p style={{ color: 'var(--text-muted)' }}>We have received your request and sent confirmation details to {formData.email || 'your email'}.</p>
+          <div
+            style={{
+              textAlign: 'center',
+              padding: '2.5rem 1.5rem',
+              background: 'var(--bg-card)',
+              borderRadius: '20px',
+              border: '1px solid var(--border-color-subtle)',
+              boxShadow: 'var(--shadow-card)'
+            }}
+          >
+            <div
+              style={{
+                width: '60px',
+                height: '60px',
+                borderRadius: '50%',
+                background: 'rgba(34, 197, 94, 0.12)',
+                color: 'var(--green-accent)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '2rem',
+                margin: '0 auto 1.25rem auto'
+              }}
+            >
+              ✓
+            </div>
+            <h4 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '0.4rem', color: 'var(--secondary)' }}>
+              🎉 Request Sent Successfully!
+            </h4>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1.5rem', lineHeight: 1.5 }}>
+              Thank you, <strong>{formData.name}</strong>! We’ve received your details and will reach out to <strong>{formData.email}</strong> within 24 hours with your strategy roadmap.
+            </p>
+            <button
+              type="button"
+              onClick={onClose}
+              className="btn btn-primary"
+              style={{ padding: '0.65rem 1.75rem', borderRadius: '10px' }}
+            >
+              Done
+            </button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit}>
+          <form
+            onSubmit={handleSubmit}
+            style={{
+              background: 'var(--bg-card)',
+              border: '1px solid var(--border-color-subtle)',
+              borderRadius: '20px',
+              padding: '1.75rem',
+              boxShadow: 'var(--shadow-card)'
+            }}
+          >
             {errorMsg && (
-              <div style={{ marginBottom: '1rem', padding: '0.75rem 1rem', background: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: '8px', color: '#ef4444', fontSize: '0.85rem' }}>
+              <div
+                style={{
+                  marginBottom: '1.25rem',
+                  padding: '0.75rem 1rem',
+                  background: 'rgba(239, 68, 68, 0.08)',
+                  border: '1px solid rgba(239, 68, 68, 0.25)',
+                  borderRadius: '10px',
+                  color: '#ef4444',
+                  fontSize: '0.85rem'
+                }}
+              >
                 {errorMsg}
               </div>
             )}
-            <div style={{ marginBottom: '1.25rem' }}>
-              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem' }}>Your Name</label>
-              <input type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required placeholder="John Doe" style={{ width: '100%', padding: '0.8rem', borderRadius: '12px', border: '1px solid var(--border-color)', outline: 'none' }} />
-            </div>
 
-            <div style={{ marginBottom: '1.25rem' }}>
-              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem' }}>Work Email</label>
-              <input type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required placeholder="john@company.com" style={{ width: '100%', padding: '0.8rem', borderRadius: '12px', border: '1px solid var(--border-color)', outline: 'none' }} />
-            </div>
-
-            <div style={{ marginBottom: '1.25rem' }}>
-              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem' }}>Business Website / Phone</label>
-              <input type="text" value={formData.website} onChange={(e) => setFormData({ ...formData, website: e.target.value })} required placeholder="https://yourcompany.com" style={{ width: '100%', padding: '0.8rem', borderRadius: '12px', border: '1px solid var(--border-color)', outline: 'none' }} />
-            </div>
-
-            <div style={{ marginBottom: '1.25rem' }}>
-              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem' }}>Primary Growth Goal</label>
-              <select value={formData.growthGoal} onChange={(e) => setFormData({ ...formData, growthGoal: e.target.value })} style={{ width: '100%', padding: '0.8rem', borderRadius: '12px', border: '1px solid var(--border-color)', outline: 'none', background: 'var(--bg-subtle)' }}>
-                <option>Scale Lead Generation</option>
-                <option>Improve ROAS / Paid Media</option>
-                <option>SEO & AI Search Optimization</option>
-                <option>Redesign Website</option>
-              </select>
-            </div>
-
-            {/* Send Method Toggle */}
-            <div style={{ marginBottom: '1.25rem' }}>
-              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem' }}>How would you like to connect?</label>
-              <div style={{ display: 'flex', gap: '0.75rem', marginTop: '0.4rem' }}>
-                <button
-                  type="button"
-                  onClick={() => setSendMethod('whatsapp')}
-                  style={{
-                    flex: 1,
-                    padding: '0.7rem 1rem',
-                    borderRadius: '12px',
-                    border: sendMethod === 'whatsapp' ? '2px solid #25D366' : '1px solid var(--border-color)',
-                    background: sendMethod === 'whatsapp' ? 'rgba(37, 211, 102, 0.1)' : 'var(--bg-subtle)',
-                    color: sendMethod === 'whatsapp' ? '#25D366' : 'var(--text-muted)',
-                    fontWeight: sendMethod === 'whatsapp' ? 700 : 500,
-                    fontSize: '0.85rem',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '0.5rem',
-                    transition: 'all 0.25s ease',
-                    fontFamily: 'inherit',
-                  }}
-                >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill={sendMethod === 'whatsapp' ? '#25D366' : 'currentColor'}>
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                  </svg>
-                  WhatsApp
-                  {sendMethod === 'whatsapp' && (
-                    <span style={{ fontSize: '0.6rem', background: '#25D366', color: '#fff', padding: '1px 5px', borderRadius: '999px', fontWeight: 700 }}>⚡ FAST</span>
-                  )}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setSendMethod('email')}
-                  style={{
-                    flex: 1,
-                    padding: '0.7rem 1rem',
-                    borderRadius: '12px',
-                    border: sendMethod === 'email' ? '2px solid var(--primary)' : '1px solid var(--border-color)',
-                    background: sendMethod === 'email' ? 'var(--bg-badge)' : 'var(--bg-subtle)',
-                    color: sendMethod === 'email' ? 'var(--primary)' : 'var(--text-muted)',
-                    fontWeight: sendMethod === 'email' ? 700 : 500,
-                    fontSize: '0.85rem',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '0.5rem',
-                    transition: 'all 0.25s ease',
-                    fontFamily: 'inherit',
-                  }}
-                >
-                  ✉️ Email
-                </button>
+            {/* Row 1: Name + Phone */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.9rem', marginBottom: '1rem' }}>
+              <div>
+                <label style={labelStyle}>Your Name *</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Rahul Sharma"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  style={inputStyle}
+                />
+              </div>
+              <div>
+                <label style={labelStyle}>Phone / WhatsApp *</label>
+                <input
+                  type="tel"
+                  required
+                  placeholder="+91 98765 43210"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  style={inputStyle}
+                />
               </div>
             </div>
 
+            {/* Row 2: Email + Brand/Website */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.9rem', marginBottom: '1rem' }}>
+              <div>
+                <label style={labelStyle}>Work Email *</label>
+                <input
+                  type="email"
+                  required
+                  placeholder="rahul@company.com"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  style={inputStyle}
+                />
+              </div>
+              <div>
+                <label style={labelStyle}>Business / Website</label>
+                <input
+                  type="text"
+                  placeholder="Brand name or URL"
+                  value={formData.businessOrWebsite}
+                  onChange={(e) => setFormData({ ...formData, businessOrWebsite: e.target.value })}
+                  style={inputStyle}
+                />
+              </div>
+            </div>
+
+            {/* Service Selection (All 17 Services) */}
+            <div style={{ marginBottom: '1rem' }}>
+              <label style={labelStyle}>Service You Need Help With *</label>
+              <select
+                value={formData.service}
+                onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                style={{ ...inputStyle, cursor: 'pointer' }}
+              >
+                {ALL_SERVICES.map(srv => (
+                  <option key={srv} value={srv}>{srv}</option>
+                ))}
+              </select>
+            </div>
+
+            {/* Primary Goal */}
+            <div style={{ marginBottom: '1rem' }}>
+              <label style={labelStyle}>Primary Growth Goal</label>
+              <select
+                value={formData.growthGoal}
+                onChange={(e) => setFormData({ ...formData, growthGoal: e.target.value })}
+                style={{ ...inputStyle, cursor: 'pointer' }}
+              >
+                {GROWTH_GOALS.map(goal => (
+                  <option key={goal} value={goal}>{goal}</option>
+                ))}
+              </select>
+            </div>
+
+            {/* Optional Note */}
+            <div style={{ marginBottom: '1.25rem' }}>
+              <label style={labelStyle}>Brief Message / Goals (Optional)</label>
+              <textarea
+                rows={2}
+                placeholder="Tell us about your target audience or key challenges..."
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                style={{ ...inputStyle, minHeight: '65px', resize: 'vertical' }}
+              />
+            </div>
+
+            {/* Method Toggle: Email vs WhatsApp */}
+            <div style={{ display: 'flex', gap: '0.6rem', marginBottom: '1.25rem' }}>
+              <button
+                type="button"
+                onClick={() => setSendMethod('email')}
+                style={{
+                  flex: 1,
+                  padding: '0.65rem',
+                  borderRadius: '10px',
+                  border: sendMethod === 'email' ? '2px solid var(--primary)' : '1px solid var(--border-color-subtle)',
+                  background: sendMethod === 'email' ? 'var(--bg-badge)' : 'var(--bg-subtle)',
+                  color: sendMethod === 'email' ? 'var(--primary)' : 'var(--text-muted)',
+                  fontWeight: sendMethod === 'email' ? 700 : 500,
+                  fontSize: '0.82rem',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '0.4rem',
+                  transition: 'all 0.2s ease',
+                  fontFamily: 'inherit'
+                }}
+              >
+                ✉️ Send via Email
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setSendMethod('whatsapp')}
+                style={{
+                  flex: 1,
+                  padding: '0.65rem',
+                  borderRadius: '10px',
+                  border: sendMethod === 'whatsapp' ? '2px solid #25D366' : '1px solid var(--border-color-subtle)',
+                  background: sendMethod === 'whatsapp' ? 'rgba(37, 211, 102, 0.1)' : 'var(--bg-subtle)',
+                  color: sendMethod === 'whatsapp' ? '#25D366' : 'var(--text-muted)',
+                  fontWeight: sendMethod === 'whatsapp' ? 700 : 500,
+                  fontSize: '0.82rem',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '0.4rem',
+                  transition: 'all 0.2s ease',
+                  fontFamily: 'inherit'
+                }}
+              >
+                💬 Connect on WhatsApp
+              </button>
+            </div>
+
+            {/* Submit Button */}
             <button
               type="submit"
-              className="btn btn-primary"
               disabled={loading}
+              className="btn btn-primary"
               style={{
                 width: '100%',
-                marginTop: '0.5rem',
-                opacity: loading ? 0.7 : 1,
+                padding: '0.85rem',
+                fontSize: '0.98rem',
+                fontWeight: 700,
+                borderRadius: '10px',
+                opacity: loading ? 0.75 : 1,
+                cursor: loading ? 'not-allowed' : 'pointer',
                 background: sendMethod === 'whatsapp' ? 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)' : undefined,
                 borderColor: sendMethod === 'whatsapp' ? '#25D366' : undefined,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.5rem'
               }}
             >
-              {loading
-                ? 'Confirming...'
-                : sendMethod === 'whatsapp'
-                  ? 'Book via WhatsApp 💬'
-                  : 'Confirm Booking via Email ➔'
-              }
+              {loading ? (
+                'Sending Request...'
+              ) : sendMethod === 'whatsapp' ? (
+                'Open WhatsApp & Book Call 💬'
+              ) : (
+                'Book Free Strategy Call ➔'
+              )}
             </button>
           </form>
         )}

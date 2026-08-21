@@ -504,7 +504,10 @@ export const App: React.FC = () => {
             <FAQSection backgroundColor="var(--bg-main)" />
 
             {/* 18. CONTACT SECTION */}
-            <ContactSection backgroundColor="var(--bg-card)" />
+            <ContactSection
+              backgroundColor="var(--bg-card)"
+              onOpenStrategyModal={handleOpenStrategyModal}
+            />
 
             {/* 19. LEAD MAGNET — FREE BRAND AUDIT */}
             <LeadMagnetSection
@@ -551,7 +554,10 @@ export const App: React.FC = () => {
               onOpenStrategyModal={() => handleOpenStrategyModal()}
             />
             <FAQSection backgroundColor="var(--bg-main)" />
-            <ContactSection backgroundColor="var(--bg-card)" />
+            <ContactSection
+              backgroundColor="var(--bg-card)"
+              onOpenStrategyModal={handleOpenStrategyModal}
+            />
           </>
         )}
 
@@ -563,7 +569,7 @@ export const App: React.FC = () => {
               isStandalonePage={true}
             />
             <ClientVoices backgroundColor="var(--bg-card)" />
-            <ContactSection />
+            <ContactSection onOpenStrategyModal={handleOpenStrategyModal} />
           </>
         )}
 
@@ -575,7 +581,7 @@ export const App: React.FC = () => {
         )}
 
         {activePage === 'contact' && (
-          <ContactSection />
+          <ContactSection onOpenStrategyModal={handleOpenStrategyModal} />
         )}
 
         {activePage === 'location' && (
@@ -638,6 +644,7 @@ export const App: React.FC = () => {
         onNavigate={handleNavigate}
         onSelectLocation={handleSelectLocation}
         onOpenLocationsModal={() => setIsLocationsModalOpen(true)}
+        onOpenStrategyModal={handleOpenStrategyModal}
       />
 
       {/* POP-UP MODALS */}
