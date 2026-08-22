@@ -87,7 +87,11 @@ export const ClientLogosCarousel: React.FC<ClientLogosCarouselProps> = ({ backgr
         <div className="marquee-container">
           <div
             className="marquee-track-left"
-            style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              animationDuration: '34.5s',
+            }}
           >
             {repeatedLogos.map((logo, idx) => (
               <div
@@ -100,6 +104,7 @@ export const ClientLogosCarousel: React.FC<ClientLogosCarouselProps> = ({ backgr
                   flexShrink: 0,
                   width: '200px',
                   height: '140px',
+                  marginRight: '2rem',
                   padding: '1rem',
                   background: '#ffffff',
                   border: '1px solid var(--border-color-subtle)',
